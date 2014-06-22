@@ -17,6 +17,7 @@ namespace soomla {
     protected:
         cocos2d::__Array *getDomainsFromDictArray(cocos2d::__Array *dictArray);
         cocos2d::__Array *getDictArrayFromDomains(cocos2d::__Array *domainArray);
+        cocos2d::__Dictionary *putTypeData(cocos2d::__Dictionary *dict, const char* type);
     };
 }
 

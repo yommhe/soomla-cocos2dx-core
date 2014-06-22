@@ -4,7 +4,7 @@
 
 #include "CCDomainHelper.h"
 
-#include "CCCommonJSONConsts.h"
+#include "CCCommonConsts.h"
 #include "CCDomainFactory.h"
 
 using namespace soomla;

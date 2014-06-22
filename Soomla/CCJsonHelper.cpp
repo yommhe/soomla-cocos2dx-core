@@ -2,12 +2,12 @@
 // Created by Fedor Shubin on 6/22/13.
 //
 
-#include "CCSoomlaJsonHelper.h"
+#include "CCJsonHelper.h"
 
 USING_NS_CC;
 using namespace std;
 
-Ref *CCSoomlaJsonHelper::getCCObjectFromJson(json_t *obj) {
+Ref *CCJsonHelper::getCCObjectFromJson(json_t *obj) {
     if (obj == NULL) {
         return NULL;
     }
@@ -23,7 +23,7 @@ Ref *CCSoomlaJsonHelper::getCCObjectFromJson(json_t *obj) {
             key = json_object_iter_key(iter);
             value = json_object_iter_value(iter);
 
-            dictionary->setObject(CCSoomlaJsonHelper::getCCObjectFromJson(value), string(key));
+            dictionary->setObject(CCJsonHelper::getCCObjectFromJson(value), string(key));
 
             iter = json_object_iter_next(obj, iter);
         }
@@ -35,7 +35,7 @@ Ref *CCSoomlaJsonHelper::getCCObjectFromJson(json_t *obj) {
         __Array *array = __Array::createWithCapacity(sizeArray);
 
         for (unsigned int i = 0; i < sizeArray; i++) {
-            array->addObject(CCSoomlaJsonHelper::getCCObjectFromJson(json_array_get(obj, i)));
+            array->addObject(CCJsonHelper::getCCObjectFromJson(json_array_get(obj, i)));
         }
 
         return array;
@@ -72,7 +72,7 @@ Ref *CCSoomlaJsonHelper::getCCObjectFromJson(json_t *obj) {
     }
 }
 
-json_t*CCSoomlaJsonHelper::getJsonFromCCObject(Ref* obj) {
+json_t*CCJsonHelper::getJsonFromCCObject(Ref* obj) {
     if (dynamic_cast<__Dictionary *>(obj)) {
         __Dictionary *mainDict = (__Dictionary *) obj;
         __Array *allKeys = mainDict->allKeys();
@@ -83,7 +83,7 @@ json_t*CCSoomlaJsonHelper::getJsonFromCCObject(Ref* obj) {
             const char *key = ((__String *) allKeys->getObjectAtIndex(i))->getCString();
             json_object_set_new(jsonDict,
                     key,
-                    CCSoomlaJsonHelper::getJsonFromCCObject(mainDict->objectForKey(key)));
+                    CCJsonHelper::getJsonFromCCObject(mainDict->objectForKey(key)));
         }
 
         return jsonDict;
@@ -94,7 +94,7 @@ json_t*CCSoomlaJsonHelper::getJsonFromCCObject(Ref* obj) {
 
         for (unsigned int i = 0; i < mainArray->count(); i++) {
             json_array_append_new(jsonArray,
-                    CCSoomlaJsonHelper::getJsonFromCCObject(mainArray->getObjectAtIndex(i)));
+                    CCJsonHelper::getJsonFromCCObject(mainArray->getObjectAtIndex(i)));
         }
 
         return jsonArray;

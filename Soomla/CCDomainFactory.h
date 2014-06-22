@@ -10,16 +10,14 @@
 #include "CCDomain.h"
 
 namespace soomla {
-    typedef soomla::CCDomain *(*TDomainCreator)(cocos2d::__Dictionary *dict);
-
     class CCDomainFactory {
     public:
         static CCDomainFactory* getInstance();
-        void registerCreator(const char* key, TDomainCreator creator);
+        void registerCreator(const char* key, std::function<soomla::CCDomain *(cocos2d::__Dictionary *)> creator);
         soomla::CCDomain *createWithDictionary(cocos2d::__Dictionary *dict);
         soomla::CCDomain *createWithDictionaryAndType(cocos2d::__Dictionary *dict, const char *type);
     private:
-        std::map<std::string, TDomainCreator> mCreators;
+        std::map<std::string, std::function<soomla::CCDomain *(cocos2d::__Dictionary *)>> mCreators;
     };
 }
 

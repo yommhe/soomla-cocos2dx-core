@@ -11,12 +11,12 @@
 #include "cocos2d.h"
 #include "jansson.h"
 
-/** \class CCSoomlaJsonHelper
+/** \class CCJsonHelper
 	\brief A helper class to generate CCObjects from JSON objects and vice versa.
 
 	A helper class to generate CCObjects from JSON strings and vice versa.
  */
-class CCSoomlaJsonHelper {
+class CCJsonHelper {
  public:
 	/**
 	   Generate a CC object from a JSON object.

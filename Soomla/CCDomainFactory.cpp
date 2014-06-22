@@ -3,7 +3,7 @@
 //
 
 #include "CCDomainFactory.h"
-#include "CCCommonJSONConsts.h"
+#include "CCCommonConsts.h"
 
 using namespace soomla;
 
@@ -17,12 +17,12 @@ CCDomainFactory *CCDomainFactory::getInstance() {
     return s_SharedDomainFactory;
 }
 
-void CCDomainFactory::registerCreator(const char *key, TDomainCreator creator) {
+void CCDomainFactory::registerCreator(const char *key, std::function<soomla::CCDomain *(cocos2d::__Dictionary *)> creator) {
     mCreators[key] = creator;
 }
 
 CCDomain * CCDomainFactory::createWithDictionary(cocos2d::__Dictionary *dict) {
-    cocos2d::__String *type = dynamic_cast<cocos2d::__String *>(dict->objectForKey(JSON_JSON_TYPE));
+    cocos2d::__String *type = dynamic_cast<cocos2d::__String *>(dict->objectForKey(CCCommonConsts::JSON_JSON_TYPE));
 
     return this->createWithDictionaryAndType(dict, type->getCString());
 }
@@ -33,11 +33,11 @@ soomla::CCDomain *CCDomainFactory::createWithDictionaryAndType(cocos2d::__Dictio
         return nullptr;
     }
 
-    TDomainCreator creator = mCreators[type];
+    std::function<soomla::CCDomain *(cocos2d::__Dictionary *)> creator = mCreators[type];
     CC_ASSERT(creator);
     if (creator == nullptr) {
         return nullptr;
     }
 
-    return (*creator)(dict);
+    return creator(dict);
 }
