@@ -5,10 +5,13 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE := cocos2dx_soomla_common_static
 LOCAL_MODULE_FILENAME := libcocos2dxsoomlacommon
-LOCAL_SRC_FILES := ../../Soomla/CCDomainFactory.cpp \
+LOCAL_SRC_FILES := ../../Soomla/CCCommonConsts.cpp \
+	../../Soomla/CCDomainFactory.cpp \
 	../../Soomla/CCDomainHelper.cpp \
-	../../Soomla/CCSoomlaJsonHelper.cpp \
-	../../Soomla/data/CCCommonJSONConsts.cpp \
+	../../Soomla/CCError.cpp \
+	../../Soomla/CCEventDispatcher.cpp \
+	../../Soomla/CCJsonHelper.cpp \
+	../../Soomla/CCNdkBridge.cpp \
 	../../Soomla/domain/CCDomain.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Soomla
