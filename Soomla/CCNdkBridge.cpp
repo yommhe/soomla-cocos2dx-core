@@ -124,9 +124,11 @@ namespace soomla {
                 json_decref(retJsonParams);
             }
 
-            CCError *error = CCError::createWithObject(retParams);
-            if (error != NULL) {
-                *pError = error;
+            if (pError != nullptr) {
+                CCError *error = CCError::createWithObject(retParams);
+                if (error != NULL) {
+                    *pError = error;
+                }
             }
 
             return retParams;

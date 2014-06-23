@@ -22,7 +22,7 @@ namespace soomla {
         CCError():
             mInfo("") {}
 
-        bool init(cocos2d::__String *errorInfo);
+        bool init(std::string &errorInfo);
     };
 };
 
