@@ -4,8 +4,8 @@
 
 
 
-#ifndef __JsonHelper_H_
-#define __JsonHelper_H_
+#ifndef __CCJsonHelper_H_
+#define __CCJsonHelper_H_
 
 #include <iostream>
 #include "cocos2d.h"
@@ -32,4 +32,4 @@ class CCJsonHelper {
 };
 
 
-#endif //__JsonHelper_H_
+#endif //__CCJsonHelper_H_
