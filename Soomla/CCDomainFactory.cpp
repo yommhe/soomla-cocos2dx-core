@@ -25,8 +25,9 @@ void CCDomainFactory::registerCreator(const char *key, std::function<soomla::CCD
 
 CCDomain * CCDomainFactory::createWithDictionary(__Dictionary *dict) {
     Ref *typeRef = dict->objectForKey(CCCommonConsts::JSON_JSON_TYPE);
-    CC_ASSERT(typeRef == nullptr);
+    CC_ASSERT(typeRef != nullptr);
     __String *type = dynamic_cast<__String *>(typeRef);
+    CC_ASSERT(type != nullptr);
 
     return this->createWithDictionaryAndType(dict, type->getCString());
 }
