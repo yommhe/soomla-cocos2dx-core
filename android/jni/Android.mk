@@ -12,6 +12,7 @@ LOCAL_SRC_FILES := ../../Soomla/CCCommonConsts.cpp \
 	../../Soomla/CCEventDispatcher.cpp \
 	../../Soomla/CCJsonHelper.cpp \
 	../../Soomla/CCNdkBridge.cpp \
+	../../Soomla/CCServiceManager.cpp \
 	../../Soomla/domain/CCDomain.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Soomla
