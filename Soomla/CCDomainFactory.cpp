@@ -5,6 +5,8 @@
 #include "CCDomainFactory.h"
 #include "CCCommonConsts.h"
 
+USING_NS_CC;
+
 using namespace soomla;
 
 static CCDomainFactory *s_SharedDomainFactory = nullptr;
@@ -17,23 +19,25 @@ CCDomainFactory *CCDomainFactory::getInstance() {
     return s_SharedDomainFactory;
 }
 
-void CCDomainFactory::registerCreator(const char *key, std::function<soomla::CCDomain *(cocos2d::__Dictionary *)> creator) {
+void CCDomainFactory::registerCreator(const char *key, std::function<soomla::CCDomain *(__Dictionary *)> creator) {
     mCreators[key] = creator;
 }
 
-CCDomain * CCDomainFactory::createWithDictionary(cocos2d::__Dictionary *dict) {
-    cocos2d::__String *type = dynamic_cast<cocos2d::__String *>(dict->objectForKey(CCCommonConsts::JSON_JSON_TYPE));
+CCDomain * CCDomainFactory::createWithDictionary(__Dictionary *dict) {
+    Ref *typeRef = dict->objectForKey(CCCommonConsts::JSON_JSON_TYPE);
+    CC_ASSERT(typeRef == nullptr);
+    __String *type = dynamic_cast<__String *>(typeRef);
 
     return this->createWithDictionaryAndType(dict, type->getCString());
 }
 
-soomla::CCDomain *CCDomainFactory::createWithDictionaryAndType(cocos2d::__Dictionary *dict, const char *type) {
+soomla::CCDomain *CCDomainFactory::createWithDictionaryAndType(__Dictionary *dict, const char *type) {
     CC_ASSERT(type);
     if (type == nullptr) {
         return nullptr;
     }
 
-    std::function<soomla::CCDomain *(cocos2d::__Dictionary *)> creator = mCreators[type];
+    std::function<soomla::CCDomain *(__Dictionary *)> creator = mCreators[type];
     CC_ASSERT(creator);
     if (creator == nullptr) {
         return nullptr;
