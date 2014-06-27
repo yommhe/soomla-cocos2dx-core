@@ -6,6 +6,7 @@
 #define __CCServiceManager_H_
 
 #include "cocos2d.h"
+#include "CCCoreService.h"
 
 namespace soomla {
     class CCServiceManager: cocos2d::Ref {
