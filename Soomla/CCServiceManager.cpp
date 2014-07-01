@@ -21,7 +21,7 @@ namespace soomla {
     }
 
     bool CCServiceManager::init() {
-        CCCoreService::getInstance();   // force to init if it's needed
+        CCCoreService::initShared();
 
         return true;
     }

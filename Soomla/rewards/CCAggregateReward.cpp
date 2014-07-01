@@ -23,7 +23,7 @@ bool soomla::CCAggregateReward::init(
 bool soomla::CCAggregateReward::initWithDictionary(cocos2d::__Dictionary *dict) {
     CCReward::initWithDictionary(dict);
 
-    cocos2d::__Array *dictArray = dynamic_cast<cocos2d::__Array *>(dict->objectForKey(CCProfileConsts::JSON_REWARDS));
+    cocos2d::__Array *dictArray = dynamic_cast<cocos2d::__Array *>(dict->objectForKey(CCCommonConsts::JSON_REWARDS));
     CC_ASSERT(dictArray);
     setRewards(this->getDomainsFromDictArray(dictArray));
 
@@ -35,7 +35,7 @@ cocos2d::__Dictionary *soomla::CCAggregateReward::toDictionary() {
 
     cocos2d::__Array *dictArray = this->getDictArrayFromDomains(this->getDictArrayFromDomains(getRewards()));
     if (dictArray != nullptr) {
-        dict->setObject(dictArray, CCProfileConsts::JSON_REWARDS);
+        dict->setObject(dictArray, CCCommonConsts::JSON_REWARDS);
     }
 
     return dict;

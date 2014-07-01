@@ -8,7 +8,6 @@
 #include "cocos2d.h"
 #include "CCError.h"
 #include "CCReward.h"
-#include "CCUserProfile.h"
 
 namespace soomla {
 
@@ -19,11 +18,11 @@ namespace soomla {
 		*/
         static CCCoreService* getInstance();
 
-        static void initShared(cocos2d::__Dictionary *profileParams);
+        static void initShared();
 
         CCCoreService();
 
-        virtual bool init(cocos2d::__Dictionary *profileParams);
+        virtual bool init();
 
     };
 };

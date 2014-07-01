@@ -13,7 +13,7 @@
 
 namespace soomla {
     class CCBadgeReward : public CCReward {
-        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::__String *, mIconUrl, IconUrl, CCProfileConsts::JSON_ICON_URL);
+        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::__String *, mIconUrl, IconUrl, CCCommonConsts::JSON_ICON_URL);
     public:
         CCBadgeReward() : CCReward(), mIconUrl(NULL) {
         };

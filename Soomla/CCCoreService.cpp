@@ -27,9 +27,9 @@ namespace soomla {
         return sInstance;
     }
 
-    void CCCoreService::initShared(__Dictionary *profileParams) {
+    void CCCoreService::initShared() {
         CCCoreService *profileService = CCCoreService::getInstance();
-        if (!profileService->init(profileParams)) {
+        if (!profileService->init()) {
             exit(1);
         }
     }
@@ -37,13 +37,12 @@ namespace soomla {
     CCCoreService::CCCoreService() {
     }
 
-    bool CCCoreService::init(__Dictionary *profileParams) {
+    bool CCCoreService::init() {
 
         CCCoreEventDispatcher::getInstance();    // to get sure it's inited
 
         __Dictionary *params = __Dictionary::create();
         params->setObject(__String::create("CCCoreService::init"), "method");
-        params->setObject(profileParams, "params");
         CCNdkBridge::callNative(params, nullptr);
 
         CCDomainFactory::getInstance()->registerCreator(CCCommonConsts::JSON_JSON_TYPE_BADGE,

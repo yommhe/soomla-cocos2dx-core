@@ -13,7 +13,7 @@
 
 namespace soomla {
     class CCAggregateReward : public CCReward {
-        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::__Array *, mRewards, Rewards, CCProfileConsts::JSON_REWARDS);
+        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::__Array *, mRewards, Rewards, CCCommonConsts::JSON_REWARDS);
     public:
         CCAggregateReward() : CCReward(), mRewards(NULL) {
         };

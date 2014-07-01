@@ -33,7 +33,9 @@ protected: inline void fill##funName##FromDict(cocos2d::__Dictionary* dict) \
     } \
 } \
 protected: inline void put##funName##ToDict(cocos2d::__Dictionary* dict) { \
+  if (varName) { \
     dict->setObject(varName, jsonKey); \
+  } \
 }
 
 #define SL_SYNTHESIZE_RETAIN_WITH_DICT_DCL(varType, varName, funName)    \

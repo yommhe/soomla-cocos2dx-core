@@ -8,16 +8,16 @@
 
 #include "cocos2d.h"
 #include "CCSoomlaMacros.h"
-#include "CCProfileConsts.h"
 #include "CCDomain.h"
+#include "CCCommonConsts.h"
 
 namespace soomla {
     class CCReward : public CCDomain {
-        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::__String *, mRewardId, RewardId, CCProfileConsts::JSON_REWARD_ID);
+        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::__String *, mRewardId, RewardId, CCCommonConsts::JSON_REWARD_ID);
 
-        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::__String *, mName, Name, CCProfileConsts::JSON_NAME);
+        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::__String *, mName, Name, CCCommonConsts::JSON_NAME);
 
-        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::__Bool *, mRepeatable, Repeatable, CCProfileConsts::JSON_REPEATABLE);
+        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::__Bool *, mRepeatable, Repeatable, CCCommonConsts::JSON_REPEATABLE);
     public:
         CCReward() : mRewardId(NULL), mName(NULL), mRepeatable(NULL) {
         };

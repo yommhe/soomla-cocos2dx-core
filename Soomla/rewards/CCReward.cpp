@@ -3,7 +3,6 @@
 //
 
 #include "CCReward.h"
-#include "CCDomainFactory.h"
 
 bool soomla::CCReward::init(cocos2d::__String *rewardId, cocos2d::__String *name, cocos2d::__Bool *repeatable) {
     setRewardId(rewardId);
