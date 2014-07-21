@@ -5,11 +5,11 @@
 
 namespace soomla {
 
-    class CCEventDispatcher : public cocos2d::Ref {
+    class CCSoomlaEventDispatcher : public cocos2d::Ref {
 	private:
         std::map<std::string, std::function<void(cocos2d::__Dictionary *)>> mEventHandlers;
     public:
-        static CCEventDispatcher *getInstance();
+        static CCSoomlaEventDispatcher *getInstance();
 
         void ndkCallback(cocos2d::__Dictionary *parameters);
 

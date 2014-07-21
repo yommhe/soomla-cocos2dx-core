@@ -28,8 +28,8 @@ namespace soomla {
     }
 
     void CCCoreService::initShared() {
-        CCCoreService *profileService = CCCoreService::getInstance();
-        if (!profileService->init()) {
+        CCCoreService *coreService = CCCoreService::getInstance();
+        if (!coreService->init()) {
             exit(1);
         }
     }

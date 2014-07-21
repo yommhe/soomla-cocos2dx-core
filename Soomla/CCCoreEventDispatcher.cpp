@@ -1,6 +1,6 @@
 #include "CCCoreEventDispatcher.h"
 #include "CCDomainFactory.h"
-#include "CCEventDispatcher.h"
+#include "CCSoomlaEventDispatcher.h"
 
 namespace soomla {
 
@@ -23,7 +23,7 @@ namespace soomla {
             return false;
         }
         
-        CCEventDispatcher *eventDispatcher = CCEventDispatcher::getInstance();
+        CCSoomlaEventDispatcher *eventDispatcher = CCSoomlaEventDispatcher::getInstance();
 
         eventDispatcher->registerEventHandler(CCCommonConsts::EVENT_REWARD_GIVEN,
                 [this](__Dictionary *parameters) {

@@ -18,7 +18,7 @@ USING_NS_CC;
     #include "platform/android/jni/JniHelper.h"
     #include <jni.h>
     #include <string>
-    #include "CCEventDispatcher.h"
+    #includeCCSoomlaEventDispatcher
 #ifdef COCOS2D_JAVASCRIPT
     #include "jsb/JSBinding.h"
 #endif
@@ -57,7 +57,7 @@ namespace soomla {
 #ifdef COCOS2D_JAVASCRIPT
             Soomla::JSBinding::callCallback((cocos2d::__Dictionary *) dataToPass);
 #else
-            CCEventDispatcher::getInstance()->ndkCallback((cocos2d::__Dictionary *)dataToPass);
+            CCSoomlaEventDispatcher::getInstance()->ndkCallback((cocos2d::__Dictionary *)dataToPass);
 #endif
 
             json_decref(root);
