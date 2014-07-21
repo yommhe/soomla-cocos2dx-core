@@ -18,7 +18,7 @@ USING_NS_CC;
     #include "platform/android/jni/JniHelper.h"
     #include <jni.h>
     #include <string>
-    #includeCCSoomlaEventDispatcher
+    #include "CCSoomlaEventDispatcher.h"
 #ifdef COCOS2D_JAVASCRIPT
     #include "jsb/JSBinding.h"
 #endif
