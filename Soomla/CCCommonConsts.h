@@ -4,6 +4,10 @@
 namespace soomla {
     class CCCommonConsts {
     public:
+        static char const *JSON_ITEM_NAME;
+        static char const *JSON_ITEM_DESCRIPTION;
+        static char const *JSON_ITEM_ITEM_ID;
+
         static char const* JSON_JSON_TYPE;
 
         static char const *JSON_JSON_TYPE_BADGE;

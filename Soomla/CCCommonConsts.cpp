@@ -1,6 +1,10 @@
 #include "CCCommonConsts.h"
 
 namespace soomla {
+    char const *CCCommonConsts::JSON_ITEM_NAME = "name";
+    char const *CCCommonConsts::JSON_ITEM_DESCRIPTION = "description";
+    char const *CCCommonConsts::JSON_ITEM_ITEM_ID = "itemId";
+
     char const *CCCommonConsts::JSON_JSON_TYPE = "jsonType";
 
     char const *CCCommonConsts::JSON_JSON_TYPE_BADGE = "badge";

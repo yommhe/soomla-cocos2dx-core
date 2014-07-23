@@ -16,6 +16,7 @@ LOCAL_SRC_FILES := ../../Soomla/CCCommonConsts.cpp \
 	../../Soomla/CCServiceManager.cpp \
 	../../Soomla/CCSoomlaEventDispatcher.cpp \
 	../../Soomla/domain/CCDomain.cpp \
+	../../Soomla/domain/CCSoomlaEntity.cpp \
 	../../Soomla/rewards/CCAggregateReward.cpp \
 	../../Soomla/rewards/CCBadgeReward.cpp \
 	../../Soomla/rewards/CCRandomReward.cpp \
