@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372B72C58DE0C3DFE3522984 /* CCSoomlaEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 372B7DF784D9DB67349CF869 /* CCSoomlaEntity.h */; };
+		372B7E556799F8D93570725F /* CCSoomlaEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 372B74257254F43D38DF97CA /* CCSoomlaEntity.cpp */; };
 		9D41014A1978CFAD00907FA8 /* CCAbstractAggregatedEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101251978CFAD00907FA8 /* CCAbstractAggregatedEventHandler.h */; };
 		9D41014B1978CFAD00907FA8 /* CCCommonConsts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101261978CFAD00907FA8 /* CCCommonConsts.cpp */; };
 		9D41014C1978CFAD00907FA8 /* CCCommonConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101271978CFAD00907FA8 /* CCCommonConsts.h */; };
@@ -48,6 +50,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		372B74257254F43D38DF97CA /* CCSoomlaEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSoomlaEntity.cpp; sourceTree = "<group>"; };
+		372B7DF784D9DB67349CF869 /* CCSoomlaEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSoomlaEntity.h; sourceTree = "<group>"; };
 		9D4101251978CFAD00907FA8 /* CCAbstractAggregatedEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAbstractAggregatedEventHandler.h; sourceTree = "<group>"; };
 		9D4101261978CFAD00907FA8 /* CCCommonConsts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCCommonConsts.cpp; sourceTree = "<group>"; };
 		9D4101271978CFAD00907FA8 /* CCCommonConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCommonConsts.h; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 			children = (
 				9D41013D1978CFAD00907FA8 /* CCDomain.cpp */,
 				9D41013E1978CFAD00907FA8 /* CCDomain.h */,
+				372B74257254F43D38DF97CA /* CCSoomlaEntity.cpp */,
+				372B7DF784D9DB67349CF869 /* CCSoomlaEntity.h */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -214,6 +220,7 @@
 				9D4101601978CFAD00907FA8 /* CCSoomlaMacros.h in Headers */,
 				9D4101621978CFAD00907FA8 /* CCDomain.h in Headers */,
 				9D4101571978CFAD00907FA8 /* CCError.h in Headers */,
+				372B72C58DE0C3DFE3522984 /* CCSoomlaEntity.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +291,7 @@
 				9D4101561978CFAD00907FA8 /* CCError.cpp in Sources */,
 				9D4101501978CFAD00907FA8 /* CCCoreService.cpp in Sources */,
 				9D4101671978CFAD00907FA8 /* CCRandomReward.cpp in Sources */,
+				372B7E556799F8D93570725F /* CCSoomlaEntity.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
