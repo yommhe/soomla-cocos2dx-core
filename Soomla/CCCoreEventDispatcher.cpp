@@ -26,23 +26,27 @@ namespace soomla {
         CCSoomlaEventDispatcher *eventDispatcher = CCSoomlaEventDispatcher::getInstance();
 
         eventDispatcher->registerEventHandler(CCCommonConsts::EVENT_REWARD_GIVEN,
-                [this](__Dictionary *parameters) {
-                    __Dictionary *rewardDict = dynamic_cast<__Dictionary *>(parameters->objectForKey("reward"));
-                    CC_ASSERT(rewardDict);
-                    CCReward *reward  = dynamic_cast<CCReward *>(CCDomainFactory::getInstance()->createWithDictionary(rewardDict));
-                    CC_ASSERT(reward);
-                    this->onRewardGivenEvent(reward);
-                });
+                this, (SEL_EventHandler) (&CCCoreEventDispatcher::handle__EVENT_REWARD_GIVEN));
         eventDispatcher->registerEventHandler(CCCommonConsts::EVENT_REWARD_TAKEN,
-                [this](__Dictionary *parameters) {
-                    __Dictionary *rewardDict = dynamic_cast<__Dictionary *>(parameters->objectForKey("reward"));
-                    CC_ASSERT(rewardDict);
-                    CCReward *reward  = dynamic_cast<CCReward *>(CCDomainFactory::getInstance()->createWithDictionary(rewardDict));
-                    CC_ASSERT(reward);
-                    this->onRewardTakenEvent(reward);
-                });
+                this, (SEL_EventHandler)(&CCCoreEventDispatcher::handle__EVENT_REWARD_TAKEN));
 
         return true;
+    }
+
+    void CCCoreEventDispatcher::handle__EVENT_REWARD_GIVEN(CCDictionary *parameters) {
+        CCDictionary *rewardDict = dynamic_cast<CCDictionary *>(parameters->objectForKey("reward"));
+        CC_ASSERT(rewardDict);
+        CCReward *reward = dynamic_cast<CCReward *>(CCDomainFactory::getInstance()->createWithDictionary(rewardDict));
+        CC_ASSERT(reward);
+        this->onRewardGivenEvent(reward);
+    }
+
+    void CCCoreEventDispatcher::handle__EVENT_REWARD_TAKEN(cocos2d::CCDictionary *parameters) {
+        CCDictionary *rewardDict = dynamic_cast<CCDictionary *>(parameters->objectForKey("reward"));
+        CC_ASSERT(rewardDict);
+        CCReward *reward = dynamic_cast<CCReward *>(CCDomainFactory::getInstance()->createWithDictionary(rewardDict));
+        CC_ASSERT(reward);
+        this->onRewardTakenEvent(reward);
     }
 
     void CCCoreEventDispatcher::onRewardGivenEvent(CCReward *reward) {

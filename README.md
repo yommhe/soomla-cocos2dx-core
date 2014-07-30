@@ -5,8 +5,8 @@ soomla-cocos2dx-core
 
 When using the SOOMLA framework, you always start by initializing the core module:
 ```c++
-    __Dictionary *commonParams = __Dictionary::create();
-    commonParams->setObject(__String::create("ExampleCustomSecret"), "customSecret");
+    CCDictionary *commonParams = CCDictionary::create();
+    commonParams->setObject(CCString::create("ExampleCustomSecret"), "customSecret");
     soomla::CCServiceManager::getInstance()->setCommonParams(commonParams);
 ```
 
@@ -15,7 +15,7 @@ This sets up the local on-device database used by SOOMLA.  The secret is used fo
 This core library holds common features and utilities used by all other modules of the SOOMLA framework.
 It includes:
 * An encrypted key-value storage (SQLite based) for persisting data locally on devices.
-* Utilities for JSON and __Dictionary manipulation.
+* Utilities for JSON and CCDictionary manipulation.
 * Utilities for Logging and encryption.
 * Reward domain objects and events - used to grant your users rewards.
 

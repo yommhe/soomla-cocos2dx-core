@@ -8,7 +8,7 @@ namespace soomla {
 
     using namespace cocos2d;
 
-    bool CCSoomlaEntity::init(cocos2d::__String *name, cocos2d::__String *description, cocos2d::__String *id) {
+    bool CCSoomlaEntity::init(cocos2d::CCString *name, cocos2d::CCString *description, cocos2d::CCString *id) {
         setName(name);
         setDescription(description);
         setId(id);
@@ -16,7 +16,7 @@ namespace soomla {
         return true;
     }
 
-    bool CCSoomlaEntity::initWithDictionary(cocos2d::__Dictionary *dict) {
+    bool CCSoomlaEntity::initWithDictionary(cocos2d::CCDictionary *dict) {
         fillNameFromDict(dict);
         fillDescriptionFromDict(dict);
         fillIdFromDict(dict);
@@ -31,8 +31,8 @@ namespace soomla {
         CC_SAFE_RELEASE(mId);
     }
 
-    cocos2d::__Dictionary *CCSoomlaEntity::toDictionary() {
-        __Dictionary* dict = __Dictionary::create();
+    cocos2d::CCDictionary *CCSoomlaEntity::toDictionary() {
+        CCDictionary* dict = CCDictionary::create();
         putNameToDict(dict);
         putDescriptionToDict(dict);
         putIdToDict(dict);

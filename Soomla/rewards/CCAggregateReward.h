@@ -13,20 +13,20 @@
 
 namespace soomla {
     class CCAggregateReward : public CCReward {
-        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::__Array *, mRewards, Rewards, CCCommonConsts::JSON_REWARDS);
+        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::CCArray *, mRewards, Rewards, CCCommonConsts::JSON_REWARDS);
     public:
         CCAggregateReward() : CCReward(), mRewards(NULL) {
         };
 
         virtual bool init(
-                cocos2d::__String *rewardId,
-                cocos2d::__String *name,
-                cocos2d::__Bool *repeatable,
-                cocos2d::__Array *rewards);
+                cocos2d::CCString *rewardId,
+                cocos2d::CCString *name,
+                cocos2d::CCBool *repeatable,
+                cocos2d::CCArray *rewards);
 
-        virtual bool initWithDictionary(cocos2d::__Dictionary *dict);
+        virtual bool initWithDictionary(cocos2d::CCDictionary *dict);
 
-        virtual cocos2d::__Dictionary *toDictionary();
+        virtual cocos2d::CCDictionary *toDictionary();
 
         virtual ~CCAggregateReward();
     };

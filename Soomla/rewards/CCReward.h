@@ -13,20 +13,20 @@
 
 namespace soomla {
     class CCReward : public CCDomain {
-        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::__String *, mRewardId, RewardId, CCCommonConsts::JSON_REWARD_ID);
+        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::CCString *, mRewardId, RewardId, CCCommonConsts::JSON_REWARD_ID);
 
-        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::__String *, mName, Name, CCCommonConsts::JSON_NAME);
+        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::CCString *, mName, Name, CCCommonConsts::JSON_NAME);
 
-        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::__Bool *, mRepeatable, Repeatable, CCCommonConsts::JSON_REPEATABLE);
+        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::CCBool *, mRepeatable, Repeatable, CCCommonConsts::JSON_REPEATABLE);
     public:
         CCReward() : mRewardId(NULL), mName(NULL), mRepeatable(NULL) {
         };
 
-        virtual bool init(cocos2d::__String *rewardId, cocos2d::__String *name, cocos2d::__Bool *repeatable);
+        virtual bool init(cocos2d::CCString *rewardId, cocos2d::CCString *name, cocos2d::CCBool *repeatable);
 
-        virtual bool initWithDictionary(cocos2d::__Dictionary *dict);
+        virtual bool initWithDictionary(cocos2d::CCDictionary *dict);
 
-        virtual cocos2d::__Dictionary *toDictionary();
+        virtual cocos2d::CCDictionary *toDictionary();
 
         virtual ~CCReward();
 

@@ -4,7 +4,7 @@
 
 #include "CCReward.h"
 
-bool soomla::CCReward::init(cocos2d::__String *rewardId, cocos2d::__String *name, cocos2d::__Bool *repeatable) {
+bool soomla::CCReward::init(cocos2d::CCString *rewardId, cocos2d::CCString *name, cocos2d::CCBool *repeatable) {
     setRewardId(rewardId);
     setName(name);
     setRepeatable(repeatable);
@@ -12,7 +12,7 @@ bool soomla::CCReward::init(cocos2d::__String *rewardId, cocos2d::__String *name
     return true;
 }
 
-bool soomla::CCReward::initWithDictionary(cocos2d::__Dictionary *dict) {
+bool soomla::CCReward::initWithDictionary(cocos2d::CCDictionary *dict) {
     fillRewardIdFromDict(dict);
     fillNameFromDict(dict);
     fillRepeatableFromDict(dict);
@@ -20,8 +20,8 @@ bool soomla::CCReward::initWithDictionary(cocos2d::__Dictionary *dict) {
     return true;
 }
 
-cocos2d::__Dictionary *soomla::CCReward::toDictionary() {
-    cocos2d::__Dictionary* dict = cocos2d::__Dictionary::create();
+cocos2d::CCDictionary *soomla::CCReward::toDictionary() {
+    cocos2d::CCDictionary* dict = cocos2d::CCDictionary::create();
 
     putRewardIdToDict(dict);
     putNameToDict(dict);

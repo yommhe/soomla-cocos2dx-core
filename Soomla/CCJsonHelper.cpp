@@ -3,17 +3,18 @@
 //
 
 #include "CCJsonHelper.h"
+#include "CCSoomlaMacros.h"
 
 USING_NS_CC;
 using namespace std;
 
-Ref *CCJsonHelper::getCCObjectFromJson(json_t *obj) {
+CCObject *CCJsonHelper::getCCObjectFromJson(json_t *obj) {
     if (obj == NULL) {
         return NULL;
     }
 
     if (json_is_object(obj)) {
-        __Dictionary *dictionary = __Dictionary::create();
+        CCDictionary *dictionary = CCDictionary::create();
 
         const char *key;
         json_t *value;
@@ -32,7 +33,7 @@ Ref *CCJsonHelper::getCCObjectFromJson(json_t *obj) {
     }
     else if (json_is_array(obj)) {
         size_t sizeArray = json_array_size(obj);
-        __Array *array = __Array::createWithCapacity(sizeArray);
+        CCArray *array = CCArray::createWithCapacity(sizeArray);
 
         for (unsigned int i = 0; i < sizeArray; i++) {
             array->addObject(CCJsonHelper::getCCObjectFromJson(json_array_get(obj, i)));
@@ -41,30 +42,30 @@ Ref *CCJsonHelper::getCCObjectFromJson(json_t *obj) {
         return array;
     }
     else if (json_is_boolean(obj)) {
-        __Bool *ccBool = __Bool::create(json_is_true(obj));
+        CCBool *ccBool = CCBool::create(json_is_true(obj));
         return ccBool;
     }
     else if (json_is_integer(obj)) {
         json_int_t intVal = json_integer_value(obj);
 
-        __Integer *__Integer = __Integer::create((int) intVal);
-        return __Integer;
+        CCInteger *CCInteger = CCInteger::create((int) intVal);
+        return CCInteger;
     }
     else if (json_is_real(obj)) {
         double realVal = json_real_value(obj);
 
-        __Double *ccDouble = __Double::create(realVal);
+        CCDouble *ccDouble = CCDouble::create(realVal);
         return ccDouble;
     }
     else if (json_is_string(obj)) {
         stringstream str;
         str << json_string_value(obj);
 
-        __String *__String = __String::create(str.str());
-        return __String;
+        CCString *CCString = CCString::create(str.str());
+        return CCString;
     }
     else if (json_is_null(obj)) {
-        return __String::create("");
+        return CCString::create("");
     }
     else {
         CC_ASSERT(false);
@@ -72,15 +73,15 @@ Ref *CCJsonHelper::getCCObjectFromJson(json_t *obj) {
     }
 }
 
-json_t*CCJsonHelper::getJsonFromCCObject(Ref* obj) {
-    if (dynamic_cast<__Dictionary *>(obj)) {
-        __Dictionary *mainDict = (__Dictionary *) obj;
-        __Array *allKeys = mainDict->allKeys();
+json_t*CCJsonHelper::getJsonFromCCObject(CCObject* obj) {
+    if (dynamic_cast<CCDictionary *>(obj)) {
+        CCDictionary *mainDict = (CCDictionary *) obj;
+        CCArray *allKeys = mainDict->allKeys();
         json_t *jsonDict = json_object();
 
         if (allKeys == NULL ) return jsonDict;
         for (unsigned int i = 0; i < allKeys->count(); i++) {
-            const char *key = ((__String *) allKeys->getObjectAtIndex(i))->getCString();
+            const char *key = ((CCString *) allKeys->objectAtIndex(i))->getCString();
             json_object_set_new(jsonDict,
                     key,
                     CCJsonHelper::getJsonFromCCObject(mainDict->objectForKey(key)));
@@ -88,43 +89,43 @@ json_t*CCJsonHelper::getJsonFromCCObject(Ref* obj) {
 
         return jsonDict;
     }
-    else if (dynamic_cast<__Array *>(obj)) {
-        __Array *mainArray = (__Array *) obj;
+    else if (dynamic_cast<CCArray *>(obj)) {
+        CCArray *mainArray = (CCArray *) obj;
         json_t *jsonArray = json_array();
 
         for (unsigned int i = 0; i < mainArray->count(); i++) {
             json_array_append_new(jsonArray,
-                    CCJsonHelper::getJsonFromCCObject(mainArray->getObjectAtIndex(i)));
+                    CCJsonHelper::getJsonFromCCObject(mainArray->objectAtIndex(i)));
         }
 
         return jsonArray;
     }
-    else if (dynamic_cast<__String *>(obj)) {
-        __String *mainString = (__String *) obj;
+    else if (dynamic_cast<CCString *>(obj)) {
+        CCString *mainString = (CCString *) obj;
         json_t *jsonString = json_string(mainString->getCString());
 
         return jsonString;
     }
-    else if (dynamic_cast<__Integer *>(obj)) {
-        __Integer *mainInteger = (__Integer *) obj;
+    else if (dynamic_cast<CCInteger *>(obj)) {
+        CCInteger *mainInteger = (CCInteger *) obj;
         json_t *jsonInt = json_integer(mainInteger->getValue());
 
         return jsonInt;
     }
-    else if (dynamic_cast<__Double *>(obj)) {
-        __Double *mainDouble = (__Double *) obj;
+    else if (dynamic_cast<CCDouble *>(obj)) {
+        CCDouble *mainDouble = (CCDouble *) obj;
         json_t *jsonReal = json_real(mainDouble->getValue());
 
         return jsonReal;
     }
-    else if (dynamic_cast<__Float *>(obj)) {
-        __Float *mainFloat = (__Float *) obj;
+    else if (dynamic_cast<CCFloat *>(obj)) {
+        CCFloat *mainFloat = (CCFloat *) obj;
         json_t *jsonString = json_real(mainFloat->getValue());
 
         return jsonString;
     }
-    else if (dynamic_cast<__Bool *>(obj)) {
-        __Bool *mainBool = (__Bool *) obj;
+    else if (dynamic_cast<CCBool *>(obj)) {
+        CCBool *mainBool = (CCBool *) obj;
         json_t *jsonBoolean = json_boolean(mainBool->getValue());
 
         return jsonBoolean;

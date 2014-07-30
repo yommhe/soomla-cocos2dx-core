@@ -41,16 +41,13 @@ namespace soomla {
 
         CCCoreEventDispatcher::getInstance();    // to get sure it's inited
 
-        __Dictionary *params = __Dictionary::create();
-        params->setObject(__String::create("CCCoreService::init"), "method");
-        CCNdkBridge::callNative(params, nullptr);
+        CCDictionary *params = CCDictionary::create();
+        params->setObject(CCString::create("CCCoreService::init"), "method");
+        CCNdkBridge::callNative(params, NULL);
 
-        CCDomainFactory::getInstance()->registerCreator(CCCommonConsts::JSON_JSON_TYPE_BADGE,
-                &CCBadgeReward::createWithDictionary);
-        CCDomainFactory::getInstance()->registerCreator(CCCommonConsts::JSON_JSON_TYPE_RANDOM,
-                &CCRandomReward::createWithDictionary);
-        CCDomainFactory::getInstance()->registerCreator(CCCommonConsts::JSON_JSON_TYPE_SEQUENCE,
-                &CCSequenceReward::createWithDictionary);
+        CCDomainFactory::getInstance()->registerCreator(CCCommonConsts::JSON_JSON_TYPE_BADGE, (SEL_DomainCreator) CCBadgeReward::createWithDictionary);
+        CCDomainFactory::getInstance()->registerCreator(CCCommonConsts::JSON_JSON_TYPE_RANDOM, (SEL_DomainCreator) CCRandomReward::createWithDictionary);
+        CCDomainFactory::getInstance()->registerCreator(CCCommonConsts::JSON_JSON_TYPE_SEQUENCE, (SEL_DomainCreator) CCSequenceReward::createWithDictionary);
 
         return true;
     }

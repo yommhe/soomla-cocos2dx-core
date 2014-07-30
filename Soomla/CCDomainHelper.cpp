@@ -10,7 +10,7 @@
 using namespace soomla;
 using namespace cocos2d;
 
-static CCDomainHelper *s_SharedDomainFactory = nullptr;
+static CCDomainHelper *s_SharedDomainFactory = NULL;
 
 CCDomainHelper *CCDomainHelper::getInstance() {
     if (!s_SharedDomainFactory) {
@@ -20,19 +20,19 @@ CCDomainHelper *CCDomainHelper::getInstance() {
     return s_SharedDomainFactory;
 }
 
-cocos2d::__Array *soomla::CCDomainHelper::getDomainsFromDictArray(cocos2d::__Array *dictArray, const char *type) {
-    if (dictArray == nullptr) {
-        return nullptr;
+cocos2d::CCArray *soomla::CCDomainHelper::getDomainsFromDictArray(cocos2d::CCArray *dictArray, const char *type) {
+    if (dictArray == NULL) {
+        return NULL;
     }
 
-    cocos2d::__Array *domainArray = cocos2d::__Array::createWithCapacity(dictArray->count());
-    cocos2d::Ref *obj;
-    cocos2d::__Dictionary *dict;
+    cocos2d::CCArray *domainArray = cocos2d::CCArray::createWithCapacity(dictArray->count());
+    cocos2d::CCObject *obj;
+    cocos2d::CCDictionary *dict;
     CCARRAY_FOREACH(dictArray, obj) {
-            dict = dynamic_cast<cocos2d::__Dictionary *>(obj);
+            dict = dynamic_cast<cocos2d::CCDictionary *>(obj);
             CC_ASSERT(obj);
             CCDomain *domain;
-            if (type == nullptr){
+            if (type == NULL){
                 domain = soomla::CCDomainFactory::getInstance()->createWithDictionary(dict);
             }
             else {
@@ -43,13 +43,13 @@ cocos2d::__Array *soomla::CCDomainHelper::getDomainsFromDictArray(cocos2d::__Arr
     return domainArray;
 }
 
-cocos2d::__Array *soomla::CCDomainHelper::getDictArrayFromDomains(cocos2d::__Array *domainArray) {
-    if (domainArray == nullptr) {
-        return nullptr;
+cocos2d::CCArray *soomla::CCDomainHelper::getDictArrayFromDomains(cocos2d::CCArray *domainArray) {
+    if (domainArray == NULL) {
+        return NULL;
     }
 
-    cocos2d::__Array *dictArray = cocos2d::__Array::createWithCapacity(domainArray->count());
-    cocos2d::Ref *obj;
+    cocos2d::CCArray *dictArray = cocos2d::CCArray::createWithCapacity(domainArray->count());
+    cocos2d::CCObject *obj;
     soomla::CCDomain *domain;
     CCARRAY_FOREACH(domainArray, obj) {
             domain = dynamic_cast<soomla::CCDomain *>(obj);

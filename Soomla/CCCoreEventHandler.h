@@ -20,7 +20,7 @@
 #define __CCCoreEventHandler__
 
 namespace soomla {
-    class CCCoreEventHandler : public cocos2d::Ref {
+    class CCCoreEventHandler : public cocos2d::CCObject {
     public:
         virtual void onRewardGivenEvent(CCReward *reward) = 0;
         virtual void onRewardTakenEvent(CCReward *reward) = 0;

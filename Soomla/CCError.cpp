@@ -13,18 +13,18 @@ namespace soomla {
 
     #define TAG "CCError"
 
-    CCError *CCError::createWithObject(cocos2d::Ref *obj) {
-        if (obj == nullptr) {
-            return nullptr;
+    CCError *CCError::createWithObject(cocos2d::CCObject *obj) {
+        if (obj == NULL) {
+            return NULL;
         }
 
-        __Dictionary *dict = static_cast<__Dictionary *>(obj);
-        if (dict->objectForKey(JSON_ERROR_INFO) == nullptr) {
-            return nullptr;
+        CCDictionary *dict = static_cast<CCDictionary *>(obj);
+        if (dict->objectForKey(JSON_ERROR_INFO) == NULL) {
+            return NULL;
         }
 
         std::string errorInfo;
-        __String *errorInfoStr = dynamic_cast<__String *>(dict->objectForKey(JSON_ERROR_INFO));
+        CCString *errorInfoStr = dynamic_cast<CCString *>(dict->objectForKey(JSON_ERROR_INFO));
         if (errorInfoStr) {
             errorInfo = errorInfoStr->getCString();
         } else {

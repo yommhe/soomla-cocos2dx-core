@@ -2,28 +2,28 @@
 // Created by Fedor Shubin on 6/19/14.
 //
 
-
 #ifndef __CCAbstractAggregatedEventHandler_H_
 #define __CCAbstractAggregatedEventHandler_H_
 
 
 #include "cocos2d.h"
+#include "CCSoomlaMacros.h"
 
 namespace soomla {
 
-#define FOR_EACH_EVENT_HANDLER(__TYPE__) __SetIterator i;\
+#define FOR_EACH_EVENT_HANDLER(__TYPE__) CCSetIterator i;\
     for(i = mEventHandlers->begin(); i != mEventHandlers->end(); i++) {\
         __TYPE__ *eventHandler = dynamic_cast<__TYPE__ *>(*i);\
 
     template <class T> class CCAbstractAggregatedEventHandler {
     protected:
-        cocos2d::__Set *mEventHandlers;
+        cocos2d::CCSet *mEventHandlers;
     public:
         CCAbstractAggregatedEventHandler() :
-                mEventHandlers(nullptr) {
+                mEventHandlers(NULL) {
         }
         virtual bool init() {
-            mEventHandlers = cocos2d::__Set::create();
+            mEventHandlers = cocos2d::CCSet::create();
             mEventHandlers->retain();
             return true;
         }

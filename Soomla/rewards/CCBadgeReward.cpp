@@ -5,10 +5,10 @@
 #include "CCBadgeReward.h"
 
 soomla::CCBadgeReward *soomla::CCBadgeReward::create(
-        cocos2d::__String *rewardId,
-        cocos2d::__String *name,
-        cocos2d::__Bool *repeatable,
-        cocos2d::__String *iconUrl) {
+        cocos2d::CCString *rewardId,
+        cocos2d::CCString *name,
+        cocos2d::CCBool *repeatable,
+        cocos2d::CCString *iconUrl) {
 
     CCBadgeReward *ret = new CCBadgeReward();
     if (ret->init(rewardId, name, repeatable, iconUrl)) {
@@ -21,10 +21,10 @@ soomla::CCBadgeReward *soomla::CCBadgeReward::create(
 }
 
 bool soomla::CCBadgeReward::init(
-        cocos2d::__String *rewardId,
-        cocos2d::__String *name,
-        cocos2d::__Bool *repeatable,
-        cocos2d::__String *iconUrl) {
+        cocos2d::CCString *rewardId,
+        cocos2d::CCString *name,
+        cocos2d::CCBool *repeatable,
+        cocos2d::CCString *iconUrl) {
 
     bool result = CCReward::init(rewardId, name, repeatable);
 
@@ -36,7 +36,7 @@ bool soomla::CCBadgeReward::init(
     }
 }
 
-bool soomla::CCBadgeReward::initWithDictionary(cocos2d::__Dictionary *dict) {
+bool soomla::CCBadgeReward::initWithDictionary(cocos2d::CCDictionary *dict) {
     CCReward::initWithDictionary(dict);
 
     fillIconUrlFromDict(dict);
@@ -44,8 +44,8 @@ bool soomla::CCBadgeReward::initWithDictionary(cocos2d::__Dictionary *dict) {
     return true;
 }
 
-cocos2d::__Dictionary *soomla::CCBadgeReward::toDictionary() {
-    cocos2d::__Dictionary *dict = CCReward::toDictionary();
+cocos2d::CCDictionary *soomla::CCBadgeReward::toDictionary() {
+    cocos2d::CCDictionary *dict = CCReward::toDictionary();
 
     putIconUrlToDict(dict);
 

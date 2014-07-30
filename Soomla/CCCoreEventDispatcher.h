@@ -25,6 +25,9 @@ namespace soomla {
 
         virtual void onRewardGivenEvent(CCReward *reward);
         virtual void onRewardTakenEvent(CCReward *reward);
+    private:
+        void handle__EVENT_REWARD_GIVEN(cocos2d::CCDictionary *parameters);
+        void handle__EVENT_REWARD_TAKEN(cocos2d::CCDictionary *parameters);
     };
 };
 

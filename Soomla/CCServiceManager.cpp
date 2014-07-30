@@ -8,7 +8,7 @@
 USING_NS_CC;
 
 namespace soomla {
-    static CCServiceManager *sInstance = nullptr;
+    static CCServiceManager *sInstance = NULL;
 
     CCServiceManager *CCServiceManager::getInstance() {
         if (!sInstance)
@@ -26,9 +26,9 @@ namespace soomla {
         return true;
     }
 
-    void CCServiceManager::setCommonParams(cocos2d::__Dictionary *commonParams) {
-        __Dictionary *params = __Dictionary::create();
-        params->setObject(__String::create("CCServiceManager::setCommonParams"), "method");
+    void CCServiceManager::setCommonParams(cocos2d::CCDictionary *commonParams) {
+        CCDictionary *params = CCDictionary::create();
+        params->setObject(CCString::create("CCServiceManager::setCommonParams"), "method");
         params->setObject(commonParams, "params");
         CCNdkBridge::callNative(params, NULL);
     }

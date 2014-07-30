@@ -52,26 +52,26 @@ namespace soomla {
                     return;
                 }
 
-            cocos2d::Ref *dataToPass = CCJsonHelper::getCCObjectFromJson(root);
+            cocos2d::CCObject *dataToPass = CCJsonHelper::getCCObjectFromJson(root);
 
 #ifdef COCOS2D_JAVASCRIPT
-            Soomla::JSBinding::callCallback((cocos2d::__Dictionary *) dataToPass);
+            Soomla::JSBinding::callCallback((cocos2d::CCDictionary *) dataToPass);
 #else
-            CCSoomlaEventDispatcher::getInstance()->ndkCallback((cocos2d::__Dictionary *)dataToPass);
+            CCSoomlaEventDispatcher::getInstance()->ndkCallback((cocos2d::CCDictionary *)dataToPass);
 #endif
 
             json_decref(root);
         }
 #endif
 
-        cocos2d::Ref *CCNdkBridge::callNative(cocos2d::__Dictionary *params, CCError **pError) {
-            cocos2d::__Dictionary *methodParams = params;
+        cocos2d::CCObject *CCNdkBridge::callNative(cocos2d::CCDictionary *params, CCError **pError) {
+            cocos2d::CCDictionary *methodParams = params;
 
             json_t *toBeSentJson = CCJsonHelper::getJsonFromCCObject(methodParams);
             json_t *retJsonParams = NULL;
 
 #if (LOG_JSON == 1)
-            CCStoreUtils::logDebug(TAG, __String::createWithFormat(
+            CCStoreUtils::logDebug(TAG, CCString::createWithFormat(
                     "to native JSON: %s", json_dumps(toBeSentJson, JSON_COMPACT | JSON_ENSURE_ASCII))->getCString());
 #endif
 
@@ -105,7 +105,7 @@ namespace soomla {
 
                 if (!retJsonParams) {
                     fprintf(stderr, "error: at line #%d: %s\n", error.line, error.text);
-                    return __Dictionary::create();
+                    return CCDictionary::create();
                 }
             }
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
@@ -113,18 +113,18 @@ namespace soomla {
 #endif
 
 #if (LOG_JSON == 1)
-            CCStoreUtils::logDebug(TAG, __String::createWithFormat(
+            CCStoreUtils::logDebug(TAG, CCString::createWithFormat(
                     "from native JSON: %s", json_dumps(retJsonParams, JSON_COMPACT | JSON_ENSURE_ASCII))->getCString());
 #endif
 
             json_decref(toBeSentJson);
-            Ref *retParams = CCJsonHelper::getCCObjectFromJson(retJsonParams);
+            CCObject *retParams = CCJsonHelper::getCCObjectFromJson(retJsonParams);
 
             if (retJsonParams) {
                 json_decref(retJsonParams);
             }
 
-            if (pError != nullptr) {
+            if (pError != NULL) {
                 CCError *error = CCError::createWithObject(retParams);
                 if (error != NULL) {
                     *pError = error;

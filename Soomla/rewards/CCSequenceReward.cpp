@@ -5,10 +5,10 @@
 #include "CCSequenceReward.h"
 
 soomla::CCSequenceReward *soomla::CCSequenceReward::create(
-        cocos2d::__String *rewardId,
-        cocos2d::__String *name,
-        cocos2d::__Bool *repeatable,
-        cocos2d::__Array *rewards) {
+        cocos2d::CCString *rewardId,
+        cocos2d::CCString *name,
+        cocos2d::CCBool *repeatable,
+        cocos2d::CCArray *rewards) {
 
     CCSequenceReward *ret = new CCSequenceReward();
     if (ret->init(rewardId, name, repeatable, rewards)) {

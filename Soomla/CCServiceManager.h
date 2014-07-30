@@ -9,11 +9,11 @@
 #include "CCCoreService.h"
 
 namespace soomla {
-    class CCServiceManager: cocos2d::Ref {
+    class CCServiceManager: cocos2d::CCObject {
     public:
         static CCServiceManager *getInstance();
         bool init();
-        void setCommonParams(cocos2d::__Dictionary *commonParams);
+        void setCommonParams(cocos2d::CCDictionary *commonParams);
     };
 }
 

@@ -11,7 +11,7 @@
 
 namespace soomla {
 
-    class CCCoreService: public cocos2d::Ref {
+    class CCCoreService: public cocos2d::CCObject {
     public:
 		/**
 		   This class is singleton, use this function to access it.
