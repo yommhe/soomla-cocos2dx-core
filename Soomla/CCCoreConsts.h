@@ -10,7 +10,6 @@ namespace soomla {
 
         static char const* JSON_JSON_TYPE;
 
-        static char const *JSON_NAME;
         static char const *JSON_SCHEDULE;
         static char const *JSON_ICON_URL;
         static char const *JSON_REWARDS;

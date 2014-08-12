@@ -7,8 +7,6 @@ namespace soomla {
 
     char const *CCCoreConsts::JSON_JSON_TYPE = "jsonType";
 
-    char const *CCCoreConsts::JSON_REWARD_ID = "rewardId";
-    char const *CCCoreConsts::JSON_NAME = "name";
     char const *CCCoreConsts::JSON_SCHEDULE = "schedule";
     char const *CCCoreConsts::JSON_ICON_URL = "iconUrl";
     char const *CCCoreConsts::JSON_REWARDS = "rewards";
