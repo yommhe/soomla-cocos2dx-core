@@ -12,21 +12,28 @@
 
 namespace soomla {
     class CCRandomReward : public CCAggregateReward {
+        CC_SYNTHESIZE_RETAIN(CCReward *, mLastGivenReward, LastGivenReward);
     public:
-        CCRandomReward() : CCAggregateReward() {
+        CCRandomReward() : CCAggregateReward(), mLastGivenReward(NULL) {
         };
 
         static CCRandomReward *create(
-                cocos2d::__String *rewardId,
+                cocos2d::__String *id,
                 cocos2d::__String *name,
-                cocos2d::__Bool *repeatable,
-                cocos2d::__Array *rewards);
+                cocos2d::__Array *rewards,
+                CCSchedule *schedule
+        );
 
         SL_CREATE_WITH_DICTIONARY(CCRandomReward);
 
         virtual ~CCRandomReward();
 
         virtual const char *getType() override;
+
+    protected:
+        virtual bool takeInner();
+
+        virtual bool giveInner();
     };
 }
 

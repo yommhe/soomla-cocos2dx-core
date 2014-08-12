@@ -3,7 +3,7 @@
 //
 
 #include "CCDomainFactory.h"
-#include "CCCommonConsts.h"
+#include "CCCoreConsts.h"
 
 USING_NS_CC;
 
@@ -24,7 +24,7 @@ void CCDomainFactory::registerCreator(const char *key, std::function<soomla::CCD
 }
 
 CCDomain * CCDomainFactory::createWithDictionary(__Dictionary *dict) {
-    Ref *typeRef = dict->objectForKey(CCCommonConsts::JSON_JSON_TYPE);
+    Ref *typeRef = dict->objectForKey(CCCoreConsts::JSON_JSON_TYPE);
     CC_ASSERT(typeRef != nullptr);
     __String *type = dynamic_cast<__String *>(typeRef);
     CC_ASSERT(type != nullptr);

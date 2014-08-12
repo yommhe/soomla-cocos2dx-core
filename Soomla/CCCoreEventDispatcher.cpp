@@ -25,7 +25,7 @@ namespace soomla {
         
         CCSoomlaEventDispatcher *eventDispatcher = CCSoomlaEventDispatcher::getInstance();
 
-        eventDispatcher->registerEventHandler(CCCommonConsts::EVENT_REWARD_GIVEN,
+        eventDispatcher->registerEventHandler(CCCoreConsts::EVENT_REWARD_GIVEN,
                 [this](__Dictionary *parameters) {
                     __Dictionary *rewardDict = dynamic_cast<__Dictionary *>(parameters->objectForKey("reward"));
                     CC_ASSERT(rewardDict);
@@ -33,7 +33,7 @@ namespace soomla {
                     CC_ASSERT(reward);
                     this->onRewardGivenEvent(reward);
                 });
-        eventDispatcher->registerEventHandler(CCCommonConsts::EVENT_REWARD_TAKEN,
+        eventDispatcher->registerEventHandler(CCCoreConsts::EVENT_REWARD_TAKEN,
                 [this](__Dictionary *parameters) {
                     __Dictionary *rewardDict = dynamic_cast<__Dictionary *>(parameters->objectForKey("reward"));
                     CC_ASSERT(rewardDict);

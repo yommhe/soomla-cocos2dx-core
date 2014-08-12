@@ -3,40 +3,80 @@
 //
 
 #include "CCSoomlaEntity.h"
+#include "CCSoomlaUtils.h"
 
 namespace soomla {
 
+    #define TAG "SOOMLA SoomlaEntity"
+
     using namespace cocos2d;
 
-    bool CCSoomlaEntity::init(cocos2d::__String *name, cocos2d::__String *description, cocos2d::__String *id) {
+    bool CCSoomlaEntity::init(cocos2d::__String *id,cocos2d::__String *name, cocos2d::__String *description) {
+        setId(id);
         setName(name);
         setDescription(description);
-        setId(id);
 
         return true;
     }
 
     bool CCSoomlaEntity::initWithDictionary(cocos2d::__Dictionary *dict) {
+        fillIdFromDict(dict);
         fillNameFromDict(dict);
         fillDescriptionFromDict(dict);
-        fillIdFromDict(dict);
+
+        if (mId == NULL) {
+            CCSoomlaUtils::logError(TAG, "This is BAD! We don't have ID in the given dict. Stopping here.");
+            CC_ASSERT(false);
+        }
+        if (mName == NULL) {
+            mName = __String::create("");
+        }
+        if (mDescription == NULL) {
+            mDescription = __String::create("");
+        }
 
         return true;
     }
 
 
     CCSoomlaEntity::~CCSoomlaEntity() {
+        CC_SAFE_RELEASE(mId);
         CC_SAFE_RELEASE(mName);
         CC_SAFE_RELEASE(mDescription);
-        CC_SAFE_RELEASE(mId);
     }
 
     cocos2d::__Dictionary *CCSoomlaEntity::toDictionary() {
+        if (mId == NULL) {
+            CCSoomlaUtils::logError(TAG, "This is BAD! We don't have ID in the this SoomlaEntity. Stopping here.");
+            CC_ASSERT(false);
+            return NULL;
+        }
+
         __Dictionary* dict = __Dictionary::create();
+        putIdToDict(dict);
         putNameToDict(dict);
         putDescriptionToDict(dict);
-        putIdToDict(dict);
 
         return dict;
+    }
+
+    bool CCSoomlaEntity::equals(cocos2d::Ref *obj) {
+        // If parameter is null return false.
+        if (obj == NULL) {
+            return false;
+        }
+
+        CCSoomlaEntity *castedObj = dynamic_cast<CCSoomlaEntity *>(obj);
+        if (!castedObj) {
+            return false;
+        }
+
+        if (strcmp(castedObj->getType(), getType()) != 0) {
+            return false;
+        }
+
+        if (castedObj->getId()->compare(getId()->getCString()) != 0) {
+            return false;
+        }
     }
 }

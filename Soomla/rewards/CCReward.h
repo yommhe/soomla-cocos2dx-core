@@ -9,20 +9,18 @@
 #include "cocos2d.h"
 #include "CCSoomlaMacros.h"
 #include "CCDomain.h"
-#include "CCCommonConsts.h"
+#include "CCCoreConsts.h"
+#include "CCSchedule.h"
+#include "CCSoomlaEntity.h"
 
 namespace soomla {
-    class CCReward : public CCDomain {
-        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::__String *, mRewardId, RewardId, CCCommonConsts::JSON_REWARD_ID);
-
-        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::__String *, mName, Name, CCCommonConsts::JSON_NAME);
-
-        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::__Bool *, mRepeatable, Repeatable, CCCommonConsts::JSON_REPEATABLE);
+    class CCReward : public CCSoomlaEntity {
+        SL_SYNTHESIZE_RETAIN_WITH_DICT(CCSchedule *, mSchedule, Schedule, CCCoreConsts::JSON_SCHEDULE);
     public:
-        CCReward() : mRewardId(NULL), mName(NULL), mRepeatable(NULL) {
+        CCReward() : CCSoomlaEntity(), mSchedule(NULL) {
         };
 
-        virtual bool init(cocos2d::__String *rewardId, cocos2d::__String *name, cocos2d::__Bool *repeatable);
+        virtual bool init(cocos2d::__String *id, cocos2d::__String *name, CCSchedule *schedule = NULL);
 
         virtual bool initWithDictionary(cocos2d::__Dictionary *dict);
 
@@ -30,7 +28,13 @@ namespace soomla {
 
         virtual ~CCReward();
 
-        virtual const char *getType() = 0;
+    public:
+        virtual bool take();
+        virtual bool give();
+
+    protected:
+        virtual bool takeInner() = 0;
+        virtual bool giveInner() = 0;
     };
 }
 

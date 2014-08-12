@@ -13,8 +13,11 @@ LOCAL_SRC_FILES := ../../Soomla/CCCommonConsts.cpp \
 	../../Soomla/CCError.cpp \
 	../../Soomla/CCJsonHelper.cpp \
 	../../Soomla/CCNdkBridge.cpp \
+	../../Soomla/CCSchedule.cpp \
 	../../Soomla/CCServiceManager.cpp \
 	../../Soomla/CCSoomlaEventDispatcher.cpp \
+	../../Soomla/CCSoomlaUtils.cpp \
+	../../Soomla/data/CCRewardStorage.cpp \
 	../../Soomla/domain/CCDomain.cpp \
 	../../Soomla/domain/CCSoomlaEntity.cpp \
 	../../Soomla/rewards/CCAggregateReward.cpp \

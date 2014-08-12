@@ -19,16 +19,26 @@ namespace soomla {
         };
 
         static CCSequenceReward *create(
-                cocos2d::__String *rewardId,
+                cocos2d::__String *id,
                 cocos2d::__String *name,
-                cocos2d::__Bool *repeatable,
-                cocos2d::__Array *rewards);
+                cocos2d::__Array *rewards,
+                CCSchedule *schedule
+        );
 
         SL_CREATE_WITH_DICTIONARY(CCSequenceReward);
 
         virtual ~CCSequenceReward();
 
         virtual const char *getType() override;
+    public:
+        CCReward *getLastGivenReward();
+        bool hasMoreToGive();
+        bool forceNextRewardToGive(CCReward *reward);
+
+    protected:
+        virtual bool takeInner();
+
+        virtual bool giveInner();
     };
 }
 

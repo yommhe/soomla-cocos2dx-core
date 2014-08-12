@@ -4,7 +4,7 @@
 
 #include "CCDomainHelper.h"
 
-#include "CCCommonConsts.h"
+#include "CCCoreConsts.h"
 #include "CCDomainFactory.h"
 
 using namespace soomla;

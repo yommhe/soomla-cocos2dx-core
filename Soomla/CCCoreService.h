@@ -8,6 +8,7 @@
 #include "cocos2d.h"
 #include "CCError.h"
 #include "CCReward.h"
+#include "CCSequenceReward.h"
 
 namespace soomla {
 
@@ -23,6 +24,11 @@ namespace soomla {
         CCCoreService();
 
         virtual bool init();
+
+        int getTimesGiven(CCReward *reward);
+        void setRewardStatus(CCReward *reward, bool give, bool notify);
+        int getLastSeqIdxGiven(soomla::CCSequenceReward *sequenceReward);
+        void setLastSeqIdxGiven(CCSequenceReward *sequenceReward, unsigned int idx);
 
     };
 };

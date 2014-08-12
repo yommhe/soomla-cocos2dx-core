@@ -3,15 +3,16 @@
 //
 
 #include "CCRandomReward.h"
+#include "CCScheduler.h"
 
 soomla::CCRandomReward *soomla::CCRandomReward::create(
-        cocos2d::__String *rewardId,
+        cocos2d::__String *id,
         cocos2d::__String *name,
-        cocos2d::__Bool *repeatable,
-        cocos2d::__Array *rewards) {
+        cocos2d::__Array *rewards,
+        CCSchedule *schedule) {
 
     CCRandomReward *ret = new CCRandomReward();
-    if (ret->init(rewardId, name, repeatable, rewards)) {
+    if (ret->init(id, name, rewards, schedule)) {
         ret->autorelease();
     }
     else {
@@ -21,8 +22,30 @@ soomla::CCRandomReward *soomla::CCRandomReward::create(
 }
 
 soomla::CCRandomReward::~CCRandomReward() {
+    CC_SAFE_RELEASE(mLastGivenReward);
 }
 
 const char *soomla::CCRandomReward::getType() {
-    return CCCommonConsts::JSON_JSON_TYPE_RANDOM;
+    return CCCoreConsts::JSON_JSON_TYPE_RANDOM;
+}
+
+
+bool soomla::CCRandomReward::takeInner() {
+    // for now is able to take only last given
+    if (mLastGivenReward == NULL) {
+        return false;
+    }
+
+    bool taken = mLastGivenReward->take();
+    setLastGivenReward(NULL);
+
+    return taken;
+}
+
+bool soomla::CCRandomReward::giveInner() {
+    CCReward *randomReward = (CCReward *) getRewards()->getRandomObject();
+    randomReward->give();
+    setLastGivenReward(randomReward);
+
+    return true;
 }

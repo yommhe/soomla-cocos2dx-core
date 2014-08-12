@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372B7222D15E89FF731A78BD /* CCSchedule.h in Headers */ = {isa = PBXBuildFile; fileRef = 372B7B53C5A571B92A25C08C /* CCSchedule.h */; };
 		372B72C58DE0C3DFE3522984 /* CCSoomlaEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 372B7DF784D9DB67349CF869 /* CCSoomlaEntity.h */; };
+		372B74CD5188E48BE19BAC31 /* CCRewardStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 372B7A7FFA3D34A23C31687B /* CCRewardStorage.h */; };
+		372B781D8BC07D3AA891021B /* CCSchedule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 372B73C62BBFD3700BD6DE74 /* CCSchedule.cpp */; };
+		372B790F7E37797D2E10ED65 /* CCSoomlaUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 372B75AEF9E49C7BD45C6ED6 /* CCSoomlaUtils.cpp */; };
+		372B7A1D5F372FCFD9E68388 /* CCSoomlaUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 372B748E4E8020FCD1396DDC /* CCSoomlaUtils.h */; };
 		372B7E556799F8D93570725F /* CCSoomlaEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 372B74257254F43D38DF97CA /* CCSoomlaEntity.cpp */; };
+		372B7FBE9869CD7B1B70ED0E /* CCRewardStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 372B73021AB74279EE404D33 /* CCRewardStorage.cpp */; };
+		9D28428D199909C6005D8EB1 /* libCocos2dXiOSCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 372B7388CA045CEE081CBA72 /* libCocos2dXiOSCore.a */; };
 		9D41014A1978CFAD00907FA8 /* CCAbstractAggregatedEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101251978CFAD00907FA8 /* CCAbstractAggregatedEventHandler.h */; };
-		9D41014B1978CFAD00907FA8 /* CCCommonConsts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101261978CFAD00907FA8 /* CCCommonConsts.cpp */; };
-		9D41014C1978CFAD00907FA8 /* CCCommonConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101271978CFAD00907FA8 /* CCCommonConsts.h */; };
+		9D41014B1978CFAD00907FA8 /* CCCoreConsts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101261978CFAD00907FA8 /* CCCoreConsts.cpp */; };
+		9D41014C1978CFAD00907FA8 /* CCCoreConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101271978CFAD00907FA8 /* CCCoreConsts.h */; };
 		9D41014D1978CFAD00907FA8 /* CCCoreEventDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101281978CFAD00907FA8 /* CCCoreEventDispatcher.cpp */; };
 		9D41014E1978CFAD00907FA8 /* CCCoreEventDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101291978CFAD00907FA8 /* CCCoreEventDispatcher.h */; };
 		9D41014F1978CFAD00907FA8 /* CCCoreEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012A1978CFAD00907FA8 /* CCCoreEventHandler.h */; };
@@ -44,17 +51,40 @@
 		9D41016A1978CFAD00907FA8 /* CCReward.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101471978CFAD00907FA8 /* CCReward.h */; };
 		9D41016B1978CFAD00907FA8 /* CCSequenceReward.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101481978CFAD00907FA8 /* CCSequenceReward.cpp */; };
 		9D41016C1978CFAD00907FA8 /* CCSequenceReward.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101491978CFAD00907FA8 /* CCSequenceReward.h */; };
-		9D41016F1978D35200907FA8 /* libCocos2dXiOSCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D41016D1978D35200907FA8 /* libCocos2dXiOSCore.a */; };
 		9D4101701978D35200907FA8 /* libSoomlaiOSCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D41016E1978D35200907FA8 /* libSoomlaiOSCore.a */; };
 		C0B3C5F3168C6D0C00161FAA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B3C5F2168C6D0C00161FAA /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		372B78242E4301AD23F7505B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 372B7632AB93BEF88F5611C8 /* Cocos2dXiOSCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C0B3C5EF168C6D0C00161FAA;
+			remoteInfo = Cocos2dXiOSCore;
+		};
+		9D28428B199909BB005D8EB1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 372B7632AB93BEF88F5611C8 /* Cocos2dXiOSCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C0B3C5EE168C6D0C00161FAA;
+			remoteInfo = Cocos2dXiOSCore;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		372B73021AB74279EE404D33 /* CCRewardStorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCRewardStorage.cpp; sourceTree = "<group>"; };
+		372B73C62BBFD3700BD6DE74 /* CCSchedule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSchedule.cpp; sourceTree = "<group>"; };
 		372B74257254F43D38DF97CA /* CCSoomlaEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSoomlaEntity.cpp; sourceTree = "<group>"; };
+		372B748E4E8020FCD1396DDC /* CCSoomlaUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSoomlaUtils.h; sourceTree = "<group>"; };
+		372B75AEF9E49C7BD45C6ED6 /* CCSoomlaUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSoomlaUtils.cpp; sourceTree = "<group>"; };
+		372B7632AB93BEF88F5611C8 /* Cocos2dXiOSCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cocos2dXiOSCore.xcodeproj; path = "soomla-native/projects/cocos2dx-ios-core/Cocos2dXiOSCore.xcodeproj"; sourceTree = "<group>"; };
+		372B7A7FFA3D34A23C31687B /* CCRewardStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCRewardStorage.h; sourceTree = "<group>"; };
+		372B7B53C5A571B92A25C08C /* CCSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSchedule.h; sourceTree = "<group>"; };
 		372B7DF784D9DB67349CF869 /* CCSoomlaEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSoomlaEntity.h; sourceTree = "<group>"; };
 		9D4101251978CFAD00907FA8 /* CCAbstractAggregatedEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAbstractAggregatedEventHandler.h; sourceTree = "<group>"; };
-		9D4101261978CFAD00907FA8 /* CCCommonConsts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCCommonConsts.cpp; sourceTree = "<group>"; };
-		9D4101271978CFAD00907FA8 /* CCCommonConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCommonConsts.h; sourceTree = "<group>"; };
+		9D4101261978CFAD00907FA8 /* CCCoreConsts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCCoreConsts.cpp; sourceTree = "<group>"; };
+		9D4101271978CFAD00907FA8 /* CCCoreConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCoreConsts.h; sourceTree = "<group>"; };
 		9D4101281978CFAD00907FA8 /* CCCoreEventDispatcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCCoreEventDispatcher.cpp; sourceTree = "<group>"; };
 		9D4101291978CFAD00907FA8 /* CCCoreEventDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCoreEventDispatcher.h; sourceTree = "<group>"; };
 		9D41012A1978CFAD00907FA8 /* CCCoreEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCoreEventHandler.h; sourceTree = "<group>"; };
@@ -98,7 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D41016F1978D35200907FA8 /* libCocos2dXiOSCore.a in Frameworks */,
+				9D28428D199909C6005D8EB1 /* libCocos2dXiOSCore.a in Frameworks */,
 				9D4101701978D35200907FA8 /* libSoomlaiOSCore.a in Frameworks */,
 				C0B3C5F3168C6D0C00161FAA /* Foundation.framework in Frameworks */,
 			);
@@ -107,12 +137,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		372B7388F0A3301D2E9CE8D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				372B7388CA045CEE081CBA72 /* libCocos2dXiOSCore.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		372B7A1EA12379CCB201D0E1 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				372B73021AB74279EE404D33 /* CCRewardStorage.cpp */,
+				372B7A7FFA3D34A23C31687B /* CCRewardStorage.h */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
 		9D4101241978CFAD00907FA8 /* Soomla */ = {
 			isa = PBXGroup;
 			children = (
 				9D4101251978CFAD00907FA8 /* CCAbstractAggregatedEventHandler.h */,
-				9D4101261978CFAD00907FA8 /* CCCommonConsts.cpp */,
-				9D4101271978CFAD00907FA8 /* CCCommonConsts.h */,
+				9D4101261978CFAD00907FA8 /* CCCoreConsts.cpp */,
+				9D4101271978CFAD00907FA8 /* CCCoreConsts.h */,
 				9D4101281978CFAD00907FA8 /* CCCoreEventDispatcher.cpp */,
 				9D4101291978CFAD00907FA8 /* CCCoreEventDispatcher.h */,
 				9D41012A1978CFAD00907FA8 /* CCCoreEventHandler.h */,
@@ -135,6 +182,11 @@
 				9D41013B1978CFAD00907FA8 /* CCSoomlaMacros.h */,
 				9D41013C1978CFAD00907FA8 /* domain */,
 				9D41013F1978CFAD00907FA8 /* rewards */,
+				372B73C62BBFD3700BD6DE74 /* CCSchedule.cpp */,
+				372B7B53C5A571B92A25C08C /* CCSchedule.h */,
+				372B748E4E8020FCD1396DDC /* CCSoomlaUtils.h */,
+				372B75AEF9E49C7BD45C6ED6 /* CCSoomlaUtils.cpp */,
+				372B7A1EA12379CCB201D0E1 /* data */,
 			);
 			path = Soomla;
 			sourceTree = "<group>";
@@ -173,6 +225,7 @@
 				9D4101241978CFAD00907FA8 /* Soomla */,
 				C0B3C5F1168C6D0C00161FAA /* Frameworks */,
 				C0B3C5F0168C6D0C00161FAA /* Products */,
+				372B7632AB93BEF88F5611C8 /* Cocos2dXiOSCore.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,7 +265,7 @@
 				9D4101591978CFAD00907FA8 /* CCJsonHelper.h in Headers */,
 				9D4101511978CFAD00907FA8 /* CCCoreService.h in Headers */,
 				9D4101531978CFAD00907FA8 /* CCDomainFactory.h in Headers */,
-				9D41014C1978CFAD00907FA8 /* CCCommonConsts.h in Headers */,
+				9D41014C1978CFAD00907FA8 /* CCCoreConsts.h in Headers */,
 				9D41015D1978CFAD00907FA8 /* CCServiceManager.h in Headers */,
 				9D41015B1978CFAD00907FA8 /* CCNdkBridge.h in Headers */,
 				9D41015F1978CFAD00907FA8 /* CCSoomlaEventDispatcher.h in Headers */,
@@ -221,6 +274,9 @@
 				9D4101621978CFAD00907FA8 /* CCDomain.h in Headers */,
 				9D4101571978CFAD00907FA8 /* CCError.h in Headers */,
 				372B72C58DE0C3DFE3522984 /* CCSoomlaEntity.h in Headers */,
+				372B7222D15E89FF731A78BD /* CCSchedule.h in Headers */,
+				372B7A1D5F372FCFD9E68388 /* CCSoomlaUtils.h in Headers */,
+				372B74CD5188E48BE19BAC31 /* CCRewardStorage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +294,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9D28428C199909BB005D8EB1 /* PBXTargetDependency */,
 			);
 			name = Cocos2dXCore;
 			productName = SoomlaIOSStore;
@@ -263,12 +320,28 @@
 			mainGroup = C0B3C5E4168C6D0C00161FAA;
 			productRefGroup = C0B3C5F0168C6D0C00161FAA /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 372B7388F0A3301D2E9CE8D7 /* Products */;
+					ProjectRef = 372B7632AB93BEF88F5611C8 /* Cocos2dXiOSCore.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C0B3C5EE168C6D0C00161FAA /* Cocos2dXCore */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		372B7388CA045CEE081CBA72 /* libCocos2dXiOSCore.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCocos2dXiOSCore.a;
+			remoteRef = 372B78242E4301AD23F7505B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C0B3C5EB168C6D0C00161FAA /* Sources */ = {
@@ -283,7 +356,7 @@
 				9D41014D1978CFAD00907FA8 /* CCCoreEventDispatcher.cpp in Sources */,
 				9D41015C1978CFAD00907FA8 /* CCServiceManager.cpp in Sources */,
 				9D4101651978CFAD00907FA8 /* CCBadgeReward.cpp in Sources */,
-				9D41014B1978CFAD00907FA8 /* CCCommonConsts.cpp in Sources */,
+				9D41014B1978CFAD00907FA8 /* CCCoreConsts.cpp in Sources */,
 				9D41016B1978CFAD00907FA8 /* CCSequenceReward.cpp in Sources */,
 				9D4101541978CFAD00907FA8 /* CCDomainHelper.cpp in Sources */,
 				9D4101611978CFAD00907FA8 /* CCDomain.cpp in Sources */,
@@ -292,10 +365,21 @@
 				9D4101501978CFAD00907FA8 /* CCCoreService.cpp in Sources */,
 				9D4101671978CFAD00907FA8 /* CCRandomReward.cpp in Sources */,
 				372B7E556799F8D93570725F /* CCSoomlaEntity.cpp in Sources */,
+				372B781D8BC07D3AA891021B /* CCSchedule.cpp in Sources */,
+				372B790F7E37797D2E10ED65 /* CCSoomlaUtils.cpp in Sources */,
+				372B7FBE9869CD7B1B70ED0E /* CCRewardStorage.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9D28428C199909BB005D8EB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cocos2dXiOSCore;
+			targetProxy = 9D28428B199909BB005D8EB1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C0B3C5FB168C6D0C00161FAA /* Debug */ = {
