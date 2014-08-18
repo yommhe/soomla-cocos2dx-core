@@ -11,7 +11,7 @@ USING_NS_CC;
 
 #if (LOG_JSON == 1)
 #define TAG "JSON"
-#include "CCStoreUtils.h"
+#include "CCSoomlaUtils.h"
 #endif
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
@@ -71,7 +71,7 @@ namespace soomla {
             json_t *retJsonParams = NULL;
 
 #if (LOG_JSON == 1)
-            CCStoreUtils::logDebug(TAG, __String::createWithFormat(
+            CCSoomlaUtils::logDebug(TAG, __String::createWithFormat(
                     "to native JSON: %s", json_dumps(toBeSentJson, JSON_COMPACT | JSON_ENSURE_ASCII))->getCString());
 #endif
 
@@ -113,7 +113,7 @@ namespace soomla {
 #endif
 
 #if (LOG_JSON == 1)
-            CCStoreUtils::logDebug(TAG, __String::createWithFormat(
+            CCSoomlaUtils::logDebug(TAG, __String::createWithFormat(
                     "from native JSON: %s", json_dumps(retJsonParams, JSON_COMPACT | JSON_ENSURE_ASCII))->getCString());
 #endif
 
