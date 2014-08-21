@@ -26,7 +26,7 @@ soomla::CCSequenceReward *soomla::CCSequenceReward::create(
 soomla::CCSequenceReward::~CCSequenceReward() {
 }
 
-const char *soomla::CCSequenceReward::getType() {
+const char *soomla::CCSequenceReward::getType() const {
     return CCCoreConsts::JSON_JSON_TYPE_SEQUENCE;
 }
 

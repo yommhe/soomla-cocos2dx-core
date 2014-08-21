@@ -28,9 +28,9 @@ namespace soomla {
         */
         virtual cocos2d::__Dictionary* toDictionary();
 
-        virtual const char *getType() = 0;
+        virtual char const * getType() const = 0;
 
-        virtual bool equals(cocos2d::Ref *obj);
+        virtual bool equals(cocos2d::Ref *obj) const;
     };
 }
 

@@ -35,7 +35,7 @@ namespace soomla {
 
         virtual ~CCBadgeReward();
 
-        virtual const char *getType();
+        virtual const char *getType() const;
 
     protected:
         virtual bool takeInner() override;

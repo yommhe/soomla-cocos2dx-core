@@ -25,7 +25,7 @@ soomla::CCRandomReward::~CCRandomReward() {
     CC_SAFE_RELEASE(mLastGivenReward);
 }
 
-const char *soomla::CCRandomReward::getType() {
+const char *soomla::CCRandomReward::getType() const {
     return CCCoreConsts::JSON_JSON_TYPE_RANDOM;
 }
 

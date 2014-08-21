@@ -29,7 +29,7 @@ namespace soomla {
 
         virtual ~CCSequenceReward();
 
-        virtual const char *getType() override;
+        virtual const char *getType() const;
     public:
         CCReward *getLastGivenReward();
         bool hasMoreToGive();

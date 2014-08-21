@@ -54,7 +54,7 @@ soomla::CCBadgeReward::~CCBadgeReward() {
     CC_SAFE_RELEASE(mIconUrl);
 }
 
-const char *soomla::CCBadgeReward::getType() {
+const char *soomla::CCBadgeReward::getType() const {
     return CCCoreConsts::JSON_JSON_TYPE_BADGE;
 }
 

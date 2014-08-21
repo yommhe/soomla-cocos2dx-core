@@ -60,7 +60,7 @@ namespace soomla {
         return dict;
     }
 
-    bool CCSoomlaEntity::equals(cocos2d::Ref *obj) {
+    bool CCSoomlaEntity::equals(cocos2d::Ref *obj) const {
         // If parameter is null return false.
         if (obj == NULL) {
             return false;
@@ -78,5 +78,7 @@ namespace soomla {
         if (castedObj->getId()->compare(getId()->getCString()) != 0) {
             return false;
         }
+
+        return true;
     }
 }

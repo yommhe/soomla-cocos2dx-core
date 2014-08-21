@@ -28,7 +28,7 @@ namespace soomla {
 
         virtual ~CCRandomReward();
 
-        virtual const char *getType() override;
+        virtual const char *getType() const;
 
     protected:
         virtual bool takeInner();
