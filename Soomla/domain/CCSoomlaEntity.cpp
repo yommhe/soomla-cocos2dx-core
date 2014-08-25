@@ -4,6 +4,7 @@
 
 #include "CCSoomlaEntity.h"
 #include "CCSoomlaUtils.h"
+#include "CCDomainFactory.h"
 
 namespace soomla {
 
@@ -80,5 +81,11 @@ namespace soomla {
         }
 
         return true;
+    }
+
+    CCSoomlaEntity *CCSoomlaEntity::clone(const char *newId) {
+        cocos2d::__Dictionary *dict = this->toDictionary();
+        dict->setObject(cocos2d::__String::create(newId), CCCoreConsts::JSON_ITEM_ITEM_ID);
+        return (CCSoomlaEntity *) CCDomainFactory::getInstance()->createWithDictionaryAndType(dict, getType());
     }
 }

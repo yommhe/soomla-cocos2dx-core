@@ -31,6 +31,8 @@ namespace soomla {
         virtual char const * getType() const = 0;
 
         virtual bool equals(cocos2d::Ref *obj) const;
+
+        virtual CCSoomlaEntity *clone(const char *newId);
     };
 }
 
