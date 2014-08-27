@@ -56,10 +56,17 @@ static __class *createWithDictionary(cocos2d::__Dictionary *dict) { \
 } \
 
 #define SL_SAFE_CREATE_FROM_RETURN(__T__, __ret__, __retParams__)			\
-    __Dictionary *retDict = (__Dictionary *)__retParams__->objectForKey("return"); \
-    soomla::CCDomain *domain = CCDomainFactory::getInstance()->createWithDictionary(retDict); \
-	__T__ __ret__ = dynamic_cast<__T__>(domain);			\
-	CC_ASSERT(__ret__);
+    SL_SAFE_CREATE(__T__, __ret__, (__retParams__->objectForKey("return")))
+
+#define SL_SAFE_CREATE(__T__, __ret__, __ref__)			\
+    __T__ __ret__ = NULL;\
+    {\
+        __Dictionary *dict = dynamic_cast<__Dictionary *>(__ref__); \
+        CC_ASSERT(dict); \
+        soomla::CCDomain *domain = CCDomainFactory::getInstance()->createWithDictionary(dict); \
+	    __ret__ = dynamic_cast<__T__>(domain);			\
+	    CC_ASSERT(__ret__); \
+    }\
 
 #define SL_EXTRACT_FROM_RETURN(__T__, __ret__, __retParams__) \
 __T__ *__ret__ = NULL; \
