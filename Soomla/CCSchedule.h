@@ -10,8 +10,6 @@
 #include "CCSoomlaMacros.h"
 #include "CCCoreConsts.h"
 
-#define TAG "SOOMLA Schedule"
-
 namespace soomla {
     class CCSchedule : public CCDomain {
         SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::__Integer*, mRequiredRecurrence, RequiredRecurrence, CCCoreConsts::JSON_SCHE_REC);
