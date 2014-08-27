@@ -55,4 +55,24 @@ static __class *createWithDictionary(cocos2d::__Dictionary *dict) { \
     return ret; \
 } \
 
+#define SL_SAFE_CREATE_FROM_RETURN(__T__, __ret__, __retParams__)			\
+    __Dictionary *retDict = (__Dictionary *)__retParams__->objectForKey("return"); \
+    soomla::CCDomain *domain = CCDomainFactory::getInstance()->createWithDictionary(retDict); \
+	__T__ __ret__ = dynamic_cast<__T__>(domain);			\
+	CC_ASSERT(__ret__);
+
+#define SL_EXTRACT_FROM_RETURN(__T__, __ret__, __retParams__) \
+__T__ *__ret__ = NULL; \
+{ \
+  Ref *retRef = __retParams__->objectForKey("return"); \
+  CC_ASSERT(retRef); \
+  __ret__ = dynamic_cast<__T__ *>(retRef); \
+  CC_ASSERT(__ret__); \
+} \
+
+#define SL_CREATE_PARAMS_FOR_METHOD(__ret__, __methodName__) \
+__Dictionary *__ret__ = __Dictionary::create(); \
+params->setObject(__String::create(__methodName__), "method");
+
+
 #endif // __CCSoomlaMacros_h
