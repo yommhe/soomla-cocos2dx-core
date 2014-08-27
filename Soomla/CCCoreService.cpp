@@ -17,6 +17,8 @@ namespace soomla {
 
     USING_NS_CC;
 
+#define TAG "SOOMLA CoreService"
+
     static CCCoreService *sInstance = NULL;
 
     CCCoreService *CCCoreService::getInstance() {
@@ -131,7 +133,7 @@ namespace soomla {
         params->setObject(__String::create("CCCoreService::setLastSeqIdxGiven"), "method");
         params->setObject(sequenceReward->toDictionary(), "reward");
         params->setObject(__Integer::create(idx), "idx");
-        (__Dictionary *) CCNdkBridge::callNative (params, &error);
+        CCNdkBridge::callNative (params, &error);
 
         if (error) {
             CCSoomlaUtils::logException(TAG, error);
