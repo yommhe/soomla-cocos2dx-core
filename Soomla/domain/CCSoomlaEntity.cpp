@@ -58,7 +58,7 @@ namespace soomla {
         putNameToDict(dict);
         putDescriptionToDict(dict);
 
-        return dict;
+        return putTypeData(dict, getType());
     }
 
     bool CCSoomlaEntity::equals(cocos2d::Ref *obj) const {

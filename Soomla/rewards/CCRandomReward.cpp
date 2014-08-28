@@ -3,7 +3,6 @@
 //
 
 #include "CCRandomReward.h"
-#include "CCScheduler.h"
 
 soomla::CCRandomReward *soomla::CCRandomReward::create(
         cocos2d::__String *id,
