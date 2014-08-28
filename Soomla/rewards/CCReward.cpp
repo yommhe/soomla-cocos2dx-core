@@ -45,7 +45,7 @@ cocos2d::__Dictionary *soomla::CCReward::toDictionary() {
         dict->setObject(mSchedule->toDictionary(), CCCoreConsts::JSON_SCHEDULE);
     }
 
-    return putTypeData(dict, getType());
+    return dict;
 }
 
 soomla::CCReward::~CCReward() {
