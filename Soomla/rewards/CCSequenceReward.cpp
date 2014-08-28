@@ -3,7 +3,6 @@
 //
 
 #include "CCSequenceReward.h"
-#include "CCScheduler.h"
 #include "CCRewardStorage.h"
 
 soomla::CCSequenceReward *soomla::CCSequenceReward::create(

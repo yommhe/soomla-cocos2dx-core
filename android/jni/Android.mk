@@ -5,7 +5,7 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE := cocos2dx_soomla_common_static
 LOCAL_MODULE_FILENAME := libcocos2dxsoomlacommon
-LOCAL_SRC_FILES := ../../Soomla/CCCommonConsts.cpp \
+LOCAL_SRC_FILES := ../../Soomla/CCCoreConsts.cpp \
 	../../Soomla/CCCoreEventDispatcher.cpp \
 	../../Soomla/CCCoreService.cpp \
 	../../Soomla/CCDomainFactory.cpp \
@@ -27,6 +27,7 @@ LOCAL_SRC_FILES := ../../Soomla/CCCommonConsts.cpp \
 	../../Soomla/rewards/CCSequenceReward.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Soomla
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../Soomla/data
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../Soomla/domain
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../Soomla/rewards
 
@@ -36,6 +37,7 @@ LOCAL_WHOLE_STATIC_LIBRARIES += jansson_static
 
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/../..
 LOCAL_EXPORT_C_INCLUDES += $(LOCAL_PATH)/../../Soomla
+LOCAL_EXPORT_C_INCLUDES += $(LOCAL_PATH)/../../Soomla/data
 LOCAL_EXPORT_C_INCLUDES += $(LOCAL_PATH)/../../Soomla/domain
 LOCAL_EXPORT_C_INCLUDES += $(LOCAL_PATH)/../../Soomla/rewards
 

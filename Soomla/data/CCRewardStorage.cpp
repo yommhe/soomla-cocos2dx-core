@@ -8,6 +8,8 @@
 #include "CCSequenceReward.h"
 #include "CCCoreService.h"
 
+#define TAG "SOOMLA RewardStorage"
+
 namespace soomla {
     static CCRewardStorage *s_SharedRewardStorage = NULL;
 

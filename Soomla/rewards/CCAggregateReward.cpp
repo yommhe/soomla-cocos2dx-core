@@ -3,7 +3,6 @@
 //
 
 #include "CCAggregateReward.h"
-#include "CCScheduler.h"
 
 bool soomla::CCAggregateReward::init(
         cocos2d::__String *id,

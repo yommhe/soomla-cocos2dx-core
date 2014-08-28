@@ -11,8 +11,6 @@
 #include "CCReward.h"
 #include "CCSequenceReward.h"
 
-#define TAG "SOOMLA RewardStorage"
-
 namespace soomla {
     class CCRewardStorage: public cocos2d::Ref {
     public:
