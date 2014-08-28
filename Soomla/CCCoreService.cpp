@@ -54,6 +54,10 @@ namespace soomla {
                 &CCRandomReward::createWithDictionary);
         CCDomainFactory::getInstance()->registerCreator(CCCoreConsts::JSON_JSON_TYPE_SEQUENCE,
                 &CCSequenceReward::createWithDictionary);
+        CCDomainFactory::getInstance()->registerCreator(CCCoreConsts::JSON_JSON_TYPE_SCHEDULE,
+                &CCSchedule::createWithDictionary);
+        CCDomainFactory::getInstance()->registerCreator(CCCoreConsts::JSON_JSON_TYPE_DATE_TIME_RANGE,
+                &CCSchedule::CCDateTimeRange::createWithDictionary);
 
         return true;
     }
