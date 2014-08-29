@@ -77,6 +77,21 @@ __T__ *__ret__ = NULL; \
   CC_ASSERT(__ret__); \
 } \
 
+#define SL_EXTRACT_DOUBLE_FROM_RETURN(__ret__, __retParams__) \
+__Double *__ret__ = NULL; \
+{ \
+  Ref *retRef = __retParams__->objectForKey("return"); \
+  CC_ASSERT(retRef); \
+  __ret__ = dynamic_cast<__Double *>(retRef); \
+  if (__ret__ == NULL) { \
+    __Integer *intRef = dynamic_cast<__Integer *>(retRef); \
+    if (intRef != NULL) { \
+        __ret__ = __Double::create(intRef->getValue());\
+    }\
+  } \
+  CC_ASSERT(__ret__); \
+} \
+
 #define SL_CREATE_PARAMS_FOR_METHOD(__ret__, __methodName__) \
 __Dictionary *__ret__ = __Dictionary::create(); \
 params->setObject(__String::create(__methodName__), "method");
