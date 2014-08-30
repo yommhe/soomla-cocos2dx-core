@@ -2,5 +2,5 @@
 	path = submodules/soomla-android-core
 	url = https://github.com/soomla/soomla-android-core.git
 [submodule "submodules/soomla-ios-core"]
-	path = submodules/soomla-ios-core
+	path = development/submodules/soomla-ios-core
 	url = https://github.com/soomla/soomla-ios-core.git
