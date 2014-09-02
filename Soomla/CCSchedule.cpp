@@ -28,7 +28,7 @@ namespace soomla {
     }
 
     bool CCSchedule::CCDateTimeRange::initWithDictionary(cocos2d::CCDictionary *dict) {
-        Ref *ref;
+        CCObject *ref;
         time_t seconds;
 
         ref = dict->objectForKey(CCCoreConsts::JSON_SCHE_RANGE_START);
@@ -82,7 +82,7 @@ namespace soomla {
     }
 
     CCSchedule *CCSchedule::create(cocos2d::CCInteger *activationLimit) {
-        return CCSchedule::create(cocos2d::CCInteger::create(CCSchedule::Recurrence::NONE), NULL, activationLimit);
+        return CCSchedule::create(cocos2d::CCInteger::create(CCSchedule::NONE), NULL, activationLimit);
     }
 
     CCSchedule *CCSchedule::create(cocos2d::CCInteger *requiredRecurrence, timeval start, timeval end, cocos2d::CCInteger *activationLimit) {
@@ -159,7 +159,7 @@ namespace soomla {
         // NOTE: From this point on ... we know that we didn't reach the activation limit AND we have TimeRanges.
         //		 We'll just make sure the time ranges and the Recurrence copmlies.
 
-        Ref *ref;
+        CCObject *ref;
         CCDateTimeRange *dateTimeRange;
 
         CCARRAY_FOREACH(mTimeRanges, ref) {
@@ -172,7 +172,7 @@ namespace soomla {
             }
 
         // we don't need to continue if RequiredRecurrence is NONE
-        if (mRequiredRecurrence->getValue() == Recurrence::NONE) {
+        if (mRequiredRecurrence->getValue() == NONE) {
             return false;
         }
 
@@ -193,7 +193,7 @@ namespace soomla {
                 if (nowTm.tm_min >= begTm.tm_min && nowTm.tm_min <= endTm.tm_min) {
                     CCSoomlaUtils::logDebug(TAG, "Now is in one of the time ranges' minutes span.");
 
-                    if (mRequiredRecurrence->getValue() == Recurrence::EVERY_HOUR) {
+                    if (mRequiredRecurrence->getValue() == EVERY_HOUR) {
                         CCSoomlaUtils::logDebug(TAG, "It's a EVERY_HOUR recurrence. APPROVED!");
                         return true;
                     }
@@ -201,7 +201,7 @@ namespace soomla {
                     if (nowTm.tm_hour >= begTm.tm_hour && nowTm.tm_hour <= endTm.tm_hour) {
                         CCSoomlaUtils::logDebug(TAG, "Now is in one of the time ranges' hours span.");
 
-                        if (mRequiredRecurrence->getValue() == Recurrence::EVERY_DAY) {
+                        if (mRequiredRecurrence->getValue() == EVERY_DAY) {
                             CCSoomlaUtils::logDebug(TAG, "It's a EVERY_DAY recurrence. APPROVED!");
                             return true;
                         }
@@ -209,7 +209,7 @@ namespace soomla {
                         if (nowTm.tm_wday >= begTm.tm_wday && nowTm.tm_wday <= endTm.tm_wday) {
                             CCSoomlaUtils::logDebug(TAG, "Now is in one of the time ranges' day-of-week span.");
 
-                            if (mRequiredRecurrence->getValue() == Recurrence::EVERY_WEEK) {
+                            if (mRequiredRecurrence->getValue() == EVERY_WEEK) {
                                 CCSoomlaUtils::logDebug(TAG, "It's a EVERY_WEEK recurrence. APPROVED!");
                                 return true;
                             }
@@ -217,7 +217,7 @@ namespace soomla {
                             if (nowTm.tm_mday >= begTm.tm_mday && nowTm.tm_mday <= endTm.tm_mday) {
                                 CCSoomlaUtils::logDebug(TAG, "Now is in one of the time ranges' days span.");
 
-                                if (mRequiredRecurrence->getValue() == Recurrence::EVERY_MONTH) {
+                                if (mRequiredRecurrence->getValue() == EVERY_MONTH) {
                                     CCSoomlaUtils::logDebug(TAG, "It's a EVERY_MONTH recurrence. APPROVED!");
                                     return true;
                                 }

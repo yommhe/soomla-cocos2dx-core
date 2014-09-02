@@ -261,7 +261,9 @@
 		C0B3C5FE168C6D0C00161FAA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++98";
 				DSTROOT = /tmp/SoomlaIOSStore.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -271,11 +273,12 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../../../../../../cocos",
-					"$(SRCROOT)/../../../../../../cocos/base",
-					"$(SRCROOT)/../../../../../../cocos/2d",
-					"$(SRCROOT)/../../../../../../cocos/platform/ios",
-					"$(SRCROOT)/../../../../../../cocos/platform/ios/Simulation",
+					"\"$(SRCROOT)/../../../../../../cocos2dx\"",
+					"\"$(SRCROOT)/../../../../../../cocos2dx/include\"",
+					"\"$(SRCROOT)/../../../../../../cocos2dx/kazmath/include\"",
+					"\"$(SRCROOT)/../../../../../../cocos2dx/platform/third_party/ios\"",
+					"\"$(SRCROOT)/../../../../../../cocos2dx/platform/ios\"",
+					"\"$(SRCROOT)/../../../../../../cocos2dx/platform/ios/Simulation\"",
 					"$(SRCROOT)/../../../../../../external/jansson",
 					"$(SRCROOT)/../../../submodules/soomla-ios-core/build/headers/**",
 					"$(SRCROOT)/../../../../Soomla/**",
@@ -296,18 +299,21 @@
 		C0B3C5FF168C6D0C00161FAA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++98";
 				DSTROOT = /tmp/SoomlaIOSStore.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = CC_TARGET_OS_IPHONE;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../../../../../../cocos",
-					"$(SRCROOT)/../../../../../../cocos/base",
-					"$(SRCROOT)/../../../../../../cocos/2d",
-					"$(SRCROOT)/../../../../../../cocos/platform/ios",
-					"$(SRCROOT)/../../../../../../cocos/platform/ios/Simulation",
+					"\"$(SRCROOT)/../../../../../../cocos2dx\"",
+					"\"$(SRCROOT)/../../../../../../cocos2dx/include\"",
+					"\"$(SRCROOT)/../../../../../../cocos2dx/kazmath/include\"",
+					"\"$(SRCROOT)/../../../../../../cocos2dx/platform/third_party/ios\"",
+					"\"$(SRCROOT)/../../../../../../cocos2dx/platform/ios\"",
+					"\"$(SRCROOT)/../../../../../../cocos2dx/platform/ios/Simulation\"",
 					"$(SRCROOT)/../../../../../../external/jansson",
 					"$(SRCROOT)/../../../submodules/soomla-ios-core/build/headers/**",
 					"$(SRCROOT)/../../../../Soomla/**",

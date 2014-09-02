@@ -8,7 +8,7 @@
 USING_NS_CC;
 
 namespace soomla {
-    static CCServiceManager *sInstance = nullptr;
+    static CCServiceManager *sInstance = NULL;
 
     CCServiceManager *CCServiceManager::getInstance() {
         if (!sInstance)

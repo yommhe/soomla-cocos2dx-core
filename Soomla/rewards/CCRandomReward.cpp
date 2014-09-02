@@ -42,7 +42,7 @@ bool soomla::CCRandomReward::takeInner() {
 }
 
 bool soomla::CCRandomReward::giveInner() {
-    CCReward *randomReward = (CCReward *) getRewards()->getRandomObject();
+    CCReward *randomReward = (CCReward *) getRewards()->randomObject();
     randomReward->give();
     setLastGivenReward(randomReward);
 

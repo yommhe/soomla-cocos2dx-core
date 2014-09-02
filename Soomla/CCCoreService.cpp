@@ -46,18 +46,18 @@ namespace soomla {
 
         CCDictionary *params = CCDictionary::create();
         params->setObject(CCString::create("CCCoreService::init"), "method");
-        CCNdkBridge::callNative(params, nullptr);
+        CCNdkBridge::callNative(params, NULL);
 
         CCDomainFactory::getInstance()->registerCreator(CCCoreConsts::JSON_JSON_TYPE_BADGE,
-                &CCBadgeReward::createWithDictionary);
+                (SEL_DomainCreator)CCBadgeReward::createWithDictionary);
         CCDomainFactory::getInstance()->registerCreator(CCCoreConsts::JSON_JSON_TYPE_RANDOM,
-                &CCRandomReward::createWithDictionary);
+                (SEL_DomainCreator)CCRandomReward::createWithDictionary);
         CCDomainFactory::getInstance()->registerCreator(CCCoreConsts::JSON_JSON_TYPE_SEQUENCE,
-                &CCSequenceReward::createWithDictionary);
+                (SEL_DomainCreator)CCSequenceReward::createWithDictionary);
         CCDomainFactory::getInstance()->registerCreator(CCCoreConsts::JSON_JSON_TYPE_SCHEDULE,
-                &CCSchedule::createWithDictionary);
+                (SEL_DomainCreator)CCSchedule::createWithDictionary);
         CCDomainFactory::getInstance()->registerCreator(CCCoreConsts::JSON_JSON_TYPE_DATE_TIME_RANGE,
-                &CCSchedule::CCDateTimeRange::createWithDictionary);
+                (SEL_DomainCreator)CCSchedule::CCDateTimeRange::createWithDictionary);
 
         return true;
     }
@@ -94,9 +94,9 @@ namespace soomla {
         CCDictionary *params = CCDictionary::create();
         params->setObject(CCString::create("CCCoreService::setRewardStatus"), "method");
         params->setObject(reward->toDictionary(), "reward");
-        params->setObject(__Bool::create(give), "give");
-        params->setObject(__Bool::create(notify), "notify");
-        (CCDictionary *) CCNdkBridge::callNative (params, &error);
+        params->setObject(CCBool::create(give), "give");
+        params->setObject(CCBool::create(notify), "notify");
+        CCNdkBridge::callNative (params, &error);
 
         if (error) {
             CCSoomlaUtils::logException(TAG, error);

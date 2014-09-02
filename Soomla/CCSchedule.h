@@ -12,9 +12,6 @@
 
 namespace soomla {
     class CCSchedule : public CCDomain {
-        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::CCInteger*, mRequiredRecurrence, RequiredRecurrence, CCCoreConsts::JSON_SCHE_REC);
-        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::CCArray*, mTimeRanges, TimeRanges, CCCoreConsts::JSON_SCHE_RANGES);
-        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::CCInteger*, mActivationLimit, ActivationLimit, CCCoreConsts::JSON_SCHE_APPROVALS);
     public:
         enum Recurrence {
             EVERY_MONTH,
@@ -23,7 +20,10 @@ namespace soomla {
             EVERY_HOUR,
             NONE
         };
-
+        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::CCInteger*, mRequiredRecurrence, RequiredRecurrence, CCCoreConsts::JSON_SCHE_REC);
+        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::CCArray*, mTimeRanges, TimeRanges, CCCoreConsts::JSON_SCHE_RANGES);
+        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::CCInteger*, mActivationLimit, ActivationLimit, CCCoreConsts::JSON_SCHE_APPROVALS);
+    public:
         class CCDateTimeRange: public CCDomain {
         public:
             timeval mStart;

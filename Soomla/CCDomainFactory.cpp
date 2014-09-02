@@ -9,7 +9,7 @@ USING_NS_CC;
 
 using namespace soomla;
 
-static CCDomainFactory *s_SharedDomainFactory = nullptr;
+static CCDomainFactory *s_SharedDomainFactory = NULL;
 
 CCDomainFactory *CCDomainFactory::getInstance() {
     if (!s_SharedDomainFactory) {
@@ -19,29 +19,29 @@ CCDomainFactory *CCDomainFactory::getInstance() {
     return s_SharedDomainFactory;
 }
 
-void CCDomainFactory::registerCreator(const char *key, std::function<soomla::CCDomain *(CCDictionary *)> creator) {
+void CCDomainFactory::registerCreator(const char *key, SEL_DomainCreator creator) {
     mCreators[key] = creator;
 }
 
 CCDomain * CCDomainFactory::createWithDictionary(CCDictionary *dict) {
-    Ref *typeRef = dict->objectForKey(CCCoreConsts::JSON_JSON_TYPE);
-    CC_ASSERT(typeRef != nullptr);
+    CCObject *typeRef = dict->objectForKey(CCCoreConsts::JSON_JSON_TYPE);
+    CC_ASSERT(typeRef != NULL);
     CCString *type = dynamic_cast<CCString *>(typeRef);
-    CC_ASSERT(type != nullptr);
+    CC_ASSERT(type != NULL);
 
     return this->createWithDictionaryAndType(dict, type->getCString());
 }
 
 soomla::CCDomain *CCDomainFactory::createWithDictionaryAndType(CCDictionary *dict, const char *type) {
     CC_ASSERT(type);
-    if (type == nullptr) {
-        return nullptr;
+    if (type == NULL) {
+        return NULL;
     }
 
-    std::function<soomla::CCDomain *(CCDictionary *)> creator = mCreators[type];
+    SEL_DomainCreator creator = mCreators[type];
     CC_ASSERT(creator);
-    if (creator == nullptr) {
-        return nullptr;
+    if (creator == NULL) {
+        return NULL;
     }
 
     return creator(dict);

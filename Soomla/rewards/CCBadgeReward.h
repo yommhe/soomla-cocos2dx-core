@@ -38,9 +38,9 @@ namespace soomla {
         virtual const char *getType() const;
 
     protected:
-        virtual bool takeInner() override;
+        virtual bool takeInner();
 
-        virtual bool giveInner() override;
+        virtual bool giveInner();
     };
 }
 
