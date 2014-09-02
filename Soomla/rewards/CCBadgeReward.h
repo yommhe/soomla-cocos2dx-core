@@ -8,29 +8,26 @@
 
 #include "cocos2d.h"
 #include "CCSoomlaMacros.h"
-#include "CCCommonConsts.h"
 #include "CCReward.h"
 
 namespace soomla {
     class CCBadgeReward : public CCReward {
-        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::CCString *, mIconUrl, IconUrl, CCCommonConsts::JSON_ICON_URL);
+        SL_SYNTHESIZE_RETAIN_WITH_DICT(cocos2d::CCString *, mIconUrl, IconUrl, CCCoreConsts::JSON_ICON_URL);
     public:
         CCBadgeReward() : CCReward(), mIconUrl(NULL) {
         };
 
         static CCBadgeReward *create(
-                cocos2d::CCString *rewardId,
+                cocos2d::CCString *id,
                 cocos2d::CCString *name,
-                cocos2d::CCBool *repeatable,
-                cocos2d::CCString *iconUrl);
+                cocos2d::CCString *iconUrl = NULL);
 
         SL_CREATE_WITH_DICTIONARY(CCBadgeReward);
 
         virtual bool init(
-                cocos2d::CCString *rewardId,
+                cocos2d::CCString *id,
                 cocos2d::CCString *name,
-                cocos2d::CCBool *repeatable,
-                cocos2d::CCString *iconUrl);
+                cocos2d::CCString *iconUrl = NULL);
 
         virtual bool initWithDictionary(cocos2d::CCDictionary *dict);
 
@@ -38,7 +35,12 @@ namespace soomla {
 
         virtual ~CCBadgeReward();
 
-        virtual const char *getType();
+        virtual const char *getType() const;
+
+    protected:
+        virtual bool takeInner() override;
+
+        virtual bool giveInner() override;
     };
 }
 

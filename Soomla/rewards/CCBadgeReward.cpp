@@ -5,13 +5,12 @@
 #include "CCBadgeReward.h"
 
 soomla::CCBadgeReward *soomla::CCBadgeReward::create(
-        cocos2d::CCString *rewardId,
+        cocos2d::CCString *id,
         cocos2d::CCString *name,
-        cocos2d::CCBool *repeatable,
         cocos2d::CCString *iconUrl) {
 
     CCBadgeReward *ret = new CCBadgeReward();
-    if (ret->init(rewardId, name, repeatable, iconUrl)) {
+    if (ret->init(id, name, iconUrl)) {
         ret->autorelease();
     }
     else {
@@ -21,12 +20,11 @@ soomla::CCBadgeReward *soomla::CCBadgeReward::create(
 }
 
 bool soomla::CCBadgeReward::init(
-        cocos2d::CCString *rewardId,
+        cocos2d::CCString *id,
         cocos2d::CCString *name,
-        cocos2d::CCBool *repeatable,
         cocos2d::CCString *iconUrl) {
 
-    bool result = CCReward::init(rewardId, name, repeatable);
+    bool result = CCReward::init(id, name);
 
     if (result) {
         setIconUrl(iconUrl);
@@ -56,6 +54,17 @@ soomla::CCBadgeReward::~CCBadgeReward() {
     CC_SAFE_RELEASE(mIconUrl);
 }
 
-const char *soomla::CCBadgeReward::getType() {
-    return CCCommonConsts::JSON_JSON_TYPE_BADGE;
+const char *soomla::CCBadgeReward::getType() const {
+    return CCCoreConsts::JSON_JSON_TYPE_BADGE;
+}
+
+
+bool soomla::CCBadgeReward::takeInner() {
+    // nothing to do here... the parent Reward takes in storage
+    return true;
+}
+
+bool soomla::CCBadgeReward::giveInner() {
+    // nothing to do here... the parent Reward gives in storage
+    return true;
 }

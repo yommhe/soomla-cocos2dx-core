@@ -55,4 +55,46 @@ static __class *createWithDictionary(cocos2d::CCDictionary *dict) { \
     return ret; \
 } \
 
+#define SL_SAFE_CREATE_FROM_RETURN(__T__, __ret__, __retParams__)			\
+    SL_SAFE_CREATE(__T__, __ret__, (__retParams__->objectForKey("return")))
+
+#define SL_SAFE_CREATE(__T__, __ret__, __ref__)			\
+    __T__ __ret__ = NULL;\
+    {\
+        CCDictionary *dict = dynamic_cast<CCDictionary *>(__ref__); \
+        CC_ASSERT(dict); \
+        soomla::CCDomain *domain = CCDomainFactory::getInstance()->createWithDictionary(dict); \
+	    __ret__ = dynamic_cast<__T__>(domain);			\
+	    CC_ASSERT(__ret__); \
+    }\
+
+#define SL_EXTRACT_FROM_RETURN(__T__, __ret__, __retParams__) \
+__T__ *__ret__ = NULL; \
+{ \
+  Ref *retRef = __retParams__->objectForKey("return"); \
+  CC_ASSERT(retRef); \
+  __ret__ = dynamic_cast<__T__ *>(retRef); \
+  CC_ASSERT(__ret__); \
+} \
+
+#define SL_EXTRACT_DOUBLE_FROM_RETURN(__ret__, __retParams__) \
+CCDouble *__ret__ = NULL; \
+{ \
+  Ref *retRef = __retParams__->objectForKey("return"); \
+  CC_ASSERT(retRef); \
+  __ret__ = dynamic_cast<CCDouble *>(retRef); \
+  if (__ret__ == NULL) { \
+    CCInteger *intRef = dynamic_cast<CCInteger *>(retRef); \
+    if (intRef != NULL) { \
+        __ret__ = CCDouble::create(intRef->getValue());\
+    }\
+  } \
+  CC_ASSERT(__ret__); \
+} \
+
+#define SL_CREATE_PARAMS_FOR_METHOD(__ret__, __methodName__) \
+CCDictionary *__ret__ = CCDictionary::create(); \
+params->setObject(CCString::create(__methodName__), "method");
+
+
 #endif // __CCSoomlaMacros_h
