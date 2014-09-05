@@ -29,6 +29,7 @@ namespace soomla {
      This class provides a way to access the raw information and manipulate it.
      */
     class CCKeyValueStorage : cocos2d::Ref {
+    public:
         /**
          Retrieves the singleton instance of the storage
          
