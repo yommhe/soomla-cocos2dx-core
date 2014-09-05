@@ -18,6 +18,7 @@ LOCAL_SRC_FILES := Soomla/CCCoreConsts.cpp \
 	Soomla/CCSoomlaEventDispatcher.cpp \
 	Soomla/CCSoomlaUtils.cpp \
 	Soomla/data/CCRewardStorage.cpp \
+	Soomla/data/CCKeyValueStorage.cpp \
 	Soomla/domain/CCDomain.cpp \
 	Soomla/domain/CCSoomlaEntity.cpp \
 	Soomla/rewards/CCAggregateReward.cpp \
