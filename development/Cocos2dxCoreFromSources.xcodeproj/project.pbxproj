@@ -104,6 +104,8 @@
 		9D63D09919B0EE220054EA87 /* DictionaryFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D63D07419B0EE220054EA87 /* DictionaryFactory.h */; };
 		9D63D09A19B0EE220054EA87 /* DictionaryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D63D07519B0EE220054EA87 /* DictionaryFactory.m */; };
 		C0B3C5F3168C6D0C00161FAA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B3C5F2168C6D0C00161FAA /* Foundation.framework */; };
+		F8B27ED319B9E8C90094A771 /* CCKeyValueStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8B27ED119B9E8C90094A771 /* CCKeyValueStorage.cpp */; };
+		F8B27ED419B9E8C90094A771 /* CCKeyValueStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = F8B27ED219B9E8C90094A771 /* CCKeyValueStorage.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -207,6 +209,8 @@
 		9D63D07519B0EE220054EA87 /* DictionaryFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryFactory.m; sourceTree = "<group>"; };
 		C0B3C5EF168C6D0C00161FAA /* libCocos2dxCoreFromSources.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocos2dxCoreFromSources.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B3C5F2168C6D0C00161FAA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F8B27ED119B9E8C90094A771 /* CCKeyValueStorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCKeyValueStorage.cpp; sourceTree = "<group>"; };
+		F8B27ED219B9E8C90094A771 /* CCKeyValueStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCKeyValueStorage.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +230,8 @@
 			children = (
 				372B73021AB74279EE404D33 /* CCRewardStorage.cpp */,
 				372B7A7FFA3D34A23C31687B /* CCRewardStorage.h */,
+				F8B27ED119B9E8C90094A771 /* CCKeyValueStorage.cpp */,
+				F8B27ED219B9E8C90094A771 /* CCKeyValueStorage.h */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -454,6 +460,7 @@
 				9D4101661978CFAD00907FA8 /* CCBadgeReward.h in Headers */,
 				9D41016C1978CFAD00907FA8 /* CCSequenceReward.h in Headers */,
 				9D4101641978CFAD00907FA8 /* CCAggregateReward.h in Headers */,
+				F8B27ED419B9E8C90094A771 /* CCKeyValueStorage.h in Headers */,
 				9D63D09019B0EE220054EA87 /* SoomlaConfig.h in Headers */,
 				9D4101681978CFAD00907FA8 /* CCRandomReward.h in Headers */,
 				9D63D04819B0EDB90054EA87 /* ParamsProvider.h in Headers */,
@@ -575,6 +582,7 @@
 				9D63D03F19B0EDB90054EA87 /* CommonConsts.mm in Sources */,
 				9D4101501978CFAD00907FA8 /* CCCoreService.cpp in Sources */,
 				9D63D03D19B0EDB90054EA87 /* CCNdkBridgeIos.mm in Sources */,
+				F8B27ED319B9E8C90094A771 /* CCKeyValueStorage.cpp in Sources */,
 				9D4101671978CFAD00907FA8 /* CCRandomReward.cpp in Sources */,
 				372B7E556799F8D93570725F /* CCSoomlaEntity.cpp in Sources */,
 				9D63D07919B0EE220054EA87 /* KeyValDatabase.m in Sources */,

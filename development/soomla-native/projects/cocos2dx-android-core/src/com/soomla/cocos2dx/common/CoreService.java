@@ -1,6 +1,8 @@
 package com.soomla.cocos2dx.common;
 
 import android.opengl.GLSurfaceView;
+
+import com.soomla.data.KeyValueStorage;
 import com.soomla.data.RewardStorage;
 import com.soomla.rewards.BadgeReward;
 import com.soomla.rewards.RandomReward;
@@ -115,6 +117,36 @@ public class CoreService extends AbstractSoomlaService {
                 Reward reward =  Reward.fromJSONObject(params.getJSONObject("reward"));
                 int idx =  params.getInt("idx");
                 RewardStorage.setLastSeqIdxGiven((SequenceReward) reward, idx);
+            }
+        });
+
+        ndkGlue.registerCallHandler("CCCoreService::getValue", new NdkGlue.CallHandler() {
+            @Override
+            public void handle(JSONObject params, JSONObject retParams) throws Exception {
+                String key =  params.getString("key");
+                String result = KeyValueStorage.getValue(key);
+                retParams.put("return", result);
+            }
+        });
+        ndkGlue.registerCallHandler("CCCoreService::setValue", new NdkGlue.CallHandler() {
+            @Override
+            public void handle(JSONObject params, JSONObject retParams) throws Exception {
+                String key =  params.getString("key");
+                String val =  params.getString("val");
+                KeyValueStorage.setValue(key, val);
+            }
+        });
+        ndkGlue.registerCallHandler("CCCoreService::deleteKeyValue", new NdkGlue.CallHandler() {
+            @Override
+            public void handle(JSONObject params, JSONObject retParams) throws Exception {
+                String key =  params.getString("key");
+                KeyValueStorage.deleteKeyValue(key);
+            }
+        });
+        ndkGlue.registerCallHandler("CCCoreService::purge", new NdkGlue.CallHandler() {
+            @Override
+            public void handle(JSONObject params, JSONObject retParams) throws Exception {
+                KeyValueStorage.purge();
             }
         });
     }

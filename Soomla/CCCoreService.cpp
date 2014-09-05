@@ -144,4 +144,72 @@ namespace soomla {
             CC_ASSERT(false);
         }
     }
+    
+    const char *CCCoreService::getValue(const char *key) const {
+        CCError *error = NULL;
+        
+        __Dictionary *params = __Dictionary::create();
+        params->setObject(__String::create("CCCoreService::getValue"), "method");
+        params->setObject(__String::create(key), "key");
+        __Dictionary *retParams = (__Dictionary *) CCNdkBridge::callNative (params, &error);
+        
+        if (error) {
+            CCSoomlaUtils::logException(TAG, error);
+            CC_ASSERT(false);
+            return NULL;
+        }
+        
+        if (retParams == NULL) {
+            return NULL;
+        }
+        
+        __String *retValue = (__String *) retParams->objectForKey("return");
+        if (!retValue) {
+            return NULL;
+        }
+        
+        return retValue->getCString();
+    }
+    
+    void CCCoreService::setValue(const char *key, const char *val) {
+        CCError *error = NULL;
+        
+        __Dictionary *params = __Dictionary::create();
+        params->setObject(__String::create("CCCoreService::setValue"), "method");
+        params->setObject(__String::create(key), "key");
+        params->setObject(__String::create(val), "val");
+        CCNdkBridge::callNative (params, &error);
+        
+        if (error) {
+            CCSoomlaUtils::logException(TAG, error);
+            CC_ASSERT(false);
+        }
+    }
+    
+    void CCCoreService::deleteKeyValue(const char *key) {
+        CCError *error = NULL;
+        
+        __Dictionary *params = __Dictionary::create();
+        params->setObject(__String::create("CCCoreService::deleteKeyValue"), "method");
+        params->setObject(__String::create(key), "key");
+        CCNdkBridge::callNative (params, &error);
+        
+        if (error) {
+            CCSoomlaUtils::logException(TAG, error);
+            CC_ASSERT(false);
+        }
+    }
+    
+    void CCCoreService::purge() {
+        CCError *error = NULL;
+        
+        __Dictionary *params = __Dictionary::create();
+        params->setObject(__String::create("CCCoreService::purge"), "method");
+        CCNdkBridge::callNative (params, &error);
+        
+        if (error) {
+            CCSoomlaUtils::logException(TAG, error);
+            CC_ASSERT(false);
+        }
+    }
 }

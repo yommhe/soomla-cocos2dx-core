@@ -13,6 +13,7 @@
 #import "DomainHelper.h"
 #import "RewardStorage.h"
 #import "Schedule.h"
+#import "KeyValueStorage.h"
 
 @interface CoreService ()
 @end
@@ -73,6 +74,24 @@
         NSDictionary *rewardDict = parameters[@"reward"];
         int idx = [parameters[@"idx"] intValue];
         [RewardStorage setLastSeqIdxGiven:idx ForReward:(SequenceReward *) [Reward fromDictionary:rewardDict]];
+    }];
+    
+    [ndkGlue registerCallHandlerForKey:@"CCCoreService::getValue" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
+        NSString *key = parameters[@"key"];
+        NSString *res = [KeyValueStorage getValueForKey:key];
+        retParameters[@"return"] = res;
+    }];
+    [ndkGlue registerCallHandlerForKey:@"CCCoreService::setValue" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
+        NSString *key = parameters[@"key"];
+        NSString *val = parameters[@"val"];
+        [KeyValueStorage setValue:val forKey:key];
+    }];
+    [ndkGlue registerCallHandlerForKey:@"CCCoreService::deleteKeyValue" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
+        NSString *key = parameters[@"key"];
+        [KeyValueStorage deleteValueForKey:key];
+    }];
+    [ndkGlue registerCallHandlerForKey:@"CCCoreService::purge" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
+        [KeyValueStorage purge];
     }];
 
     /* -= Callback handlers =- */
