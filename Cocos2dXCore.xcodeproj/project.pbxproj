@@ -53,6 +53,8 @@
 		9D63D09F19B1B20D0054EA87 /* libCocos2dXiOSCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D63D09D19B1B20D0054EA87 /* libCocos2dXiOSCore.a */; };
 		9D63D0A019B1B20D0054EA87 /* libSoomlaiOSCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D63D09E19B1B20D0054EA87 /* libSoomlaiOSCore.a */; };
 		C0B3C5F3168C6D0C00161FAA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B3C5F2168C6D0C00161FAA /* Foundation.framework */; };
+		F8B27EDB19B9F51F0094A771 /* CCKeyValueStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8B27ED919B9F51F0094A771 /* CCKeyValueStorage.cpp */; };
+		F8B27EDC19B9F51F0094A771 /* CCKeyValueStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = F8B27EDA19B9F51F0094A771 /* CCKeyValueStorage.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +107,8 @@
 		9D63D09E19B1B20D0054EA87 /* libSoomlaiOSCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSoomlaiOSCore.a; path = build/ios/libSoomlaiOSCore.a; sourceTree = "<group>"; };
 		C0B3C5EF168C6D0C00161FAA /* libCocos2dXCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocos2dXCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B3C5F2168C6D0C00161FAA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F8B27ED919B9F51F0094A771 /* CCKeyValueStorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCKeyValueStorage.cpp; sourceTree = "<group>"; };
+		F8B27EDA19B9F51F0094A771 /* CCKeyValueStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCKeyValueStorage.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,8 @@
 		372B7A1EA12379CCB201D0E1 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				F8B27ED919B9F51F0094A771 /* CCKeyValueStorage.cpp */,
+				F8B27EDA19B9F51F0094A771 /* CCKeyValueStorage.h */,
 				372B73021AB74279EE404D33 /* CCRewardStorage.cpp */,
 				372B7A7FFA3D34A23C31687B /* CCRewardStorage.h */,
 			);
@@ -233,6 +239,7 @@
 			files = (
 				9D41014A1978CFAD00907FA8 /* CCAbstractAggregatedEventHandler.h in Headers */,
 				9D41016A1978CFAD00907FA8 /* CCReward.h in Headers */,
+				F8B27EDC19B9F51F0094A771 /* CCKeyValueStorage.h in Headers */,
 				9D41014F1978CFAD00907FA8 /* CCCoreEventHandler.h in Headers */,
 				9D4101551978CFAD00907FA8 /* CCDomainHelper.h in Headers */,
 				9D4101661978CFAD00907FA8 /* CCBadgeReward.h in Headers */,
@@ -327,6 +334,7 @@
 				372B7E556799F8D93570725F /* CCSoomlaEntity.cpp in Sources */,
 				372B781D8BC07D3AA891021B /* CCSchedule.cpp in Sources */,
 				372B790F7E37797D2E10ED65 /* CCSoomlaUtils.cpp in Sources */,
+				F8B27EDB19B9F51F0094A771 /* CCKeyValueStorage.cpp in Sources */,
 				372B7FBE9869CD7B1B70ED0E /* CCRewardStorage.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
