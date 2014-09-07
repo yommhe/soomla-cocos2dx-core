@@ -71,7 +71,7 @@ static __class *createWithDictionary(cocos2d::CCDictionary *dict) { \
 #define SL_EXTRACT_FROM_RETURN(__T__, __ret__, __retParams__) \
 __T__ *__ret__ = NULL; \
 { \
-  Ref *retRef = __retParams__->objectForKey("return"); \
+  CCObject *retRef = __retParams__->objectForKey("return"); \
   CC_ASSERT(retRef); \
   __ret__ = dynamic_cast<__T__ *>(retRef); \
   CC_ASSERT(__ret__); \
@@ -80,7 +80,7 @@ __T__ *__ret__ = NULL; \
 #define SL_EXTRACT_DOUBLE_FROM_RETURN(__ret__, __retParams__) \
 CCDouble *__ret__ = NULL; \
 { \
-  Ref *retRef = __retParams__->objectForKey("return"); \
+  CCObject *retRef = __retParams__->objectForKey("return"); \
   CC_ASSERT(retRef); \
   __ret__ = dynamic_cast<CCDouble *>(retRef); \
   if (__ret__ == NULL) { \
