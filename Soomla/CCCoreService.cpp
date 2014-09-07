@@ -96,7 +96,7 @@ namespace soomla {
         params->setObject(reward->toDictionary(), "reward");
         params->setObject(__Bool::create(give), "give");
         params->setObject(__Bool::create(notify), "notify");
-        (__Dictionary *) CCNdkBridge::callNative (params, &error);
+        CCNdkBridge::callNative (params, &error);
 
         if (error) {
             CCSoomlaUtils::logException(TAG, error);
