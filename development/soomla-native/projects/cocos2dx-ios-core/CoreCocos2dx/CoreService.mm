@@ -14,6 +14,7 @@
 #import "RewardStorage.h"
 #import "Schedule.h"
 #import "KeyValueStorage.h"
+#import "DomainFactory.h"
 
 @interface CoreService ()
 @end
@@ -56,24 +57,28 @@
     }];
     [ndkGlue registerCallHandlerForKey:@"CCCoreService::getTimesGiven" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
         NSDictionary *rewardDict = parameters[@"reward"];
-        int res = [RewardStorage getTimesGivenForReward:[Reward fromDictionary:rewardDict]];
+        Reward *reward = rewardDict ? [[DomainFactory sharedDomainFactory] createWithDict:rewardDict] : nil;
+        int res = [RewardStorage getTimesGivenForReward:reward];
         retParameters[@"return"] = @(res);
     }];
     [ndkGlue registerCallHandlerForKey:@"CCCoreService::setRewardStatus" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
         NSDictionary *rewardDict = parameters[@"reward"];
         bool give = [parameters[@"give"] boolValue];
         bool notify = [parameters[@"notify"] boolValue];
-        [RewardStorage setStatus:give forReward:[Reward fromDictionary:rewardDict] andNotify:notify];
+        Reward *reward = rewardDict ? [[DomainFactory sharedDomainFactory] createWithDict:rewardDict] : nil;
+        [RewardStorage setStatus:give forReward:reward andNotify:notify];
     }];
     [ndkGlue registerCallHandlerForKey:@"CCCoreService::getLastSeqIdxGiven" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
         NSDictionary *rewardDict = parameters[@"reward"];
-        int res = [RewardStorage getLastSeqIdxGivenForReward:(SequenceReward *) [Reward fromDictionary:rewardDict]];
+        Reward *reward = rewardDict ? [[DomainFactory sharedDomainFactory] createWithDict:rewardDict] : nil;
+        int res = [RewardStorage getLastSeqIdxGivenForReward:(SequenceReward *) reward];
         retParameters[@"return"] = @(res);
     }];
     [ndkGlue registerCallHandlerForKey:@"CCCoreService::setLastSeqIdxGiven" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
         NSDictionary *rewardDict = parameters[@"reward"];
         int idx = [parameters[@"idx"] intValue];
-        [RewardStorage setLastSeqIdxGiven:idx ForReward:(SequenceReward *) [Reward fromDictionary:rewardDict]];
+        Reward *reward = rewardDict ? [[DomainFactory sharedDomainFactory] createWithDict:rewardDict] : nil;
+        [RewardStorage setLastSeqIdxGiven:idx ForReward:(SequenceReward *) reward];
     }];
     
     [ndkGlue registerCallHandlerForKey:@"CCCoreService::getValue" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
@@ -109,14 +114,26 @@
 }
 
 + (void)initCreators {
-    [[DomainHelper sharedDomainHelper] registerType:(NSString *) JSON_JSON_TYPE_BADGE
-                                      withClassName:NSStringFromClass([BadgeReward class])];
-    [[DomainHelper sharedDomainHelper] registerType:(NSString *) JSON_JSON_TYPE_RANDOM
-                                      withClassName:NSStringFromClass([RandomReward class])];
-    [[DomainHelper sharedDomainHelper] registerType:(NSString *) JSON_JSON_TYPE_SEQUENCE
-                                      withClassName:NSStringFromClass([SequenceReward class])];
-    [[DomainHelper sharedDomainHelper] registerType:(NSString *) JSON_JSON_TYPE_SCHEDULE
-                                      withClassName:NSStringFromClass([Schedule class])];
+    [[DomainHelper sharedDomainHelper] registerType:(NSString *)JSON_JSON_TYPE_BADGE
+                                      withClassName:NSStringFromClass([BadgeReward class])
+                                           andBlock:^id(NSDictionary *dict) {
+                                               return [[[BadgeReward alloc] initWithDictionary:dict] autorelease];
+                                           }];
+    [[DomainHelper sharedDomainHelper] registerType:(NSString *)JSON_JSON_TYPE_RANDOM
+                                      withClassName:NSStringFromClass([RandomReward class])
+                                           andBlock:^id(NSDictionary *dict) {
+                                               return [[[RandomReward alloc] initWithDictionary:dict] autorelease];
+                                           }];
+    [[DomainHelper sharedDomainHelper] registerType:(NSString *)JSON_JSON_TYPE_SEQUENCE
+                                      withClassName:NSStringFromClass([SequenceReward class])
+                                           andBlock:^id(NSDictionary *dict) {
+                                               return [[[SequenceReward alloc] initWithDictionary:dict] autorelease];
+                                           }];
+    [[DomainHelper sharedDomainHelper] registerType:(NSString *)JSON_JSON_TYPE_SCHEDULE
+                                      withClassName:NSStringFromClass([Schedule class])
+                                           andBlock:^id(NSDictionary *dict) {
+                                               return [[[Schedule alloc] initWithDictionary:dict] autorelease];
+                                           }];
     [[DomainHelper sharedDomainHelper] registerType:(NSString *) JSON_JSON_TYPE_DATE_TIME_RANGE
                                       withClassName:NSStringFromClass([DateTimeRange class])];
 }
