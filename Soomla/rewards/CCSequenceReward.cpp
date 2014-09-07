@@ -34,7 +34,7 @@ soomla::CCReward *soomla::CCSequenceReward::getLastGivenReward() {
     if (idx < 0) {
         return NULL;
     }
-    return (CCReward *) getRewards()->objectAtIndex(idx);
+    return (CCReward *) getRewards()->getObjectAtIndex(idx);
 }
 
 bool soomla::CCSequenceReward::hasMoreToGive() {
@@ -43,7 +43,7 @@ bool soomla::CCSequenceReward::hasMoreToGive() {
 
 bool soomla::CCSequenceReward::forceNextRewardToGive(soomla::CCReward *reward) {
     for (unsigned int i = 0; i < getRewards()->count(); i++) {
-        if (reward->equals(getRewards()->objectAtIndex(i))) {
+        if (reward->equals(getRewards()->getObjectAtIndex(i))) {
             CCRewardStorage::getInstance()->setLastSeqIdxGiven(this, i - 1);
             return true;
         }
