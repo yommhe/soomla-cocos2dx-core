@@ -148,10 +148,10 @@ namespace soomla {
     const char *CCCoreService::kvStorageGetValue(const char *key) const {
         CCError *error = NULL;
         
-        __Dictionary *params = __Dictionary::create();
-        params->setObject(__String::create("CCCoreService::getValue"), "method");
-        params->setObject(__String::create(key), "key");
-        __Dictionary *retParams = (__Dictionary *) CCNdkBridge::callNative (params, &error);
+        CCDictionary *params = CCDictionary::create();
+        params->setObject(CCString::create("CCCoreService::getValue"), "method");
+        params->setObject(CCString::create(key), "key");
+        CCDictionary *retParams = (CCDictionary *) CCNdkBridge::callNative (params, &error);
         
         if (error) {
             CCSoomlaUtils::logException(TAG, error);
@@ -163,7 +163,7 @@ namespace soomla {
             return NULL;
         }
         
-        __String *retValue = (__String *) retParams->objectForKey("return");
+        CCString *retValue = (CCString *) retParams->objectForKey("return");
         if (!retValue) {
             return NULL;
         }
@@ -174,10 +174,10 @@ namespace soomla {
     void CCCoreService::kvStorageSetValue(const char *key, const char *val) {
         CCError *error = NULL;
         
-        __Dictionary *params = __Dictionary::create();
-        params->setObject(__String::create("CCCoreService::setValue"), "method");
-        params->setObject(__String::create(key), "key");
-        params->setObject(__String::create(val), "val");
+        CCDictionary *params = CCDictionary::create();
+        params->setObject(CCString::create("CCCoreService::setValue"), "method");
+        params->setObject(CCString::create(key), "key");
+        params->setObject(CCString::create(val), "val");
         CCNdkBridge::callNative (params, &error);
         
         if (error) {
@@ -189,9 +189,9 @@ namespace soomla {
     void CCCoreService::kvStorageDeleteKeyValue(const char *key) {
         CCError *error = NULL;
         
-        __Dictionary *params = __Dictionary::create();
-        params->setObject(__String::create("CCCoreService::deleteKeyValue"), "method");
-        params->setObject(__String::create(key), "key");
+        CCDictionary *params = CCDictionary::create();
+        params->setObject(CCString::create("CCCoreService::deleteKeyValue"), "method");
+        params->setObject(CCString::create(key), "key");
         CCNdkBridge::callNative (params, &error);
         
         if (error) {
@@ -203,8 +203,8 @@ namespace soomla {
     void CCCoreService::kvStoragePurge() {
         CCError *error = NULL;
         
-        __Dictionary *params = __Dictionary::create();
-        params->setObject(__String::create("CCCoreService::purge"), "method");
+        CCDictionary *params = CCDictionary::create();
+        params->setObject(CCString::create("CCCoreService::purge"), "method");
         CCNdkBridge::callNative (params, &error);
         
         if (error) {
