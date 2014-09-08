@@ -30,10 +30,10 @@ namespace soomla {
             CC_ASSERT(false);
         }
         if (mName == NULL) {
-            mName = CCString::create("");
+            setName(CCString::create(""));
         }
         if (mDescription == NULL) {
-            mDescription = CCString::create("");
+            setDescription(CCString::create(""));
         }
 
         return true;

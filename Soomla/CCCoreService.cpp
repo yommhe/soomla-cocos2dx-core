@@ -144,4 +144,72 @@ namespace soomla {
             CC_ASSERT(false);
         }
     }
+    
+    const char *CCCoreService::kvStorageGetValue(const char *key) const {
+        CCError *error = NULL;
+        
+        __Dictionary *params = __Dictionary::create();
+        params->setObject(__String::create("CCCoreService::getValue"), "method");
+        params->setObject(__String::create(key), "key");
+        __Dictionary *retParams = (__Dictionary *) CCNdkBridge::callNative (params, &error);
+        
+        if (error) {
+            CCSoomlaUtils::logException(TAG, error);
+            CC_ASSERT(false);
+            return NULL;
+        }
+        
+        if (retParams == NULL) {
+            return NULL;
+        }
+        
+        __String *retValue = (__String *) retParams->objectForKey("return");
+        if (!retValue) {
+            return NULL;
+        }
+        
+        return retValue->getCString();
+    }
+    
+    void CCCoreService::kvStorageSetValue(const char *key, const char *val) {
+        CCError *error = NULL;
+        
+        __Dictionary *params = __Dictionary::create();
+        params->setObject(__String::create("CCCoreService::setValue"), "method");
+        params->setObject(__String::create(key), "key");
+        params->setObject(__String::create(val), "val");
+        CCNdkBridge::callNative (params, &error);
+        
+        if (error) {
+            CCSoomlaUtils::logException(TAG, error);
+            CC_ASSERT(false);
+        }
+    }
+    
+    void CCCoreService::kvStorageDeleteKeyValue(const char *key) {
+        CCError *error = NULL;
+        
+        __Dictionary *params = __Dictionary::create();
+        params->setObject(__String::create("CCCoreService::deleteKeyValue"), "method");
+        params->setObject(__String::create(key), "key");
+        CCNdkBridge::callNative (params, &error);
+        
+        if (error) {
+            CCSoomlaUtils::logException(TAG, error);
+            CC_ASSERT(false);
+        }
+    }
+    
+    void CCCoreService::kvStoragePurge() {
+        CCError *error = NULL;
+        
+        __Dictionary *params = __Dictionary::create();
+        params->setObject(__String::create("CCCoreService::purge"), "method");
+        CCNdkBridge::callNative (params, &error);
+        
+        if (error) {
+            CCSoomlaUtils::logException(TAG, error);
+            CC_ASSERT(false);
+        }
+    }
 }
