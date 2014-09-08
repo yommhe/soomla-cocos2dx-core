@@ -145,7 +145,7 @@ namespace soomla {
         }
     }
     
-    const char *CCCoreService::getValue(const char *key) const {
+    const char *CCCoreService::kvStorageGetValue(const char *key) const {
         CCError *error = NULL;
         
         __Dictionary *params = __Dictionary::create();
@@ -171,7 +171,7 @@ namespace soomla {
         return retValue->getCString();
     }
     
-    void CCCoreService::setValue(const char *key, const char *val) {
+    void CCCoreService::kvStorageSetValue(const char *key, const char *val) {
         CCError *error = NULL;
         
         __Dictionary *params = __Dictionary::create();
@@ -186,7 +186,7 @@ namespace soomla {
         }
     }
     
-    void CCCoreService::deleteKeyValue(const char *key) {
+    void CCCoreService::kvStorageDeleteKeyValue(const char *key) {
         CCError *error = NULL;
         
         __Dictionary *params = __Dictionary::create();
@@ -200,7 +200,7 @@ namespace soomla {
         }
     }
     
-    void CCCoreService::purge() {
+    void CCCoreService::kvStoragePurge() {
         CCError *error = NULL;
         
         __Dictionary *params = __Dictionary::create();

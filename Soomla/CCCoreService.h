@@ -30,10 +30,10 @@ namespace soomla {
         int getLastSeqIdxGiven(soomla::CCSequenceReward *sequenceReward);
         void setLastSeqIdxGiven(CCSequenceReward *sequenceReward, unsigned int idx);
         
-        const char *getValue(const char *key) const;
-        void setValue(const char *key, const char *val);
-        void deleteKeyValue(const char *key);
-        void purge();
+        const char *kvStorageGetValue(const char *key) const;
+        void kvStorageSetValue(const char *key, const char *val);
+        void kvStorageDeleteKeyValue(const char *key);
+        void kvStoragePurge();
     };
 };
 

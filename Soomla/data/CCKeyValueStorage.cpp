@@ -30,18 +30,18 @@ namespace soomla {
     }
 
     const char *CCKeyValueStorage::getValue(const char *key) const {
-        return CCCoreService::getInstance()->getValue(key);
+        return CCCoreService::getInstance()->kvStorageGetValue(key);
     }
 
     void CCKeyValueStorage::setValue(const char *key, const char *val) {
-        return CCCoreService::getInstance()->setValue(key, val);
+        return CCCoreService::getInstance()->kvStorageSetValue(key, val);
     }
 
     void CCKeyValueStorage::deleteKeyValue(const char *key) {
-        CCCoreService::getInstance()->deleteKeyValue(key);
+        CCCoreService::getInstance()->kvStorageDeleteKeyValue(key);
     }
 
     void CCKeyValueStorage::purge() {
-        CCCoreService::getInstance()->purge();
+        CCCoreService::getInstance()->kvStoragePurge();
     }
 }
