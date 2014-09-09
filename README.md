@@ -21,6 +21,11 @@ It includes:
 
 SOOMLA modules internally use these features, though we encourage you to use them for your own needs as well.  For example, use our key-value storage for custom game data for usage across game sessions.
 
+You can start by using the more common features in core by including the `Cocos2dxCore.h` header.
+````cpp
+  #include "Cocos2dxStore.h"
+````
+
 
 Our way of saying "Thanks !"
 ---

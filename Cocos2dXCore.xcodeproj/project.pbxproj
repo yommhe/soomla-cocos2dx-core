@@ -52,6 +52,7 @@
 		9D41016C1978CFAD00907FA8 /* CCSequenceReward.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101491978CFAD00907FA8 /* CCSequenceReward.h */; };
 		9D63D0A019B1B20D0054EA87 /* libSoomlaiOSCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D63D09E19B1B20D0054EA87 /* libSoomlaiOSCore.a */; };
 		C0B3C5F3168C6D0C00161FAA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B3C5F2168C6D0C00161FAA /* Foundation.framework */; };
+		F861D66519BF5F7F008834EF /* Cocos2dxCore.h in Headers */ = {isa = PBXBuildFile; fileRef = F861D66419BF5F6E008834EF /* Cocos2dxCore.h */; };
 		F8B27EDB19B9F51F0094A771 /* CCKeyValueStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8B27ED919B9F51F0094A771 /* CCKeyValueStorage.cpp */; };
 		F8B27EDC19B9F51F0094A771 /* CCKeyValueStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = F8B27EDA19B9F51F0094A771 /* CCKeyValueStorage.h */; };
 		F8B27EEA19B9FE6D0094A771 /* libCocos2dXiOSCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B27EE919B9FE6D0094A771 /* libCocos2dXiOSCore.a */; };
@@ -104,6 +105,7 @@
 		9D63D09E19B1B20D0054EA87 /* libSoomlaiOSCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSoomlaiOSCore.a; path = build/ios/libSoomlaiOSCore.a; sourceTree = "<group>"; };
 		C0B3C5EF168C6D0C00161FAA /* libCocos2dXCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocos2dXCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B3C5F2168C6D0C00161FAA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F861D66419BF5F6E008834EF /* Cocos2dxCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cocos2dxCore.h; sourceTree = "<group>"; };
 		F8B27ED919B9F51F0094A771 /* CCKeyValueStorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCKeyValueStorage.cpp; sourceTree = "<group>"; };
 		F8B27EDA19B9F51F0094A771 /* CCKeyValueStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCKeyValueStorage.h; sourceTree = "<group>"; };
 		F8B27EE919B9FE6D0094A771 /* libCocos2dXiOSCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCocos2dXiOSCore.a; path = build/ios/libCocos2dXiOSCore.a; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		9D4101241978CFAD00907FA8 /* Soomla */ = {
 			isa = PBXGroup;
 			children = (
+				F861D66419BF5F6E008834EF /* Cocos2dxCore.h */,
 				9D4101251978CFAD00907FA8 /* CCAbstractAggregatedEventHandler.h */,
 				9D4101261978CFAD00907FA8 /* CCCoreConsts.cpp */,
 				9D4101271978CFAD00907FA8 /* CCCoreConsts.h */,
@@ -233,6 +236,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F861D66519BF5F7F008834EF /* Cocos2dxCore.h in Headers */,
 				9D41014A1978CFAD00907FA8 /* CCAbstractAggregatedEventHandler.h in Headers */,
 				9D41016A1978CFAD00907FA8 /* CCReward.h in Headers */,
 				F8B27EDC19B9F51F0094A771 /* CCKeyValueStorage.h in Headers */,
