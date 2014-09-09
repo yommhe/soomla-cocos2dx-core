@@ -47,6 +47,13 @@ namespace soomla {
         void removeEventHandler(T *eventHandler) {
             mEventHandlers->removeObject(eventHandler);
         }
+        
+        /**
+         Removes all event handlers from the event handler
+         */
+        void purge() {
+            mEventHandlers->removeAllObjects();
+        }
 
     };
 }
