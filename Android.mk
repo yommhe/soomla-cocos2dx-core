@@ -5,27 +5,13 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE := cocos2dx_soomla_common_static
 LOCAL_MODULE_FILENAME := libcocos2dxsoomlacommon
-LOCAL_SRC_FILES := Soomla/CCCoreConsts.cpp \
-	Soomla/CCCoreEventDispatcher.cpp \
-	Soomla/CCCoreService.cpp \
-	Soomla/CCDomainFactory.cpp \
-	Soomla/CCDomainHelper.cpp \
-	Soomla/CCError.cpp \
-	Soomla/CCJsonHelper.cpp \
-	Soomla/CCNdkBridge.cpp \
-	Soomla/CCSchedule.cpp \
-	Soomla/CCServiceManager.cpp \
-	Soomla/CCSoomlaEventDispatcher.cpp \
-	Soomla/CCSoomlaUtils.cpp \
-	Soomla/data/CCRewardStorage.cpp \
-	Soomla/data/CCKeyValueStorage.cpp \
-	Soomla/domain/CCDomain.cpp \
-	Soomla/domain/CCSoomlaEntity.cpp \
-	Soomla/rewards/CCAggregateReward.cpp \
-	Soomla/rewards/CCBadgeReward.cpp \
-	Soomla/rewards/CCRandomReward.cpp \
-	Soomla/rewards/CCReward.cpp \
-	Soomla/rewards/CCSequenceReward.cpp
+
+CORE_SRC_LIST := $(wildcard $(LOCAL_PATH)/Soomla/*.cpp)
+CORE_SRC_LIST += $(wildcard $(LOCAL_PATH)/Soomla/domain/*.cpp)
+CORE_SRC_LIST += $(wildcard $(LOCAL_PATH)/Soomla/data/*.cpp)
+CORE_SRC_LIST += $(wildcard $(LOCAL_PATH)/Soomla/rewards/*.cpp)
+
+LOCAL_SRC_FILES := $(CORE_SRC_LIST)
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/Soomla
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/Soomla/data

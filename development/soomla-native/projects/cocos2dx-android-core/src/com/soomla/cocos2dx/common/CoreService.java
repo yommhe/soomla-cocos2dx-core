@@ -89,7 +89,7 @@ public class CoreService extends AbstractSoomlaService {
         ndkGlue.registerCallHandler("CCCoreService::getTimesGiven", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
-                Reward reward =  Reward.fromJSONObject(params.getJSONObject("reward"));
+                Reward reward = DomainFactory.getInstance().createWithJsonObject(params.getJSONObject("reward"));
                 int result = RewardStorage.getTimesGiven(reward);
                 retParams.put("return", result);
             }
@@ -97,7 +97,7 @@ public class CoreService extends AbstractSoomlaService {
         ndkGlue.registerCallHandler("CCCoreService::setRewardStatus", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
-                Reward reward =  Reward.fromJSONObject(params.getJSONObject("reward"));
+                Reward reward = DomainFactory.getInstance().createWithJsonObject(params.getJSONObject("reward"));
                 boolean give =  params.getBoolean("give");
                 boolean notify =  params.getBoolean("notify");
                 RewardStorage.setRewardStatus(reward, give, notify);
@@ -106,7 +106,7 @@ public class CoreService extends AbstractSoomlaService {
         ndkGlue.registerCallHandler("CCCoreService::getLastSeqIdxGiven", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
-                Reward reward =  Reward.fromJSONObject(params.getJSONObject("reward"));
+                Reward reward = DomainFactory.getInstance().createWithJsonObject(params.getJSONObject("reward"));
                 int result = RewardStorage.getLastSeqIdxGiven((SequenceReward) reward);
                 retParams.put("return", result);
             }
@@ -114,7 +114,7 @@ public class CoreService extends AbstractSoomlaService {
         ndkGlue.registerCallHandler("CCCoreService::setLastSeqIdxGiven", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
-                Reward reward =  Reward.fromJSONObject(params.getJSONObject("reward"));
+                Reward reward = DomainFactory.getInstance().createWithJsonObject(params.getJSONObject("reward"));
                 int idx =  params.getInt("idx");
                 RewardStorage.setLastSeqIdxGiven((SequenceReward) reward, idx);
             }
