@@ -104,6 +104,7 @@
 		9D63D09919B0EE220054EA87 /* DictionaryFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D63D07419B0EE220054EA87 /* DictionaryFactory.h */; };
 		9D63D09A19B0EE220054EA87 /* DictionaryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D63D07519B0EE220054EA87 /* DictionaryFactory.m */; };
 		C0B3C5F3168C6D0C00161FAA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B3C5F2168C6D0C00161FAA /* Foundation.framework */; };
+		F861D66719BF6192008834EF /* Cocos2dxCore.h in Headers */ = {isa = PBXBuildFile; fileRef = F861D66619BF6192008834EF /* Cocos2dxCore.h */; };
 		F8B27ED319B9E8C90094A771 /* CCKeyValueStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8B27ED119B9E8C90094A771 /* CCKeyValueStorage.cpp */; };
 		F8B27ED419B9E8C90094A771 /* CCKeyValueStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = F8B27ED219B9E8C90094A771 /* CCKeyValueStorage.h */; };
 /* End PBXBuildFile section */
@@ -209,6 +210,7 @@
 		9D63D07519B0EE220054EA87 /* DictionaryFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryFactory.m; sourceTree = "<group>"; };
 		C0B3C5EF168C6D0C00161FAA /* libCocos2dxCoreFromSources.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocos2dxCoreFromSources.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B3C5F2168C6D0C00161FAA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F861D66619BF6192008834EF /* Cocos2dxCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cocos2dxCore.h; sourceTree = "<group>"; };
 		F8B27ED119B9E8C90094A771 /* CCKeyValueStorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCKeyValueStorage.cpp; sourceTree = "<group>"; };
 		F8B27ED219B9E8C90094A771 /* CCKeyValueStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCKeyValueStorage.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -239,6 +241,7 @@
 		9D4101241978CFAD00907FA8 /* Soomla */ = {
 			isa = PBXGroup;
 			children = (
+				F861D66619BF6192008834EF /* Cocos2dxCore.h */,
 				9D4101251978CFAD00907FA8 /* CCAbstractAggregatedEventHandler.h */,
 				9D4101261978CFAD00907FA8 /* CCCoreConsts.cpp */,
 				9D4101271978CFAD00907FA8 /* CCCoreConsts.h */,
@@ -485,6 +488,7 @@
 				9D63D08419B0EE220054EA87 /* BadgeReward.h in Headers */,
 				372B72C58DE0C3DFE3522984 /* CCSoomlaEntity.h in Headers */,
 				372B7222D15E89FF731A78BD /* CCSchedule.h in Headers */,
+				F861D66719BF6192008834EF /* Cocos2dxCore.h in Headers */,
 				9D63D09619B0EE220054EA87 /* SoomlaiOSCore-Prefix.pch in Headers */,
 				9D63D09219B0EE220054EA87 /* SoomlaEntity.h in Headers */,
 				372B7A1D5F372FCFD9E68388 /* CCSoomlaUtils.h in Headers */,
