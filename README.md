@@ -23,7 +23,7 @@ SOOMLA modules internally use these features, though we encourage you to use the
 
 You can start by using the more common features in core by including the `Cocos2dxCore.h` header.
 ````cpp
-  #include "Cocos2dxStore.h"
+  #include "Cocos2dxCore.h"
 ````
 
 
