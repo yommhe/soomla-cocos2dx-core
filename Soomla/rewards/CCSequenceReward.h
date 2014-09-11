@@ -21,8 +21,7 @@ namespace soomla {
         static CCSequenceReward *create(
                 cocos2d::CCString *id,
                 cocos2d::CCString *name,
-                cocos2d::CCArray *rewards,
-                CCSchedule *schedule
+                cocos2d::CCArray *rewards
         );
 
         SL_CREATE_WITH_DICTIONARY(CCSequenceReward);
