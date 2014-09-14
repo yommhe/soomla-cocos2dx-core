@@ -31,6 +31,7 @@ namespace soomla {
     public:
         virtual bool take();
         virtual bool give();
+        bool isOwned();
 
     protected:
         virtual bool takeInner() = 0;
