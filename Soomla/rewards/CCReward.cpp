@@ -81,3 +81,7 @@ bool soomla::CCReward::give() {
 
     return false;
 }
+
+bool soomla::CCReward::isOwned() {
+    return CCRewardStorage::getInstance()->isRewardGiven(this);
+}
