@@ -8,12 +8,11 @@
 soomla::CCSequenceReward *soomla::CCSequenceReward::create(
         cocos2d::__String *id,
         cocos2d::__String *name,
-        cocos2d::__Array *rewards,
-        CCSchedule *schedule
+        cocos2d::__Array *rewards
 ) {
 
     CCSequenceReward *ret = new CCSequenceReward();
-    if (ret->init(id, name, rewards, schedule)) {
+    if (ret->init(id, name, rewards, NULL)) {
         ret->autorelease();
     }
     else {
