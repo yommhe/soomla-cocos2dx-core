@@ -17,6 +17,10 @@
 #ifndef __Cocos2dxCore_H
 #define __Cocos2dxCore_H
 
+#ifdef COCOS2D_JAVASCRIPT
+#include "jsb_soomla.h"
+#endif
+
 #include "CCCoreEventDispatcher.h"
 #include "CCCoreService.h"
 #include "CCError.h"
