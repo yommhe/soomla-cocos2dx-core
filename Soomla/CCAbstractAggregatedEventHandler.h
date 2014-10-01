@@ -18,13 +18,24 @@ namespace soomla {
     template <class T> class CCAbstractAggregatedEventHandler {
     protected:
         cocos2d::CCSet *mEventHandlers;
+        cocos2d::CCSet *tempAddEventHandlers;
+        cocos2d::CCSet *tempRemoveEventHandlers;
+        int lockCount;
     public:
         CCAbstractAggregatedEventHandler() :
-                mEventHandlers(NULL) {
+                mEventHandlers(NULL), tempAddEventHandlers(NULL),
+                tempRemoveEventHandlers(NULL), lockCount(0) {
         }
         virtual bool init() {
             mEventHandlers = cocos2d::CCSet::create();
             mEventHandlers->retain();
+            
+            tempAddEventHandlers = cocos2d::CCSet::create();
+            tempAddEventHandlers->retain();
+            
+            tempRemoveEventHandlers = cocos2d::CCSet::create();
+            tempRemoveEventHandlers->retain();
+            
             return true;
         }
 
@@ -37,7 +48,12 @@ namespace soomla {
         \param eventHandler A pointer to the event handler you'd like to add.
         */
         void addEventHandler(T *eventHandler) {
-            mEventHandlers->addObject(eventHandler);
+            if (lockCount <= 0) {
+                mEventHandlers->addObject(eventHandler);
+            }
+            else {
+                tempAddEventHandlers->addObject(eventHandler);
+            }
         }
 
         /**
@@ -45,7 +61,12 @@ namespace soomla {
         \param eventHandler A pointer to the event handler you'd like to remove.
         */
         void removeEventHandler(T *eventHandler) {
-            mEventHandlers->removeObject(eventHandler);
+            if (lockCount <= 0) {
+                mEventHandlers->removeObject(eventHandler);
+            }
+            else {
+                tempRemoveEventHandlers->addObject(eventHandler);
+            }
         }
         
         /**
@@ -53,6 +74,41 @@ namespace soomla {
          */
         void purge() {
             mEventHandlers->removeAllObjects();
+            
+            lockCount = 0;
+            
+            tempAddEventHandlers->removeAllObjects();
+            tempRemoveEventHandlers->removeAllObjects();
+        }
+    protected:
+        void lockEventHandlers() {
+            if (lockCount == 0) {
+                tempAddEventHandlers->removeAllObjects();
+                tempRemoveEventHandlers->removeAllObjects();
+            }
+            
+            lockCount++;
+        }
+        
+        void unlockEventHandlers() {
+            for(cocos2d::CCSetIterator i = tempAddEventHandlers->begin(); i != tempAddEventHandlers->end(); i++) {
+                T *addHandler = dynamic_cast<T *>(*i);
+                addEventHandler(addHandler);
+            }
+            
+            for(cocos2d::CCSetIterator i = tempRemoveEventHandlers->begin(); i != tempRemoveEventHandlers->end(); i++) {
+                T *removeHandler = dynamic_cast<T *>(*i);
+                removeEventHandler(removeHandler);
+            }
+            
+            lockCount--;
+            
+            if (lockCount <= 0) {
+                tempAddEventHandlers->removeAllObjects();
+                tempRemoveEventHandlers->removeAllObjects();
+                
+                lockCount = 0;
+            }
         }
 
     };
