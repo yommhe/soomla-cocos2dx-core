@@ -6,11 +6,11 @@
 
 @implementation CommonConsts {
 }
-const NSString *const JSON_JSON_TYPE = @"jsonType";
+const NSString *const JSON_JSON_TYPE = @"className";
 
-const NSString *const JSON_JSON_TYPE_BADGE = @"badge";
-const NSString *const JSON_JSON_TYPE_RANDOM = @"random";
-const NSString *const JSON_JSON_TYPE_SEQUENCE = @"sequence";
-const NSString *const JSON_JSON_TYPE_SCHEDULE = @"schedule";
-const NSString *const JSON_JSON_TYPE_DATE_TIME_RANGE = @"dateTimeRange";
+const NSString *const JSON_JSON_TYPE_BADGE = @"BadgeReward";
+const NSString *const JSON_JSON_TYPE_RANDOM = @"RandomReward";
+const NSString *const JSON_JSON_TYPE_SEQUENCE = @"SequenceReward";
+const NSString *const JSON_JSON_TYPE_SCHEDULE = @"Schedule";
+const NSString *const JSON_JSON_TYPE_DATE_TIME_RANGE = @"DateTimeRange";
 @end
