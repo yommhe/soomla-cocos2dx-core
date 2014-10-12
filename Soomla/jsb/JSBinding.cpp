@@ -49,10 +49,10 @@ void Soomla::JSBinding::callNative(const char *params, std::string &result) {
     free(dump);
 }
 
-void Soomla::JSBinding::callCallback(CCDictionary *params) {
+void Soomla::JSBinding::ndkCallback(CCDictionary *params) {
     json_t *root = CCJsonHelper::getJsonFromCCObject(params);
     char *dump = json_dumps(root, JSON_COMPACT | JSON_ENSURE_ASCII);
-    CCLog("callCallback: in >> %s", dump);
+    CCLog("ndkCallback: in >> %s", dump);
 
     std::string jsonParams = dump;
     free(dump);
@@ -64,7 +64,7 @@ void Soomla::JSBinding::callCallback(CCDictionary *params) {
             v[0] = STRING_TO_JSVAL(JS_NewStringCopyZ(cx, jsonParams.c_str()))
     };
     ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(ScriptingCore::getInstance()->getGlobalObject()),
-            "easyNDKCallBack", 1, v, &retval);
+            "ndkCallback", 1, v, &retval);
 }
 
 #endif // COCOS2D_JAVASCRIPT

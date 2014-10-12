@@ -55,7 +55,7 @@ namespace soomla {
             cocos2d::CCObject *dataToPass = CCJsonHelper::getCCObjectFromJson(root);
 
 #ifdef COCOS2D_JAVASCRIPT
-            Soomla::JSBinding::callCallback((cocos2d::CCDictionary *) dataToPass);
+            Soomla::JSBinding::ndkCallback((cocos2d::CCDictionary *) dataToPass);
 #else
             CCSoomlaEventDispatcher::getInstance()->ndkCallback((cocos2d::CCDictionary *)dataToPass);
 #endif
