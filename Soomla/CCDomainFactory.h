@@ -1,7 +1,3 @@
-//
-// Created by Fedor on 04/06/14.
-//
-
 
 #ifndef __CCDomainFactory_H_
 #define __CCDomainFactory_H_

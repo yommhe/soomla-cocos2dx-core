@@ -1,6 +1,3 @@
-//
-// Created by Fedor Shubin on 5/20/13.
-//
 
 #ifndef __CCCoreService_H_
 #define __CCCoreService_H_
@@ -29,7 +26,7 @@ namespace soomla {
         void setRewardStatus(CCReward *reward, bool give, bool notify);
         int getLastSeqIdxGiven(soomla::CCSequenceReward *sequenceReward);
         void setLastSeqIdxGiven(CCSequenceReward *sequenceReward, unsigned int idx);
-        
+
         const char *kvStorageGetValue(const char *key) const;
         void kvStorageSetValue(const char *key, const char *val);
         void kvStorageDeleteKeyValue(const char *key);

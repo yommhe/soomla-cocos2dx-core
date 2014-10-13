@@ -1,6 +1,3 @@
-//
-// Created by Fedor Shubin on 5/20/13.
-//
 
 #include "CCNdkBridge.h"
 #include "CCJsonHelper.h"

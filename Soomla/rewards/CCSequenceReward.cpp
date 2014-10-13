@@ -1,6 +1,4 @@
-//
-// Created by Fedor on 04/06/14.
-//
+
 
 #include "CCSequenceReward.h"
 #include "CCRewardStorage.h"

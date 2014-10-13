@@ -5,11 +5,6 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author vedi
- *         date 6/9/14
- *         time 6:38 PM
- */
 public class DomainFactory {
 
     public static interface Creator<T> {

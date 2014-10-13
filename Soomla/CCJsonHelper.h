@@ -1,6 +1,3 @@
-//
-// Created by Fedor Shubin on 6/22/13.
-//
 
 
 

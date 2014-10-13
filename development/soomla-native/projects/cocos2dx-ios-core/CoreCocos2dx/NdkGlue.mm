@@ -1,6 +1,3 @@
-//
-// Created by Fedor Shubin on 5/24/13.
-//
 
 #import "NdkGlue.h"
 #import "CCNdkBridgeIos.h"

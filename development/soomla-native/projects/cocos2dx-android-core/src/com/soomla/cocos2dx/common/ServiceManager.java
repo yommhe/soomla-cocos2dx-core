@@ -8,11 +8,7 @@ import java.lang.ref.WeakReference;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * @author vedi
- *         date 6/16/14
- *         time 1:20 AM
- */
+
 public class ServiceManager implements SoomlaService {
 
     private static ServiceManager INSTANCE = null;

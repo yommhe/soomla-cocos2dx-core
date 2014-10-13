@@ -5,11 +5,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author vedi
- *         date 6/25/14
- *         time 10:35 PM
- */
+
 public class ParamsProvider {
 
     private static ParamsProvider INSTANCE = null;

@@ -1,6 +1,3 @@
-//
-// Created by Fedor Shubin on 6/12/14.
-//
 
 #import "CoreService.h"
 #import "NdkGlue.h"
@@ -80,7 +77,7 @@
         Reward *reward = rewardDict ? [[DomainFactory sharedDomainFactory] createWithDict:rewardDict] : nil;
         [RewardStorage setLastSeqIdxGiven:idx ForReward:(SequenceReward *) reward];
     }];
-    
+
     [ndkGlue registerCallHandlerForKey:@"CCCoreService::getValue" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
         NSString *key = parameters[@"key"];
         NSString *res = [KeyValueStorage getValueForKey:key];

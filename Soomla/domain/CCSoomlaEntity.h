@@ -1,6 +1,4 @@
-//
-// Created by Fedor Shubin on 7/23/14.
-//
+
 #ifndef __CCSoomlaEntity_H_
 #define __CCSoomlaEntity_H_
 

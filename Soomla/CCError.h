@@ -1,6 +1,4 @@
-//
-// Created by Fedor Shubin on 5/21/13.
-//
+
 
 #ifndef __CCError_H_
 #define __CCError_H_

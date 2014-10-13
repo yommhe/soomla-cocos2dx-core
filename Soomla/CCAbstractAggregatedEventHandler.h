@@ -1,6 +1,3 @@
-//
-// Created by Fedor Shubin on 6/19/14.
-//
 
 
 #ifndef __CCAbstractAggregatedEventHandler_H_
@@ -29,13 +26,13 @@ namespace soomla {
         virtual bool init() {
             mEventHandlers = cocos2d::__Set::create();
             mEventHandlers->retain();
-            
+
             tempAddEventHandlers = cocos2d::__Set::create();
             tempAddEventHandlers->retain();
-            
+
             tempRemoveEventHandlers = cocos2d::__Set::create();
             tempRemoveEventHandlers->retain();
-            
+
             return true;
         }
 
@@ -68,15 +65,15 @@ namespace soomla {
                 tempRemoveEventHandlers->addObject(eventHandler);
             }
         }
-        
+
         /**
          Removes all event handlers from the event handler
          */
         void purge() {
             mEventHandlers->removeAllObjects();
-            
+
             lockCount = 0;
-            
+
             tempAddEventHandlers->removeAllObjects();
             tempRemoveEventHandlers->removeAllObjects();
         }
@@ -86,27 +83,27 @@ namespace soomla {
                 tempAddEventHandlers->removeAllObjects();
                 tempRemoveEventHandlers->removeAllObjects();
             }
-            
+
             lockCount++;
         }
-        
+
         void unlockEventHandlers() {
             for(cocos2d::__SetIterator i = tempAddEventHandlers->begin(); i != tempAddEventHandlers->end(); i++) {
                 T *addHandler = dynamic_cast<T *>(*i);
                 addEventHandler(addHandler);
             }
-            
+
             for(cocos2d::__SetIterator i = tempRemoveEventHandlers->begin(); i != tempRemoveEventHandlers->end(); i++) {
                 T *removeHandler = dynamic_cast<T *>(*i);
                 removeEventHandler(removeHandler);
             }
-            
+
             lockCount--;
-            
+
             if (lockCount <= 0) {
                 tempAddEventHandlers->removeAllObjects();
                 tempRemoveEventHandlers->removeAllObjects();
-                
+
                 lockCount = 0;
             }
         }

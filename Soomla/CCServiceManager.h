@@ -1,6 +1,3 @@
-//
-// Created by Fedor Shubin on 6/25/14.
-//
 
 #ifndef __CCServiceManager_H_
 #define __CCServiceManager_H_

@@ -1,6 +1,3 @@
-//
-// Created by Fedor on 03/06/14.
-//
 
 
 #ifndef __CCReward_H_

@@ -14,11 +14,7 @@ import org.json.JSONObject;
 
 import java.lang.ref.WeakReference;
 
-/**
- * @author vedi
- *         date 7/1/14
- *         time 10:17 AM
- */
+
 public class CoreService extends AbstractSoomlaService {
 
     private static CoreService INSTANCE = null;

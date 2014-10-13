@@ -1,6 +1,3 @@
-//
-// Created by Fedor Shubin on 6/25/14.
-//
 
 #import <MacTypes.h>
 #import "ParamsProvider.h"

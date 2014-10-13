@@ -1,6 +1,3 @@
-//
-// Created by Fedor Shubin on 5/20/13.
-//
 
 #ifndef __CCNdkBridge_H_
 #define __CCNdkBridge_H_
@@ -12,7 +9,7 @@ namespace soomla {
 	/** \class CCNdkBridge
 		\brief The bridge between the application and the Cocos2d-x code.
 
-		This class receives calls from the native application and sends them 
+		This class receives calls from the native application and sends them
 		over to the Cocos2d-x code, and vice versa.
 	 */
     class CCNdkBridge {

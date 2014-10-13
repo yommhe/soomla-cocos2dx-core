@@ -1,6 +1,3 @@
-//
-// Created by Fedor Shubin on 7/23/14.
-//
 
 #include "CCSoomlaEntity.h"
 #include "CCSoomlaUtils.h"

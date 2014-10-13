@@ -1,6 +1,3 @@
-//
-// Created by Fedor on 04/06/14.
-//
 
 
 #ifndef __CCDomain_H_

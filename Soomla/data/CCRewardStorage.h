@@ -1,7 +1,3 @@
-//
-// Created by Fedor Shubin on 8/11/14.
-// Copyright (c) 2014 SOOMLA. All rights reserved.
-//
 
 
 #ifndef __CCRewardStorage_H_

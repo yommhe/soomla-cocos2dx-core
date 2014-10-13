@@ -1,6 +1,3 @@
-//
-// Created by Fedor Shubin on 6/25/14.
-//
 
 #include "CCServiceManager.h"
 #include "CCNdkBridge.h"
@@ -41,4 +38,3 @@ namespace soomla {
         CCNdkBridge::callNative(params, NULL);
     }
 }
-

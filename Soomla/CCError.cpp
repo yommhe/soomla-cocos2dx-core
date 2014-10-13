@@ -1,6 +1,3 @@
-//
-// Created by Fedor Shubin on 5/21/13.
-//
 
 
 #include "CCError.h"

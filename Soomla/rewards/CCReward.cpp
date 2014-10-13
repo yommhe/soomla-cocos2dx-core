@@ -1,6 +1,3 @@
-//
-// Created by Fedor on 03/06/14.
-//
 
 #include "CCReward.h"
 #include "CCRewardStorage.h"
