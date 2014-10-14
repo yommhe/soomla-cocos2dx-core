@@ -94,12 +94,5 @@
     }
 }
 
-- (void)dealloc {
-    [_typeClass release];
-    [_classType release];
-    [super dealloc];
-}
-
-
 @end
 

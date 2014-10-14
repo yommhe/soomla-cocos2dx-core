@@ -28,14 +28,8 @@
     return self;
 }
 
-- (void)dealloc {
-    // Should never be called, but just here for clarity really.
-    [_creators release];
-    [super dealloc];
-}
-
 - (void)registerCreatorForKey:(NSString *)key withBlock:(id (^)(NSDictionary *dict))creator {
-    [_creators setValue:Block_copy(creator) forKey:key];
+    [_creators setValue:[creator copy] forKey:key];
 }
 
 - (id)createWithDict:(NSDictionary *)dict {

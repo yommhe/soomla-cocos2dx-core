@@ -117,22 +117,22 @@
     [[DomainHelper sharedDomainHelper] registerType:(NSString *)JSON_JSON_TYPE_BADGE
                                       withClassName:NSStringFromClass([BadgeReward class])
                                            andBlock:^id(NSDictionary *dict) {
-                                               return [[[BadgeReward alloc] initWithDictionary:dict] autorelease];
+                                               return [[BadgeReward alloc] initWithDictionary:dict] ;
                                            }];
     [[DomainHelper sharedDomainHelper] registerType:(NSString *)JSON_JSON_TYPE_RANDOM
                                       withClassName:NSStringFromClass([RandomReward class])
                                            andBlock:^id(NSDictionary *dict) {
-                                               return [[[RandomReward alloc] initWithDictionary:dict] autorelease];
+                                               return [[RandomReward alloc] initWithDictionary:dict] ;
                                            }];
     [[DomainHelper sharedDomainHelper] registerType:(NSString *)JSON_JSON_TYPE_SEQUENCE
                                       withClassName:NSStringFromClass([SequenceReward class])
                                            andBlock:^id(NSDictionary *dict) {
-                                               return [[[SequenceReward alloc] initWithDictionary:dict] autorelease];
+                                               return [[SequenceReward alloc] initWithDictionary:dict] ;
                                            }];
     [[DomainHelper sharedDomainHelper] registerType:(NSString *)JSON_JSON_TYPE_SCHEDULE
                                       withClassName:NSStringFromClass([Schedule class])
                                            andBlock:^id(NSDictionary *dict) {
-                                               return [[[Schedule alloc] initWithDictionary:dict] autorelease];
+                                               return [[Schedule alloc] initWithDictionary:dict] ;
                                            }];
     [[DomainHelper sharedDomainHelper] registerType:(NSString *) JSON_JSON_TYPE_DATE_TIME_RANGE
                                       withClassName:NSStringFromClass([DateTimeRange class])];
