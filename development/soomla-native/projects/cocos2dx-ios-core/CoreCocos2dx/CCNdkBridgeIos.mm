@@ -25,7 +25,6 @@ namespace soomla {
                            options:kNilOptions
                              error:&error];
 
-        [jsonParamsStr release];
         if (error == nil) {
             NSObject *retParamsNs = [[NdkGlue sharedInstance] dispatchNdkCall:dictParams];
 
@@ -44,8 +43,6 @@ namespace soomla {
                     json_t *retJsonParams = json_loads([retJsonParamsStr UTF8String], 0, &jerror);
 
                     if (retJsonParams) {
-                        [retJsonParamsStr release];
-
                         return retJsonParams;
                     } else {
                         fprintf(stderr, "error: at line #%d: %s\n", jerror.line, jerror.text);

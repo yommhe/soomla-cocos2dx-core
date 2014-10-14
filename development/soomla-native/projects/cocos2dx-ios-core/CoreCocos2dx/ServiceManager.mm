@@ -42,9 +42,4 @@
     [self.services addObject:service];
 }
 
-- (void)dealloc {
-    [_services release];
-    [super dealloc];
-}
-
 @end

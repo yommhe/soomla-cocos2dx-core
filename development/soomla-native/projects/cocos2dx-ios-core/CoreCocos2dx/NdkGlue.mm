@@ -98,7 +98,6 @@ static NSString* TAG = @"SOOMLA NdkGlue";
             return;
         }
 
-        [jsonPrmsString release];
     }
 
     soomla::CCNdkBridgeIos::ndkCallback(jsonPrms);

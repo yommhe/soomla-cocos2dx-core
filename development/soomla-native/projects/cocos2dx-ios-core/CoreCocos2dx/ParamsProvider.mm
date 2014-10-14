@@ -37,8 +37,4 @@
     return [self.paramsDict objectForKey:key];
 }
 
-- (void)dealloc {
-    [_paramsDict release];
-    [super dealloc];
-}
 @end
