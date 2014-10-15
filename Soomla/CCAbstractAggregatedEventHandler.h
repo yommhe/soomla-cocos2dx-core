@@ -92,11 +92,19 @@ namespace soomla {
         
         void unlockEventHandlers() {
             for(cocos2d::CCSetIterator i = tempAddEventHandlers->begin(); i != tempAddEventHandlers->end(); i++) {
+                if (!(*i)) {
+                    break;
+                }
+                
                 T *addHandler = dynamic_cast<T *>(*i);
                 addEventHandler(addHandler);
             }
             
             for(cocos2d::CCSetIterator i = tempRemoveEventHandlers->begin(); i != tempRemoveEventHandlers->end(); i++) {
+                if (!(*i)) {
+                    break;
+                }
+                
                 T *removeHandler = dynamic_cast<T *>(*i);
                 removeEventHandler(removeHandler);
             }
