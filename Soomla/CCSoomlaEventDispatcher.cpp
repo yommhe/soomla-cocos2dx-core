@@ -1,5 +1,9 @@
 #include "CCSoomlaEventDispatcher.h"
 
+#ifdef COCOS2D_JAVASCRIPT
+#include "JSBinding.h"
+#endif
+
 namespace soomla {
 
     USING_NS_CC;
@@ -27,16 +31,20 @@ namespace soomla {
     }
 
     void CCSoomlaEventDispatcher::ndkCallback(CCDictionary *parameters) {
+#ifdef COCOS2D_JAVASCRIPT
+        Soomla::JSBinding::ndkCallback(parameters);
+#else
         CCString *eventName = dynamic_cast<CCString *>(parameters->objectForKey("method"));
         CC_ASSERT(eventName);
-
+        
         if (mEventHandlers.find(eventName->getCString()) != mEventHandlers.end()) {
             StructEventHandler *handler = mEventHandlers[eventName->getCString()];
             ((handler->target)->*(handler->selector))(parameters);
         }
-		else {
+        else {
             CCLog("Unregistered event happened: %s", eventName->getCString());
         }
+#endif
     }
 
     CCSoomlaEventDispatcher::~CCSoomlaEventDispatcher() {

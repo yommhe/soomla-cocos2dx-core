@@ -9,10 +9,6 @@
 #include "NdkGlue.h"
 #include "CCSoomlaEventDispatcher.h"
 
-#ifdef COCOS2D_JAVASCRIPT
-#include "JSBinding.h"
-#endif
-
 namespace soomla {
     json_t *CCNdkBridgeIos::receiveCppMessage(json_t *jsonParams) {
         char *pszJsonParams = json_dumps(jsonParams, JSON_COMPACT | JSON_ENSURE_ASCII);
@@ -65,10 +61,6 @@ namespace soomla {
 
     void CCNdkBridgeIos::ndkCallback(json_t *jsonParams) {
         cocos2d::CCObject *dataToPass = CCJsonHelper::getCCObjectFromJson(jsonParams);
-#ifdef COCOS2D_JAVASCRIPT
-        Soomla::JSBinding::ndkCallback((cocos2d::CCDictionary *) dataToPass);
-#else
         CCSoomlaEventDispatcher::getInstance()->ndkCallback((cocos2d::CCDictionary *) dataToPass);
-#endif
     }
 }
