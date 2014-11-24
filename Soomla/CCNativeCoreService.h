@@ -14,25 +14,27 @@
  limitations under the License.
  */
 
-#ifndef __CCRewardStorage_H_
-#define __CCRewardStorage_H_
+#ifndef __CCNativeCoreService_H_
+#define __CCNativeCoreService_H_
 
-#include "cocos2d.h"
-#include "CCReward.h"
-#include "CCSequenceReward.h"
+#include "CCCoreService.h"
 
 namespace soomla {
-    class CCRewardStorage: public cocos2d::Ref {
+    
+    class CCNativeCoreService: public CCCoreService {
     public:
-        static CCRewardStorage *getInstance();
-
-        void setRewardStatus(CCReward *reward, bool give);
-        void setRewardStatus(CCReward *reward, bool give, bool notify);
-        bool isRewardGiven(CCReward *reward);
+        virtual bool init();
+        
         int getTimesGiven(CCReward *reward);
-        int getLastSeqIdxGiven(CCSequenceReward *sequenceReward);
+        void setRewardStatus(CCReward *reward, bool give, bool notify);
+        int getLastSeqIdxGiven(soomla::CCSequenceReward *sequenceReward);
         void setLastSeqIdxGiven(CCSequenceReward *sequenceReward, unsigned int idx);
+        
+        const char *kvStorageGetValue(const char *key) const;
+        void kvStorageSetValue(const char *key, const char *val);
+        void kvStorageDeleteKeyValue(const char *key);
+        void kvStoragePurge();
     };
 }
 
-#endif //__CCRewardStorage_H_
+#endif /* __CCNativeCoreService_H_ */

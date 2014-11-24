@@ -24,6 +24,7 @@ namespace soomla {
     public:
         virtual void onRewardGivenEvent(CCReward *reward) = 0;
         virtual void onRewardTakenEvent(CCReward *reward) = 0;
+        virtual void onCustomEvent(cocos2d::__String *name, cocos2d::__Dictionary *extra) = 0;
     };
 
 };

@@ -10,33 +10,45 @@
 	<string>Cocos2dxCoreFromSources</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>0D578872-5529-4190-A79E-E51BB7F7AE37</key>
-		<string>ssh://github.com/soomla/soomla-cocos2dx-core.git</string>
-		<key>B0945458-ADC9-427C-A707-D9552147A0BF</key>
+		<key>3C7220E68B1EE37C18CF456227E6169CCABBA119</key>
 		<string>https://github.com/soomla/soomla-ios-core.git</string>
+		<key>852ED3691A47A99B0D19C820A500AE9772B2A44E</key>
+		<string>https://github.com/cocos2d/cocos2d-x.git</string>
+		<key>BAD866C9FDD19D65B7E9CC9A77F606F8843B9079</key>
+		<string>github.com:soomla/soomla-cocos2dx-core.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>development/Cocos2dxCoreFromSources.xcodeproj/project.xcworkspace</string>
+	<string>development/Cocos2dxCoreFromSources.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>0D578872-5529-4190-A79E-E51BB7F7AE37</key>
+		<key>3C7220E68B1EE37C18CF456227E6169CCABBA119</key>
+		<string>../../..development/submodules/soomla-ios-core/</string>
+		<key>852ED3691A47A99B0D19C820A500AE9772B2A44E</key>
+		<string>../../../../..</string>
+		<key>BAD866C9FDD19D65B7E9CC9A77F606F8843B9079</key>
 		<string>../../..</string>
-		<key>B0945458-ADC9-427C-A707-D9552147A0BF</key>
-		<string>../../submodules/soomla-ios-core</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/soomla/soomla-cocos2dx-core.git</string>
+	<string>github.com:soomla/soomla-cocos2dx-core.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>0D578872-5529-4190-A79E-E51BB7F7AE37</string>
+	<string>BAD866C9FDD19D65B7E9CC9A77F606F8843B9079</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>0D578872-5529-4190-A79E-E51BB7F7AE37</string>
+			<string>852ED3691A47A99B0D19C820A500AE9772B2A44E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>..</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BAD866C9FDD19D65B7E9CC9A77F606F8843B9079</string>
 			<key>IDESourceControlWCCName</key>
 			<string>soomla-cocos2dx-core</string>
 		</dict>
@@ -44,7 +56,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>B0945458-ADC9-427C-A707-D9552147A0BF</string>
+			<string>3C7220E68B1EE37C18CF456227E6169CCABBA119</string>
 			<key>IDESourceControlWCCName</key>
 			<string>soomla-ios-core</string>
 		</dict>
