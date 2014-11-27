@@ -15,6 +15,7 @@
  */
 
 #include "CCError.h"
+#include "CCSoomlaUtils.h"
 
 USING_NS_CC;
 
@@ -28,14 +29,18 @@ namespace soomla {
         if (obj == nullptr) {
             return nullptr;
         }
-
-        __Dictionary *dict = static_cast<__Dictionary *>(obj);
-        if (dict->objectForKey(JSON_ERROR_INFO) == nullptr) {
-            return nullptr;
+        
+        __String *errorInfoStr = dynamic_cast<__String *>(obj);
+        if (errorInfoStr == NULL) {
+            __Dictionary *dict = static_cast<__Dictionary *>(obj);
+            if (dict->objectForKey(JSON_ERROR_INFO) == nullptr) {
+                return nullptr;
+            }
+            
+            errorInfoStr = dynamic_cast<__String *>(dict->objectForKey(JSON_ERROR_INFO));
         }
-
+        
         std::string errorInfo;
-        __String *errorInfoStr = dynamic_cast<__String *>(dict->objectForKey(JSON_ERROR_INFO));
         if (errorInfoStr) {
             errorInfo = errorInfoStr->getCString();
         } else {
@@ -49,6 +54,24 @@ namespace soomla {
             CC_SAFE_DELETE(ret);
         }
         return ret;
+    }
+    
+    void CCError::tryFillError(CCError **error, cocos2d::Ref *obj, const char *tag) {
+        if (error != NULL) {
+            CCError *resultError = CCError::createWithObject(obj);
+            if (resultError != NULL) {
+                *error = resultError;
+            }
+        }
+        else {
+            __String *errorStr = dynamic_cast<__String *>(obj);
+            if (errorStr != NULL) {
+                if (tag == NULL) {
+                    tag = TAG;
+                }
+                CCSoomlaUtils::logError(tag, errorStr->getCString());
+            }
+        }
     }
 
     bool CCError::init(std::string &errorInfo) {

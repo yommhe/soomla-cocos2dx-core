@@ -24,6 +24,7 @@ namespace soomla {
     class CCError : public cocos2d::Ref {
     public:
         static CCError *createWithObject(cocos2d::Ref *obj);
+        static void tryFillError(CCError **error, cocos2d::Ref *obj, const char *tag = NULL);
         const char *getInfo() {return mInfo.c_str();};
     private:
 		/**

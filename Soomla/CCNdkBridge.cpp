@@ -16,6 +16,7 @@
 
 #include "CCNdkBridge.h"
 #include "CCJsonHelper.h"
+#include "CCSoomlaUtils.h"
 
 USING_NS_CC;
 
@@ -23,7 +24,6 @@ USING_NS_CC;
 
 #if (LOG_JSON == 1)
 #define TAG "JSON"
-#include "CCSoomlaUtils.h"
 #endif
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
@@ -136,10 +136,13 @@ namespace soomla {
                 json_decref(retJsonParams);
             }
 
-            if (pError != nullptr) {
-                CCError *error = CCError::createWithObject(retParams);
-                if (error != NULL) {
+            CCError *error = CCError::createWithObject(retParams);
+            if (error != NULL) {
+                if (pError != NULL) {
                     *pError = error;
+                }
+                else {
+                    CCSoomlaUtils::logException("SOOMLA NdkBridge", error);
                 }
             }
 
