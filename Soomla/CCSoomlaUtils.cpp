@@ -34,4 +34,7 @@ namespace soomla {
         cocos2d::log("%s Soomla error: %s", tag, error->getInfo());
     }
 
+    bool CCSoomlaUtils::isNullOrEmpty(cocos2d::__String *str) {
+        return ((str == NULL) || (str->length() == 0));
+    }
 };

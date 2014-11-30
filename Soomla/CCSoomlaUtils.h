@@ -55,6 +55,13 @@ namespace soomla {
          @param error A CCSoomlaError from which to extract the message.
 		*/
         static void logException(const char *tag, CCError *error);
+        
+        /**
+         Checks if a string is either NULL or empty string
+         @param str The string to check
+         @return true if the string is null or empty, false otherwise
+         */
+        static bool isNullOrEmpty(cocos2d::__String *str);
     };
 };
 

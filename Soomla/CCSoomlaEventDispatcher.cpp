@@ -40,7 +40,10 @@ namespace soomla {
 
     void CCSoomlaEventDispatcher::ndkCallback(__Dictionary *parameters) {
         __String *eventName = dynamic_cast<__String *>(parameters->objectForKey("method"));
-        CC_ASSERT(eventName);
+        if (eventName == NULL) {
+            // Suppress any events without callbacks (push event probably)
+            return;
+        }
 
         std::function<void(__Dictionary *)> handler = mEventHandlers[eventName->getCString()];
 
