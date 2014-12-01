@@ -17,7 +17,7 @@ CORE_SRC_LIST += $(wildcard $(LOCAL_PATH)/Soomla/jsb/*.cpp)
 endif
 
 
-LOCAL_SRC_FILES := $(CORE_SRC_LIST)
+LOCAL_SRC_FILES := $(CORE_SRC_LIST:$(LOCAL_PATH)/%=%)
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/Soomla
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/Soomla/data

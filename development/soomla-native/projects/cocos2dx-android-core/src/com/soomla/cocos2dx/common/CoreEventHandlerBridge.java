@@ -3,6 +3,7 @@ package com.soomla.cocos2dx.common;
 import android.opengl.GLSurfaceView;
 
 import com.soomla.BusProvider;
+import com.soomla.events.CustomEvent;
 import com.soomla.events.RewardGivenEvent;
 import com.soomla.events.RewardTakenEvent;
 import com.squareup.otto.Subscribe;
@@ -28,7 +29,7 @@ public class CoreEventHandlerBridge {
                 try {
                     JSONObject parameters = new JSONObject();
                     parameters.put("method", CommonConsts.EVENT_REWARD_GIVEN);
-                    parameters.put("reward", DomainHelper.getInstance().domainToJsonObject(rewardGivenEvent.Reward));
+                    parameters.put("reward", rewardGivenEvent.RewardId);
                     NdkGlue.getInstance().sendMessageWithParameters(parameters);
                 } catch (JSONException e) {
                     throw new IllegalStateException(e);
@@ -45,7 +46,25 @@ public class CoreEventHandlerBridge {
                 try {
                     JSONObject parameters = new JSONObject();
                     parameters.put("method", CommonConsts.EVENT_REWARD_TAKEN);
-                    parameters.put("reward", DomainHelper.getInstance().domainToJsonObject(rewardTakenEvent.Reward));
+                    parameters.put("reward", rewardTakenEvent.RewardId);
+                    NdkGlue.getInstance().sendMessageWithParameters(parameters);
+                } catch (JSONException e) {
+                    throw new IllegalStateException(e);
+                }
+            }
+        });
+    }
+
+    @Subscribe
+    public void onCustomEvent(final CustomEvent customEvent) {
+        mGLThread.queueEvent(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    JSONObject parameters = new JSONObject();
+                    parameters.put("method", CommonConsts.EVENT_CUSTOM);
+                    parameters.put("name", customEvent.getName());
+                    parameters.put("extra", new JSONObject(customEvent.getExtra()));
                     NdkGlue.getInstance().sendMessageWithParameters(parameters);
                 } catch (JSONException e) {
                     throw new IllegalStateException(e);

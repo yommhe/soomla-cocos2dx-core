@@ -1,6 +1,3 @@
-//
-// Created by Fedor Shubin on 6/23/13.
-//
 
 
 #include "CCNdkBridgeIos.h"

@@ -1,6 +1,3 @@
-//
-// Created by Fedor Shubin on 6/11/14.
-//
 
 #import "DomainHelper.h"
 #import "DomainFactory.h"
@@ -95,4 +92,3 @@
 }
 
 @end
-

@@ -1,6 +1,3 @@
-//
-// Created by Fedor Shubin on 6/23/13.
-//
 
 #ifndef __CCProfileNdkBridgeIos_H_
 #define __CCProfileNdkBridgeIos_H_

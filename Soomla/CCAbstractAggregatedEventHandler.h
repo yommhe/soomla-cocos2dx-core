@@ -1,7 +1,18 @@
-//
-// Created by Fedor Shubin on 6/19/14.
-//
-
+/*
+ Copyright (C) 2012-2014 Soomla Inc.
+ 
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ */
 #ifndef __CCAbstractAggregatedEventHandler_H_
 #define __CCAbstractAggregatedEventHandler_H_
 
@@ -29,13 +40,13 @@ namespace soomla {
         virtual bool init() {
             mEventHandlers = cocos2d::CCSet::create();
             mEventHandlers->retain();
-            
+
             tempAddEventHandlers = cocos2d::CCSet::create();
             tempAddEventHandlers->retain();
-            
+
             tempRemoveEventHandlers = cocos2d::CCSet::create();
             tempRemoveEventHandlers->retain();
-            
+
             return true;
         }
 
@@ -68,15 +79,15 @@ namespace soomla {
                 tempRemoveEventHandlers->addObject(eventHandler);
             }
         }
-        
+
         /**
          Removes all event handlers from the event handler
          */
         void purge() {
             mEventHandlers->removeAllObjects();
-            
+
             lockCount = 0;
-            
+
             tempAddEventHandlers->removeAllObjects();
             tempRemoveEventHandlers->removeAllObjects();
         }
@@ -86,10 +97,10 @@ namespace soomla {
                 tempAddEventHandlers->removeAllObjects();
                 tempRemoveEventHandlers->removeAllObjects();
             }
-            
+
             lockCount++;
         }
-        
+
         void unlockEventHandlers() {
             for(cocos2d::CCSetIterator i = tempAddEventHandlers->begin(); i != tempAddEventHandlers->end(); i++) {
                 if (!(*i)) {
@@ -99,7 +110,7 @@ namespace soomla {
                 T *addHandler = dynamic_cast<T *>(*i);
                 addEventHandler(addHandler);
             }
-            
+
             for(cocos2d::CCSetIterator i = tempRemoveEventHandlers->begin(); i != tempRemoveEventHandlers->end(); i++) {
                 if (!(*i)) {
                     break;
@@ -108,13 +119,13 @@ namespace soomla {
                 T *removeHandler = dynamic_cast<T *>(*i);
                 removeEventHandler(removeHandler);
             }
-            
+
             lockCount--;
-            
+
             if (lockCount <= 0) {
                 tempAddEventHandlers->removeAllObjects();
                 tempRemoveEventHandlers->removeAllObjects();
-                
+
                 lockCount = 0;
             }
         }

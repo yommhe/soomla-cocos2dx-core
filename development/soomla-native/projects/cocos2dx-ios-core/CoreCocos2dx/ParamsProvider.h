@@ -1,6 +1,4 @@
-//
-// Created by Fedor Shubin on 6/25/14.
-//
+
 
 #import <Foundation/Foundation.h>
 
@@ -11,4 +9,3 @@
 - (void)setParams:(NSDictionary *)params withKey:(NSString *)key;
 - (NSDictionary *)getParamsForKey:(NSString *)key;
 @end
-

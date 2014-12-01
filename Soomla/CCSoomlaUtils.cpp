@@ -14,7 +14,7 @@
  limitations under the License.
  */
 
-// Created by Fedor Shubin on 5/19/13.
+
 
 #include "CCSoomlaUtils.h"
 #include "cocos2d.h"
@@ -34,4 +34,7 @@ namespace soomla {
         CCLOG("%s Soomla error: %s", tag, error->getInfo());
     }
 
+    bool CCSoomlaUtils::isNullOrEmpty(cocos2d::CCString *str) {
+        return ((str == NULL) || (str->length() == 0));
+    }
 };

@@ -12,11 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author vedi
- *         date 6/10/14
- *         time 10:42 AM
- */
+
 public class DomainHelper {
 
     public static transient DomainHelper INSTANCE = null;

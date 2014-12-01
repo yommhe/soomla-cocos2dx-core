@@ -1,6 +1,3 @@
-//
-// Created by Fedor Shubin on 6/10/14.
-//
 
 #import "DomainFactory.h"
 #import "CommonConsts.h"
