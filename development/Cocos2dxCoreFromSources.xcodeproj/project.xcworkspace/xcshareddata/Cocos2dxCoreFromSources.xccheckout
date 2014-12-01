@@ -22,9 +22,9 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3C7220E68B1EE37C18CF456227E6169CCABBA119</key>
-		<string>../../..development/submodules/soomla-ios-core/</string>
+		<string>../../..development/submodules/soomla-ios-core</string>
 		<key>852ED3691A47A99B0D19C820A500AE9772B2A44E</key>
-		<string>../../../../..</string>
+		<string>../../../..</string>
 		<key>BAD866C9FDD19D65B7E9CC9A77F606F8843B9079</key>
 		<string>../../..</string>
 	</dict>
@@ -42,7 +42,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>852ED3691A47A99B0D19C820A500AE9772B2A44E</string>
 			<key>IDESourceControlWCCName</key>
-			<string>..</string>
+			<string></string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>

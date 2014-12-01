@@ -925,6 +925,7 @@
 					"$(SRCROOT)/../../../cocos/platform/desktop",
 					"$(SRCROOT)/../../../external/glfw3/include/mac",
 				);
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -964,6 +965,7 @@
 					"$(SRCROOT)/../../../cocos/platform/desktop",
 					"$(SRCROOT)/../../../external/glfw3/include/mac",
 				);
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";

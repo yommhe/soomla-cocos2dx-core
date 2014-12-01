@@ -538,7 +538,7 @@
 					"$(SRCROOT)/../../external/jansson",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/build/ios";
+				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SYMROOT = out;
@@ -569,7 +569,7 @@
 					"$(SRCROOT)/../../external/jansson",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/build/ios";
+				LIBRARY_SEARCH_PATHS = "";
 				SDKROOT = iphoneos;
 				SYMROOT = out;
 				VALIDATE_PRODUCT = YES;
@@ -592,7 +592,7 @@
 					"$(SRCROOT)/../../cocos/platform/ios/Simulation",
 					"$(SRCROOT)/build/ios/headers/**",
 				);
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/build/ios";
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -619,7 +619,7 @@
 					"$(SRCROOT)/../../cocos/platform/ios/Simulation",
 					"$(SRCROOT)/build/ios/headers/**",
 				);
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/build/ios";
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
