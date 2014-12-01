@@ -14,8 +14,6 @@
  limitations under the License.
  */
 
-// Created by Igor Yegoroff on 5/17/13.
-
 #ifndef __CCSoomlaMacros_h
 #define __CCSoomlaMacros_h
 

@@ -63,6 +63,10 @@ static NSString* TAG = @"SOOMLA NdkGlue";
 }
 
 - (void)dispatchNdkCallback:(NSNotification*)notification {
+    if (notification.object == self) {
+        return;
+    }
+    
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
 
     void (^callbackHandler)(NSNotification *, NSDictionary *) = [self.callbackHandlers objectForKey:notification.name];

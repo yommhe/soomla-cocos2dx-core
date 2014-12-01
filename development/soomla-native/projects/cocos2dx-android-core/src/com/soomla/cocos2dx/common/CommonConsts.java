@@ -12,4 +12,5 @@ public class CommonConsts {
 
     public static final String EVENT_REWARD_GIVEN = "com.soomla.events.RewardGivenEvent";
     public static final String EVENT_REWARD_TAKEN = "com.soomla.events.RewardTakenEvent";
+    public static final String EVENT_CUSTOM = "com.soomla.events.CustomEvent";
 }
