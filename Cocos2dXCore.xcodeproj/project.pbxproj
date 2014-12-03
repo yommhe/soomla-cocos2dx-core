@@ -887,7 +887,6 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
 					CC_TARGET_OS_MAC,
 					"$(inherited)",
 				);
