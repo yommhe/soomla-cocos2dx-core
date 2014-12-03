@@ -1,6 +1,3 @@
-//
-// Created by Fedor Shubin on 6/15/14.
-//
 
 #import "ServiceManager.h"
 #import "NdkGlue.h"

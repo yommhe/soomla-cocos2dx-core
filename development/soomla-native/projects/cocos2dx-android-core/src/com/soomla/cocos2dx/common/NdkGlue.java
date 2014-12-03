@@ -10,11 +10,6 @@ import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author vedi
- *         date 5/24/13
- *         time 8:36 PM
- */
 public class NdkGlue {
 
     private Map<String, CallHandler> callHandlers = new HashMap<String, CallHandler>();

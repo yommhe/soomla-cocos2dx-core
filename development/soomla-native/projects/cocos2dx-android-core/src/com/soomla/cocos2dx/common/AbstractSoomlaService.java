@@ -4,11 +4,7 @@ import android.opengl.GLSurfaceView;
 
 import java.lang.ref.WeakReference;
 
-/**
- * @author vedi
- *         date 7/1/14
- *         time 1:11 PM
- */
+
 public abstract class AbstractSoomlaService implements SoomlaService {
 
     protected static WeakReference<GLSurfaceView> glSurfaceViewRef = new WeakReference<GLSurfaceView>(null);

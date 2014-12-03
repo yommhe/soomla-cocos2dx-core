@@ -34,5 +34,6 @@
 #include "CCSchedule.h"
 #include "CCSoomlaUtils.h"
 #include "CCKeyValueStorage.h"
+#include "CCRewardStorage.h"
 
 #endif

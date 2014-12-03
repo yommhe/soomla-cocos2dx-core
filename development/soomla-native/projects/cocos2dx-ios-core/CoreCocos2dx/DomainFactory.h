@@ -1,6 +1,3 @@
-//
-// Created by Fedor Shubin on 6/10/14.
-//
 
 #import <Foundation/Foundation.h>
 
@@ -10,5 +7,3 @@
 - (void)registerCreatorForKey: (NSString *)key withBlock: (id (^)(NSDictionary *dict)) creator;
 - (id)createWithDict: (NSDictionary *)dict;
 @end
-
-
