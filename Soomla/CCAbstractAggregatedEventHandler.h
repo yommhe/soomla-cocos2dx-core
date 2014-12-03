@@ -102,30 +102,30 @@ namespace soomla {
         }
 
         void unlockEventHandlers() {
-            for(cocos2d::__SetIterator i = tempAddEventHandlers->begin(); i != tempAddEventHandlers->end(); i++) {
-                if (!(*i)) {
-                    break;
-                }
-                
-                T *addHandler = dynamic_cast<T *>(*i);
-                addEventHandler(addHandler);
-            }
-
-            for(cocos2d::__SetIterator i = tempRemoveEventHandlers->begin(); i != tempRemoveEventHandlers->end(); i++) {
-                if (!(*i)) {
-                    break;
-                }
-                
-                T *removeHandler = dynamic_cast<T *>(*i);
-                removeEventHandler(removeHandler);
-            }
-
             lockCount--;
-
+            
             if (lockCount <= 0) {
+                for(cocos2d::__SetIterator i = tempAddEventHandlers->begin(); i != tempAddEventHandlers->end(); i++) {
+                    if (!(*i)) {
+                        break;
+                    }
+                    
+                    T *addHandler = dynamic_cast<T *>(*i);
+                    addEventHandler(addHandler);
+                }
+                
+                for(cocos2d::__SetIterator i = tempRemoveEventHandlers->begin(); i != tempRemoveEventHandlers->end(); i++) {
+                    if (!(*i)) {
+                        break;
+                    }
+                    
+                    T *removeHandler = dynamic_cast<T *>(*i);
+                    removeEventHandler(removeHandler);
+                }
+                
                 tempAddEventHandlers->removeAllObjects();
                 tempRemoveEventHandlers->removeAllObjects();
-
+                
                 lockCount = 0;
             }
         }
