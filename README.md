@@ -26,6 +26,11 @@ You can start by using the more common features in core by including the `Cocos2
   #include "Cocos2dxCore.h"
 ````
 
+## Download
+
+####Pre baked zip:
+
+[soomla-cocos2dx-core 1.0.1](http://library.soom.la/fetch/cocos2dx-core/1.0.1?cf=github)
 
 Our way of saying "Thanks !"
 ---
