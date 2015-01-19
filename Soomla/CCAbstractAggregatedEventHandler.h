@@ -93,11 +93,6 @@ namespace soomla {
         }
     protected:
         void lockEventHandlers() {
-            if (lockCount == 0) {
-                tempAddEventHandlers->removeAllObjects();
-                tempRemoveEventHandlers->removeAllObjects();
-            }
-
             lockCount++;
         }
 
