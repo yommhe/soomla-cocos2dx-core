@@ -15,7 +15,7 @@
  */
 
 #include "CCKeyValueStorage.h"
-#include "CCCoreService.h"
+#include "CCCoreBridge.h"
 
 namespace soomla {
     static CCKeyValueStorage *s_SharedKeyValueStorage = NULL;
@@ -30,18 +30,18 @@ namespace soomla {
     }
 
     const char *CCKeyValueStorage::getValue(const char *key) const {
-        return CCCoreService::getInstance()->kvStorageGetValue(key);
+        return CCCoreBridge::getInstance()->kvStorageGetValue(key);
     }
 
     void CCKeyValueStorage::setValue(const char *key, const char *val) {
-        return CCCoreService::getInstance()->kvStorageSetValue(key, val);
+        return CCCoreBridge::getInstance()->kvStorageSetValue(key, val);
     }
 
     void CCKeyValueStorage::deleteKeyValue(const char *key) {
-        CCCoreService::getInstance()->kvStorageDeleteKeyValue(key);
+        CCCoreBridge::getInstance()->kvStorageDeleteKeyValue(key);
     }
 
     void CCKeyValueStorage::purge() {
-        CCCoreService::getInstance()->kvStoragePurge();
+        CCCoreBridge::getInstance()->kvStoragePurge();
     }
 }

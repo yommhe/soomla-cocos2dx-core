@@ -21,8 +21,8 @@
 		9D41014D1978CFAD00907FA8 /* CCCoreEventDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101281978CFAD00907FA8 /* CCCoreEventDispatcher.cpp */; };
 		9D41014E1978CFAD00907FA8 /* CCCoreEventDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101291978CFAD00907FA8 /* CCCoreEventDispatcher.h */; };
 		9D41014F1978CFAD00907FA8 /* CCCoreEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012A1978CFAD00907FA8 /* CCCoreEventHandler.h */; };
-		9D4101501978CFAD00907FA8 /* CCCoreService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D41012B1978CFAD00907FA8 /* CCCoreService.cpp */; };
-		9D4101511978CFAD00907FA8 /* CCCoreService.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012C1978CFAD00907FA8 /* CCCoreService.h */; };
+		9D4101501978CFAD00907FA8 /* CCCoreBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D41012B1978CFAD00907FA8 /* CCCoreBridge.cpp */; };
+		9D4101511978CFAD00907FA8 /* CCCoreBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012C1978CFAD00907FA8 /* CCCoreBridge.h */; };
 		9D4101521978CFAD00907FA8 /* CCDomainFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D41012D1978CFAD00907FA8 /* CCDomainFactory.cpp */; };
 		9D4101531978CFAD00907FA8 /* CCDomainFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012E1978CFAD00907FA8 /* CCDomainFactory.h */; };
 		9D4101541978CFAD00907FA8 /* CCDomainHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D41012F1978CFAD00907FA8 /* CCDomainHelper.cpp */; };
@@ -33,8 +33,6 @@
 		9D4101591978CFAD00907FA8 /* CCJsonHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101341978CFAD00907FA8 /* CCJsonHelper.h */; };
 		9D41015A1978CFAD00907FA8 /* CCNdkBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101351978CFAD00907FA8 /* CCNdkBridge.cpp */; };
 		9D41015B1978CFAD00907FA8 /* CCNdkBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101361978CFAD00907FA8 /* CCNdkBridge.h */; };
-		9D41015C1978CFAD00907FA8 /* CCServiceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101371978CFAD00907FA8 /* CCServiceManager.cpp */; };
-		9D41015D1978CFAD00907FA8 /* CCServiceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101381978CFAD00907FA8 /* CCServiceManager.h */; };
 		9D41015E1978CFAD00907FA8 /* CCSoomlaEventDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101391978CFAD00907FA8 /* CCSoomlaEventDispatcher.cpp */; };
 		9D41015F1978CFAD00907FA8 /* CCSoomlaEventDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41013A1978CFAD00907FA8 /* CCSoomlaEventDispatcher.h */; };
 		9D4101601978CFAD00907FA8 /* CCSoomlaMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41013B1978CFAD00907FA8 /* CCSoomlaMacros.h */; };
@@ -54,18 +52,14 @@
 		9D63D03D19B0EDB90054EA87 /* CCNdkBridgeIos.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D63D02D19B0EDB90054EA87 /* CCNdkBridgeIos.mm */; };
 		9D63D03E19B0EDB90054EA87 /* CommonConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D63D02E19B0EDB90054EA87 /* CommonConsts.h */; };
 		9D63D03F19B0EDB90054EA87 /* CommonConsts.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D63D02F19B0EDB90054EA87 /* CommonConsts.mm */; };
-		9D63D04019B0EDB90054EA87 /* CoreService.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D63D03019B0EDB90054EA87 /* CoreService.h */; };
-		9D63D04119B0EDB90054EA87 /* CoreService.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D63D03119B0EDB90054EA87 /* CoreService.mm */; };
+		9D63D04019B0EDB90054EA87 /* CoreBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D63D03019B0EDB90054EA87 /* CoreBridge.h */; };
+		9D63D04119B0EDB90054EA87 /* CoreBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D63D03119B0EDB90054EA87 /* CoreBridge.mm */; };
 		9D63D04219B0EDB90054EA87 /* DomainFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D63D03219B0EDB90054EA87 /* DomainFactory.h */; };
 		9D63D04319B0EDB90054EA87 /* DomainFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D63D03319B0EDB90054EA87 /* DomainFactory.mm */; };
 		9D63D04419B0EDB90054EA87 /* DomainHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D63D03419B0EDB90054EA87 /* DomainHelper.h */; };
 		9D63D04519B0EDB90054EA87 /* DomainHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D63D03519B0EDB90054EA87 /* DomainHelper.mm */; };
 		9D63D04619B0EDB90054EA87 /* NdkGlue.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D63D03619B0EDB90054EA87 /* NdkGlue.h */; };
 		9D63D04719B0EDB90054EA87 /* NdkGlue.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D63D03719B0EDB90054EA87 /* NdkGlue.mm */; };
-		9D63D04819B0EDB90054EA87 /* ParamsProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D63D03819B0EDB90054EA87 /* ParamsProvider.h */; };
-		9D63D04919B0EDB90054EA87 /* ParamsProvider.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D63D03919B0EDB90054EA87 /* ParamsProvider.mm */; };
-		9D63D04A19B0EDB90054EA87 /* ServiceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D63D03A19B0EDB90054EA87 /* ServiceManager.h */; };
-		9D63D04B19B0EDB90054EA87 /* ServiceManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D63D03B19B0EDB90054EA87 /* ServiceManager.mm */; };
 		9D63D07619B0EE220054EA87 /* JSONConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D63D04E19B0EE220054EA87 /* JSONConsts.h */; };
 		9D63D07719B0EE220054EA87 /* JSONConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D63D04F19B0EE220054EA87 /* JSONConsts.m */; };
 		9D63D07819B0EE220054EA87 /* KeyValDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D63D05019B0EE220054EA87 /* KeyValDatabase.h */; };
@@ -105,21 +99,24 @@
 		9D63D09A19B0EE220054EA87 /* DictionaryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D63D07519B0EE220054EA87 /* DictionaryFactory.m */; };
 		C0B3C5F3168C6D0C00161FAA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B3C5F2168C6D0C00161FAA /* Foundation.framework */; };
 		F861D66719BF6192008834EF /* Cocos2dxCore.h in Headers */ = {isa = PBXBuildFile; fileRef = F861D66619BF6192008834EF /* Cocos2dxCore.h */; };
-		F8694A6E1A1C963D001738B4 /* CCBridgelessCoreService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8694A6C1A1C963D001738B4 /* CCBridgelessCoreService.cpp */; };
-		F8694A6F1A1C963D001738B4 /* CCBridgelessCoreService.h in Headers */ = {isa = PBXBuildFile; fileRef = F8694A6D1A1C963D001738B4 /* CCBridgelessCoreService.h */; };
-		F8694A721A1C9852001738B4 /* CCNativeCoreService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8694A701A1C9852001738B4 /* CCNativeCoreService.cpp */; };
-		F8694A731A1C9852001738B4 /* CCNativeCoreService.h in Headers */ = {isa = PBXBuildFile; fileRef = F8694A711A1C9852001738B4 /* CCNativeCoreService.h */; };
+		F865E1AE1AB05541006DA7E2 /* CCSoomla.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F865E1AD1AB05541006DA7E2 /* CCSoomla.cpp */; };
+		F865E1B11AB06FE9006DA7E2 /* CCCoreBridgeBinderIos.h in Headers */ = {isa = PBXBuildFile; fileRef = F865E1AF1AB06FE9006DA7E2 /* CCCoreBridgeBinderIos.h */; };
+		F865E1B21AB06FE9006DA7E2 /* CCCoreBridgeBinderIos.mm in Sources */ = {isa = PBXBuildFile; fileRef = F865E1B01AB06FE9006DA7E2 /* CCCoreBridgeBinderIos.mm */; };
+		F865E1C41AB08590006DA7E2 /* CCSoomla.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F865E1AD1AB05541006DA7E2 /* CCSoomla.cpp */; };
+		F8694A6E1A1C963D001738B4 /* CCBridgelessCoreBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8694A6C1A1C963D001738B4 /* CCBridgelessCoreBridge.cpp */; };
+		F8694A6F1A1C963D001738B4 /* CCBridgelessCoreBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = F8694A6D1A1C963D001738B4 /* CCBridgelessCoreBridge.h */; };
+		F8694A721A1C9852001738B4 /* CCNativeCoreBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8694A701A1C9852001738B4 /* CCNativeCoreBridge.cpp */; };
+		F8694A731A1C9852001738B4 /* CCNativeCoreBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = F8694A711A1C9852001738B4 /* CCNativeCoreBridge.h */; };
 		F8A1E3AD1A235D73006FAA3C /* CCCoreConsts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101261978CFAD00907FA8 /* CCCoreConsts.cpp */; };
 		F8A1E3AE1A235D73006FAA3C /* CCCoreEventDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101281978CFAD00907FA8 /* CCCoreEventDispatcher.cpp */; };
-		F8A1E3AF1A235D73006FAA3C /* CCBridgelessCoreService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8694A6C1A1C963D001738B4 /* CCBridgelessCoreService.cpp */; };
-		F8A1E3B01A235D73006FAA3C /* CCNativeCoreService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8694A701A1C9852001738B4 /* CCNativeCoreService.cpp */; };
-		F8A1E3B11A235D73006FAA3C /* CCCoreService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D41012B1978CFAD00907FA8 /* CCCoreService.cpp */; };
+		F8A1E3AF1A235D73006FAA3C /* CCBridgelessCoreBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8694A6C1A1C963D001738B4 /* CCBridgelessCoreBridge.cpp */; };
+		F8A1E3B01A235D73006FAA3C /* CCNativeCoreBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8694A701A1C9852001738B4 /* CCNativeCoreBridge.cpp */; };
+		F8A1E3B11A235D73006FAA3C /* CCCoreBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D41012B1978CFAD00907FA8 /* CCCoreBridge.cpp */; };
 		F8A1E3B21A235D73006FAA3C /* CCDomainFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D41012D1978CFAD00907FA8 /* CCDomainFactory.cpp */; };
 		F8A1E3B31A235D73006FAA3C /* CCDomainHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D41012F1978CFAD00907FA8 /* CCDomainHelper.cpp */; };
 		F8A1E3B41A235D73006FAA3C /* CCError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101311978CFAD00907FA8 /* CCError.cpp */; };
 		F8A1E3B51A235D73006FAA3C /* CCJsonHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101331978CFAD00907FA8 /* CCJsonHelper.cpp */; };
 		F8A1E3B61A235D73006FAA3C /* CCNdkBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101351978CFAD00907FA8 /* CCNdkBridge.cpp */; };
-		F8A1E3B71A235D73006FAA3C /* CCServiceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101371978CFAD00907FA8 /* CCServiceManager.cpp */; };
 		F8A1E3B81A235D73006FAA3C /* CCSoomlaEventDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101391978CFAD00907FA8 /* CCSoomlaEventDispatcher.cpp */; };
 		F8A1E3B91A235D73006FAA3C /* CCSoomlaMacros.h in Sources */ = {isa = PBXBuildFile; fileRef = 9D41013B1978CFAD00907FA8 /* CCSoomlaMacros.h */; };
 		F8A1E3BA1A235D73006FAA3C /* CCDomain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D41013D1978CFAD00907FA8 /* CCDomain.cpp */; };
@@ -138,15 +135,14 @@
 		F8A1E3CE1A236202006FAA3C /* CCCoreConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101271978CFAD00907FA8 /* CCCoreConsts.h */; };
 		F8A1E3CF1A236202006FAA3C /* CCCoreEventDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101291978CFAD00907FA8 /* CCCoreEventDispatcher.h */; };
 		F8A1E3D01A236202006FAA3C /* CCCoreEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012A1978CFAD00907FA8 /* CCCoreEventHandler.h */; };
-		F8A1E3D11A236202006FAA3C /* CCBridgelessCoreService.h in Headers */ = {isa = PBXBuildFile; fileRef = F8694A6D1A1C963D001738B4 /* CCBridgelessCoreService.h */; };
-		F8A1E3D21A236202006FAA3C /* CCNativeCoreService.h in Headers */ = {isa = PBXBuildFile; fileRef = F8694A711A1C9852001738B4 /* CCNativeCoreService.h */; };
-		F8A1E3D31A236202006FAA3C /* CCCoreService.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012C1978CFAD00907FA8 /* CCCoreService.h */; };
+		F8A1E3D11A236202006FAA3C /* CCBridgelessCoreBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = F8694A6D1A1C963D001738B4 /* CCBridgelessCoreBridge.h */; };
+		F8A1E3D21A236202006FAA3C /* CCNativeCoreBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = F8694A711A1C9852001738B4 /* CCNativeCoreBridge.h */; };
+		F8A1E3D31A236202006FAA3C /* CCCoreBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012C1978CFAD00907FA8 /* CCCoreBridge.h */; };
 		F8A1E3D41A236202006FAA3C /* CCDomainFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012E1978CFAD00907FA8 /* CCDomainFactory.h */; };
 		F8A1E3D51A236202006FAA3C /* CCDomainHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101301978CFAD00907FA8 /* CCDomainHelper.h */; };
 		F8A1E3D61A236202006FAA3C /* CCError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101321978CFAD00907FA8 /* CCError.h */; };
 		F8A1E3D71A236202006FAA3C /* CCJsonHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101341978CFAD00907FA8 /* CCJsonHelper.h */; };
 		F8A1E3D81A236202006FAA3C /* CCNdkBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101361978CFAD00907FA8 /* CCNdkBridge.h */; };
-		F8A1E3D91A236202006FAA3C /* CCServiceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101381978CFAD00907FA8 /* CCServiceManager.h */; };
 		F8A1E3DA1A236202006FAA3C /* CCSoomlaEventDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41013A1978CFAD00907FA8 /* CCSoomlaEventDispatcher.h */; };
 		F8A1E3DB1A236202006FAA3C /* CCSoomlaMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41013B1978CFAD00907FA8 /* CCSoomlaMacros.h */; };
 		F8A1E3DC1A236202006FAA3C /* CCDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41013E1978CFAD00907FA8 /* CCDomain.h */; };
@@ -179,8 +175,8 @@
 		9D4101281978CFAD00907FA8 /* CCCoreEventDispatcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCCoreEventDispatcher.cpp; sourceTree = "<group>"; };
 		9D4101291978CFAD00907FA8 /* CCCoreEventDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCoreEventDispatcher.h; sourceTree = "<group>"; };
 		9D41012A1978CFAD00907FA8 /* CCCoreEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCoreEventHandler.h; sourceTree = "<group>"; };
-		9D41012B1978CFAD00907FA8 /* CCCoreService.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCCoreService.cpp; sourceTree = "<group>"; };
-		9D41012C1978CFAD00907FA8 /* CCCoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCoreService.h; sourceTree = "<group>"; };
+		9D41012B1978CFAD00907FA8 /* CCCoreBridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCCoreBridge.cpp; sourceTree = "<group>"; };
+		9D41012C1978CFAD00907FA8 /* CCCoreBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCoreBridge.h; sourceTree = "<group>"; };
 		9D41012D1978CFAD00907FA8 /* CCDomainFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCDomainFactory.cpp; sourceTree = "<group>"; };
 		9D41012E1978CFAD00907FA8 /* CCDomainFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDomainFactory.h; sourceTree = "<group>"; };
 		9D41012F1978CFAD00907FA8 /* CCDomainHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCDomainHelper.cpp; sourceTree = "<group>"; };
@@ -191,8 +187,6 @@
 		9D4101341978CFAD00907FA8 /* CCJsonHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCJsonHelper.h; sourceTree = "<group>"; };
 		9D4101351978CFAD00907FA8 /* CCNdkBridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCNdkBridge.cpp; sourceTree = "<group>"; };
 		9D4101361978CFAD00907FA8 /* CCNdkBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNdkBridge.h; sourceTree = "<group>"; };
-		9D4101371978CFAD00907FA8 /* CCServiceManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCServiceManager.cpp; sourceTree = "<group>"; };
-		9D4101381978CFAD00907FA8 /* CCServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCServiceManager.h; sourceTree = "<group>"; };
 		9D4101391978CFAD00907FA8 /* CCSoomlaEventDispatcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSoomlaEventDispatcher.cpp; sourceTree = "<group>"; };
 		9D41013A1978CFAD00907FA8 /* CCSoomlaEventDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSoomlaEventDispatcher.h; sourceTree = "<group>"; };
 		9D41013B1978CFAD00907FA8 /* CCSoomlaMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSoomlaMacros.h; sourceTree = "<group>"; };
@@ -214,18 +208,14 @@
 		9D63D02D19B0EDB90054EA87 /* CCNdkBridgeIos.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCNdkBridgeIos.mm; sourceTree = "<group>"; };
 		9D63D02E19B0EDB90054EA87 /* CommonConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonConsts.h; sourceTree = "<group>"; };
 		9D63D02F19B0EDB90054EA87 /* CommonConsts.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CommonConsts.mm; sourceTree = "<group>"; };
-		9D63D03019B0EDB90054EA87 /* CoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreService.h; sourceTree = "<group>"; };
-		9D63D03119B0EDB90054EA87 /* CoreService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CoreService.mm; sourceTree = "<group>"; };
+		9D63D03019B0EDB90054EA87 /* CoreBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreBridge.h; sourceTree = "<group>"; };
+		9D63D03119B0EDB90054EA87 /* CoreBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CoreBridge.mm; sourceTree = "<group>"; };
 		9D63D03219B0EDB90054EA87 /* DomainFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainFactory.h; sourceTree = "<group>"; };
 		9D63D03319B0EDB90054EA87 /* DomainFactory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DomainFactory.mm; sourceTree = "<group>"; };
 		9D63D03419B0EDB90054EA87 /* DomainHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainHelper.h; sourceTree = "<group>"; };
 		9D63D03519B0EDB90054EA87 /* DomainHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DomainHelper.mm; sourceTree = "<group>"; };
 		9D63D03619B0EDB90054EA87 /* NdkGlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NdkGlue.h; sourceTree = "<group>"; };
 		9D63D03719B0EDB90054EA87 /* NdkGlue.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NdkGlue.mm; sourceTree = "<group>"; };
-		9D63D03819B0EDB90054EA87 /* ParamsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParamsProvider.h; sourceTree = "<group>"; };
-		9D63D03919B0EDB90054EA87 /* ParamsProvider.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ParamsProvider.mm; sourceTree = "<group>"; };
-		9D63D03A19B0EDB90054EA87 /* ServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceManager.h; sourceTree = "<group>"; };
-		9D63D03B19B0EDB90054EA87 /* ServiceManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ServiceManager.mm; sourceTree = "<group>"; };
 		9D63D04E19B0EE220054EA87 /* JSONConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONConsts.h; sourceTree = "<group>"; };
 		9D63D04F19B0EE220054EA87 /* JSONConsts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONConsts.m; sourceTree = "<group>"; };
 		9D63D05019B0EE220054EA87 /* KeyValDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyValDatabase.h; sourceTree = "<group>"; };
@@ -266,10 +256,14 @@
 		C0B3C5EF168C6D0C00161FAA /* libCocos2dxCoreFromSources.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocos2dxCoreFromSources.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B3C5F2168C6D0C00161FAA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F861D66619BF6192008834EF /* Cocos2dxCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cocos2dxCore.h; sourceTree = "<group>"; };
-		F8694A6C1A1C963D001738B4 /* CCBridgelessCoreService.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCBridgelessCoreService.cpp; sourceTree = "<group>"; };
-		F8694A6D1A1C963D001738B4 /* CCBridgelessCoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBridgelessCoreService.h; sourceTree = "<group>"; };
-		F8694A701A1C9852001738B4 /* CCNativeCoreService.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCNativeCoreService.cpp; sourceTree = "<group>"; };
-		F8694A711A1C9852001738B4 /* CCNativeCoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNativeCoreService.h; sourceTree = "<group>"; };
+		F865E1AC1AB0552F006DA7E2 /* CCSoomla.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCSoomla.h; sourceTree = "<group>"; };
+		F865E1AD1AB05541006DA7E2 /* CCSoomla.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSoomla.cpp; sourceTree = "<group>"; };
+		F865E1AF1AB06FE9006DA7E2 /* CCCoreBridgeBinderIos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCoreBridgeBinderIos.h; sourceTree = "<group>"; };
+		F865E1B01AB06FE9006DA7E2 /* CCCoreBridgeBinderIos.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCCoreBridgeBinderIos.mm; sourceTree = "<group>"; };
+		F8694A6C1A1C963D001738B4 /* CCBridgelessCoreBridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCBridgelessCoreBridge.cpp; sourceTree = "<group>"; };
+		F8694A6D1A1C963D001738B4 /* CCBridgelessCoreBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBridgelessCoreBridge.h; sourceTree = "<group>"; };
+		F8694A701A1C9852001738B4 /* CCNativeCoreBridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCNativeCoreBridge.cpp; sourceTree = "<group>"; };
+		F8694A711A1C9852001738B4 /* CCNativeCoreBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNativeCoreBridge.h; sourceTree = "<group>"; };
 		F8A1E3961A235CBB006FAA3C /* libCocos2dxCoreFromSources Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCocos2dxCoreFromSources Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B27ED119B9E8C90094A771 /* CCKeyValueStorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCKeyValueStorage.cpp; sourceTree = "<group>"; };
 		F8B27ED219B9E8C90094A771 /* CCKeyValueStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCKeyValueStorage.h; sourceTree = "<group>"; };
@@ -309,18 +303,20 @@
 			isa = PBXGroup;
 			children = (
 				F861D66619BF6192008834EF /* Cocos2dxCore.h */,
+				F865E1AC1AB0552F006DA7E2 /* CCSoomla.h */,
+				F865E1AD1AB05541006DA7E2 /* CCSoomla.cpp */,
 				9D4101251978CFAD00907FA8 /* CCAbstractAggregatedEventHandler.h */,
 				9D4101261978CFAD00907FA8 /* CCCoreConsts.cpp */,
 				9D4101271978CFAD00907FA8 /* CCCoreConsts.h */,
 				9D4101281978CFAD00907FA8 /* CCCoreEventDispatcher.cpp */,
 				9D4101291978CFAD00907FA8 /* CCCoreEventDispatcher.h */,
 				9D41012A1978CFAD00907FA8 /* CCCoreEventHandler.h */,
-				F8694A6C1A1C963D001738B4 /* CCBridgelessCoreService.cpp */,
-				F8694A6D1A1C963D001738B4 /* CCBridgelessCoreService.h */,
-				F8694A701A1C9852001738B4 /* CCNativeCoreService.cpp */,
-				F8694A711A1C9852001738B4 /* CCNativeCoreService.h */,
-				9D41012B1978CFAD00907FA8 /* CCCoreService.cpp */,
-				9D41012C1978CFAD00907FA8 /* CCCoreService.h */,
+				F8694A6C1A1C963D001738B4 /* CCBridgelessCoreBridge.cpp */,
+				F8694A6D1A1C963D001738B4 /* CCBridgelessCoreBridge.h */,
+				F8694A701A1C9852001738B4 /* CCNativeCoreBridge.cpp */,
+				F8694A711A1C9852001738B4 /* CCNativeCoreBridge.h */,
+				9D41012B1978CFAD00907FA8 /* CCCoreBridge.cpp */,
+				9D41012C1978CFAD00907FA8 /* CCCoreBridge.h */,
 				9D41012D1978CFAD00907FA8 /* CCDomainFactory.cpp */,
 				9D41012E1978CFAD00907FA8 /* CCDomainFactory.h */,
 				9D41012F1978CFAD00907FA8 /* CCDomainHelper.cpp */,
@@ -331,8 +327,6 @@
 				9D4101341978CFAD00907FA8 /* CCJsonHelper.h */,
 				9D4101351978CFAD00907FA8 /* CCNdkBridge.cpp */,
 				9D4101361978CFAD00907FA8 /* CCNdkBridge.h */,
-				9D4101371978CFAD00907FA8 /* CCServiceManager.cpp */,
-				9D4101381978CFAD00907FA8 /* CCServiceManager.h */,
 				9D4101391978CFAD00907FA8 /* CCSoomlaEventDispatcher.cpp */,
 				9D41013A1978CFAD00907FA8 /* CCSoomlaEventDispatcher.h */,
 				9D41013B1978CFAD00907FA8 /* CCSoomlaMacros.h */,
@@ -381,20 +375,18 @@
 			children = (
 				9D63D02C19B0EDB90054EA87 /* CCNdkBridgeIos.h */,
 				9D63D02D19B0EDB90054EA87 /* CCNdkBridgeIos.mm */,
+				F865E1AF1AB06FE9006DA7E2 /* CCCoreBridgeBinderIos.h */,
+				F865E1B01AB06FE9006DA7E2 /* CCCoreBridgeBinderIos.mm */,
 				9D63D02E19B0EDB90054EA87 /* CommonConsts.h */,
 				9D63D02F19B0EDB90054EA87 /* CommonConsts.mm */,
-				9D63D03019B0EDB90054EA87 /* CoreService.h */,
-				9D63D03119B0EDB90054EA87 /* CoreService.mm */,
+				9D63D03019B0EDB90054EA87 /* CoreBridge.h */,
+				9D63D03119B0EDB90054EA87 /* CoreBridge.mm */,
 				9D63D03219B0EDB90054EA87 /* DomainFactory.h */,
 				9D63D03319B0EDB90054EA87 /* DomainFactory.mm */,
 				9D63D03419B0EDB90054EA87 /* DomainHelper.h */,
 				9D63D03519B0EDB90054EA87 /* DomainHelper.mm */,
 				9D63D03619B0EDB90054EA87 /* NdkGlue.h */,
 				9D63D03719B0EDB90054EA87 /* NdkGlue.mm */,
-				9D63D03819B0EDB90054EA87 /* ParamsProvider.h */,
-				9D63D03919B0EDB90054EA87 /* ParamsProvider.mm */,
-				9D63D03A19B0EDB90054EA87 /* ServiceManager.h */,
-				9D63D03B19B0EDB90054EA87 /* ServiceManager.mm */,
 			);
 			name = CoreCocos2dx;
 			path = "soomla-native/projects/cocos2dx-ios-core/CoreCocos2dx";
@@ -516,6 +508,7 @@
 			files = (
 				9D41014A1978CFAD00907FA8 /* CCAbstractAggregatedEventHandler.h in Headers */,
 				9D63D03C19B0EDB90054EA87 /* CCNdkBridgeIos.h in Headers */,
+				F865E1B11AB06FE9006DA7E2 /* CCCoreBridgeBinderIos.h in Headers */,
 				9D63D09419B0EE220054EA87 /* SoomlaEventHandling.h in Headers */,
 				9D63D09919B0EE220054EA87 /* DictionaryFactory.h in Headers */,
 				9D63D04219B0EDB90054EA87 /* DomainFactory.h in Headers */,
@@ -527,25 +520,22 @@
 				9D63D07819B0EE220054EA87 /* KeyValDatabase.h in Headers */,
 				9D4101551978CFAD00907FA8 /* CCDomainHelper.h in Headers */,
 				9D63D07E19B0EE220054EA87 /* SoomlaEncryptor.h in Headers */,
-				9D63D04019B0EDB90054EA87 /* CoreService.h in Headers */,
+				9D63D04019B0EDB90054EA87 /* CoreBridge.h in Headers */,
 				9D63D08619B0EE220054EA87 /* RandomReward.h in Headers */,
 				9D63D07C19B0EE220054EA87 /* RewardStorage.h in Headers */,
 				9D63D08819B0EE220054EA87 /* Reward.h in Headers */,
-				9D63D04A19B0EDB90054EA87 /* ServiceManager.h in Headers */,
 				9D4101661978CFAD00907FA8 /* CCBadgeReward.h in Headers */,
 				9D41016C1978CFAD00907FA8 /* CCSequenceReward.h in Headers */,
 				9D4101641978CFAD00907FA8 /* CCAggregateReward.h in Headers */,
 				F8B27ED419B9E8C90094A771 /* CCKeyValueStorage.h in Headers */,
 				9D63D09019B0EE220054EA87 /* SoomlaConfig.h in Headers */,
 				9D4101681978CFAD00907FA8 /* CCRandomReward.h in Headers */,
-				9D63D04819B0EDB90054EA87 /* ParamsProvider.h in Headers */,
 				9D4101591978CFAD00907FA8 /* CCJsonHelper.h in Headers */,
-				9D4101511978CFAD00907FA8 /* CCCoreService.h in Headers */,
+				9D4101511978CFAD00907FA8 /* CCCoreBridge.h in Headers */,
 				9D4101531978CFAD00907FA8 /* CCDomainFactory.h in Headers */,
 				9D63D09719B0EE220054EA87 /* SoomlaUtils.h in Headers */,
 				9D63D08C19B0EE220054EA87 /* Schedule.h in Headers */,
 				9D41014C1978CFAD00907FA8 /* CCCoreConsts.h in Headers */,
-				9D41015D1978CFAD00907FA8 /* CCServiceManager.h in Headers */,
 				9D63D04619B0EDB90054EA87 /* NdkGlue.h in Headers */,
 				9D63D04419B0EDB90054EA87 /* DomainHelper.h in Headers */,
 				9D41015B1978CFAD00907FA8 /* CCNdkBridge.h in Headers */,
@@ -553,7 +543,7 @@
 				9D63D08019B0EE220054EA87 /* FBEncryptorAES.h in Headers */,
 				9D63D07619B0EE220054EA87 /* JSONConsts.h in Headers */,
 				9D41014E1978CFAD00907FA8 /* CCCoreEventDispatcher.h in Headers */,
-				F8694A6F1A1C963D001738B4 /* CCBridgelessCoreService.h in Headers */,
+				F8694A6F1A1C963D001738B4 /* CCBridgelessCoreBridge.h in Headers */,
 				9D4101601978CFAD00907FA8 /* CCSoomlaMacros.h in Headers */,
 				9D4101621978CFAD00907FA8 /* CCDomain.h in Headers */,
 				9D4101571978CFAD00907FA8 /* CCError.h in Headers */,
@@ -564,7 +554,7 @@
 				F861D66719BF6192008834EF /* Cocos2dxCore.h in Headers */,
 				9D63D09619B0EE220054EA87 /* SoomlaiOSCore-Prefix.pch in Headers */,
 				9D63D09219B0EE220054EA87 /* SoomlaEntity.h in Headers */,
-				F8694A731A1C9852001738B4 /* CCNativeCoreService.h in Headers */,
+				F8694A731A1C9852001738B4 /* CCNativeCoreBridge.h in Headers */,
 				372B7A1D5F372FCFD9E68388 /* CCSoomlaUtils.h in Headers */,
 				372B74CD5188E48BE19BAC31 /* CCRewardStorage.h in Headers */,
 				9D63D03E19B0EDB90054EA87 /* CommonConsts.h in Headers */,
@@ -580,15 +570,14 @@
 				F8A1E3CE1A236202006FAA3C /* CCCoreConsts.h in Headers */,
 				F8A1E3CF1A236202006FAA3C /* CCCoreEventDispatcher.h in Headers */,
 				F8A1E3D01A236202006FAA3C /* CCCoreEventHandler.h in Headers */,
-				F8A1E3D11A236202006FAA3C /* CCBridgelessCoreService.h in Headers */,
-				F8A1E3D21A236202006FAA3C /* CCNativeCoreService.h in Headers */,
-				F8A1E3D31A236202006FAA3C /* CCCoreService.h in Headers */,
+				F8A1E3D11A236202006FAA3C /* CCBridgelessCoreBridge.h in Headers */,
+				F8A1E3D21A236202006FAA3C /* CCNativeCoreBridge.h in Headers */,
+				F8A1E3D31A236202006FAA3C /* CCCoreBridge.h in Headers */,
 				F8A1E3D41A236202006FAA3C /* CCDomainFactory.h in Headers */,
 				F8A1E3D51A236202006FAA3C /* CCDomainHelper.h in Headers */,
 				F8A1E3D61A236202006FAA3C /* CCError.h in Headers */,
 				F8A1E3D71A236202006FAA3C /* CCJsonHelper.h in Headers */,
 				F8A1E3D81A236202006FAA3C /* CCNdkBridge.h in Headers */,
-				F8A1E3D91A236202006FAA3C /* CCServiceManager.h in Headers */,
 				F8A1E3DA1A236202006FAA3C /* CCSoomlaEventDispatcher.h in Headers */,
 				F8A1E3DB1A236202006FAA3C /* CCSoomlaMacros.h in Headers */,
 				F8A1E3DC1A236202006FAA3C /* CCDomain.h in Headers */,
@@ -680,33 +669,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D63D04319B0EDB90054EA87 /* DomainFactory.mm in Sources */,
-				F8694A721A1C9852001738B4 /* CCNativeCoreService.cpp in Sources */,
+				F8694A721A1C9852001738B4 /* CCNativeCoreBridge.cpp in Sources */,
 				9D4101631978CFAD00907FA8 /* CCAggregateReward.cpp in Sources */,
 				9D63D09519B0EE220054EA87 /* SoomlaEventHandling.m in Sources */,
 				9D63D07B19B0EE220054EA87 /* KeyValueStorage.m in Sources */,
 				9D41015E1978CFAD00907FA8 /* CCSoomlaEventDispatcher.cpp in Sources */,
 				9D63D07D19B0EE220054EA87 /* RewardStorage.m in Sources */,
+				F865E1B21AB06FE9006DA7E2 /* CCCoreBridgeBinderIos.mm in Sources */,
 				9D4101691978CFAD00907FA8 /* CCReward.cpp in Sources */,
 				9D41015A1978CFAD00907FA8 /* CCNdkBridge.cpp in Sources */,
 				9D4101581978CFAD00907FA8 /* CCJsonHelper.cpp in Sources */,
 				9D41014D1978CFAD00907FA8 /* CCCoreEventDispatcher.cpp in Sources */,
-				9D41015C1978CFAD00907FA8 /* CCServiceManager.cpp in Sources */,
 				9D63D08D19B0EE220054EA87 /* Schedule.m in Sources */,
 				9D4101651978CFAD00907FA8 /* CCBadgeReward.cpp in Sources */,
+				F865E1AE1AB05541006DA7E2 /* CCSoomla.cpp in Sources */,
 				9D63D08719B0EE220054EA87 /* RandomReward.m in Sources */,
 				9D41014B1978CFAD00907FA8 /* CCCoreConsts.cpp in Sources */,
 				9D63D08119B0EE220054EA87 /* FBEncryptorAES.m in Sources */,
-				F8694A6E1A1C963D001738B4 /* CCBridgelessCoreService.cpp in Sources */,
+				F8694A6E1A1C963D001738B4 /* CCBridgelessCoreBridge.cpp in Sources */,
 				9D63D08919B0EE220054EA87 /* Reward.m in Sources */,
 				9D63D08F19B0EE220054EA87 /* Soomla.m in Sources */,
 				9D41016B1978CFAD00907FA8 /* CCSequenceReward.cpp in Sources */,
-				9D63D04119B0EDB90054EA87 /* CoreService.mm in Sources */,
+				9D63D04119B0EDB90054EA87 /* CoreBridge.mm in Sources */,
 				9D4101541978CFAD00907FA8 /* CCDomainHelper.cpp in Sources */,
 				9D63D09819B0EE220054EA87 /* SoomlaUtils.m in Sources */,
 				9D63D09119B0EE220054EA87 /* SoomlaConfig.m in Sources */,
 				9D63D08319B0EE220054EA87 /* NSData-Base64.m in Sources */,
-				9D63D04B19B0EDB90054EA87 /* ServiceManager.mm in Sources */,
-				9D63D04919B0EDB90054EA87 /* ParamsProvider.mm in Sources */,
 				9D63D09319B0EE220054EA87 /* SoomlaEntity.m in Sources */,
 				9D63D07F19B0EE220054EA87 /* SoomlaEncryptor.m in Sources */,
 				9D63D09A19B0EE220054EA87 /* DictionaryFactory.m in Sources */,
@@ -717,7 +705,7 @@
 				9D4101561978CFAD00907FA8 /* CCError.cpp in Sources */,
 				9D63D08519B0EE220054EA87 /* BadgeReward.m in Sources */,
 				9D63D03F19B0EDB90054EA87 /* CommonConsts.mm in Sources */,
-				9D4101501978CFAD00907FA8 /* CCCoreService.cpp in Sources */,
+				9D4101501978CFAD00907FA8 /* CCCoreBridge.cpp in Sources */,
 				9D63D03D19B0EDB90054EA87 /* CCNdkBridgeIos.mm in Sources */,
 				F8B27ED319B9E8C90094A771 /* CCKeyValueStorage.cpp in Sources */,
 				9D4101671978CFAD00907FA8 /* CCRandomReward.cpp in Sources */,
@@ -735,17 +723,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F865E1C41AB08590006DA7E2 /* CCSoomla.cpp in Sources */,
 				F8A1E3AD1A235D73006FAA3C /* CCCoreConsts.cpp in Sources */,
 				F8A1E3AE1A235D73006FAA3C /* CCCoreEventDispatcher.cpp in Sources */,
-				F8A1E3AF1A235D73006FAA3C /* CCBridgelessCoreService.cpp in Sources */,
-				F8A1E3B01A235D73006FAA3C /* CCNativeCoreService.cpp in Sources */,
-				F8A1E3B11A235D73006FAA3C /* CCCoreService.cpp in Sources */,
+				F8A1E3AF1A235D73006FAA3C /* CCBridgelessCoreBridge.cpp in Sources */,
+				F8A1E3B01A235D73006FAA3C /* CCNativeCoreBridge.cpp in Sources */,
+				F8A1E3B11A235D73006FAA3C /* CCCoreBridge.cpp in Sources */,
 				F8A1E3B21A235D73006FAA3C /* CCDomainFactory.cpp in Sources */,
 				F8A1E3B31A235D73006FAA3C /* CCDomainHelper.cpp in Sources */,
 				F8A1E3B41A235D73006FAA3C /* CCError.cpp in Sources */,
 				F8A1E3B51A235D73006FAA3C /* CCJsonHelper.cpp in Sources */,
 				F8A1E3B61A235D73006FAA3C /* CCNdkBridge.cpp in Sources */,
-				F8A1E3B71A235D73006FAA3C /* CCServiceManager.cpp in Sources */,
 				F8A1E3B81A235D73006FAA3C /* CCSoomlaEventDispatcher.cpp in Sources */,
 				F8A1E3B91A235D73006FAA3C /* CCSoomlaMacros.h in Sources */,
 				F8A1E3BA1A235D73006FAA3C /* CCDomain.cpp in Sources */,

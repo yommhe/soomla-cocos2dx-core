@@ -17,7 +17,7 @@
 #include "CCRewardStorage.h"
 #include "CCReward.h"
 #include "CCSequenceReward.h"
-#include "CCCoreService.h"
+#include "CCCoreBridge.h"
 
 #define TAG "SOOMLA RewardStorage"
 
@@ -34,7 +34,7 @@ namespace soomla {
     }
 
     int CCRewardStorage::getTimesGiven(CCReward *reward) {
-        return CCCoreService::getInstance()->getTimesGiven(reward);
+        return CCCoreBridge::getInstance()->getTimesGiven(reward);
     }
 
     bool CCRewardStorage::isRewardGiven(CCReward *reward) {
@@ -46,14 +46,14 @@ namespace soomla {
     }
 
     void CCRewardStorage::setRewardStatus(CCReward *reward, bool give, bool notify) {
-        CCCoreService::getInstance()->setRewardStatus(reward, give, notify);
+        CCCoreBridge::getInstance()->setRewardStatus(reward, give, notify);
     }
 
     int CCRewardStorage::getLastSeqIdxGiven(CCSequenceReward *sequenceReward) {
-        return CCCoreService::getInstance()->getLastSeqIdxGiven(sequenceReward);
+        return CCCoreBridge::getInstance()->getLastSeqIdxGiven(sequenceReward);
     }
 
     void CCRewardStorage::setLastSeqIdxGiven(CCSequenceReward *sequenceReward, unsigned int idx) {
-        CCCoreService::getInstance()->setLastSeqIdxGiven(sequenceReward, idx);
+        CCCoreBridge::getInstance()->setLastSeqIdxGiven(sequenceReward, idx);
     }
 }

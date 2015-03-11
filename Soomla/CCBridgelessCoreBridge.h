@@ -14,17 +14,17 @@
  limitations under the License.
  */
 
-#ifndef __CCBridgelessCoreService_H_
-#define __CCBridgelessCoreService_H_
+#ifndef __CCBridgelessCoreBridge_H_
+#define __CCBridgelessCoreBridge_H_
 
-#include "CCCoreService.h"
+#include "CCCoreBridge.h"
 #include "cocos2d.h"
 
 namespace soomla {
     
-    class CCBridgelessCoreService: public CCCoreService {
+    class CCBridgelessCoreBridge: public CCCoreBridge {
     public:
-        CCBridgelessCoreService();
+        CCBridgelessCoreBridge();
         
         int getTimesGiven(CCReward *reward);
         void setRewardStatus(CCReward *reward, bool give, bool notify);
@@ -50,4 +50,4 @@ namespace soomla {
     };
 }
 
-#endif /* __CCBridgelessCoreService_H_ */
+#endif /* __CCBridgelessCoreBridge_H_ */

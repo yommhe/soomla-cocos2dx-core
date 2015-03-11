@@ -14,15 +14,15 @@
  limitations under the License.
  */
 
-#include "CCCoreService.h"
+#include "CCCoreBridge.h"
 #include "CCDomainFactory.h"
 #include "CCBadgeReward.h"
 #include "CCRandomReward.h"
 #include "CCSequenceReward.h"
 #include "CCCoreEventDispatcher.h"
 #include "CCSoomlaUtils.h"
-#include "CCNativeCoreService.h"
-#include "CCBridgelessCoreService.h"
+#include "CCNativeCoreBridge.h"
+#include "CCBridgelessCoreBridge.h"
 
 using namespace cocos2d;
 
@@ -30,34 +30,34 @@ namespace soomla {
 
     USING_NS_CC;
 
-#define TAG "SOOMLA CoreService"
+#define TAG "SOOMLA CoreBridge"
 
-    static CCCoreService *sInstance = NULL;
+    static CCCoreBridge *sInstance = NULL;
 
-    CCCoreService *CCCoreService::getInstance() {
+    CCCoreBridge *CCCoreBridge::getInstance() {
         if (!sInstance)
         {
             #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS) || (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-            sInstance = new CCNativeCoreService();
+            sInstance = new CCNativeCoreBridge();
             #else
-            sInstance = new CCBridgelessCoreService();
+            sInstance = new CCBridgelessCoreBridge();
             #endif
             sInstance->retain();
         }
         return sInstance;
     }
 
-    void CCCoreService::initShared() {
-        CCCoreService *coreService = CCCoreService::getInstance();
-        if (!coreService->init()) {
+    void CCCoreBridge::initShared() {
+        CCCoreBridge *coreBridge = CCCoreBridge::getInstance();
+        if (!coreBridge->init()) {
             exit(1);
         }
     }
 
-    CCCoreService::CCCoreService() {
+    CCCoreBridge::CCCoreBridge() {
     }
 
-    bool CCCoreService::init() {
+    bool CCCoreBridge::init() {
 
         CCCoreEventDispatcher::getInstance();    // to get sure it's inited
 

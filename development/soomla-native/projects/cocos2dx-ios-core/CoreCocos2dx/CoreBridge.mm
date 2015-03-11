@@ -1,5 +1,5 @@
 
-#import "CoreService.h"
+#import "CoreBridge.h"
 #import "NdkGlue.h"
 #import "Reward.h"
 #import "SoomlaEventHandling.h"
@@ -13,22 +13,21 @@
 #import "KeyValueStorage.h"
 #import "DomainFactory.h"
 #import "Soomla.h"
-#import "ParamsProvider.h"
 
-@interface CoreService ()
+@interface CoreBridge ()
 @end
 
-@implementation CoreService {
+@implementation CoreBridge {
 
 }
 
-+ (id)sharedCoreService {
-    static CoreService *sharedCoreService = nil;
++ (id)sharedCoreBridge {
+    static CoreBridge *sharedCoreBridge = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedCoreService = [self alloc];
+        sharedCoreBridge = [self alloc];
     });
-    return sharedCoreService;
+    return sharedCoreBridge;
 }
 
 + (void)initialize {
@@ -51,51 +50,49 @@
     NdkGlue *ndkGlue = [NdkGlue sharedInstance];
 
     /* -= Call handlers =- */
-    [ndkGlue registerCallHandlerForKey:@"CCCoreService::init" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
-        [[CoreService sharedCoreService] init];
-        NSDictionary *commonParams = [[ParamsProvider sharedParamsProvider] getParamsForKey:@"common"];
-        NSString *customSecret = commonParams[@"customSecret"];
-        [Soomla initializeWithSecret:customSecret];
+    [ndkGlue registerCallHandlerForKey:@"CCSoomla::initialize" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
+        NSString *soomlaSecret = parameters[@"soomlaSecret"];
+        [Soomla initializeWithSecret:soomlaSecret];
     }];
-    [ndkGlue registerCallHandlerForKey:@"CCCoreService::getTimesGiven" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
+    [ndkGlue registerCallHandlerForKey:@"CCCoreBridge::getTimesGiven" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
         NSString *rewardId = parameters[@"reward"];
         int res = [RewardStorage getTimesGivenForReward:rewardId];
         retParameters[@"return"] = @(res);
     }];
-    [ndkGlue registerCallHandlerForKey:@"CCCoreService::setRewardStatus" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
+    [ndkGlue registerCallHandlerForKey:@"CCCoreBridge::setRewardStatus" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
         NSString *rewardId = parameters[@"reward"];
         bool give = [parameters[@"give"] boolValue];
         bool notify = [parameters[@"notify"] boolValue];
         [RewardStorage setStatus:give forReward:rewardId andNotify:notify];
     }];
-    [ndkGlue registerCallHandlerForKey:@"CCCoreService::getLastSeqIdxGiven" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
+    [ndkGlue registerCallHandlerForKey:@"CCCoreBridge::getLastSeqIdxGiven" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
         NSString *rewardId = parameters[@"reward"];
         int res = [RewardStorage getLastSeqIdxGivenForSequenceReward:rewardId];
         retParameters[@"return"] = @(res);
     }];
-    [ndkGlue registerCallHandlerForKey:@"CCCoreService::setLastSeqIdxGiven" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
+    [ndkGlue registerCallHandlerForKey:@"CCCoreBridge::setLastSeqIdxGiven" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
         NSString *rewardId = parameters[@"reward"];
         int idx = [parameters[@"idx"] intValue];
         [RewardStorage setLastSeqIdxGiven:idx ForSequenceReward:rewardId];
     }];
 
-    [ndkGlue registerCallHandlerForKey:@"CCCoreService::getValue" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
+    [ndkGlue registerCallHandlerForKey:@"CCCoreBridge::getValue" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
         NSString *key = parameters[@"key"];
         NSString *res = [KeyValueStorage getValueForKey:key];
         if (res) {
             retParameters[@"return"] = res;
         }
     }];
-    [ndkGlue registerCallHandlerForKey:@"CCCoreService::setValue" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
+    [ndkGlue registerCallHandlerForKey:@"CCCoreBridge::setValue" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
         NSString *key = parameters[@"key"];
         NSString *val = parameters[@"val"];
         [KeyValueStorage setValue:val forKey:key];
     }];
-    [ndkGlue registerCallHandlerForKey:@"CCCoreService::deleteKeyValue" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
+    [ndkGlue registerCallHandlerForKey:@"CCCoreBridge::deleteKeyValue" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
         NSString *key = parameters[@"key"];
         [KeyValueStorage deleteValueForKey:key];
     }];
-    [ndkGlue registerCallHandlerForKey:@"CCCoreService::purge" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
+    [ndkGlue registerCallHandlerForKey:@"CCCoreBridge::purge" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
         [KeyValueStorage purge];
     }];
 

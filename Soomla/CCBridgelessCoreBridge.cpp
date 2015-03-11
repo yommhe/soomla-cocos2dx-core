@@ -16,7 +16,7 @@
 
 #include "base/CCUserDefault.h"
 
-#include "CCBridgelessCoreService.h"
+#include "CCBridgelessCoreBridge.h"
 #include "CCSoomlaUtils.h"
 #include "CCCoreEventDispatcher.h"
 #include "CCSoomlaUtils.h"
@@ -25,19 +25,19 @@ namespace soomla {
     
     USING_NS_CC;
     
-    #define TAG "SOOMLA CCBridgelessCoreService"
+    #define TAG "SOOMLA BridgelessCoreBridge"
 
     #define DB_KEY_PRFIX "soomla."
     #define KEY_VALUE_STORAGE_KEY "soomla.kvs.keys"
     
-    CCBridgelessCoreService::CCBridgelessCoreService() {
+    CCBridgelessCoreBridge::CCBridgelessCoreBridge() {
         mStoredKeys = __Set::create();
         mStoredKeys->retain();
         
         loadStoredKeys();
     }
     
-    int CCBridgelessCoreService::getTimesGiven(CCReward *reward) {
+    int CCBridgelessCoreBridge::getTimesGiven(CCReward *reward) {
         const char *key = keyRewardTimesGiven(reward->getId()->getCString());
         const char *val = kvStorageGetValue(key);
         if (val == NULL) {
@@ -46,11 +46,11 @@ namespace soomla {
         return __String::create(val)->intValue();
     }
     
-    void CCBridgelessCoreService::setRewardStatus(CCReward *reward, bool give, bool notify) {
+    void CCBridgelessCoreBridge::setRewardStatus(CCReward *reward, bool give, bool notify) {
         setTimesGiven(reward, give, notify);
     }
     
-    int CCBridgelessCoreService::getLastSeqIdxGiven(soomla::CCSequenceReward *sequenceReward) {
+    int CCBridgelessCoreBridge::getLastSeqIdxGiven(soomla::CCSequenceReward *sequenceReward) {
         const char *key = keyRewardIdxSeqGiven(sequenceReward->getId()->getCString());
         const char *val = kvStorageGetValue(key);
         if (val == NULL) {
@@ -59,12 +59,12 @@ namespace soomla {
         return __String::create(val)->intValue();
     }
     
-    void CCBridgelessCoreService::setLastSeqIdxGiven(CCSequenceReward *sequenceReward, unsigned int idx) {
+    void CCBridgelessCoreBridge::setLastSeqIdxGiven(CCSequenceReward *sequenceReward, unsigned int idx) {
         const char *key = keyRewardIdxSeqGiven(sequenceReward->getId()->getCString());
         kvStorageSetValue(key, __String::createWithFormat("%d", idx)->getCString());
     }
     
-    const char *CCBridgelessCoreService::kvStorageGetValue(const char *key) const {
+    const char *CCBridgelessCoreBridge::kvStorageGetValue(const char *key) const {
         std::string defaultValue = "";
         std::string result = UserDefault::getInstance()->getStringForKey(key, defaultValue);
         if (result == defaultValue) {
@@ -76,7 +76,7 @@ namespace soomla {
         return returnedValue->getCString();
     }
     
-    void CCBridgelessCoreService::kvStorageSetValue(const char *key, const char *val) {
+    void CCBridgelessCoreBridge::kvStorageSetValue(const char *key, const char *val) {
         UserDefault::getInstance()->setStringForKey(key, val);
         UserDefault::getInstance()->flush();
         
@@ -84,7 +84,7 @@ namespace soomla {
         saveStoredKeys();
     }
     
-    void CCBridgelessCoreService::kvStorageDeleteKeyValue(const char *key) {
+    void CCBridgelessCoreBridge::kvStorageDeleteKeyValue(const char *key) {
         UserDefault::getInstance()->setStringForKey(key, "");
         UserDefault::getInstance()->flush();
         
@@ -92,7 +92,7 @@ namespace soomla {
         saveStoredKeys();
     }
     
-    void CCBridgelessCoreService::kvStoragePurge() {
+    void CCBridgelessCoreBridge::kvStoragePurge() {
         for(__SetIterator i = mStoredKeys->begin(); i != mStoredKeys->end(); i++) {
             if (!(*i)) {
                 break;
@@ -108,7 +108,7 @@ namespace soomla {
         UserDefault::getInstance()->flush();
     }
     
-    void CCBridgelessCoreService::setTimesGiven(CCReward *reward, bool up, bool notify) {
+    void CCBridgelessCoreBridge::setTimesGiven(CCReward *reward, bool up, bool notify) {
         int total = getTimesGiven(reward) + (up ? 1 : -1);
         if(total<0) total = 0;
         
@@ -134,7 +134,7 @@ namespace soomla {
         }
     }
     
-    void CCBridgelessCoreService::addStoredKeys(const char *key) {
+    void CCBridgelessCoreBridge::addStoredKeys(const char *key) {
         __String *wrapKey = __String::create(key);
         
         if (mStoredKeys->containsObject(wrapKey)) {
@@ -144,13 +144,13 @@ namespace soomla {
         mStoredKeys->addObject(wrapKey);
     }
     
-    void CCBridgelessCoreService::removeStoredKeys(const char *key) {
+    void CCBridgelessCoreBridge::removeStoredKeys(const char *key) {
         __String *wrapKey = __String::create(key);
         
         mStoredKeys->removeObject(wrapKey);
     }
     
-    void CCBridgelessCoreService::saveStoredKeys() {
+    void CCBridgelessCoreBridge::saveStoredKeys() {
         std::string joinedKeys = "";
         for(__SetIterator i = mStoredKeys->begin(); i != mStoredKeys->end(); i++) {
             if (!(*i)) {
@@ -165,7 +165,7 @@ namespace soomla {
         UserDefault::getInstance()->flush();
     }
     
-    void CCBridgelessCoreService::loadStoredKeys() {
+    void CCBridgelessCoreBridge::loadStoredKeys() {
         std::string joinedKeys = UserDefault::getInstance()->getStringForKey(KEY_VALUE_STORAGE_KEY, "");
         
         std::stringstream ss(joinedKeys);
@@ -175,19 +175,19 @@ namespace soomla {
         }
     }
     
-    const char* CCBridgelessCoreService::keyRewards(const char* rewardId, const char* postfix) {
+    const char* CCBridgelessCoreBridge::keyRewards(const char* rewardId, const char* postfix) {
         return __String::createWithFormat("%srewards.%s.%s", DB_KEY_PRFIX, rewardId, postfix)->getCString();
     }
     
-    const char* CCBridgelessCoreService::keyRewardIdxSeqGiven(const char* rewardId) {
+    const char* CCBridgelessCoreBridge::keyRewardIdxSeqGiven(const char* rewardId) {
         return keyRewards(rewardId, "seq.id");
     }
     
-    const char* CCBridgelessCoreService::keyRewardTimesGiven(const char* rewardId) {
+    const char* CCBridgelessCoreBridge::keyRewardTimesGiven(const char* rewardId) {
         return keyRewards(rewardId, "timesGiven");
     }
     
-    const char* CCBridgelessCoreService::keyRewardLastGiven(const char* rewardId) {
+    const char* CCBridgelessCoreBridge::keyRewardLastGiven(const char* rewardId) {
         return keyRewards(rewardId, "lastGiven");
     }
 }

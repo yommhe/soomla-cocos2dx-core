@@ -14,14 +14,14 @@
  limitations under the License.
  */
 
-#ifndef __CCNativeCoreService_H_
-#define __CCNativeCoreService_H_
+#ifndef __CCNativeCoreBridge_H_
+#define __CCNativeCoreBridge_H_
 
-#include "CCCoreService.h"
+#include "CCCoreBridge.h"
 
 namespace soomla {
     
-    class CCNativeCoreService: public CCCoreService {
+    class CCNativeCoreBridge: public CCCoreBridge {
     public:
         virtual bool init();
         
@@ -34,7 +34,9 @@ namespace soomla {
         void kvStorageSetValue(const char *key, const char *val);
         void kvStorageDeleteKeyValue(const char *key);
         void kvStoragePurge();
+    private:
+        void bindNative();
     };
 }
 
-#endif /* __CCNativeCoreService_H_ */
+#endif /* __CCNativeCoreBridge_H_ */

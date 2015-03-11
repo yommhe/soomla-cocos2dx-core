@@ -13,20 +13,15 @@ import com.soomla.Schedule;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.ref.WeakReference;
+public class CoreBridge {
 
+    private static CoreBridge INSTANCE = null;
 
-public class CoreService extends AbstractSoomlaService {
-
-    private static CoreService INSTANCE = null;
-
-    private boolean inited = false;
-
-    public static CoreService getInstance() {
+    public static CoreBridge getInstance() {
         if (INSTANCE == null) {
-            synchronized (CoreService.class) {
+            synchronized (CoreBridge.class) {
                 if (INSTANCE == null) {
-                    INSTANCE = new CoreService();
+                    INSTANCE = new CoreBridge();
                 }
             }
         }
@@ -36,7 +31,7 @@ public class CoreService extends AbstractSoomlaService {
     @SuppressWarnings("FieldCanBeLocal")
     private CoreEventHandlerBridge coreEventHandlerBridge;
 
-    public CoreService() {
+    public CoreBridge() {
         coreEventHandlerBridge = new CoreEventHandlerBridge();
 
         DomainHelper.getInstance().registerTypeWithClassName(CommonConsts.JSON_JSON_TYPE_SCHEDULE, Schedule.class);
@@ -77,16 +72,15 @@ public class CoreService extends AbstractSoomlaService {
 
         final NdkGlue ndkGlue = NdkGlue.getInstance();
 
-        ndkGlue.registerCallHandler("CCCoreService::init", new NdkGlue.CallHandler() {
+        ndkGlue.registerCallHandler("CCSoomla::initialize", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
-                CoreService.getInstance().init();
-                String customSecret = ParamsProvider.getInstance().getParams("common").optString("customSecret");
+                String customSecret = params.optString("customSecret");
                 SoomlaUtils.LogDebug("SOOMLA", "initialize is called from java!");
                 Soomla.initialize(customSecret);
             }
         });
-        ndkGlue.registerCallHandler("CCCoreService::getTimesGiven", new NdkGlue.CallHandler() {
+        ndkGlue.registerCallHandler("CCCoreBridge::getTimesGiven", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
                 String rewardId = params.getString("reward");
@@ -94,7 +88,7 @@ public class CoreService extends AbstractSoomlaService {
                 retParams.put("return", result);
             }
         });
-        ndkGlue.registerCallHandler("CCCoreService::setRewardStatus", new NdkGlue.CallHandler() {
+        ndkGlue.registerCallHandler("CCCoreBridge::setRewardStatus", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
                 String rewardId = params.getString("reward");
@@ -103,7 +97,7 @@ public class CoreService extends AbstractSoomlaService {
                 RewardStorage.setRewardStatus(rewardId, give, notify);
             }
         });
-        ndkGlue.registerCallHandler("CCCoreService::getLastSeqIdxGiven", new NdkGlue.CallHandler() {
+        ndkGlue.registerCallHandler("CCCoreBridge::getLastSeqIdxGiven", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
                 String rewardId = params.getString("reward");
@@ -111,7 +105,7 @@ public class CoreService extends AbstractSoomlaService {
                 retParams.put("return", result);
             }
         });
-        ndkGlue.registerCallHandler("CCCoreService::setLastSeqIdxGiven", new NdkGlue.CallHandler() {
+        ndkGlue.registerCallHandler("CCCoreBridge::setLastSeqIdxGiven", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
                 String rewardId = params.getString("reward");
@@ -120,7 +114,7 @@ public class CoreService extends AbstractSoomlaService {
             }
         });
 
-        ndkGlue.registerCallHandler("CCCoreService::getValue", new NdkGlue.CallHandler() {
+        ndkGlue.registerCallHandler("CCCoreBridge::getValue", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
                 String key =  params.getString("key");
@@ -128,7 +122,7 @@ public class CoreService extends AbstractSoomlaService {
                 retParams.put("return", result);
             }
         });
-        ndkGlue.registerCallHandler("CCCoreService::setValue", new NdkGlue.CallHandler() {
+        ndkGlue.registerCallHandler("CCCoreBridge::setValue", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
                 String key =  params.getString("key");
@@ -136,14 +130,14 @@ public class CoreService extends AbstractSoomlaService {
                 KeyValueStorage.setValue(key, val);
             }
         });
-        ndkGlue.registerCallHandler("CCCoreService::deleteKeyValue", new NdkGlue.CallHandler() {
+        ndkGlue.registerCallHandler("CCCoreBridge::deleteKeyValue", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
                 String key =  params.getString("key");
                 KeyValueStorage.deleteKeyValue(key);
             }
         });
-        ndkGlue.registerCallHandler("CCCoreService::purge", new NdkGlue.CallHandler() {
+        ndkGlue.registerCallHandler("CCCoreBridge::purge", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
                 KeyValueStorage.purge();
@@ -151,20 +145,10 @@ public class CoreService extends AbstractSoomlaService {
         });
     }
 
-    private void init() {
-        final GLSurfaceView glSurfaceView = glSurfaceViewRef.get();
+    public void init() {
+        final GLSurfaceView glSurfaceView = NdkGlue.getInstance().getGlSurfaceRef().get();
         if (glSurfaceView != null) {
             coreEventHandlerBridge.setGlSurfaceView(glSurfaceView);
-        }
-
-        inited = true;
-    }
-
-    public void setGlSurfaceView(GLSurfaceView glSurfaceView) {
-        if (inited) {
-            coreEventHandlerBridge.setGlSurfaceView(glSurfaceView);
-        } else {
-            glSurfaceViewRef = new WeakReference<GLSurfaceView>(glSurfaceView);
         }
     }
 }

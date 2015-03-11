@@ -14,35 +14,49 @@
  limitations under the License.
  */
 
-#include "CCNativeCoreService.h"
+#include "CCNativeCoreBridge.h"
 #include "CCNdkBridge.h"
 #include "CCSoomlaUtils.h"
+
+USING_NS_CC;
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#include "platform/android/jni/JniHelper.h"
+#include <jni.h>
+#include <string>
+
+#define CLASS_NAME "com/soomla/cocos2dx/common/CoreBridgeBinder"
+#endif
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+
+#include "CCCoreBridgeBinderIos.h"
+
+#endif
 
 namespace soomla {
     
     USING_NS_CC;
     
-    #define TAG "SOOMLA NativeCoreService"
+    #define TAG "SOOMLA NativeCoreBridge"
     
-    bool CCNativeCoreService::init() {
-        bool result = CCCoreService::init();
+    bool CCNativeCoreBridge::init() {
+        bool result = CCCoreBridge::init();
         
         if (!result) {
             return result;
         }
         
-        __Dictionary *params = __Dictionary::create();
-        params->setObject(__String::create("CCCoreService::init"), "method");
-        CCNdkBridge::callNative(params, nullptr);
+        this->bindNative();
         
         return true;
     }
 
-    int CCNativeCoreService::getTimesGiven(CCReward *reward) {
+    int CCNativeCoreBridge::getTimesGiven(CCReward *reward) {
         CCError *error = NULL;
         
         __Dictionary *params = __Dictionary::create();
-        params->setObject(__String::create("CCCoreService::getTimesGiven"), "method");
+        params->setObject(__String::create("CCCoreBridge::getTimesGiven"), "method");
         params->setObject(reward->getId(), "reward");
         __Dictionary *retParams = (__Dictionary *) CCNdkBridge::callNative (params, &error);
         
@@ -64,11 +78,11 @@ namespace soomla {
         return retValue->getValue();
     }
 
-    void CCNativeCoreService::setRewardStatus(CCReward *reward, bool give, bool notify) {
+    void CCNativeCoreBridge::setRewardStatus(CCReward *reward, bool give, bool notify) {
         CCError *error = NULL;
         
         __Dictionary *params = __Dictionary::create();
-        params->setObject(__String::create("CCCoreService::setRewardStatus"), "method");
+        params->setObject(__String::create("CCCoreBridge::setRewardStatus"), "method");
         params->setObject(reward->getId(), "reward");
         params->setObject(__Bool::create(give), "give");
         params->setObject(__Bool::create(notify), "notify");
@@ -80,11 +94,11 @@ namespace soomla {
         }
     }
 
-    int CCNativeCoreService::getLastSeqIdxGiven(CCSequenceReward *sequenceReward) {
+    int CCNativeCoreBridge::getLastSeqIdxGiven(CCSequenceReward *sequenceReward) {
         CCError *error = NULL;
         
         __Dictionary *params = __Dictionary::create();
-        params->setObject(__String::create("CCCoreService::getLastSeqIdxGiven"), "method");
+        params->setObject(__String::create("CCCoreBridge::getLastSeqIdxGiven"), "method");
         params->setObject(sequenceReward->getId(), "reward");
         __Dictionary *retParams = (__Dictionary *) CCNdkBridge::callNative (params, &error);
         
@@ -106,11 +120,11 @@ namespace soomla {
         return retValue->getValue();
     }
 
-    void CCNativeCoreService::setLastSeqIdxGiven(CCSequenceReward *sequenceReward, unsigned int idx) {
+    void CCNativeCoreBridge::setLastSeqIdxGiven(CCSequenceReward *sequenceReward, unsigned int idx) {
         CCError *error = NULL;
         
         __Dictionary *params = __Dictionary::create();
-        params->setObject(__String::create("CCCoreService::setLastSeqIdxGiven"), "method");
+        params->setObject(__String::create("CCCoreBridge::setLastSeqIdxGiven"), "method");
         params->setObject(sequenceReward->getId(), "reward");
         params->setObject(__Integer::create(idx), "idx");
         CCNdkBridge::callNative (params, &error);
@@ -121,11 +135,11 @@ namespace soomla {
         }
     }
 
-    const char *CCNativeCoreService::kvStorageGetValue(const char *key) const {
+    const char *CCNativeCoreBridge::kvStorageGetValue(const char *key) const {
         CCError *error = NULL;
         
         __Dictionary *params = __Dictionary::create();
-        params->setObject(__String::create("CCCoreService::getValue"), "method");
+        params->setObject(__String::create("CCCoreBridge::getValue"), "method");
         params->setObject(__String::create(key), "key");
         __Dictionary *retParams = (__Dictionary *) CCNdkBridge::callNative (params, &error);
         
@@ -147,11 +161,11 @@ namespace soomla {
         return retValue->getCString();
     }
 
-    void CCNativeCoreService::kvStorageSetValue(const char *key, const char *val) {
+    void CCNativeCoreBridge::kvStorageSetValue(const char *key, const char *val) {
         CCError *error = NULL;
         
         __Dictionary *params = __Dictionary::create();
-        params->setObject(__String::create("CCCoreService::setValue"), "method");
+        params->setObject(__String::create("CCCoreBridge::setValue"), "method");
         params->setObject(__String::create(key), "key");
         params->setObject(__String::create(val), "val");
         CCNdkBridge::callNative (params, &error);
@@ -162,11 +176,11 @@ namespace soomla {
         }
     }
 
-    void CCNativeCoreService::kvStorageDeleteKeyValue(const char *key) {
+    void CCNativeCoreBridge::kvStorageDeleteKeyValue(const char *key) {
         CCError *error = NULL;
         
         __Dictionary *params = __Dictionary::create();
-        params->setObject(__String::create("CCCoreService::deleteKeyValue"), "method");
+        params->setObject(__String::create("CCCoreBridge::deleteKeyValue"), "method");
         params->setObject(__String::create(key), "key");
         CCNdkBridge::callNative (params, &error);
         
@@ -176,16 +190,36 @@ namespace soomla {
         }
     }
 
-    void CCNativeCoreService::kvStoragePurge() {
+    void CCNativeCoreBridge::kvStoragePurge() {
         CCError *error = NULL;
         
         __Dictionary *params = __Dictionary::create();
-        params->setObject(__String::create("CCCoreService::purge"), "method");
+        params->setObject(__String::create("CCCoreBridge::purge"), "method");
         CCNdkBridge::callNative (params, &error);
         
         if (error) {
             CCSoomlaUtils::logException(TAG, error);
             CC_ASSERT(false);
         }
+    }
+    
+    void CCNativeCoreBridge::bindNative() {
+        CCSoomlaUtils::logDebug(TAG, "Binding to native platform bridge...");
+        
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+        JniMethodInfo minfo;
+        
+        bool exists = JniHelper::getStaticMethodInfo(minfo, CLASS_NAME, "bind", "()V");
+        
+        if (exists)
+        {
+            minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+        }
+        else {
+            CCSoomlaUtils::logError(TAG, "Unable to bind native bridge on Android");
+        }
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+        soomla::CCCoreBridgeBinderIos::bind();
+#endif
     }
 }

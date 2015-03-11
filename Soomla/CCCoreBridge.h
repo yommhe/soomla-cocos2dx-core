@@ -14,8 +14,8 @@
  limitations under the License.
  */
 
-#ifndef __CCCoreService_H_
-#define __CCCoreService_H_
+#ifndef __CCCoreBridge_H_
+#define __CCCoreBridge_H_
 
 #include "cocos2d.h"
 #include "CCError.h"
@@ -24,16 +24,16 @@
 
 namespace soomla {
 
-    class CCCoreService: public cocos2d::Ref {
+    class CCCoreBridge: public cocos2d::Ref {
     public:
 		/**
 		   This class is singleton, use this function to access it.
 		*/
-        static CCCoreService* getInstance();
+        static CCCoreBridge* getInstance();
 
         static void initShared();
 
-        CCCoreService();
+        CCCoreBridge();
 
         virtual bool init();
 
@@ -49,4 +49,4 @@ namespace soomla {
     };
 };
 
-#endif // !__CCCoreService_H_
+#endif // !__CCCoreBridge_H_
