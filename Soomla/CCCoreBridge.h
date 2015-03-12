@@ -36,16 +36,6 @@ namespace soomla {
         CCCoreBridge();
 
         virtual bool init();
-
-        virtual int getTimesGiven(CCReward *reward) = 0;
-        virtual void setRewardStatus(CCReward *reward, bool give, bool notify) = 0;
-        virtual int getLastSeqIdxGiven(soomla::CCSequenceReward *sequenceReward) = 0;
-        virtual void setLastSeqIdxGiven(CCSequenceReward *sequenceReward, unsigned int idx) = 0;
-
-        virtual const char *kvStorageGetValue(const char *key) const = 0;
-        virtual void kvStorageSetValue(const char *key, const char *val) = 0;
-        virtual void kvStorageDeleteKeyValue(const char *key) = 0;
-        virtual void kvStoragePurge() = 0;
     };
 };
 

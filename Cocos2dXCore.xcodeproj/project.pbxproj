@@ -54,8 +54,6 @@
 		F865E1CF1AB0A018006DA7E2 /* CCSoomla.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F865E1C71AB0A018006DA7E2 /* CCSoomla.cpp */; };
 		F865E1D01AB0A018006DA7E2 /* CCSoomla.h in Headers */ = {isa = PBXBuildFile; fileRef = F865E1C81AB0A018006DA7E2 /* CCSoomla.h */; };
 		F865E1D11AB0A018006DA7E2 /* CCCoreBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F865E1C91AB0A018006DA7E2 /* CCCoreBridge.cpp */; };
-		F865E1D21AB0A018006DA7E2 /* CCBridgelessCoreBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F865E1CA1AB0A018006DA7E2 /* CCBridgelessCoreBridge.cpp */; };
-		F865E1D31AB0A018006DA7E2 /* CCBridgelessCoreBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = F865E1CB1AB0A018006DA7E2 /* CCBridgelessCoreBridge.h */; };
 		F865E1D41AB0A018006DA7E2 /* CCCoreBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = F865E1CC1AB0A018006DA7E2 /* CCCoreBridge.h */; };
 		F8694AF81A1CF6DE001738B4 /* CCCoreConsts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101261978CFAD00907FA8 /* CCCoreConsts.cpp */; };
 		F8694AF91A1CF6E1001738B4 /* CCCoreEventDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101281978CFAD00907FA8 /* CCCoreEventDispatcher.cpp */; };
@@ -99,6 +97,19 @@
 		F8694B6D1A1CF731001738B4 /* CCSoomlaUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 372B748E4E8020FCD1396DDC /* CCSoomlaUtils.h */; };
 		F8694B701A1CF731001738B4 /* CCKeyValueStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = F8B27EDA19B9F51F0094A771 /* CCKeyValueStorage.h */; };
 		F8694B721A1CF731001738B4 /* CCRewardStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 372B7A7FFA3D34A23C31687B /* CCRewardStorage.h */; };
+		F89F71FC1AB187E6000ECC23 /* CCNativeKeyValueStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F89F71F81AB187E6000ECC23 /* CCNativeKeyValueStorage.cpp */; };
+		F89F71FD1AB187E6000ECC23 /* CCNativeKeyValueStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = F89F71F91AB187E6000ECC23 /* CCNativeKeyValueStorage.h */; };
+		F89F71FE1AB187E6000ECC23 /* CCNativeRewardStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F89F71FA1AB187E6000ECC23 /* CCNativeRewardStorage.cpp */; };
+		F89F71FF1AB187E6000ECC23 /* CCNativeRewardStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = F89F71FB1AB187E6000ECC23 /* CCNativeRewardStorage.h */; };
+		F89F72001AB1881C000ECC23 /* CCNativeKeyValueStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F89F71F81AB187E6000ECC23 /* CCNativeKeyValueStorage.cpp */; };
+		F89F72011AB1881C000ECC23 /* CCNativeRewardStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F89F71FA1AB187E6000ECC23 /* CCNativeRewardStorage.cpp */; };
+		F89F72021AB1881C000ECC23 /* CCNativeCoreBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F865E1C51AB0A017006DA7E2 /* CCNativeCoreBridge.cpp */; };
+		F89F72031AB1881C000ECC23 /* CCCoreBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F865E1C91AB0A018006DA7E2 /* CCCoreBridge.cpp */; };
+		F89F720C1AB18D03000ECC23 /* CCBridgelessKeyValueStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = F89F720A1AB18D03000ECC23 /* CCBridgelessKeyValueStorage.h */; };
+		F89F720D1AB18D03000ECC23 /* CCBridgelessKeyValueStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = F89F720A1AB18D03000ECC23 /* CCBridgelessKeyValueStorage.h */; };
+		F89F720E1AB18D03000ECC23 /* CCBridgelessKeyValueStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F89F720B1AB18D03000ECC23 /* CCBridgelessKeyValueStorage.cpp */; };
+		F89F720F1AB18D03000ECC23 /* CCBridgelessKeyValueStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F89F720B1AB18D03000ECC23 /* CCBridgelessKeyValueStorage.cpp */; };
+		F89F72101AB18DA1000ECC23 /* CCSoomla.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F865E1C71AB0A018006DA7E2 /* CCSoomla.cpp */; };
 		F8B27EDB19B9F51F0094A771 /* CCKeyValueStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8B27ED919B9F51F0094A771 /* CCKeyValueStorage.cpp */; };
 		F8B27EDC19B9F51F0094A771 /* CCKeyValueStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = F8B27EDA19B9F51F0094A771 /* CCKeyValueStorage.h */; };
 		F8B27EEA19B9FE6D0094A771 /* libCocos2dXiOSCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B27EE919B9FE6D0094A771 /* libCocos2dXiOSCore.a */; };
@@ -153,11 +164,15 @@
 		F865E1C71AB0A018006DA7E2 /* CCSoomla.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSoomla.cpp; sourceTree = "<group>"; };
 		F865E1C81AB0A018006DA7E2 /* CCSoomla.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSoomla.h; sourceTree = "<group>"; };
 		F865E1C91AB0A018006DA7E2 /* CCCoreBridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCCoreBridge.cpp; sourceTree = "<group>"; };
-		F865E1CA1AB0A018006DA7E2 /* CCBridgelessCoreBridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCBridgelessCoreBridge.cpp; sourceTree = "<group>"; };
-		F865E1CB1AB0A018006DA7E2 /* CCBridgelessCoreBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBridgelessCoreBridge.h; sourceTree = "<group>"; };
 		F865E1CC1AB0A018006DA7E2 /* CCCoreBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCoreBridge.h; sourceTree = "<group>"; };
 		F8694AD91A1CF680001738B4 /* libCocos2dXCore Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCocos2dXCore Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8694B731A1CF75B001738B4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		F89F71F81AB187E6000ECC23 /* CCNativeKeyValueStorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCNativeKeyValueStorage.cpp; sourceTree = "<group>"; };
+		F89F71F91AB187E6000ECC23 /* CCNativeKeyValueStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNativeKeyValueStorage.h; sourceTree = "<group>"; };
+		F89F71FA1AB187E6000ECC23 /* CCNativeRewardStorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCNativeRewardStorage.cpp; sourceTree = "<group>"; };
+		F89F71FB1AB187E6000ECC23 /* CCNativeRewardStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNativeRewardStorage.h; sourceTree = "<group>"; };
+		F89F720A1AB18D03000ECC23 /* CCBridgelessKeyValueStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBridgelessKeyValueStorage.h; sourceTree = "<group>"; };
+		F89F720B1AB18D03000ECC23 /* CCBridgelessKeyValueStorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCBridgelessKeyValueStorage.cpp; sourceTree = "<group>"; };
 		F8B27ED919B9F51F0094A771 /* CCKeyValueStorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCKeyValueStorage.cpp; sourceTree = "<group>"; };
 		F8B27EDA19B9F51F0094A771 /* CCKeyValueStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCKeyValueStorage.h; sourceTree = "<group>"; };
 		F8B27EE919B9FE6D0094A771 /* libCocos2dXiOSCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCocos2dXiOSCore.a; path = build/ios/libCocos2dXiOSCore.a; sourceTree = "<group>"; };
@@ -187,6 +202,8 @@
 		372B7A1EA12379CCB201D0E1 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				F89F720A1AB18D03000ECC23 /* CCBridgelessKeyValueStorage.h */,
+				F89F720B1AB18D03000ECC23 /* CCBridgelessKeyValueStorage.cpp */,
 				F8B27ED919B9F51F0094A771 /* CCKeyValueStorage.cpp */,
 				F8B27EDA19B9F51F0094A771 /* CCKeyValueStorage.h */,
 				372B73021AB74279EE404D33 /* CCRewardStorage.cpp */,
@@ -198,13 +215,12 @@
 		9D4101241978CFAD00907FA8 /* Soomla */ = {
 			isa = PBXGroup;
 			children = (
+				F89F71F71AB187E6000ECC23 /* NativeImpl */,
 				F865E1C51AB0A017006DA7E2 /* CCNativeCoreBridge.cpp */,
 				F865E1C61AB0A018006DA7E2 /* CCNativeCoreBridge.h */,
 				F865E1C71AB0A018006DA7E2 /* CCSoomla.cpp */,
 				F865E1C81AB0A018006DA7E2 /* CCSoomla.h */,
 				F865E1C91AB0A018006DA7E2 /* CCCoreBridge.cpp */,
-				F865E1CA1AB0A018006DA7E2 /* CCBridgelessCoreBridge.cpp */,
-				F865E1CB1AB0A018006DA7E2 /* CCBridgelessCoreBridge.h */,
 				F865E1CC1AB0A018006DA7E2 /* CCCoreBridge.h */,
 				F861D66419BF5F6E008834EF /* Cocos2dxCore.h */,
 				9D4101251978CFAD00907FA8 /* CCAbstractAggregatedEventHandler.h */,
@@ -294,6 +310,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F89F71F71AB187E6000ECC23 /* NativeImpl */ = {
+			isa = PBXGroup;
+			children = (
+				F89F71F81AB187E6000ECC23 /* CCNativeKeyValueStorage.cpp */,
+				F89F71F91AB187E6000ECC23 /* CCNativeKeyValueStorage.h */,
+				F89F71FA1AB187E6000ECC23 /* CCNativeRewardStorage.cpp */,
+				F89F71FB1AB187E6000ECC23 /* CCNativeRewardStorage.h */,
+			);
+			path = NativeImpl;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -302,10 +329,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F865E1D41AB0A018006DA7E2 /* CCCoreBridge.h in Headers */,
-				F865E1D31AB0A018006DA7E2 /* CCBridgelessCoreBridge.h in Headers */,
 				F861D66519BF5F7F008834EF /* Cocos2dxCore.h in Headers */,
 				9D41014A1978CFAD00907FA8 /* CCAbstractAggregatedEventHandler.h in Headers */,
 				9D41016A1978CFAD00907FA8 /* CCReward.h in Headers */,
+				F89F71FF1AB187E6000ECC23 /* CCNativeRewardStorage.h in Headers */,
 				F8B27EDC19B9F51F0094A771 /* CCKeyValueStorage.h in Headers */,
 				9D41014F1978CFAD00907FA8 /* CCCoreEventHandler.h in Headers */,
 				F865E1CE1AB0A018006DA7E2 /* CCNativeCoreBridge.h in Headers */,
@@ -325,7 +352,9 @@
 				9D4101621978CFAD00907FA8 /* CCDomain.h in Headers */,
 				9D4101571978CFAD00907FA8 /* CCError.h in Headers */,
 				372B72C58DE0C3DFE3522984 /* CCSoomlaEntity.h in Headers */,
+				F89F720C1AB18D03000ECC23 /* CCBridgelessKeyValueStorage.h in Headers */,
 				372B7222D15E89FF731A78BD /* CCSchedule.h in Headers */,
+				F89F71FD1AB187E6000ECC23 /* CCNativeKeyValueStorage.h in Headers */,
 				372B7A1D5F372FCFD9E68388 /* CCSoomlaUtils.h in Headers */,
 				372B74CD5188E48BE19BAC31 /* CCRewardStorage.h in Headers */,
 			);
@@ -343,6 +372,7 @@
 				F8694B4F1A1CF730001738B4 /* CCDomainFactory.h in Headers */,
 				F8694B511A1CF730001738B4 /* CCDomainHelper.h in Headers */,
 				F8694B531A1CF730001738B4 /* CCError.h in Headers */,
+				F89F720D1AB18D03000ECC23 /* CCBridgelessKeyValueStorage.h in Headers */,
 				F8694B551A1CF731001738B4 /* CCJsonHelper.h in Headers */,
 				F8694B571A1CF731001738B4 /* CCNdkBridge.h in Headers */,
 				F8694B5B1A1CF731001738B4 /* CCSoomlaEventDispatcher.h in Headers */,
@@ -435,9 +465,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F89F71FC1AB187E6000ECC23 /* CCNativeKeyValueStorage.cpp in Sources */,
 				9D4101631978CFAD00907FA8 /* CCAggregateReward.cpp in Sources */,
 				9D41015E1978CFAD00907FA8 /* CCSoomlaEventDispatcher.cpp in Sources */,
 				9D4101691978CFAD00907FA8 /* CCReward.cpp in Sources */,
+				F89F720E1AB18D03000ECC23 /* CCBridgelessKeyValueStorage.cpp in Sources */,
 				9D41015A1978CFAD00907FA8 /* CCNdkBridge.cpp in Sources */,
 				9D4101581978CFAD00907FA8 /* CCJsonHelper.cpp in Sources */,
 				9D41014D1978CFAD00907FA8 /* CCCoreEventDispatcher.cpp in Sources */,
@@ -451,10 +483,10 @@
 				9D4101561978CFAD00907FA8 /* CCError.cpp in Sources */,
 				9D4101671978CFAD00907FA8 /* CCRandomReward.cpp in Sources */,
 				F865E1CD1AB0A018006DA7E2 /* CCNativeCoreBridge.cpp in Sources */,
+				F89F71FE1AB187E6000ECC23 /* CCNativeRewardStorage.cpp in Sources */,
 				372B7E556799F8D93570725F /* CCSoomlaEntity.cpp in Sources */,
 				372B781D8BC07D3AA891021B /* CCSchedule.cpp in Sources */,
 				372B790F7E37797D2E10ED65 /* CCSoomlaUtils.cpp in Sources */,
-				F865E1D21AB0A018006DA7E2 /* CCBridgelessCoreBridge.cpp in Sources */,
 				F865E1D11AB0A018006DA7E2 /* CCCoreBridge.cpp in Sources */,
 				F8B27EDB19B9F51F0094A771 /* CCKeyValueStorage.cpp in Sources */,
 				372B7FBE9869CD7B1B70ED0E /* CCRewardStorage.cpp in Sources */,
@@ -465,6 +497,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F89F72101AB18DA1000ECC23 /* CCSoomla.cpp in Sources */,
+				F89F72001AB1881C000ECC23 /* CCNativeKeyValueStorage.cpp in Sources */,
+				F89F72011AB1881C000ECC23 /* CCNativeRewardStorage.cpp in Sources */,
+				F89F72021AB1881C000ECC23 /* CCNativeCoreBridge.cpp in Sources */,
+				F89F72031AB1881C000ECC23 /* CCCoreBridge.cpp in Sources */,
 				F8694B401A1CF717001738B4 /* CCSoomlaUtils.cpp in Sources */,
 				F8694B031A1CF6F1001738B4 /* CCDomainFactory.cpp in Sources */,
 				F8694B051A1CF6F1001738B4 /* CCDomainHelper.cpp in Sources */,
@@ -482,6 +519,7 @@
 				F8694B201A1CF6F1001738B4 /* CCSchedule.cpp in Sources */,
 				F8694B241A1CF6F1001738B4 /* CCKeyValueStorage.cpp in Sources */,
 				F8694B261A1CF6F1001738B4 /* CCRewardStorage.cpp in Sources */,
+				F89F720F1AB18D03000ECC23 /* CCBridgelessKeyValueStorage.cpp in Sources */,
 				F8694AF81A1CF6DE001738B4 /* CCCoreConsts.cpp in Sources */,
 				F8694AF91A1CF6E1001738B4 /* CCCoreEventDispatcher.cpp in Sources */,
 			);

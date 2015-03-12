@@ -22,7 +22,6 @@
 #include "CCCoreEventDispatcher.h"
 #include "CCSoomlaUtils.h"
 #include "CCNativeCoreBridge.h"
-#include "CCBridgelessCoreBridge.h"
 
 using namespace cocos2d;
 
@@ -40,7 +39,7 @@ namespace soomla {
             #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS) || (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
             sInstance = new CCNativeCoreBridge();
             #else
-            sInstance = new CCBridgelessCoreBridge();
+            sInstance = new CCCoreBridge();
             #endif
             sInstance->retain();
         }

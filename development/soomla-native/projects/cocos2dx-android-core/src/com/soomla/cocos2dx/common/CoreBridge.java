@@ -80,7 +80,7 @@ public class CoreBridge {
                 Soomla.initialize(customSecret);
             }
         });
-        ndkGlue.registerCallHandler("CCCoreBridge::getTimesGiven", new NdkGlue.CallHandler() {
+        ndkGlue.registerCallHandler("CCNativeRewardStorage::getTimesGiven", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
                 String rewardId = params.getString("reward");
@@ -88,7 +88,7 @@ public class CoreBridge {
                 retParams.put("return", result);
             }
         });
-        ndkGlue.registerCallHandler("CCCoreBridge::setRewardStatus", new NdkGlue.CallHandler() {
+        ndkGlue.registerCallHandler("CCNativeRewardStorage::setRewardStatus", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
                 String rewardId = params.getString("reward");
@@ -97,7 +97,7 @@ public class CoreBridge {
                 RewardStorage.setRewardStatus(rewardId, give, notify);
             }
         });
-        ndkGlue.registerCallHandler("CCCoreBridge::getLastSeqIdxGiven", new NdkGlue.CallHandler() {
+        ndkGlue.registerCallHandler("CCNativeRewardStorage::getLastSeqIdxGiven", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
                 String rewardId = params.getString("reward");
@@ -105,7 +105,7 @@ public class CoreBridge {
                 retParams.put("return", result);
             }
         });
-        ndkGlue.registerCallHandler("CCCoreBridge::setLastSeqIdxGiven", new NdkGlue.CallHandler() {
+        ndkGlue.registerCallHandler("CCNativeRewardStorage::setLastSeqIdxGiven", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
                 String rewardId = params.getString("reward");
@@ -114,7 +114,7 @@ public class CoreBridge {
             }
         });
 
-        ndkGlue.registerCallHandler("CCCoreBridge::getValue", new NdkGlue.CallHandler() {
+        ndkGlue.registerCallHandler("CCNativeKeyValueStorage::getValue", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
                 String key =  params.getString("key");
@@ -122,7 +122,7 @@ public class CoreBridge {
                 retParams.put("return", result);
             }
         });
-        ndkGlue.registerCallHandler("CCCoreBridge::setValue", new NdkGlue.CallHandler() {
+        ndkGlue.registerCallHandler("CCNativeKeyValueStorage::setValue", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
                 String key =  params.getString("key");
@@ -130,14 +130,14 @@ public class CoreBridge {
                 KeyValueStorage.setValue(key, val);
             }
         });
-        ndkGlue.registerCallHandler("CCCoreBridge::deleteKeyValue", new NdkGlue.CallHandler() {
+        ndkGlue.registerCallHandler("CCNativeKeyValueStorage::deleteKeyValue", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
                 String key =  params.getString("key");
                 KeyValueStorage.deleteKeyValue(key);
             }
         });
-        ndkGlue.registerCallHandler("CCCoreBridge::purge", new NdkGlue.CallHandler() {
+        ndkGlue.registerCallHandler("CCNativeKeyValueStorage::purge", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
                 KeyValueStorage.purge();

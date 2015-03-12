@@ -14,34 +14,22 @@
  limitations under the License.
  */
 
-#include "CCKeyValueStorage.h"
-#include "CCCoreBridge.h"
+#include "CCNativeKeyValueStorage.h"
+#include "CCBridgelessKeyValueStorage.h"
 
 namespace soomla {
     static CCKeyValueStorage *s_SharedKeyValueStorage = NULL;
     
     CCKeyValueStorage *CCKeyValueStorage::getInstance() {
         if (!s_SharedKeyValueStorage) {
-            s_SharedKeyValueStorage = new CCKeyValueStorage();
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS) || (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+            s_SharedKeyValueStorage = new CCNativeKeyValueStorage();
+#else
+            s_SharedKeyValueStorage = new CCBridgelessKeyValueStorage();
+#endif
             s_SharedKeyValueStorage->retain();
         }
         
         return s_SharedKeyValueStorage;
-    }
-
-    const char *CCKeyValueStorage::getValue(const char *key) const {
-        return CCCoreBridge::getInstance()->kvStorageGetValue(key);
-    }
-
-    void CCKeyValueStorage::setValue(const char *key, const char *val) {
-        return CCCoreBridge::getInstance()->kvStorageSetValue(key, val);
-    }
-
-    void CCKeyValueStorage::deleteKeyValue(const char *key) {
-        CCCoreBridge::getInstance()->kvStorageDeleteKeyValue(key);
-    }
-
-    void CCKeyValueStorage::purge() {
-        CCCoreBridge::getInstance()->kvStoragePurge();
     }
 }
