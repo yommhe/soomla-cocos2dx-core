@@ -1,12 +1,12 @@
 /*
  Copyright (C) 2012-2014 Soomla Inc.
-
+ 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
-
+ 
  http://www.apache.org/licenses/LICENSE-2.0
-
+ 
  Unless required by applicable law or agreed to in writing, software
  distributed under the License is distributed on an "AS IS" BASIS,
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,26 +14,14 @@
  limitations under the License.
  */
 
-#ifndef __Cocos2dxCore_H
-#define __Cocos2dxCore_H
+#ifndef __CCCoreBridgeBinderIos_H_
+#define __CCCoreBridgeBinderIos_H_
 
-#ifdef COCOS2D_JAVASCRIPT
-#include "jsb_soomla.h"
-#endif
+namespace soomla {
+    class CCCoreBridgeBinderIos {
+    public:
+        static void bind();
+    };
+};
 
-#include "CCCoreEventDispatcher.h"
-#include "CCSoomla.h"
-#include "CCCoreBridge.h"
-#include "CCError.h"
-#include "CCSoomlaEventDispatcher.h"
-#include "CCSoomlaEntity.h"
-#include "CCReward.h"
-#include "CCRandomReward.h"
-#include "CCBadgeReward.h"
-#include "CCSequenceReward.h"
-#include "CCSchedule.h"
-#include "CCSoomlaUtils.h"
-#include "CCKeyValueStorage.h"
-#include "CCRewardStorage.h"
-
-#endif
+#endif // __CCCoreBridgeBinder_H_
