@@ -26,7 +26,7 @@ namespace soomla {
     #define TAG "SOOMLA Soomla"
     
     void CCSoomla::initialize(const char *soomlaSecret) {
-        __String *soomlaSecretStr = __String::create(soomlaSecret);
+        CCString *soomlaSecretStr = CCString::create(soomlaSecret);
         if (soomlaSecretStr == NULL || soomlaSecretStr->length()==0) {
             CCSoomlaUtils::logError(TAG, "Can't initialize SOOMLA without soomlaSecret");
             CCAssert(true, "");
@@ -36,8 +36,8 @@ namespace soomla {
         
         CCCoreBridge::initShared();
         
-        __Dictionary *params = __Dictionary::create();
-        params->setObject(__String::create("CCSoomla::initialize"), "method");
+        CCDictionary *params = CCDictionary::create();
+        params->setObject(CCString::create("CCSoomla::initialize"), "method");
         params->setObject(soomlaSecretStr, "soomlaSecret");
         CCNdkBridge::callNative(params, NULL);
     }
