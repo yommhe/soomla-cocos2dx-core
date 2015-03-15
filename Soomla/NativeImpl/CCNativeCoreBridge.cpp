@@ -40,16 +40,9 @@ namespace soomla {
     
     #define TAG "SOOMLA NativeCoreBridge"
     
-    bool CCNativeCoreBridge::init() {
-        bool result = CCCoreBridge::init();
-        
-        if (!result) {
-            return result;
-        }
-        
+    CCNativeCoreBridge::CCNativeCoreBridge() {
+        // Just bind to native before initing
         this->bindNative();
-        
-        return true;
     }
     
     void CCNativeCoreBridge::bindNative() {

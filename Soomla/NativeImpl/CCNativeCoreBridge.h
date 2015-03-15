@@ -23,7 +23,7 @@ namespace soomla {
     
     class CCNativeCoreBridge: public CCCoreBridge {
     public:
-        virtual bool init();
+        CCNativeCoreBridge();
     private:
         void bindNative();
     };
