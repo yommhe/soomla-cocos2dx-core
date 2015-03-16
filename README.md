@@ -5,9 +5,7 @@ soomla-cocos2dx-core
 
 When using the SOOMLA framework, you always start by initializing the core module:
 ```c++
-    CCDictionary *commonParams = CCDictionary::create();
-    commonParams->setObject(CCString::create("ExampleCustomSecret"), "customSecret");
-    soomla::CCServiceManager::getInstance()->setCommonParams(commonParams);
+    soomla::CCSoomla::initialize("customSecret");
 ```
 
 This sets up the local on-device database used by SOOMLA.  The secret is used for encrypting the data, make sure to choose a good one.
@@ -30,7 +28,7 @@ You can start by using the more common features in core by including the `Cocos2
 
 ####Pre baked zip:
 
-[soomla-cocos2dx-core 1.0.2](http://library.soom.la/fetch/cocos2dx-v2-core/1.0.2?cf=github)
+[soomla-cocos2dx-core 1.1.0](http://library.soom.la/fetch/cocos2dx-v2-core/1.1.0?cf=github)
 
 Our way of saying "Thanks !"
 ---
