@@ -14,31 +14,19 @@
  limitations under the License.
  */
 
-#ifndef __CCRewardStorage_H_
-#define __CCRewardStorage_H_
+#ifndef __CCNativeRewardStorage_H__
+#define __CCNativeRewardStorage_H__
 
-#include "cocos2d.h"
-#include "CCReward.h"
-#include "CCSequenceReward.h"
+#include "CCRewardStorage.h"
 
 namespace soomla {
-    class CCRewardStorage: public cocos2d::CCObject {
+    class CCNativeRewardStorage: public CCRewardStorage {
     public:
-        static CCRewardStorage *getInstance();
-
-        virtual void setRewardStatus(CCReward *reward, bool give);
         virtual void setRewardStatus(CCReward *reward, bool give, bool notify);
-        virtual bool isRewardGiven(CCReward *reward);
         virtual int getTimesGiven(CCReward *reward);
         virtual int getLastSeqIdxGiven(CCSequenceReward *sequenceReward);
         virtual void setLastSeqIdxGiven(CCSequenceReward *sequenceReward, unsigned int idx);
-    private:
-        void setTimesGiven(CCReward *reward, bool up, bool notify);
-        const char* keyRewards(const char* rewardId, const char* postfix);
-        const char* keyRewardIdxSeqGiven(const char* rewardId);
-        const char* keyRewardTimesGiven(const char* rewardId);
-        const char* keyRewardLastGiven(const char* rewardId);
     };
 }
 
-#endif //__CCRewardStorage_H_
+#endif // __CCNativeRewardStorage_H__

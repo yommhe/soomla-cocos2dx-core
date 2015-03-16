@@ -14,19 +14,15 @@
  limitations under the License.
  */
 
-#ifndef __CCServiceManager_H_
-#define __CCServiceManager_H_
-
-#include "cocos2d.h"
-#include "CCCoreService.h"
+#ifndef __CCSoomla_H_
+#define __CCSoomla_H_
 
 namespace soomla {
-    class CCServiceManager: cocos2d::CCObject {
+    
+    class CCSoomla {
     public:
-        static CCServiceManager *getInstance();
-        bool init();
-        void setCommonParams(cocos2d::CCDictionary *commonParams);
+        static void initialize(const char *soomlaSecret);
     };
 }
 
-#endif //__CCServiceManager_H_
+#endif // __CCSoomla_H_

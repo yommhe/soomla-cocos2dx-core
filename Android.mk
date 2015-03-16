@@ -12,6 +12,7 @@ CORE_SRC_LIST := $(wildcard $(LOCAL_PATH)/Soomla/*.cpp)
 CORE_SRC_LIST += $(wildcard $(LOCAL_PATH)/Soomla/domain/*.cpp)
 CORE_SRC_LIST += $(wildcard $(LOCAL_PATH)/Soomla/data/*.cpp)
 CORE_SRC_LIST += $(wildcard $(LOCAL_PATH)/Soomla/rewards/*.cpp)
+CORE_SRC_LIST += $(wildcard $(LOCAL_PATH)/Soomla/NativeImpl/*.cpp)
 ifneq '$(COCOS2D_JAVASCRIPT)' ''
 CORE_SRC_LIST += $(wildcard $(LOCAL_PATH)/Soomla/jsb/*.cpp)
 endif
@@ -23,6 +24,7 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/Soomla
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/Soomla/data
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/Soomla/domain
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/Soomla/rewards
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/Soomla/NativeImpl
 ifneq '$(COCOS2D_JAVASCRIPT)' ''
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/Soomla/jsb
 endif
@@ -42,6 +44,7 @@ LOCAL_EXPORT_C_INCLUDES += $(LOCAL_PATH)/Soomla
 LOCAL_EXPORT_C_INCLUDES += $(LOCAL_PATH)/Soomla/data
 LOCAL_EXPORT_C_INCLUDES += $(LOCAL_PATH)/Soomla/domain
 LOCAL_EXPORT_C_INCLUDES += $(LOCAL_PATH)/Soomla/rewards
+LOCAL_EXPORT_C_INCLUDES += $(LOCAL_PATH)/Soomla/NativeImpl
 ifneq '$(COCOS2D_JAVASCRIPT)' ''
 LOCAL_EXPORT_C_INCLUDES += $$(LOCAL_PATH)/Soomla/jsb
 endif

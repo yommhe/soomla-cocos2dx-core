@@ -1,7 +1,10 @@
 package com.soomla.cocos2dx.common;
 
 import android.app.Activity;
+import android.opengl.GLSurfaceView;
 import android.util.Log;
+
+import com.soomla.SoomlaApp;
 import com.soomla.SoomlaUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,6 +21,9 @@ public class NdkGlue {
     public WeakReference<Activity> getActivityRef() {
         return mActivityRef;
     }
+    public WeakReference<GLSurfaceView> getGlSurfaceRef() {
+        return mGlSurfaceViewRef;
+    }
 
     public static interface CallHandler {
         void handle(JSONObject params, JSONObject retParams) throws Exception;
@@ -31,6 +37,7 @@ public class NdkGlue {
     private static NdkGlue INSTANCE;
 
     private WeakReference<Activity> mActivityRef = new WeakReference<Activity>(null);
+    private WeakReference<GLSurfaceView> mGlSurfaceViewRef = new WeakReference<GLSurfaceView>(null);
 
     public static NdkGlue getInstance() {
         if (INSTANCE == null) {
@@ -56,7 +63,12 @@ public class NdkGlue {
     }
 
     public void setActivity(Activity activity) {
+        SoomlaApp.getAppContext();
         mActivityRef = new WeakReference<Activity>(activity);
+    }
+
+    public void setGlSurfaceView(GLSurfaceView glSurfaceView) {
+        mGlSurfaceViewRef = new WeakReference<GLSurfaceView>(glSurfaceView);
     }
 
     private static native void sendCppMessage(String json);

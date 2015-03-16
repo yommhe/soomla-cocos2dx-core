@@ -14,8 +14,8 @@
  limitations under the License.
  */
 
-#ifndef __CCCoreService_H_
-#define __CCCoreService_H_
+#ifndef __CCCoreBridge_H_
+#define __CCCoreBridge_H_
 
 #include "cocos2d.h"
 #include "CCError.h"
@@ -24,29 +24,19 @@
 
 namespace soomla {
 
-    class CCCoreService: public cocos2d::CCObject {
+    class CCCoreBridge: public cocos2d::CCObject {
     public:
 		/**
 		   This class is singleton, use this function to access it.
 		*/
-        static CCCoreService* getInstance();
+        static CCCoreBridge* getInstance();
 
         static void initShared();
 
-        CCCoreService();
+        CCCoreBridge();
 
         virtual bool init();
-
-        virtual int getTimesGiven(CCReward *reward) = 0;
-        virtual void setRewardStatus(CCReward *reward, bool give, bool notify) = 0;
-        virtual int getLastSeqIdxGiven(soomla::CCSequenceReward *sequenceReward) = 0;
-        virtual void setLastSeqIdxGiven(CCSequenceReward *sequenceReward, unsigned int idx) = 0;
-
-        virtual const char *kvStorageGetValue(const char *key) const = 0;
-        virtual void kvStorageSetValue(const char *key, const char *val) = 0;
-        virtual void kvStorageDeleteKeyValue(const char *key) = 0;
-        virtual void kvStoragePurge() = 0;
     };
 };
 
-#endif // !__CCCoreService_H_
+#endif // !__CCCoreBridge_H_
