@@ -19,6 +19,8 @@
 
 #include "cocos2d.h"
 
+#define DB_KEY_PRFIX "soomla."
+
 namespace soomla {
     
     /**
@@ -43,7 +45,7 @@ namespace soomla {
          @param key The key in the key-val pair.
          @return The value for given key.
          */
-        const char *getValue(const char *key) const;
+        virtual const char *getValue(const char *key) const = 0;
         
         /**
          Sets the given value to the given `key`.
@@ -51,14 +53,14 @@ namespace soomla {
          @param val The val in the key-val pair.
          @param key The key in the key-val pair.
          */
-        void setValue(const char *key, const char *val);
+        virtual void setValue(const char *key, const char *val) = 0;
         
         /**
          Deletes the key-val pair with the given `key`.
          
          @param key The key in the key-val pair.
          */
-        void deleteKeyValue(const char *key);
+        virtual void deleteKeyValue(const char *key) = 0;
         
         /**
          Purges the entire storage
@@ -66,7 +68,7 @@ namespace soomla {
          NOTE: Use with caution, since this will delete all the user's local information
          This message is used mainly for while in testing.
          */
-        void purge();
+        virtual void purge() = 0;
     };
 }
 

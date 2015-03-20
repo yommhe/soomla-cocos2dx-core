@@ -11,19 +11,17 @@
 		9D3313031977E21500D59A76 /* CCNdkBridgeIos.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D3312F31977E21500D59A76 /* CCNdkBridgeIos.mm */; };
 		9D3313041977E21500D59A76 /* CommonConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D3312F41977E21500D59A76 /* CommonConsts.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D3313051977E21500D59A76 /* CommonConsts.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D3312F51977E21500D59A76 /* CommonConsts.mm */; };
-		9D3313061977E21500D59A76 /* CoreService.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D3312F61977E21500D59A76 /* CoreService.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9D3313071977E21500D59A76 /* CoreService.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D3312F71977E21500D59A76 /* CoreService.mm */; };
 		9D3313081977E21500D59A76 /* DomainFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D3312F81977E21500D59A76 /* DomainFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D3313091977E21500D59A76 /* DomainFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D3312F91977E21500D59A76 /* DomainFactory.mm */; };
 		9D33130A1977E21500D59A76 /* DomainHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D3312FA1977E21500D59A76 /* DomainHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D33130B1977E21500D59A76 /* DomainHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D3312FB1977E21500D59A76 /* DomainHelper.mm */; };
 		9D33130C1977E21500D59A76 /* NdkGlue.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D3312FC1977E21500D59A76 /* NdkGlue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D33130D1977E21500D59A76 /* NdkGlue.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D3312FD1977E21500D59A76 /* NdkGlue.mm */; };
-		9D33130E1977E21500D59A76 /* ParamsProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D3312FE1977E21500D59A76 /* ParamsProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9D33130F1977E21500D59A76 /* ParamsProvider.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D3312FF1977E21500D59A76 /* ParamsProvider.mm */; };
-		9D3313101977E21500D59A76 /* ServiceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D3313001977E21500D59A76 /* ServiceManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9D3313111977E21500D59A76 /* ServiceManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D3313011977E21500D59A76 /* ServiceManager.mm */; };
 		C0B3C5F3168C6D0C00161FAA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B3C5F2168C6D0C00161FAA /* Foundation.framework */; };
+		F865E1D91AB0A040006DA7E2 /* CoreBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = F865E1D51AB0A040006DA7E2 /* CoreBridge.mm */; };
+		F865E1DA1AB0A040006DA7E2 /* CCCoreBridgeBinderIos.mm in Sources */ = {isa = PBXBuildFile; fileRef = F865E1D61AB0A040006DA7E2 /* CCCoreBridgeBinderIos.mm */; };
+		F865E1DB1AB0A040006DA7E2 /* CCCoreBridgeBinderIos.h in Headers */ = {isa = PBXBuildFile; fileRef = F865E1D71AB0A040006DA7E2 /* CCCoreBridgeBinderIos.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F865E1DC1AB0A040006DA7E2 /* CoreBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = F865E1D81AB0A040006DA7E2 /* CoreBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,20 +30,18 @@
 		9D3312F31977E21500D59A76 /* CCNdkBridgeIos.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCNdkBridgeIos.mm; sourceTree = "<group>"; };
 		9D3312F41977E21500D59A76 /* CommonConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonConsts.h; sourceTree = "<group>"; };
 		9D3312F51977E21500D59A76 /* CommonConsts.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CommonConsts.mm; sourceTree = "<group>"; };
-		9D3312F61977E21500D59A76 /* CoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreService.h; sourceTree = "<group>"; };
-		9D3312F71977E21500D59A76 /* CoreService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CoreService.mm; sourceTree = "<group>"; };
 		9D3312F81977E21500D59A76 /* DomainFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainFactory.h; sourceTree = "<group>"; };
 		9D3312F91977E21500D59A76 /* DomainFactory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DomainFactory.mm; sourceTree = "<group>"; };
 		9D3312FA1977E21500D59A76 /* DomainHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainHelper.h; sourceTree = "<group>"; };
 		9D3312FB1977E21500D59A76 /* DomainHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DomainHelper.mm; sourceTree = "<group>"; };
 		9D3312FC1977E21500D59A76 /* NdkGlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NdkGlue.h; sourceTree = "<group>"; };
 		9D3312FD1977E21500D59A76 /* NdkGlue.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NdkGlue.mm; sourceTree = "<group>"; };
-		9D3312FE1977E21500D59A76 /* ParamsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParamsProvider.h; sourceTree = "<group>"; };
-		9D3312FF1977E21500D59A76 /* ParamsProvider.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ParamsProvider.mm; sourceTree = "<group>"; };
-		9D3313001977E21500D59A76 /* ServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceManager.h; sourceTree = "<group>"; };
-		9D3313011977E21500D59A76 /* ServiceManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ServiceManager.mm; sourceTree = "<group>"; };
 		C0B3C5EF168C6D0C00161FAA /* libCocos2dXiOSCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocos2dXiOSCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B3C5F2168C6D0C00161FAA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F865E1D51AB0A040006DA7E2 /* CoreBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CoreBridge.mm; sourceTree = "<group>"; };
+		F865E1D61AB0A040006DA7E2 /* CCCoreBridgeBinderIos.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCCoreBridgeBinderIos.mm; sourceTree = "<group>"; };
+		F865E1D71AB0A040006DA7E2 /* CCCoreBridgeBinderIos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCoreBridgeBinderIos.h; sourceTree = "<group>"; };
+		F865E1D81AB0A040006DA7E2 /* CoreBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreBridge.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,22 +59,20 @@
 		9D3312F11977E21500D59A76 /* CoreCocos2dx */ = {
 			isa = PBXGroup;
 			children = (
+				F865E1D51AB0A040006DA7E2 /* CoreBridge.mm */,
+				F865E1D61AB0A040006DA7E2 /* CCCoreBridgeBinderIos.mm */,
+				F865E1D71AB0A040006DA7E2 /* CCCoreBridgeBinderIos.h */,
+				F865E1D81AB0A040006DA7E2 /* CoreBridge.h */,
 				9D3312F21977E21500D59A76 /* CCNdkBridgeIos.h */,
 				9D3312F31977E21500D59A76 /* CCNdkBridgeIos.mm */,
 				9D3312F41977E21500D59A76 /* CommonConsts.h */,
 				9D3312F51977E21500D59A76 /* CommonConsts.mm */,
-				9D3312F61977E21500D59A76 /* CoreService.h */,
-				9D3312F71977E21500D59A76 /* CoreService.mm */,
 				9D3312F81977E21500D59A76 /* DomainFactory.h */,
 				9D3312F91977E21500D59A76 /* DomainFactory.mm */,
 				9D3312FA1977E21500D59A76 /* DomainHelper.h */,
 				9D3312FB1977E21500D59A76 /* DomainHelper.mm */,
 				9D3312FC1977E21500D59A76 /* NdkGlue.h */,
 				9D3312FD1977E21500D59A76 /* NdkGlue.mm */,
-				9D3312FE1977E21500D59A76 /* ParamsProvider.h */,
-				9D3312FF1977E21500D59A76 /* ParamsProvider.mm */,
-				9D3313001977E21500D59A76 /* ServiceManager.h */,
-				9D3313011977E21500D59A76 /* ServiceManager.mm */,
 			);
 			path = CoreCocos2dx;
 			sourceTree = "<group>";
@@ -118,12 +112,11 @@
 			files = (
 				9D3313021977E21500D59A76 /* CCNdkBridgeIos.h in Headers */,
 				9D33130C1977E21500D59A76 /* NdkGlue.h in Headers */,
-				9D3313101977E21500D59A76 /* ServiceManager.h in Headers */,
-				9D33130E1977E21500D59A76 /* ParamsProvider.h in Headers */,
 				9D33130A1977E21500D59A76 /* DomainHelper.h in Headers */,
 				9D3313081977E21500D59A76 /* DomainFactory.h in Headers */,
+				F865E1DC1AB0A040006DA7E2 /* CoreBridge.h in Headers */,
+				F865E1DB1AB0A040006DA7E2 /* CCCoreBridgeBinderIos.h in Headers */,
 				9D3313041977E21500D59A76 /* CommonConsts.h in Headers */,
-				9D3313061977E21500D59A76 /* CoreService.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,7 +179,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "##########################################\n#\n# c.f. http://stackoverflow.com/questions/3520977/build-fat-static-library-device-simulator-using-xcode-and-sdk-4\n#\n# Version 2.7\n#\n# Latest Change:\n# - Supports iPhone 5 / iPod Touch 5 (uses Apple's workaround to lipo bug)\n#\n# Purpose:\n#   Automatically create a Universal static library for iPhone + iPad + iPhone Simulator from within XCode\n#\n# Author: Adam Martin - http://twitter.com/redglassesapps\n# Based on: original script from Eonil (main changes: Eonil's script WILL NOT WORK in Xcode GUI - it WILL CRASH YOUR COMPUTER)\n#\n\nset -e\nset -o pipefail\n\n#################[ Tests: helps workaround any future bugs in Xcode ]########\n#\nDEBUG_THIS_SCRIPT=\"false\"\n\nif [ $DEBUG_THIS_SCRIPT = \"true\" ]\nthen\necho \"########### TESTS #############\"\necho \"Use the following variables when debugging this script; note that they may change on recursions\"\necho \"BUILD_DIR = $BUILD_DIR\"\necho \"BUILD_ROOT = $BUILD_ROOT\"\necho \"CONFIGURATION_BUILD_DIR = $CONFIGURATION_BUILD_DIR\"\necho \"BUILT_PRODUCTS_DIR = $BUILT_PRODUCTS_DIR\"\necho \"CONFIGURATION_TEMP_DIR = $CONFIGURATION_TEMP_DIR\"\necho \"TARGET_BUILD_DIR = $TARGET_BUILD_DIR\"\nfi\n\n#####################[ part 1 ]##################\n# First, work out the BASESDK version number (NB: Apple ought to report this, but they hide it)\n#    (incidental: searching for substrings in sh is a nightmare! Sob)\n\nSDK_VERSION=$(echo ${SDK_NAME} | grep -o '.\\{3\\}$')\n\n# Next, work out if we're in SIM or DEVICE\n\nif [ ${PLATFORM_NAME} = \"iphonesimulator\" ]\nthen\nOTHER_SDK_TO_BUILD=iphoneos${SDK_VERSION}\nelse\nOTHER_SDK_TO_BUILD=iphonesimulator${SDK_VERSION}\nfi\n\necho \"XCode has selected SDK: ${PLATFORM_NAME} with version: ${SDK_VERSION} (although back-targetting: ${IPHONEOS_DEPLOYMENT_TARGET})\"\necho \"...therefore, OTHER_SDK_TO_BUILD = ${OTHER_SDK_TO_BUILD}\"\n#\n#####################[ end of part 1 ]##################\n\n#####################[ part 2 ]##################\n#\n# IF this is the original invocation, invoke WHATEVER other builds are required\n#\n# Xcode is already building ONE target...\n#\n# ...but this is a LIBRARY, so Apple is wrong to set it to build just one.\n# ...we need to build ALL targets\n# ...we MUST NOT re-build the target that is ALREADY being built: Xcode WILL CRASH YOUR COMPUTER if you try this (infinite recursion!)\n#\n#\n# So: build ONLY the missing platforms/configurations.\n\nif [ \"true\" == ${ALREADYINVOKED:-false} ]\nthen\necho \"RECURSION: I am NOT the root invocation, so I'm NOT going to recurse\"\nelse\n# CRITICAL:\n# Prevent infinite recursion (Xcode sucks)\nexport ALREADYINVOKED=\"true\"\n\necho \"RECURSION: I am the root ... recursing all missing build targets NOW...\"\necho \"RECURSION: ...about to invoke: xcodebuild -configuration \\\"${CONFIGURATION}\\\" -project \\\"${PROJECT_NAME}.xcodeproj\\\" -target \\\"${TARGET_NAME}\\\" -sdk \\\"${OTHER_SDK_TO_BUILD}\\\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO\" BUILD_DIR=\\\"${BUILD_DIR}\\\" BUILD_ROOT=\\\"${BUILD_ROOT}\\\" SYMROOT=\\\"${SYMROOT}\\\"\n\nxcodebuild -configuration \"${CONFIGURATION}\" -project \"${PROJECT_NAME}.xcodeproj\" -target \"${TARGET_NAME}\" -sdk \"${OTHER_SDK_TO_BUILD}\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" SYMROOT=\"${SYMROOT}\"\n\nACTION=\"build\"\n\n#Merge all platform binaries as a fat binary for each configurations.\n\n# Calculate where the (multiple) built files are coming from:\nCURRENTCONFIG_DEVICE_DIR=${SYMROOT}/${CONFIGURATION}-iphoneos\nCURRENTCONFIG_SIMULATOR_DIR=${SYMROOT}/${CONFIGURATION}-iphonesimulator\n\necho \"Taking device build from: ${CURRENTCONFIG_DEVICE_DIR}\"\necho \"Taking simulator build from: ${CURRENTCONFIG_SIMULATOR_DIR}\"\n\nif [[ -z $CREATING_UNIVERSAL_DIR ]]\nthen\nCREATING_UNIVERSAL_DIR=${SYMROOT}/${CONFIGURATION}-universal\nfi\necho \"...I will output a universal build to: ${CREATING_UNIVERSAL_DIR}\"\n\n# ... remove the products of previous runs of this script\n#      NB: this directory is ONLY created by this script - it should be safe to delete!\n\nrm -rf \"${CREATING_UNIVERSAL_DIR}\"\nmkdir \"${CREATING_UNIVERSAL_DIR}\"\n\n#\necho \"lipo: for current configuration (${CONFIGURATION}) creating output file: ${CREATING_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\"\nxcrun -sdk iphoneos lipo -create -output \"${CREATING_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_DEVICE_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_SIMULATOR_DIR}/${EXECUTABLE_NAME}\"\n\n#########\n#\n# Added: StackOverflow suggestion to also copy \"include\" files\n#    (untested, but should work OK)\n#\necho \"Fetching headers from ${PUBLIC_HEADERS_FOLDER_PATH}\"\necho \"  (if you embed your library project in another project, you will need to add\"\necho \"   a \"User Search Headers\" build setting of: (NB INCLUDE THE DOUBLE QUOTES BELOW!)\"\necho '        \"$(TARGET_BUILD_DIR)/usr/local/include/\"'\nif [ -d \"${CURRENTCONFIG_DEVICE_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}\" ]\nthen\nmkdir -p \"${CREATING_UNIVERSAL_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}\"\n# * needs to be outside the double quotes?\ncp -r \"${CURRENTCONFIG_DEVICE_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\"* \"${CREATING_UNIVERSAL_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}\"\nfi\nfi\n";
+			shellScript = "##########################################\n#\n# c.f. http://stackoverflow.com/questions/3520977/build-fat-static-library-device-simulator-using-xcode-and-sdk-4\n#\n# Version 2.7\n#\n# Latest Change:\n# - Supports iPhone 5 / iPod Touch 5 (uses Apple's workaround to lipo bug)\n#\n# Purpose:\n#   Automatically create a Universal static library for iPhone + iPad + iPhone Simulator from within XCode\n#\n# Author: Adam Martin - http://twitter.com/redglassesapps\n# Based on: original script from Eonil (main changes: Eonil's script WILL NOT WORK in Xcode GUI - it WILL CRASH YOUR COMPUTER)\n#\n\nset -e\nset -o pipefail\n\n#################[ Tests: helps workaround any future bugs in Xcode ]########\n#\nDEBUG_THIS_SCRIPT=\"false\"\n\nif [ $DEBUG_THIS_SCRIPT = \"true\" ]\nthen\necho \"########### TESTS #############\"\necho \"Use the following variables when debugging this script; note that they may change on recursions\"\necho \"BUILD_DIR = $BUILD_DIR\"\necho \"BUILD_ROOT = $BUILD_ROOT\"\necho \"CONFIGURATION_BUILD_DIR = $CONFIGURATION_BUILD_DIR\"\necho \"BUILT_PRODUCTS_DIR = $BUILT_PRODUCTS_DIR\"\necho \"CONFIGURATION_TEMP_DIR = $CONFIGURATION_TEMP_DIR\"\necho \"TARGET_BUILD_DIR = $TARGET_BUILD_DIR\"\nfi\n\n#####################[ part 1 ]##################\n# First, work out the BASESDK version number (NB: Apple ought to report this, but they hide it)\n#    (incidental: searching for substrings in sh is a nightmare! Sob)\n\nSDK_VERSION=$(echo ${SDK_NAME} | grep -o '.\\{3\\}$')\n\n# Next, work out if we're in SIM or DEVICE\n\nif [ ${PLATFORM_NAME} = \"iphonesimulator\" ]\nthen\nOTHER_SDK_TO_BUILD=iphoneos${SDK_VERSION}\nelse\nOTHER_SDK_TO_BUILD=iphonesimulator${SDK_VERSION}\nfi\n\necho \"XCode has selected SDK: ${PLATFORM_NAME} with version: ${SDK_VERSION} (although back-targetting: ${IPHONEOS_DEPLOYMENT_TARGET})\"\necho \"...therefore, OTHER_SDK_TO_BUILD = ${OTHER_SDK_TO_BUILD}\"\n#\n#####################[ end of part 1 ]##################\n\n#####################[ part 2 ]##################\n#\n# IF this is the original invocation, invoke WHATEVER other builds are required\n#\n# Xcode is already building ONE target...\n#\n# ...but this is a LIBRARY, so Apple is wrong to set it to build just one.\n# ...we need to build ALL targets\n# ...we MUST NOT re-build the target that is ALREADY being built: Xcode WILL CRASH YOUR COMPUTER if you try this (infinite recursion!)\n#\n#\n# So: build ONLY the missing platforms/configurations.\n\nif [ \"true\" == ${ALREADYINVOKED:-false} ]\nthen\necho \"RECURSION: I am NOT the root invocation, so I'm NOT going to recurse\"\nelse\n# CRITICAL:\n# Prevent infinite recursion (Xcode sucks)\nexport ALREADYINVOKED=\"true\"\n\necho \"RECURSION: I am the root ... recursing all missing build targets NOW...\"\necho \"RECURSION: ...about to invoke: xcodebuild -configuration \\\"${CONFIGURATION}\\\" -project \\\"${PROJECT_NAME}.xcodeproj\\\" -target \\\"${TARGET_NAME}\\\" -sdk \\\"${OTHER_SDK_TO_BUILD}\\\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO\" BUILD_DIR=\\\"${BUILD_DIR}\\\" BUILD_ROOT=\\\"${BUILD_ROOT}\\\" SYMROOT=\\\"${SYMROOT}\\\"\n\nxcodebuild -configuration \"${CONFIGURATION}\" -project \"${PROJECT_NAME}.xcodeproj\" -target \"${TARGET_NAME}\" -sdk \"${OTHER_SDK_TO_BUILD}\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" SYMROOT=\"${SYMROOT}\"\n\nACTION=\"build\"\n\n#Merge all platform binaries as a fat binary for each configurations.\n\n# Calculate where the (multiple) built files are coming from:\nCURRENTCONFIG_DEVICE_DIR=${SYMROOT}/${CONFIGURATION}-iphoneos\nCURRENTCONFIG_SIMULATOR_DIR=${SYMROOT}/${CONFIGURATION}-iphonesimulator\n\necho \"Taking device build from: ${CURRENTCONFIG_DEVICE_DIR}\"\necho \"Taking simulator build from: ${CURRENTCONFIG_SIMULATOR_DIR}\"\n\nif [[ -z $CREATING_UNIVERSAL_DIR ]]\nthen\nCREATING_UNIVERSAL_DIR=${SYMROOT}/${CONFIGURATION}-universal\nfi\necho \"...I will output a universal build to: ${CREATING_UNIVERSAL_DIR}\"\n\n# ... remove the products of previous runs of this script\n#      NB: this directory is ONLY created by this script - it should be safe to delete!\n\n# rm -rf \"${CREATING_UNIVERSAL_DIR}\"\nmkdir -p \"${CREATING_UNIVERSAL_DIR}\"\n\n#\necho \"lipo: for current configuration (${CONFIGURATION}) creating output file: ${CREATING_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\"\nxcrun -sdk iphoneos lipo -create -output \"${CREATING_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_DEVICE_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_SIMULATOR_DIR}/${EXECUTABLE_NAME}\"\n\n#########\n#\n# Added: StackOverflow suggestion to also copy \"include\" files\n#    (untested, but should work OK)\n#\necho \"Fetching headers from ${PUBLIC_HEADERS_FOLDER_PATH}\"\necho \"  (if you embed your library project in another project, you will need to add\"\necho \"   a \"User Search Headers\" build setting of: (NB INCLUDE THE DOUBLE QUOTES BELOW!)\"\nif [ -d \"${CURRENTCONFIG_DEVICE_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}\" ]\nthen\nmkdir -p \"${CREATING_UNIVERSAL_DIR}/headers/${PROJECT_NAME}\"\n# * needs to be outside the double quotes?\ncp -r \"${CURRENTCONFIG_DEVICE_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\"* \"${CREATING_UNIVERSAL_DIR}/headers/${PROJECT_NAME}\"\nfi\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -196,13 +189,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D33130D1977E21500D59A76 /* NdkGlue.mm in Sources */,
-				9D33130F1977E21500D59A76 /* ParamsProvider.mm in Sources */,
 				9D33130B1977E21500D59A76 /* DomainHelper.mm in Sources */,
 				9D3313091977E21500D59A76 /* DomainFactory.mm in Sources */,
 				9D3313051977E21500D59A76 /* CommonConsts.mm in Sources */,
-				9D3313111977E21500D59A76 /* ServiceManager.mm in Sources */,
+				F865E1DA1AB0A040006DA7E2 /* CCCoreBridgeBinderIos.mm in Sources */,
 				9D3313031977E21500D59A76 /* CCNdkBridgeIos.mm in Sources */,
-				9D3313071977E21500D59A76 /* CoreService.mm in Sources */,
+				F865E1D91AB0A040006DA7E2 /* CoreBridge.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
