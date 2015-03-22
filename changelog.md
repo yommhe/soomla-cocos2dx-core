@@ -2,6 +2,7 @@
 
 * Changes
   * Changing iOS bridge compilation + header location
+  * Making project v2.2.x compatible
 
 ### v1.1.0 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/cocos2dx-v2-v1.0.2...cocos2dx-v2-v1.1.0)
 
