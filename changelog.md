@@ -1,3 +1,8 @@
+### v1.1.1 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/cocos2dx-v2-v1.1.0...cocos2dx-v2-v1.1.1)
+
+* Changes
+  * Changing iOS bridge compilation + header location
+
 ### v1.1.0 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/cocos2dx-v2-v1.0.2...cocos2dx-v2-v1.1.0)
 
 **BREAKING API VERSION**
@@ -16,9 +21,6 @@
 * Changes
   * Fixing issues with KVS (iOS) via submodule
   * Fixing AsyncTask not found (Android) via submodule
-
-
-* Changes
   * Upgrading submodules
 
 ### v1.0.0
