@@ -57,12 +57,10 @@ void Soomla::JSBinding::callCallback(CCDictionary *params) {
 
     JSContext* cx = ScriptingCore::getInstance()->getGlobalContext();
 
+    jsval v = std_string_to_jsval(cx, jsonParams);
     jsval retval;
-    jsval v[] = {
-            v[0] = STRING_TO_JSVAL(JS_NewStringCopyZ(cx, jsonParams.c_str()))
-    };
     ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(ScriptingCore::getInstance()->getGlobalObject()),
-            "ndkCallback", 1, v, &retval);
+            "ndkCallback", 1, &v, &retval);
 }
 
 #endif // COCOS2D_JAVASCRIPT
