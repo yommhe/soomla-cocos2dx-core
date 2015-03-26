@@ -18,8 +18,7 @@
 #define __CCCoreEventDispatcher_H_
 
 #include "cocos2d.h"
-#include "CCAbstractAggregatedEventHandler.h"
-#include "CCCoreEventHandler.h"
+#include "CCReward.h"
 
 namespace soomla {
 
@@ -30,7 +29,7 @@ namespace soomla {
 		it to your event handler call addEventHandler(). You also set parameters
 		for StoreController through this class.
 	 */
-    class CCCoreEventDispatcher : public CCAbstractAggregatedEventHandler<CCCoreEventHandler>, public CCCoreEventHandler {
+    class CCCoreEventDispatcher : public cocos2d::Ref {
     public:
 		/**
 		   This class is singleton, access it with this function.

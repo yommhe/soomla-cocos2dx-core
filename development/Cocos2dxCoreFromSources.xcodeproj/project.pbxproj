@@ -20,7 +20,6 @@
 		9D41014C1978CFAD00907FA8 /* CCCoreConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101271978CFAD00907FA8 /* CCCoreConsts.h */; };
 		9D41014D1978CFAD00907FA8 /* CCCoreEventDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101281978CFAD00907FA8 /* CCCoreEventDispatcher.cpp */; };
 		9D41014E1978CFAD00907FA8 /* CCCoreEventDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101291978CFAD00907FA8 /* CCCoreEventDispatcher.h */; };
-		9D41014F1978CFAD00907FA8 /* CCCoreEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012A1978CFAD00907FA8 /* CCCoreEventHandler.h */; };
 		9D4101501978CFAD00907FA8 /* CCCoreBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D41012B1978CFAD00907FA8 /* CCCoreBridge.cpp */; };
 		9D4101511978CFAD00907FA8 /* CCCoreBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012C1978CFAD00907FA8 /* CCCoreBridge.h */; };
 		9D4101521978CFAD00907FA8 /* CCDomainFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D41012D1978CFAD00907FA8 /* CCDomainFactory.cpp */; };
@@ -141,7 +140,6 @@
 		F8A1E3CD1A236202006FAA3C /* CCAbstractAggregatedEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101251978CFAD00907FA8 /* CCAbstractAggregatedEventHandler.h */; };
 		F8A1E3CE1A236202006FAA3C /* CCCoreConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101271978CFAD00907FA8 /* CCCoreConsts.h */; };
 		F8A1E3CF1A236202006FAA3C /* CCCoreEventDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101291978CFAD00907FA8 /* CCCoreEventDispatcher.h */; };
-		F8A1E3D01A236202006FAA3C /* CCCoreEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012A1978CFAD00907FA8 /* CCCoreEventHandler.h */; };
 		F8A1E3D31A236202006FAA3C /* CCCoreBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012C1978CFAD00907FA8 /* CCCoreBridge.h */; };
 		F8A1E3D41A236202006FAA3C /* CCDomainFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012E1978CFAD00907FA8 /* CCDomainFactory.h */; };
 		F8A1E3D51A236202006FAA3C /* CCDomainHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101301978CFAD00907FA8 /* CCDomainHelper.h */; };
@@ -179,7 +177,6 @@
 		9D4101271978CFAD00907FA8 /* CCCoreConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCoreConsts.h; sourceTree = "<group>"; };
 		9D4101281978CFAD00907FA8 /* CCCoreEventDispatcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCCoreEventDispatcher.cpp; sourceTree = "<group>"; };
 		9D4101291978CFAD00907FA8 /* CCCoreEventDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCoreEventDispatcher.h; sourceTree = "<group>"; };
-		9D41012A1978CFAD00907FA8 /* CCCoreEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCoreEventHandler.h; sourceTree = "<group>"; };
 		9D41012B1978CFAD00907FA8 /* CCCoreBridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCCoreBridge.cpp; sourceTree = "<group>"; };
 		9D41012C1978CFAD00907FA8 /* CCCoreBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCoreBridge.h; sourceTree = "<group>"; };
 		9D41012D1978CFAD00907FA8 /* CCDomainFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCDomainFactory.cpp; sourceTree = "<group>"; };
@@ -322,7 +319,6 @@
 				9D4101271978CFAD00907FA8 /* CCCoreConsts.h */,
 				9D4101281978CFAD00907FA8 /* CCCoreEventDispatcher.cpp */,
 				9D4101291978CFAD00907FA8 /* CCCoreEventDispatcher.h */,
-				9D41012A1978CFAD00907FA8 /* CCCoreEventHandler.h */,
 				9D41012B1978CFAD00907FA8 /* CCCoreBridge.cpp */,
 				9D41012C1978CFAD00907FA8 /* CCCoreBridge.h */,
 				9D41012D1978CFAD00907FA8 /* CCDomainFactory.cpp */,
@@ -537,7 +533,6 @@
 				9D63D08A19B0EE220054EA87 /* SequenceReward.h in Headers */,
 				9D63D08E19B0EE220054EA87 /* Soomla.h in Headers */,
 				9D63D07A19B0EE220054EA87 /* KeyValueStorage.h in Headers */,
-				9D41014F1978CFAD00907FA8 /* CCCoreEventHandler.h in Headers */,
 				9D63D07819B0EE220054EA87 /* KeyValDatabase.h in Headers */,
 				9D4101551978CFAD00907FA8 /* CCDomainHelper.h in Headers */,
 				9D63D07E19B0EE220054EA87 /* SoomlaEncryptor.h in Headers */,
@@ -592,7 +587,6 @@
 				F8A1E3CD1A236202006FAA3C /* CCAbstractAggregatedEventHandler.h in Headers */,
 				F8A1E3CE1A236202006FAA3C /* CCCoreConsts.h in Headers */,
 				F8A1E3CF1A236202006FAA3C /* CCCoreEventDispatcher.h in Headers */,
-				F8A1E3D01A236202006FAA3C /* CCCoreEventHandler.h in Headers */,
 				F8A1E3D31A236202006FAA3C /* CCCoreBridge.h in Headers */,
 				F8A1E3D41A236202006FAA3C /* CCDomainFactory.h in Headers */,
 				F8A1E3D51A236202006FAA3C /* CCDomainHelper.h in Headers */,
