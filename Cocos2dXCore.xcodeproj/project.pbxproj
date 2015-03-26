@@ -17,6 +17,18 @@
 		372B7A1D5F372FCFD9E68388 /* CCSoomlaUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 372B748E4E8020FCD1396DDC /* CCSoomlaUtils.h */; };
 		372B7E556799F8D93570725F /* CCSoomlaEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 372B74257254F43D38DF97CA /* CCSoomlaEntity.cpp */; };
 		372B7FBE9869CD7B1B70ED0E /* CCRewardStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 372B73021AB74279EE404D33 /* CCRewardStorage.cpp */; };
+		9D1639741AC41B3300BD5878 /* CCNativeCoreBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F89F72201AB19307000ECC23 /* CCNativeCoreBridge.cpp */; };
+		9D1639751AC41B3300BD5878 /* CCNativeKeyValueStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F89F71F81AB187E6000ECC23 /* CCNativeKeyValueStorage.cpp */; };
+		9D1639761AC41B3300BD5878 /* CCNativeRewardStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F89F71FA1AB187E6000ECC23 /* CCNativeRewardStorage.cpp */; };
+		9D1639771AC41B3300BD5878 /* CCSoomla.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F865E1C71AB0A018006DA7E2 /* CCSoomla.cpp */; };
+		9D1639781AC41B3300BD5878 /* CCCoreBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F865E1C91AB0A018006DA7E2 /* CCCoreBridge.cpp */; };
+		9D1639791AC41B3300BD5878 /* CCBridgelessKeyValueStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F89F720B1AB18D03000ECC23 /* CCBridgelessKeyValueStorage.cpp */; };
+		9D16397A1AC41B8200BD5878 /* CCNativeCoreBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = F89F72211AB19307000ECC23 /* CCNativeCoreBridge.h */; };
+		9D16397B1AC41B8200BD5878 /* CCNativeKeyValueStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = F89F71F91AB187E6000ECC23 /* CCNativeKeyValueStorage.h */; };
+		9D16397C1AC41B8200BD5878 /* CCNativeRewardStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = F89F71FB1AB187E6000ECC23 /* CCNativeRewardStorage.h */; };
+		9D16397D1AC41B8200BD5878 /* CCSoomla.h in Headers */ = {isa = PBXBuildFile; fileRef = F865E1C81AB0A018006DA7E2 /* CCSoomla.h */; };
+		9D16397E1AC41B8200BD5878 /* CCCoreBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = F865E1CC1AB0A018006DA7E2 /* CCCoreBridge.h */; };
+		9D16397F1AC41B8200BD5878 /* CCBridgelessKeyValueStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = F89F720A1AB18D03000ECC23 /* CCBridgelessKeyValueStorage.h */; };
 		9D41014A1978CFAD00907FA8 /* CCAbstractAggregatedEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101251978CFAD00907FA8 /* CCAbstractAggregatedEventHandler.h */; };
 		9D41014B1978CFAD00907FA8 /* CCCoreConsts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101261978CFAD00907FA8 /* CCCoreConsts.cpp */; };
 		9D41014C1978CFAD00907FA8 /* CCCoreConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101271978CFAD00907FA8 /* CCCoreConsts.h */; };
@@ -56,12 +68,9 @@
 		9D831D4D1AB8369A00A234A5 /* CCAggregateReward.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101401978CFAD00907FA8 /* CCAggregateReward.cpp */; };
 		9D831D4E1AB8369A00A234A5 /* CCSoomlaEventDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101391978CFAD00907FA8 /* CCSoomlaEventDispatcher.cpp */; };
 		9D831D4F1AB8369A00A234A5 /* CCReward.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101461978CFAD00907FA8 /* CCReward.cpp */; };
-		9D831D501AB8369A00A234A5 /* CCBridgelessCoreService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8694A801A1CEC15001738B4 /* CCBridgelessCoreService.cpp */; };
 		9D831D511AB8369A00A234A5 /* CCNdkBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101351978CFAD00907FA8 /* CCNdkBridge.cpp */; };
 		9D831D521AB8369A00A234A5 /* CCJsonHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101331978CFAD00907FA8 /* CCJsonHelper.cpp */; };
-		9D831D531AB8369A00A234A5 /* CCNativeCoreService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8694A7E1A1CEC15001738B4 /* CCNativeCoreService.cpp */; };
 		9D831D541AB8369A00A234A5 /* CCCoreEventDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101281978CFAD00907FA8 /* CCCoreEventDispatcher.cpp */; };
-		9D831D551AB8369A00A234A5 /* CCServiceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101371978CFAD00907FA8 /* CCServiceManager.cpp */; };
 		9D831D561AB8369A00A234A5 /* CCBadgeReward.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101421978CFAD00907FA8 /* CCBadgeReward.cpp */; };
 		9D831D571AB8369A00A234A5 /* CCCoreConsts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101261978CFAD00907FA8 /* CCCoreConsts.cpp */; };
 		9D831D581AB8369A00A234A5 /* CCSequenceReward.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101481978CFAD00907FA8 /* CCSequenceReward.cpp */; };
@@ -69,7 +78,6 @@
 		9D831D5A1AB8369A00A234A5 /* CCDomain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D41013D1978CFAD00907FA8 /* CCDomain.cpp */; };
 		9D831D5B1AB8369A00A234A5 /* CCDomainFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D41012D1978CFAD00907FA8 /* CCDomainFactory.cpp */; };
 		9D831D5C1AB8369A00A234A5 /* CCError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101311978CFAD00907FA8 /* CCError.cpp */; };
-		9D831D5D1AB8369A00A234A5 /* CCCoreService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D41012B1978CFAD00907FA8 /* CCCoreService.cpp */; };
 		9D831D5E1AB8369A00A234A5 /* CCRandomReward.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101441978CFAD00907FA8 /* CCRandomReward.cpp */; };
 		9D831D5F1AB8369A00A234A5 /* CCSoomlaEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 372B74257254F43D38DF97CA /* CCSoomlaEntity.cpp */; };
 		9D831D601AB8369A00A234A5 /* CCSchedule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 372B73C62BBFD3700BD6DE74 /* CCSchedule.cpp */; };
@@ -90,18 +98,14 @@
 		9D831D711AB8369A00A234A5 /* CCAggregateReward.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101411978CFAD00907FA8 /* CCAggregateReward.h */; };
 		9D831D721AB8369A00A234A5 /* CCRandomReward.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101451978CFAD00907FA8 /* CCRandomReward.h */; };
 		9D831D731AB8369A00A234A5 /* CCJsonHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101341978CFAD00907FA8 /* CCJsonHelper.h */; };
-		9D831D741AB8369A00A234A5 /* CCCoreService.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012C1978CFAD00907FA8 /* CCCoreService.h */; };
 		9D831D751AB8369A00A234A5 /* CCDomainFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012E1978CFAD00907FA8 /* CCDomainFactory.h */; };
 		9D831D761AB8369A00A234A5 /* CCCoreConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101271978CFAD00907FA8 /* CCCoreConsts.h */; };
-		9D831D771AB8369A00A234A5 /* CCServiceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101381978CFAD00907FA8 /* CCServiceManager.h */; };
 		9D831D781AB8369A00A234A5 /* CCNdkBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101361978CFAD00907FA8 /* CCNdkBridge.h */; };
-		9D831D791AB8369A00A234A5 /* CCNativeCoreService.h in Headers */ = {isa = PBXBuildFile; fileRef = F8694A7D1A1CEC15001738B4 /* CCNativeCoreService.h */; };
 		9D831D7A1AB8369A00A234A5 /* CCSoomlaEventDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41013A1978CFAD00907FA8 /* CCSoomlaEventDispatcher.h */; };
 		9D831D7B1AB8369A00A234A5 /* CCCoreEventDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101291978CFAD00907FA8 /* CCCoreEventDispatcher.h */; };
 		9D831D7C1AB8369A00A234A5 /* CCSoomlaMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41013B1978CFAD00907FA8 /* CCSoomlaMacros.h */; };
 		9D831D7D1AB8369A00A234A5 /* CCDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41013E1978CFAD00907FA8 /* CCDomain.h */; };
 		9D831D7E1AB8369A00A234A5 /* CCError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101321978CFAD00907FA8 /* CCError.h */; };
-		9D831D7F1AB8369A00A234A5 /* CCBridgelessCoreService.h in Headers */ = {isa = PBXBuildFile; fileRef = F8694A7F1A1CEC15001738B4 /* CCBridgelessCoreService.h */; };
 		9D831D801AB8369A00A234A5 /* CCSoomlaEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 372B7DF784D9DB67349CF869 /* CCSoomlaEntity.h */; };
 		9D831D811AB8369A00A234A5 /* CCSchedule.h in Headers */ = {isa = PBXBuildFile; fileRef = 372B7B53C5A571B92A25C08C /* CCSchedule.h */; };
 		9D831D821AB8369A00A234A5 /* CCSoomlaUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 372B748E4E8020FCD1396DDC /* CCSoomlaUtils.h */; };
@@ -454,6 +458,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D16397A1AC41B8200BD5878 /* CCNativeCoreBridge.h in Headers */,
+				9D16397B1AC41B8200BD5878 /* CCNativeKeyValueStorage.h in Headers */,
+				9D16397C1AC41B8200BD5878 /* CCNativeRewardStorage.h in Headers */,
+				9D16397D1AC41B8200BD5878 /* CCSoomla.h in Headers */,
+				9D16397E1AC41B8200BD5878 /* CCCoreBridge.h in Headers */,
+				9D16397F1AC41B8200BD5878 /* CCBridgelessKeyValueStorage.h in Headers */,
 				9D7B403D1ABB0FC3000FC929 /* jsb_soomla.h in Headers */,
 				9D7B403C1ABB0FBC000FC929 /* JSBinding.h in Headers */,
 				9D831D691AB8369A00A234A5 /* Cocos2dxCore.h in Headers */,
@@ -467,18 +477,14 @@
 				9D831D711AB8369A00A234A5 /* CCAggregateReward.h in Headers */,
 				9D831D721AB8369A00A234A5 /* CCRandomReward.h in Headers */,
 				9D831D731AB8369A00A234A5 /* CCJsonHelper.h in Headers */,
-				9D831D741AB8369A00A234A5 /* CCCoreService.h in Headers */,
 				9D831D751AB8369A00A234A5 /* CCDomainFactory.h in Headers */,
 				9D831D761AB8369A00A234A5 /* CCCoreConsts.h in Headers */,
-				9D831D771AB8369A00A234A5 /* CCServiceManager.h in Headers */,
 				9D831D781AB8369A00A234A5 /* CCNdkBridge.h in Headers */,
-				9D831D791AB8369A00A234A5 /* CCNativeCoreService.h in Headers */,
 				9D831D7A1AB8369A00A234A5 /* CCSoomlaEventDispatcher.h in Headers */,
 				9D831D7B1AB8369A00A234A5 /* CCCoreEventDispatcher.h in Headers */,
 				9D831D7C1AB8369A00A234A5 /* CCSoomlaMacros.h in Headers */,
 				9D831D7D1AB8369A00A234A5 /* CCDomain.h in Headers */,
 				9D831D7E1AB8369A00A234A5 /* CCError.h in Headers */,
-				9D831D7F1AB8369A00A234A5 /* CCBridgelessCoreService.h in Headers */,
 				9D831D801AB8369A00A234A5 /* CCSoomlaEntity.h in Headers */,
 				9D831D811AB8369A00A234A5 /* CCSchedule.h in Headers */,
 				9D831D821AB8369A00A234A5 /* CCSoomlaUtils.h in Headers */,
@@ -610,17 +616,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D1639741AC41B3300BD5878 /* CCNativeCoreBridge.cpp in Sources */,
+				9D1639751AC41B3300BD5878 /* CCNativeKeyValueStorage.cpp in Sources */,
+				9D1639761AC41B3300BD5878 /* CCNativeRewardStorage.cpp in Sources */,
+				9D1639771AC41B3300BD5878 /* CCSoomla.cpp in Sources */,
+				9D1639781AC41B3300BD5878 /* CCCoreBridge.cpp in Sources */,
+				9D1639791AC41B3300BD5878 /* CCBridgelessKeyValueStorage.cpp in Sources */,
 				9D7B403B1ABB0FAB000FC929 /* jsb_soomla.cpp in Sources */,
 				9D7B403A1ABB0FA7000FC929 /* JSBinding.cpp in Sources */,
 				9D831D4D1AB8369A00A234A5 /* CCAggregateReward.cpp in Sources */,
 				9D831D4E1AB8369A00A234A5 /* CCSoomlaEventDispatcher.cpp in Sources */,
 				9D831D4F1AB8369A00A234A5 /* CCReward.cpp in Sources */,
-				9D831D501AB8369A00A234A5 /* CCBridgelessCoreService.cpp in Sources */,
 				9D831D511AB8369A00A234A5 /* CCNdkBridge.cpp in Sources */,
 				9D831D521AB8369A00A234A5 /* CCJsonHelper.cpp in Sources */,
-				9D831D531AB8369A00A234A5 /* CCNativeCoreService.cpp in Sources */,
 				9D831D541AB8369A00A234A5 /* CCCoreEventDispatcher.cpp in Sources */,
-				9D831D551AB8369A00A234A5 /* CCServiceManager.cpp in Sources */,
 				9D831D561AB8369A00A234A5 /* CCBadgeReward.cpp in Sources */,
 				9D831D571AB8369A00A234A5 /* CCCoreConsts.cpp in Sources */,
 				9D831D581AB8369A00A234A5 /* CCSequenceReward.cpp in Sources */,
@@ -628,7 +637,6 @@
 				9D831D5A1AB8369A00A234A5 /* CCDomain.cpp in Sources */,
 				9D831D5B1AB8369A00A234A5 /* CCDomainFactory.cpp in Sources */,
 				9D831D5C1AB8369A00A234A5 /* CCError.cpp in Sources */,
-				9D831D5D1AB8369A00A234A5 /* CCCoreService.cpp in Sources */,
 				9D831D5E1AB8369A00A234A5 /* CCRandomReward.cpp in Sources */,
 				9D831D5F1AB8369A00A234A5 /* CCSoomlaEntity.cpp in Sources */,
 				9D831D601AB8369A00A234A5 /* CCSchedule.cpp in Sources */,
@@ -718,12 +726,14 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"/Applications/Cocos/frameworks/cocos2d-x-3.4/cocos/platform/ios",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.4/cocos/platform/ios/Simulation",
+					"/Applications/Cocos/frameworks/cocos2d-x-3.4/cocos",
+					"/Applications/Cocos/frameworks/cocos2d-x-3.4/cocos/base",
+					"/Applications/Cocos/frameworks/cocos2d-x-3.4/cocos/2d",
+					"$(SRCROOT)/../jansson",
+					"$(SRCROOT)/build/ios/headers/**",
 					"/Applications/Cocos/frameworks/cocos2d-x-3.4/cocos/scripting/js-bindings/auto",
 					"/Applications/Cocos/frameworks/cocos2d-x-3.4/cocos/scripting/js-bindings/manual",
 					"/Applications/Cocos/frameworks/cocos2d-x-3.4/external/spidermonkey/include/ios",
-					"$(SRCROOT)/build/ios/headers/**",
 				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/build/ios";
 				LINK_WITH_STANDARD_LIBRARIES = NO;
@@ -751,12 +761,14 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"/Applications/Cocos/frameworks/cocos2d-x-3.4/cocos/platform/ios",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.4/cocos/platform/ios/Simulation",
+					"/Applications/Cocos/frameworks/cocos2d-x-3.4/cocos",
+					"/Applications/Cocos/frameworks/cocos2d-x-3.4/cocos/base",
+					"/Applications/Cocos/frameworks/cocos2d-x-3.4/cocos/2d",
+					"$(SRCROOT)/../jansson",
+					"$(SRCROOT)/build/ios/headers/**",
 					"/Applications/Cocos/frameworks/cocos2d-x-3.4/cocos/scripting/js-bindings/auto",
 					"/Applications/Cocos/frameworks/cocos2d-x-3.4/cocos/scripting/js-bindings/manual",
 					"/Applications/Cocos/frameworks/cocos2d-x-3.4/external/spidermonkey/include/ios",
-					"$(SRCROOT)/build/ios/headers/**",
 				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/build/ios";
 				LINK_WITH_STANDARD_LIBRARIES = NO;
