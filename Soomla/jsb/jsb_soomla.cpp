@@ -18,12 +18,6 @@ bool js_callNative(JSContext* cx, uint32_t argc, jsval* vp){
     if (argc == 1) {
         const char* arg0;
         std::string arg0_tmp; ok &= jsval_to_std_string(cx, argv[0], &arg0_tmp); arg0 = arg0_tmp.c_str();
-//    JSObject* obj = NULL;
-//    JSB::JSBinding* cobj = NULL;
-//    obj = JS_THIS_OBJECT(cx, vp);
-//    js_proxy_t* proxy = jsb_get_js_proxy(obj);
-//    cobj = (JSB::JSBinding* )(proxy ? proxy->ptr : NULL);
-//    JSB_PRECONDITION2(cobj, cx, JS_FALSE, "Invalid Native Object");
         std::string result;
         Soomla::JSBinding::callNative(arg0, result);
         jsval ret_jsval = std_string_to_jsval(cx, result);
