@@ -31,9 +31,6 @@ USING_NS_CC;
     #include <jni.h>
     #include <string>
     #include "CCSoomlaEventDispatcher.h"
-#ifdef COCOS2D_JAVASCRIPT
-    #include "jsb/JSBinding.h"
-#endif
 
     #define CLASS_NAME "com/soomla/cocos2dx/common/NdkGlue"
 #endif
@@ -66,11 +63,7 @@ namespace soomla {
 
             cocos2d::Ref *dataToPass = CCJsonHelper::getCCObjectFromJson(root);
 
-#ifdef COCOS2D_JAVASCRIPT
-            Soomla::JSBinding::callCallback((cocos2d::__Dictionary *) dataToPass);
-#else
             CCSoomlaEventDispatcher::getInstance()->ndkCallback((cocos2d::__Dictionary *)dataToPass);
-#endif
 
             json_decref(root);
         }

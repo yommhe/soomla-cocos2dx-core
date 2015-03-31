@@ -16,6 +16,10 @@
 
 #include "CCSoomlaEventDispatcher.h"
 
+#ifdef COCOS2D_JAVASCRIPT
+#include "JSBinding.h"
+#endif
+
 namespace soomla {
 
     USING_NS_CC;
@@ -39,6 +43,9 @@ namespace soomla {
     }
 
     void CCSoomlaEventDispatcher::ndkCallback(__Dictionary *parameters) {
+#ifdef COCOS2D_JAVASCRIPT
+        Soomla::JSBinding::callCallback(parameters);
+#else
         __String *eventName = dynamic_cast<__String *>(parameters->objectForKey("method"));
         if (eventName == NULL) {
             // Suppress any events without callbacks (push event probably)
@@ -53,5 +60,6 @@ namespace soomla {
 		else {
             log("Unregistered event happened: %s", eventName->getCString());
         }
+#endif
     }
 }
