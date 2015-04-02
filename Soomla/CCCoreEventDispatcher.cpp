@@ -17,6 +17,7 @@
 #include "CCCoreEventDispatcher.h"
 #include "CCDomainFactory.h"
 #include "CCSoomlaEventDispatcher.h"
+#include "CCCoreConsts.h"
 
 namespace soomla {
 
@@ -34,10 +35,6 @@ namespace soomla {
     }
 
     bool CCCoreEventDispatcher::init() {
-
-        if (!CCAbstractAggregatedEventHandler::init()) {
-            return false;
-        }
         
         CCSoomlaEventDispatcher *eventDispatcher = CCSoomlaEventDispatcher::getInstance();
 
@@ -52,26 +49,29 @@ namespace soomla {
     }
 
     void CCCoreEventDispatcher::onRewardGivenEvent(CCReward *reward) {
-        FOR_EACH_EVENT_HANDLER(CCCoreEventHandler)
-            eventHandler->onRewardGivenEvent(reward);
-        }
+        CCDictionary *eventDict = CCDictionary::create();
+        eventDict->setObject(reward, CCCoreConsts::DICT_ELEMENT_REWARD);
+        
+        CCNotificationCenter::sharedNotificationCenter()->postNotification(CCCoreConsts::EVENT_REWARD_GIVEN, eventDict);
     }
 
     void CCCoreEventDispatcher::onRewardTakenEvent(CCReward *reward) {
-        FOR_EACH_EVENT_HANDLER(CCCoreEventHandler)
-            eventHandler->onRewardTakenEvent(reward);
-        }
+        CCDictionary *eventDict = CCDictionary::create();
+        eventDict->setObject(reward, CCCoreConsts::DICT_ELEMENT_REWARD);
+        
+        CCNotificationCenter::sharedNotificationCenter()->postNotification(CCCoreConsts::EVENT_REWARD_TAKEN, eventDict);
     }
 
     void CCCoreEventDispatcher::onCustomEvent(cocos2d::CCString *name, cocos2d::CCDictionary *extra) {
-        FOR_EACH_EVENT_HANDLER(CCCoreEventHandler)
-            eventHandler->onCustomEvent(name, extra);
-        }
+        CCDictionary *eventDict = CCDictionary::create();
+        eventDict->setObject(name, CCCoreConsts::DICT_ELEMENT_NAME);
+        eventDict->setObject(extra, CCCoreConsts::DICT_ELEMENT_EXTRA);
+        
+        CCNotificationCenter::sharedNotificationCenter()->postNotification(CCCoreConsts::EVENT_CUSTOM, eventDict);
     }
 
-
     void CCCoreEventDispatcher::handle__EVENT_REWARD_GIVEN(cocos2d::CCDictionary *parameters) {
-        CCString *rewardId = dynamic_cast<CCString *>(parameters->objectForKey("reward"));
+        CCString *rewardId = dynamic_cast<CCString *>(parameters->objectForKey(CCCoreConsts::DICT_ELEMENT_REWARD));
         CC_ASSERT(rewardId);
         CCReward *reward  = CCReward::getReward(rewardId);
         CC_ASSERT(reward);
@@ -79,7 +79,7 @@ namespace soomla {
     }
 
     void CCCoreEventDispatcher::handle__EVENT_REWARD_TAKEN(cocos2d::CCDictionary *parameters) {
-        CCString *rewardId = dynamic_cast<CCString *>(parameters->objectForKey("reward"));
+        CCString *rewardId = dynamic_cast<CCString *>(parameters->objectForKey(CCCoreConsts::DICT_ELEMENT_REWARD));
         CC_ASSERT(rewardId);
         CCReward *reward  = CCReward::getReward(rewardId);
         CC_ASSERT(reward);
@@ -87,9 +87,9 @@ namespace soomla {
     }
 
     void CCCoreEventDispatcher::handle__EVENT_CUSTOM(cocos2d::CCDictionary *parameters) {
-        CCString *name = dynamic_cast<CCString *>(parameters->objectForKey("name"));
+        CCString *name = dynamic_cast<CCString *>(parameters->objectForKey(CCCoreConsts::DICT_ELEMENT_NAME));
         CC_ASSERT(name);
-        CCDictionary *extra = dynamic_cast<CCDictionary *>(parameters->objectForKey("extra"));
+        CCDictionary *extra = dynamic_cast<CCDictionary *>(parameters->objectForKey(CCCoreConsts::DICT_ELEMENT_EXTRA));
         CC_ASSERT(extra);
         this->onCustomEvent(name, extra);
     }
