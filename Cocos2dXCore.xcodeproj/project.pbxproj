@@ -945,6 +945,7 @@
 					"$(SRCROOT)/../../cocos/2d",
 					"$(SRCROOT)/../../cocos/platform/mac",
 					"$(SRCROOT)/../../cocos/platform/desktop",
+					"$(SRCROOT)/../../external/jansson",
 					"$(SRCROOT)/../../external/glfw3/include/mac",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -989,6 +990,7 @@
 					"$(SRCROOT)/../../cocos/2d",
 					"$(SRCROOT)/../../cocos/platform/mac",
 					"$(SRCROOT)/../../cocos/platform/desktop",
+					"$(SRCROOT)/../../external/jansson",
 					"$(SRCROOT)/../../external/glfw3/include/mac",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
