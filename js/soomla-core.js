@@ -1,12 +1,6 @@
 (function () {
 
-  if (_.isUndefined(window.Soomla)) {
-    window.Soomla = {};
-  }
-
-  var PrevSoomla = window.Soomla;
-
-  var Soomla = _.extend(PrevSoomla, {Models: {}}); // merge with binding instance
+  var Soomla = window.Soomla = _.extend(window.Soomla || {}, {Models: {}}); // merge with binding instance
 
   Soomla.platform = {
     name: cc.sys.os.toLowerCase(),
@@ -66,7 +60,7 @@
 
     var Clazz = function () {
 
-      _.extend(this, fields, {
+      _.extend(this, parentClass ? new parentClass() : {}, _.cloneDeep(fields), {
         className: className
       });
 
@@ -78,7 +72,6 @@
     };
 
     Clazz.name = className;
-
 
     if (parentClass) {
       Clazz.prototype = new parentClass();
@@ -131,6 +124,9 @@
       }
 
       return true;
+    },
+    clone: function clone(newId) {
+      return Soomla.factory.create(_.extend({}, this, {itemId: newId}));
     }
   }, Domain);
 
@@ -282,6 +278,12 @@
    */
   var Reward = Soomla.Models.Reward = declareClass("Reward", {
     schedule: null,
+    onCreate: function () {
+      if (!this.schedule) {
+        this.schedule = Schedule.createAnyTimeOnce();
+      }
+      Reward.addReward(this);
+    },
     take: function take() {
       if (!Soomla.rewardStorage.isRewardGiven(this)) {
         Soomla.logDebug("Reward not given. id: " + id);
@@ -316,9 +318,6 @@
     },
     giveInner: function giveInner() {
       return new Error("giveInner is not implemented");
-    },
-    onCreate: function () {
-      Reward.addReward(this);
     }
   }, SoomlaEntity);
 
@@ -617,7 +616,7 @@
       this.setTimesGiven(reward, give, notify);
     },
     getTimesGiven: function getTimesGiven(reward) {
-      var key = this.keyRewardTimesGiven(reward.getId());
+      var key = this.keyRewardTimesGiven(reward.itemId);
       var val = Soomla.keyValueStorage.getValue(key);
       return (!_.isUndefined(val) && !_.isNull(val)) ? val : 0;
     },
@@ -625,12 +624,12 @@
       return this.getTimesGiven(reward) > 0;
     },
     getLastSeqIdxGiven: function getLastSeqIdxGiven(sequenceReward) {
-      var key = this.keyRewardIdxSeqGiven(sequenceReward.getId());
+      var key = this.keyRewardIdxSeqGiven(sequenceReward.itemId);
       var val = Soomla.keyValueStorage.getValue(key);
       return (!_.isUndefined(val) && !_.isNull(val)) ? val : -1;
     },
     setLastSeqIdxGiven: function setLastSeqIdxGiven(sequenceReward, idx) {
-      var key = this.keyRewardIdxSeqGiven(sequenceReward.getId());
+      var key = this.keyRewardIdxSeqGiven(sequenceReward.itemId);
       Soomla.keyValueStorage.setValue(key, idx);
     },
 
@@ -642,11 +641,11 @@
         total = 0;
       }
 
-      var key = this.keyRewardTimesGiven(reward.getId());
+      var key = this.keyRewardTimesGiven(reward.itemId);
       Soomla.keyValueStorage.setValue(key, total);
 
       if (up) {
-        key = this.keyRewardLastGiven(reward.getId());
+        key = this.keyRewardLastGiven(reward.itemId);
         Soomla.keyValueStorage.setValue(key, Date.now());
       }
 
