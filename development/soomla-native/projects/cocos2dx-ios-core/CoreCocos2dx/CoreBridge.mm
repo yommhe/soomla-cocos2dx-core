@@ -21,6 +21,10 @@
 
 }
 
++ (id)initShared {
+    return [[CoreBridge sharedCoreBridge] init];
+}
+
 + (id)sharedCoreBridge {
     static CoreBridge *sharedCoreBridge = nil;
     static dispatch_once_t onceToken;
