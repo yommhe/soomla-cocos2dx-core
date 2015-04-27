@@ -1,3 +1,15 @@
+### v1.2.0 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.1.1...v1.2.0)
+
+**BREAKING API VERSION**
+
+* Features
+  * Replacing event handlers with custom events dispatched through Cocos2d-x facilities
+
+### v1.1.1 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.1.0...v1.1.1)
+
+* Changes
+  * Changing iOS bridge compilation + header location
+
 ### v1.1.0 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.0.2...v1.1.0)
 
 **BREAKING API VERSION**
