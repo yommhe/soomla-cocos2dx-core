@@ -45,6 +45,11 @@ LOCAL_EXPORT_C_INCLUDES += $$(LOCAL_PATH)/Soomla/jsb
 endif
 
 include $(BUILD_STATIC_LIBRARY)
+
+ifneq '$(COCOS2D_JAVASCRIPT)' ''
 $(call import-module,jansson)
 $(call import-module,scripting/js-bindings/proj.android/prebuilt-mk)
 $(call import-module,tools/simulator/libsimulator/proj.android/prebuilt-mk)
+else
+$(call import-module,external/jansson)
+endif
