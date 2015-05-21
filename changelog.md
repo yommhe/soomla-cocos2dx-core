@@ -1,3 +1,11 @@
+### v1.2.1 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.2.1...v1.2.1)
+
+* Changes
+  * Fixed the way js files are distributed between modules
+
+* Fixes
+  * Fixed Android.mk with jansson folder location
+
 ### v1.2.0 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.1.1...v1.2.0)
 
 **BREAKING API VERSION**
