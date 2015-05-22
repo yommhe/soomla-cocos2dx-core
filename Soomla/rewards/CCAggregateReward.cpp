@@ -45,7 +45,7 @@ bool soomla::CCAggregateReward::initWithDictionary(cocos2d::__Dictionary *dict) 
 cocos2d::__Dictionary *soomla::CCAggregateReward::toDictionary() {
     cocos2d::__Dictionary *dict = CCReward::toDictionary();
 
-    cocos2d::__Array *dictArray = this->getDictArrayFromDomains(this->getDictArrayFromDomains(getRewards()));
+    cocos2d::__Array *dictArray = this->getDictArrayFromDomains(getRewards());
     if (dictArray != nullptr) {
         dict->setObject(dictArray, CCCoreConsts::JSON_REWARDS);
     }
