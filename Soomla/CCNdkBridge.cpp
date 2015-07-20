@@ -76,7 +76,7 @@ namespace soomla {
             json_t *retJsonParams = NULL;
 
 #if (LOG_JSON == 1)
-            CCSoomlaUtils::logDebug(TAG, __String::createWithFormat(
+            CCSoomlaUtils::logDebug("CCNdkBridge", __String::createWithFormat(
                     "to native JSON: %s", json_dumps(toBeSentJson, JSON_COMPACT | JSON_ENSURE_ASCII))->getCString());
 #endif
 
