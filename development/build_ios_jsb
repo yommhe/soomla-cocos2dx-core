@@ -11,18 +11,14 @@ mkdir -p $build
 
 for path in "${paths[@]}"
 do
-  cd $path
-  ./build_all
-  cd -
+  $path/build_all
   cp -R $path/build/* $build/
 done
 
 
 path="soomla-native/projects/cocos2dx-ios-core"
 
-cd $path
-./build_all_jsb
-cd -
+$path/build_all_jsb
 cp -R $path/build/* $build/
 
 cd - > /dev/null
