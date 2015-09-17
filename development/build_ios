@@ -1,14 +1,16 @@
-paths=( "submodules/soomla-ios-core" "soomla-native/projects/cocos2dx-ios-core" )
+#!/bin/sh
+set -e
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+cd $DIR
+
 build=../build/ios
 
 rm -rf $build
 mkdir -p $build
 
-for path in "${paths[@]}"
-do
-  cd $path
-  ./build_all
-  cd -
-  cp -R $path/build/* $build/
-done
+soomla-native/projects/cocos2dx-ios-core/build_all
 
+cp -R submodules/soomla-ios-core/build/* $build/
+cp -R soomla-native/projects/cocos2dx-ios-core/build/* $build/
+
+cd - > /dev/null
