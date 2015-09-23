@@ -54,7 +54,14 @@ namespace soomla {
          @param key The key in the key-val pair.
          */
         virtual void setValue(const char *key, const char *val) = 0;
-        
+
+        /**
+        * Gets all keys in the storage with no encryption
+        *
+        * @return a List of unencrypted keys
+        */
+        virtual cocos2d::__Array *getEncryptedKeys() = 0;
+
         /**
          Deletes the key-val pair with the given `key`.
          

@@ -498,6 +498,12 @@
       Soomla.callNative({
         method: "CCNativeKeyValueStorage::purge"
       });
+    },
+    getEncryptedKeys: function getEncryptedKeys() {
+      var result = Soomla.callNative({
+        method: "CCNativeKeyValueStorage::getEncryptedKeys"
+      });
+      return result['return'];
     }
   });
 
@@ -542,6 +548,11 @@
       }, this);
 
       cc.sys.localStorage.setItem(this.KEY_VALUE_STORAGE_KEY, "");
+    },
+    getEncryptedKeys: function getEncryptedKeys() {
+      Soomla.logDebug('getEncryptedKeys');
+      return this.mStoredKeys;
+
     },
 
     addStoredKeys: function (key) {
