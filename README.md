@@ -28,7 +28,7 @@ You can start by using the more common features in core by including the `Cocos2
 
 ####Pre baked zip:
 
-[soomla-cocos2dx-core 1.2.3](http://library.soom.la/fetch/cocos2dx-core/1.2.3?cf=github)
+[soomla-cocos2dx-core 1.2.4](http://library.soom.la/fetch/cocos2dx-core/1.2.4?cf=github)
 
 Our way of saying "Thanks !"
 ---

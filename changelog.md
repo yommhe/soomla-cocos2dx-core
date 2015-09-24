@@ -1,3 +1,12 @@
+### v1.2.4 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.2.3...v1.2.4)
+
+* Changes
+  * Added KeyValueStorage.getEncryptedKeys
+
+* Fixes
+  * JNI: local reference table overflow
+  * Fixed build with jsb
+
 ### v1.2.3 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.2.2...v1.2.3)
 
 * Changes
