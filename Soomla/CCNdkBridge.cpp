@@ -101,6 +101,7 @@ namespace soomla {
                 const char *nativeString = t.env->GetStringUTFChars(retString, 0);
                 std::string retParamsStr(nativeString);
                 t.env->ReleaseStringUTFChars(retString, nativeString);
+                t.env->DeleteLocalRef(retString);
 
 
                 const char *jsonCharArray = retParamsStr.c_str();
