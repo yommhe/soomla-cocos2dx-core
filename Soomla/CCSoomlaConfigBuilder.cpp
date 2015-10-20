@@ -15,6 +15,7 @@
  */
 
 #include "CCSoomlaConfigBuilder.h"
+#include <string>
 
 using namespace soomla;
 
@@ -32,6 +33,21 @@ CCSoomlaConfigBuilder *CCSoomlaConfigBuilder::create() {
         CC_SAFE_DELETE(instance);
     }
     return instance;
+}
+
+bool CCSoomlaConfigBuilder::appendConfigParameter(cocos2d::__String *key, cocos2d::Ref *value) {
+    _rawConfig->setObject(value, key->getCString());
+    return true;
+}
+
+bool CCSoomlaConfigBuilder::appendConfigParameter(cocos2d::__Dictionary *value) {
+    cocos2d::DictElement* pElement = NULL;
+    using namespace cocos2d;
+    CCDICT_FOREACH(value, pElement) {
+        Ref *entryValue = pElement->getObject();
+        _rawConfig->setObject(pElement->getObject(), pElement->getStrKey());
+    }
+    return true;
 }
 
 cocos2d::__Dictionary *CCSoomlaConfigBuilder::build() {
