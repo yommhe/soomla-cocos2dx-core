@@ -44,7 +44,6 @@ bool CCSoomlaConfigBuilder::appendConfigParameter(cocos2d::__Dictionary *value) 
     cocos2d::DictElement* pElement = NULL;
     using namespace cocos2d;
     CCDICT_FOREACH(value, pElement) {
-        Ref *entryValue = pElement->getObject();
         _rawConfig->setObject(pElement->getObject(), pElement->getStrKey());
     }
     return true;
