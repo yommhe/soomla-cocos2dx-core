@@ -19,20 +19,12 @@
 
 using namespace soomla;
 
-bool CCSoomlaConfigBuilder::init() {
+CCSoomlaConfigBuilder::CCSoomlaConfigBuilder() {
     _rawConfig = new cocos2d::__Dictionary();
-    return true;
 }
 
 CCSoomlaConfigBuilder *CCSoomlaConfigBuilder::create() {
-    CCSoomlaConfigBuilder *instance = new CCSoomlaConfigBuilder();
-    if (instance->init()) {
-        instance->autorelease();
-    }
-    else {
-        CC_SAFE_DELETE(instance);
-    }
-    return instance;
+    return new CCSoomlaConfigBuilder();
 }
 
 bool CCSoomlaConfigBuilder::appendConfigParameter(const char *key, cocos2d::Ref *value) {

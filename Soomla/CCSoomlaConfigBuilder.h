@@ -23,13 +23,13 @@ namespace soomla {
     class CCSoomlaConfigBuilder : public cocos2d::Ref {
     private:
         cocos2d::__Dictionary *_rawConfig;
-        bool init();
     protected:
         //append to config dictionary only one entry
         bool appendConfigParameter(const char *key, cocos2d::Ref *value);
         //append to config dictionary all key/value pairs from given dictionary
         bool appendConfigParameter(cocos2d::__Dictionary *value);
     public:
+        CCSoomlaConfigBuilder();
         static CCSoomlaConfigBuilder *create();
         cocos2d::__Dictionary *build();
     };
