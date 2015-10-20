@@ -35,8 +35,8 @@ CCSoomlaConfigBuilder *CCSoomlaConfigBuilder::create() {
     return instance;
 }
 
-bool CCSoomlaConfigBuilder::appendConfigParameter(cocos2d::__String *key, cocos2d::Ref *value) {
-    _rawConfig->setObject(value, key->getCString());
+bool CCSoomlaConfigBuilder::appendConfigParameter(const char *key, cocos2d::Ref *value) {
+    _rawConfig->setObject(value, key);
     return true;
 }
 

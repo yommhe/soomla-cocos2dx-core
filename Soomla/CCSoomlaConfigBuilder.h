@@ -26,7 +26,7 @@ namespace soomla {
         bool init();
     protected:
         //append to config dictionary only one entry
-        bool appendConfigParameter(cocos2d::__String *key, cocos2d::Ref *value);
+        bool appendConfigParameter(const char *key, cocos2d::Ref *value);
         //append to config dictionary all key/value pairs from given dictionary
         bool appendConfigParameter(cocos2d::__Dictionary *value);
     public:
