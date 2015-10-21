@@ -21,6 +21,10 @@
 
 }
 
++ (id)initShared {
+    return [[CoreBridge sharedCoreBridge] init];
+}
+
 + (id)sharedCoreBridge {
     static CoreBridge *sharedCoreBridge = nil;
     static dispatch_once_t onceToken;
@@ -94,6 +98,13 @@
     }];
     [ndkGlue registerCallHandlerForKey:@"CCNativeKeyValueStorage::purge" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
         [KeyValueStorage purge];
+    }];
+    [ndkGlue registerCallHandlerForKey:@"CCNativeKeyValueStorage::getEncryptedKeys" withBlock:^(NSDictionary *parameters, NSMutableDictionary *retParameters) {
+        [KeyValueStorage purge];
+        NSArray *res = [KeyValueStorage getEncryptedKeys];
+        if (res) {
+            retParameters[@"return"] = res;
+        }
     }];
 
     /* -= Callback handlers =- */

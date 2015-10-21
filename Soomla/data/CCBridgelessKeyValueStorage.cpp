@@ -50,7 +50,21 @@ namespace soomla {
         addStoredKeys(key);
         saveStoredKeys();
     }
-    
+
+    cocos2d::__Array *CCBridgelessKeyValueStorage::getEncryptedKeys() {
+        __Array *result = __Array::create();
+        for(__SetIterator i = mStoredKeys->begin(); i != mStoredKeys->end(); i++) {
+            if (!(*i)) {
+                break;
+            }
+
+            __String *key = dynamic_cast<__String *>(*i);
+            result->addObject(key);
+        }
+
+        return result;
+    }
+
     void CCBridgelessKeyValueStorage::deleteKeyValue(const char *key) {
         CCUserDefault::sharedUserDefault()->setStringForKey(key, "");
         CCUserDefault::sharedUserDefault()->flush();

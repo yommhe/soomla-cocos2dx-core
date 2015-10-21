@@ -1,6 +1,3 @@
-//
-// Created by Fedor Shubin on 1/22/14.
-//
 
 
 #ifndef __JSBinding_H_
@@ -17,7 +14,7 @@ namespace Soomla {
     {
     public:
         static void callNative(const char *params, std::string &result);
-        static void ndkCallback(cocos2d::CCDictionary *params);
+        static void callCallback(cocos2d::CCDictionary *params);
     };
 }
 

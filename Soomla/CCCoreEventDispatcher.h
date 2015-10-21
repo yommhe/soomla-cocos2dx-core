@@ -18,8 +18,7 @@
 #define __CCCoreEventDispatcher_H_
 
 #include "cocos2d.h"
-#include "CCAbstractAggregatedEventHandler.h"
-#include "CCCoreEventHandler.h"
+#include "CCReward.h"
 
 namespace soomla {
 
@@ -39,13 +38,33 @@ namespace soomla {
 
         bool init();
 
+        /**
+         Fires a custom event when a reward is given to the user.
+         
+         Event Name - CCCoreEvents::EVENT_REWARD_GIVEN
+         Event Data (Dictionary):
+         CCCoreEvents::DICT_ELEMENT_REWARD - CCReward - The reward given to the user
+         */
         virtual void onRewardGivenEvent(CCReward *reward);
+        /**
+         Fires a custom event when a reward is taken to the user.
+         
+         Event Name - CCCoreEvents::EVENT_REWARD_TAKEN
+         Event Data (Dictionary):
+         CCCoreEvents::DICT_ELEMENT_REWARD - CCReward - The reward taken to the user
+         */
         virtual void onRewardTakenEvent(CCReward *reward);
+        /**
+         Fires a custom event when a custom event is fired in Soomla.
+         
+         Event Name - CCCoreEvents::EVENT_CUSTOM
+         Event Data (Dictionary):
+         CCCoreEvents::DICT_ELEMENT_NAME - __String - The custom event name
+         CCCoreEvents::DICT_ELEMENT_EXTRA - __Dictionary - The custom event 
+         contents in dictionary format
+         */
+        virtual void onCustomEvent(cocos2d::__String *name, cocos2d::__Dictionary *extra);
         virtual void onCustomEvent(cocos2d::CCString *name, cocos2d::CCDictionary *extra);
-    private:
-        void handle__EVENT_REWARD_GIVEN(cocos2d::CCDictionary *parameters);
-        void handle__EVENT_REWARD_TAKEN(cocos2d::CCDictionary *parameters);
-        void handle__EVENT_CUSTOM(cocos2d::CCDictionary *parameters);
     };
 };
 

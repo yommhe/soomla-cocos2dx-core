@@ -1,4 +1,44 @@
-### v1.1.0 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/cocos2dx-v2-v1.0.2...cocos2dx-v2-v1.1.0)
+### v1.2.4 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.2.3...v1.2.4)
+
+* Changes
+  * Added KeyValueStorage.getEncryptedKeys
+
+* Fixes
+  * JNI: local reference table overflow
+  * Fixed build with jsb
+
+### v1.2.3 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.2.2...v1.2.3)
+
+* Changes
+  * Updated submodules
+
+### v1.2.2 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.2.1...v1.2.2)
+
+* Fixes
+	* Some minor bug fixes
+	* Fixed TAG for logs in CCNdkBridge not defined
+
+### v1.2.1 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.2.0...v1.2.1)
+
+* Changes
+  * Fixed the way js files are distributed between modules
+
+* Fixes
+  * Fixed Android.mk with jansson folder location
+
+### v1.2.0 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.1.1...v1.2.0)
+
+**BREAKING API VERSION**
+
+* Features
+  * Replacing event handlers with custom events dispatched through Cocos2d-x facilities
+
+### v1.1.1 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.1.0...v1.1.1)
+
+* Changes
+  * Changing iOS bridge compilation + header location
+
+### v1.1.0 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.0.2...v1.1.0)
 
 **BREAKING API VERSION**
 

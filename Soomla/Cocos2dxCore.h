@@ -36,4 +36,8 @@
 #include "CCKeyValueStorage.h"
 #include "CCRewardStorage.h"
 
+#ifdef COCOS2D_JAVASCRIPT
+#include "jsb_soomla.h"
+#endif
+
 #endif

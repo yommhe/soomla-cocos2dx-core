@@ -17,7 +17,6 @@ ifneq '$(COCOS2D_JAVASCRIPT)' ''
 CORE_SRC_LIST += $(wildcard $(LOCAL_PATH)/Soomla/jsb/*.cpp)
 endif
 
-
 LOCAL_SRC_FILES := $(CORE_SRC_LIST:$(LOCAL_PATH)/%=%)
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/Soomla
@@ -29,6 +28,8 @@ ifneq '$(COCOS2D_JAVASCRIPT)' ''
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/Soomla/jsb
 endif
 
+LOCAL_WHOLE_STATIC_LIBRARIES += cocos2d_js_static
+LOCAL_WHOLE_STATIC_LIBRARIES += cocos2d_simulator_static
 ifneq '$(COCOS2D_JAVASCRIPT)' ''
 LOCAL_WHOLE_STATIC_LIBRARIES += cocosdenshion_static
 LOCAL_WHOLE_STATIC_LIBRARIES += chipmunk_static
@@ -56,4 +57,11 @@ $(call import-module,external/chipmunk)
 $(call import-module,scripting/javascript/spidermonkey-android)
 $(call import-module,scripting/javascript/bindings)
 endif
+
+ifneq '$(COCOS2D_JAVASCRIPT)' ''
+$(call import-module,jansson)
+$(call import-module,scripting/js-bindings/proj.android/prebuilt-mk)
+$(call import-module,tools/simulator/libsimulator/proj.android/prebuilt-mk)
+else
 $(call import-module,external/jansson)
+endif

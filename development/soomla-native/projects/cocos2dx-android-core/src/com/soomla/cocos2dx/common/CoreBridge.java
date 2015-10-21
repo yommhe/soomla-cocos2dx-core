@@ -10,8 +10,11 @@ import com.soomla.rewards.BadgeReward;
 import com.soomla.rewards.RandomReward;
 import com.soomla.rewards.SequenceReward;
 import com.soomla.Schedule;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.List;
 
 public class CoreBridge {
 
@@ -141,6 +144,13 @@ public class CoreBridge {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
                 KeyValueStorage.purge();
+            }
+        });
+        ndkGlue.registerCallHandler("CCNativeKeyValueStorage::getEncryptedKeys", new NdkGlue.CallHandler() {
+            @Override
+            public void handle(JSONObject params, JSONObject retParams) throws Exception {
+                List<String> result = KeyValueStorage.getEncryptedKeys();
+                retParams.put("return", new JSONArray(result));
             }
         });
     }

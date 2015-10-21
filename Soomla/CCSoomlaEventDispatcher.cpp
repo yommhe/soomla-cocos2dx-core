@@ -39,37 +39,27 @@ namespace soomla {
 	}
 
     void CCSoomlaEventDispatcher::unregisterEventHandler(const char *key) {
-        if (mEventHandlers.find(key) != mEventHandlers.end()) {
-            StructEventHandler *handler = mEventHandlers[key];
-            mEventHandlers.erase(key);
-            delete handler;
-        }
+        mEventHandlers.erase(key);
     }
 
     void CCSoomlaEventDispatcher::ndkCallback(CCDictionary *parameters) {
 #ifdef COCOS2D_JAVASCRIPT
-        Soomla::JSBinding::ndkCallback(parameters);
+        Soomla::JSBinding::callCallback(parameters);
 #else
         CCString *eventName = dynamic_cast<CCString *>(parameters->objectForKey("method"));
         if (eventName == NULL) {
             // Suppress any events without callbacks (push event probably)
             return;
         }
-        
-        if (mEventHandlers.find(eventName->getCString()) != mEventHandlers.end()) {
-            StructEventHandler *handler = mEventHandlers[eventName->getCString()];
-            ((handler->target)->*(handler->selector))(parameters);
+
+        std::function<void(CCDictionary *)> handler = mEventHandlers[eventName->getCString()];
+
+        if (handler) {
+            handler(parameters);
         }
-        else {
-            CCLog("Unregistered event happened: %s", eventName->getCString());
+		else {
+            log("Unregistered event happened: %s", eventName->getCString());
         }
 #endif
-    }
-
-    CCSoomlaEventDispatcher::~CCSoomlaEventDispatcher() {
-        std::map<std::string, StructEventHandler *>::iterator iter;
-        for (iter = mEventHandlers.begin(); iter != mEventHandlers.end(); ++iter) {
-            this->unregisterEventHandler(iter->first.c_str());
-        }
     }
 }
