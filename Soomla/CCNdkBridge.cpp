@@ -61,7 +61,7 @@ namespace soomla {
                     return;
                 }
 
-            cocos2d::Ref *dataToPass = CCJsonHelper::getCCObjectFromJson(root);
+            cocos2d::CCObject *dataToPass = CCJsonHelper::getCCObjectFromJson(root);
 
             CCSoomlaEventDispatcher::getInstance()->ndkCallback((cocos2d::CCDictionary *)dataToPass);
 
