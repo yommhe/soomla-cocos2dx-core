@@ -61,4 +61,11 @@ namespace soomla {
         }
 #endif
     }
+
+     CCSoomlaEventDispatcher::~CCSoomlaEventDispatcher() {
+        std::map<std::string, StructEventHandler *>::iterator iter;
+        for (iter = mEventHandlers.begin(); iter != mEventHandlers.end(); ++iter) {
+            this->unregisterEventHandler(iter->first.c_str());
+        }
+    }
 }
