@@ -66,6 +66,10 @@ namespace soomla {
          contents in dictionary format
          */
         virtual void onCustomEvent(cocos2d::CCString *name, cocos2d::CCDictionary *extra);
+    private:
+        void handle__EVENT_REWARD_GIVEN(cocos2d::CCDictionary *parameters);
+        void handle__EVENT_REWARD_TAKEN(cocos2d::CCDictionary *parameters);
+        void handle__EVENT_CUSTOM(cocos2d::CCDictionary *parameters);
     };
 };
 
