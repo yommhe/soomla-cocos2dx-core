@@ -96,7 +96,6 @@
 		9D52649019DBE0C300BDA0F5 /* JSBinding.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D52648C19DBE0C300BDA0F5 /* JSBinding.cpp */; };
 		9D52649119DBE0C300BDA0F5 /* JSBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D52648D19DBE0C300BDA0F5 /* JSBinding.h */; };
 		9D63D0A019B1B20D0054EA87 /* libSoomlaiOSCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D63D09E19B1B20D0054EA87 /* libSoomlaiOSCore.a */; };
-		B2FA88F8A4233F1ACA64FEE2 /* CCCoreEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = B2FA89AE3645A0AFE44E2714 /* CCCoreEventHandler.h */; };
 		C0B3C5F3168C6D0C00161FAA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B3C5F2168C6D0C00161FAA /* Foundation.framework */; };
 		F8106D8A1AB6EDE00069D41A /* CCNativeCoreBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F89F72201AB19307000ECC23 /* CCNativeCoreBridge.cpp */; };
 		F8106D8B1AB6EDE00069D41A /* CCNativeKeyValueStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F89F71F81AB187E6000ECC23 /* CCNativeKeyValueStorage.cpp */; };
@@ -217,7 +216,6 @@
 		9D52648C19DBE0C300BDA0F5 /* JSBinding.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSBinding.cpp; sourceTree = "<group>"; };
 		9D52648D19DBE0C300BDA0F5 /* JSBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBinding.h; sourceTree = "<group>"; };
 		9D63D09E19B1B20D0054EA87 /* libSoomlaiOSCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSoomlaiOSCore.a; path = build/ios/libSoomlaiOSCore.a; sourceTree = "<group>"; };
-		B2FA89AE3645A0AFE44E2714 /* CCCoreEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCoreEventHandler.h; sourceTree = "<group>"; };
 		C0B3C5EF168C6D0C00161FAA /* libCocos2dXCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocos2dXCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B3C5F2168C6D0C00161FAA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F861D66419BF5F6E008834EF /* Cocos2dxCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cocos2dxCore.h; sourceTree = "<group>"; };
@@ -320,7 +318,6 @@
 				372B748E4E8020FCD1396DDC /* CCSoomlaUtils.h */,
 				372B75AEF9E49C7BD45C6ED6 /* CCSoomlaUtils.cpp */,
 				372B7A1EA12379CCB201D0E1 /* data */,
-				B2FA89AE3645A0AFE44E2714 /* CCCoreEventHandler.h */,
 			);
 			path = Soomla;
 			sourceTree = "<group>";
@@ -475,7 +472,6 @@
 				F89F71FD1AB187E6000ECC23 /* CCNativeKeyValueStorage.h in Headers */,
 				372B7A1D5F372FCFD9E68388 /* CCSoomlaUtils.h in Headers */,
 				372B74CD5188E48BE19BAC31 /* CCRewardStorage.h in Headers */,
-				B2FA88F8A4233F1ACA64FEE2 /* CCCoreEventHandler.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
