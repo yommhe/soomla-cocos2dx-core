@@ -18,6 +18,8 @@
 #define __CCCoreEventDispatcher_H_
 
 #include "cocos2d.h"
+#include "CCAbstractAggregatedEventHandler.h"
+#include "CCCoreEventHandler.h"
 #include "CCReward.h"
 
 namespace soomla {
@@ -63,7 +65,6 @@ namespace soomla {
          CCCoreEvents::DICT_ELEMENT_EXTRA - __Dictionary - The custom event 
          contents in dictionary format
          */
-        virtual void onCustomEvent(cocos2d::__String *name, cocos2d::__Dictionary *extra);
         virtual void onCustomEvent(cocos2d::CCString *name, cocos2d::CCDictionary *extra);
     };
 };

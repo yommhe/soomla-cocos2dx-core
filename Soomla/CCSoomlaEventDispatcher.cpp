@@ -52,13 +52,12 @@ namespace soomla {
             return;
         }
 
-        std::function<void(CCDictionary *)> handler = mEventHandlers[eventName->getCString()];
-
-        if (handler) {
-            handler(parameters);
+        if (mEventHandlers.find(eventName->getCString()) != mEventHandlers.end()) {
+            StructEventHandler *handler = mEventHandlers[eventName->getCString()];
+            ((handler->target)->*(handler->selector))(parameters);
         }
 		else {
-            log("Unregistered event happened: %s", eventName->getCString());
+            CCLog("Unregistered event happened: %s", eventName->getCString());
         }
 #endif
     }

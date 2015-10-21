@@ -51,14 +51,14 @@ namespace soomla {
         saveStoredKeys();
     }
 
-    cocos2d::__Array *CCBridgelessKeyValueStorage::getEncryptedKeys() {
-        __Array *result = __Array::create();
-        for(__SetIterator i = mStoredKeys->begin(); i != mStoredKeys->end(); i++) {
+    cocos2d::CCArray *CCBridgelessKeyValueStorage::getEncryptedKeys() {
+        CCArray *result = CCArray::create();
+        for(CCSetIterator i = mStoredKeys->begin(); i != mStoredKeys->end(); i++) {
             if (!(*i)) {
                 break;
             }
 
-            __String *key = dynamic_cast<__String *>(*i);
+            CCString *key = dynamic_cast<CCString *>(*i);
             result->addObject(key);
         }
 

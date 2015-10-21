@@ -60,7 +60,7 @@ namespace soomla {
         *
         * @return a List of unencrypted keys
         */
-        virtual cocos2d::__Array *getEncryptedKeys() = 0;
+        virtual cocos2d::CCArray *getEncryptedKeys() = 0;
 
         /**
          Deletes the key-val pair with the given `key`.

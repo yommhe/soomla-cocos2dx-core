@@ -93,26 +93,26 @@ namespace soomla {
         }
     }
 
-    cocos2d::__Array *CCNativeKeyValueStorage::getEncryptedKeys() {
+    cocos2d::CCArray *CCNativeKeyValueStorage::getEncryptedKeys() {
         CCError *error = NULL;
 
-        __Dictionary *params = __Dictionary::create();
-        params->setObject(__String::create("CCNativeKeyValueStorage::getEncryptedKeys"), "method");
-        __Dictionary *retParams = (__Dictionary *) CCNdkBridge::callNative(params, &error);
+        CCDictionary *params = CCDictionary::create();
+        params->setObject(CCString::create("CCNativeKeyValueStorage::getEncryptedKeys"), "method");
+        CCDictionary *retParams = (CCDictionary *) CCNdkBridge::callNative(params, &error);
 
         if (error) {
             CCSoomlaUtils::logException(TAG, error);
             CC_ASSERT(false);
-            return nullptr;
+            return NULL;
         }
 
-        if (retParams == nullptr) {
-            return nullptr;
+        if (retParams == NULL) {
+            return NULL;
         }
 
-        __Array *retValue = (__Array *) retParams->objectForKey("return");
+        CCArray *retValue = (CCArray *) retParams->objectForKey("return");
         if (!retValue) {
-            return nullptr;
+            return NULL;
         }
 
         return retValue;
