@@ -33,7 +33,9 @@ namespace soomla {
         virtual const char *getValue(const char *key) const;
         
         virtual void setValue(const char *key, const char *val);
-        
+
+        virtual cocos2d::CCArray *getEncryptedKeys();
+
         virtual void deleteKeyValue(const char *key);
         
         virtual void purge();

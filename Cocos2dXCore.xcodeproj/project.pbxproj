@@ -20,6 +20,7 @@
 		9D41014C1978CFAD00907FA8 /* CCCoreConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101271978CFAD00907FA8 /* CCCoreConsts.h */; };
 		9D41014D1978CFAD00907FA8 /* CCCoreEventDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D4101281978CFAD00907FA8 /* CCCoreEventDispatcher.cpp */; };
 		9D41014E1978CFAD00907FA8 /* CCCoreEventDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101291978CFAD00907FA8 /* CCCoreEventDispatcher.h */; };
+		9D41014F1978CFAD00907FA8 /* CCCoreEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012A1978CFAD00907FA8 /* CCCoreEventHandler.h */; };
 		9D4101521978CFAD00907FA8 /* CCDomainFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D41012D1978CFAD00907FA8 /* CCDomainFactory.cpp */; };
 		9D4101531978CFAD00907FA8 /* CCDomainFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012E1978CFAD00907FA8 /* CCDomainFactory.h */; };
 		9D4101541978CFAD00907FA8 /* CCDomainHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D41012F1978CFAD00907FA8 /* CCDomainHelper.cpp */; };
@@ -78,10 +79,8 @@
 		9D52641019DBDF3700BDA0F5 /* CCAggregateReward.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101411978CFAD00907FA8 /* CCAggregateReward.h */; };
 		9D52641119DBDF3700BDA0F5 /* CCRandomReward.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101451978CFAD00907FA8 /* CCRandomReward.h */; };
 		9D52641219DBDF3700BDA0F5 /* CCJsonHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101341978CFAD00907FA8 /* CCJsonHelper.h */; };
-		9D52641319DBDF3700BDA0F5 /* (null) in Headers */ = {isa = PBXBuildFile; };
 		9D52641419DBDF3700BDA0F5 /* CCDomainFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012E1978CFAD00907FA8 /* CCDomainFactory.h */; };
 		9D52641519DBDF3700BDA0F5 /* CCCoreConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101271978CFAD00907FA8 /* CCCoreConsts.h */; };
-		9D52641619DBDF3700BDA0F5 /* (null) in Headers */ = {isa = PBXBuildFile; };
 		9D52641719DBDF3700BDA0F5 /* CCNdkBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101361978CFAD00907FA8 /* CCNdkBridge.h */; };
 		9D52641819DBDF3700BDA0F5 /* CCSoomlaEventDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41013A1978CFAD00907FA8 /* CCSoomlaEventDispatcher.h */; };
 		9D52641919DBDF3700BDA0F5 /* CCCoreEventDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101291978CFAD00907FA8 /* CCCoreEventDispatcher.h */; };
@@ -131,6 +130,7 @@
 		F8694B461A1CF730001738B4 /* CCAbstractAggregatedEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101251978CFAD00907FA8 /* CCAbstractAggregatedEventHandler.h */; };
 		F8694B481A1CF730001738B4 /* CCCoreConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101271978CFAD00907FA8 /* CCCoreConsts.h */; };
 		F8694B4A1A1CF730001738B4 /* CCCoreEventDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101291978CFAD00907FA8 /* CCCoreEventDispatcher.h */; };
+		F8694B4B1A1CF730001738B4 /* CCCoreEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012A1978CFAD00907FA8 /* CCCoreEventHandler.h */; };
 		F8694B4F1A1CF730001738B4 /* CCDomainFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012E1978CFAD00907FA8 /* CCDomainFactory.h */; };
 		F8694B511A1CF730001738B4 /* CCDomainHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101301978CFAD00907FA8 /* CCDomainHelper.h */; };
 		F8694B531A1CF730001738B4 /* CCError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101321978CFAD00907FA8 /* CCError.h */; };
@@ -184,6 +184,7 @@
 		9D4101271978CFAD00907FA8 /* CCCoreConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCoreConsts.h; sourceTree = "<group>"; };
 		9D4101281978CFAD00907FA8 /* CCCoreEventDispatcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCCoreEventDispatcher.cpp; sourceTree = "<group>"; };
 		9D4101291978CFAD00907FA8 /* CCCoreEventDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCoreEventDispatcher.h; sourceTree = "<group>"; };
+		9D41012A1978CFAD00907FA8 /* CCCoreEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCoreEventHandler.h; sourceTree = "<group>"; };
 		9D41012D1978CFAD00907FA8 /* CCDomainFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCDomainFactory.cpp; sourceTree = "<group>"; };
 		9D41012E1978CFAD00907FA8 /* CCDomainFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDomainFactory.h; sourceTree = "<group>"; };
 		9D41012F1978CFAD00907FA8 /* CCDomainHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCDomainHelper.cpp; sourceTree = "<group>"; };
@@ -296,6 +297,7 @@
 				9D4101271978CFAD00907FA8 /* CCCoreConsts.h */,
 				9D4101281978CFAD00907FA8 /* CCCoreEventDispatcher.cpp */,
 				9D4101291978CFAD00907FA8 /* CCCoreEventDispatcher.h */,
+				9D41012A1978CFAD00907FA8 /* CCCoreEventHandler.h */,
 				9D41012D1978CFAD00907FA8 /* CCDomainFactory.cpp */,
 				9D41012E1978CFAD00907FA8 /* CCDomainFactory.h */,
 				9D41012F1978CFAD00907FA8 /* CCDomainHelper.cpp */,
@@ -421,10 +423,8 @@
 				9D52641019DBDF3700BDA0F5 /* CCAggregateReward.h in Headers */,
 				9D52641119DBDF3700BDA0F5 /* CCRandomReward.h in Headers */,
 				9D52641219DBDF3700BDA0F5 /* CCJsonHelper.h in Headers */,
-				9D52641319DBDF3700BDA0F5 /* (null) in Headers */,
 				9D52641419DBDF3700BDA0F5 /* CCDomainFactory.h in Headers */,
 				9D52641519DBDF3700BDA0F5 /* CCCoreConsts.h in Headers */,
-				9D52641619DBDF3700BDA0F5 /* (null) in Headers */,
 				9D52641719DBDF3700BDA0F5 /* CCNdkBridge.h in Headers */,
 				9D52641819DBDF3700BDA0F5 /* CCSoomlaEventDispatcher.h in Headers */,
 				9D52641919DBDF3700BDA0F5 /* CCCoreEventDispatcher.h in Headers */,
@@ -449,6 +449,7 @@
 				9D41016A1978CFAD00907FA8 /* CCReward.h in Headers */,
 				F89F71FF1AB187E6000ECC23 /* CCNativeRewardStorage.h in Headers */,
 				F8B27EDC19B9F51F0094A771 /* CCKeyValueStorage.h in Headers */,
+				9D41014F1978CFAD00907FA8 /* CCCoreEventHandler.h in Headers */,
 				9D4101551978CFAD00907FA8 /* CCDomainHelper.h in Headers */,
 				9D4101661978CFAD00907FA8 /* CCBadgeReward.h in Headers */,
 				9D41016C1978CFAD00907FA8 /* CCSequenceReward.h in Headers */,
@@ -482,6 +483,7 @@
 				F8694B461A1CF730001738B4 /* CCAbstractAggregatedEventHandler.h in Headers */,
 				F8694B481A1CF730001738B4 /* CCCoreConsts.h in Headers */,
 				F8694B4A1A1CF730001738B4 /* CCCoreEventDispatcher.h in Headers */,
+				F8694B4B1A1CF730001738B4 /* CCCoreEventHandler.h in Headers */,
 				F8694B4F1A1CF730001738B4 /* CCDomainFactory.h in Headers */,
 				F8694B511A1CF730001738B4 /* CCDomainHelper.h in Headers */,
 				F8694B531A1CF730001738B4 /* CCError.h in Headers */,

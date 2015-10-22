@@ -65,7 +65,7 @@ cocos2d::CCArray *soomla::CCDomainHelper::getDictArrayFromDomains(cocos2d::CCArr
     soomla::CCDomain *domain;
     CCARRAY_FOREACH(domainArray, obj) {
             domain = dynamic_cast<soomla::CCDomain *>(obj);
-            CC_ASSERT(obj);
+            CC_ASSERT(domain);
             dictArray->addObject(domain->toDictionary());
         }
     return dictArray;
