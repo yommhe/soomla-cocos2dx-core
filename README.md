@@ -28,10 +28,10 @@ You can start by using the more common features in core by including the `Cocos2
 
 ####Pre baked zip:
 
-The latest [soomla-cocos2dx-core](http://library.soom.la/fetch/cocos2dx-core/latest?cf=github) release
+[soomla-cocos2dx-core 1.2.4](http://library.soom.la/fetch/cocos2dx-core/1.2.4?cf=github)
 
 #### From sources:
- - Clone this repository;
+ - Clone this repository recursively: `git clone --recursive https://github.com/soomla/soomla-cocos2dx-core.git`;
  - Run `./build_all` from project directory;
  - Take created binaries from `build` directory and use it!
 
