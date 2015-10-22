@@ -61,8 +61,8 @@ namespace soomla {
          
          Event Name - CCCoreEvents::EVENT_CUSTOM
          Event Data (Dictionary):
-         CCCoreEvents::DICT_ELEMENT_NAME - __String - The custom event name
-         CCCoreEvents::DICT_ELEMENT_EXTRA - __Dictionary - The custom event 
+         CCCoreEvents::DICT_ELEMENT_NAME - CCString - The custom event name
+         CCCoreEvents::DICT_ELEMENT_EXTRA - CCDictionary - The custom event 
          contents in dictionary format
          */
         virtual void onCustomEvent(cocos2d::CCString *name, cocos2d::CCDictionary *extra);
