@@ -108,7 +108,6 @@
 		9D4B31AD1AC009200083C869 /* SequenceReward.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D63D06419B0EE220054EA87 /* SequenceReward.h */; };
 		9D4B31AE1AC009200083C869 /* Soomla.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D63D06819B0EE220054EA87 /* Soomla.h */; };
 		9D4B31AF1AC009200083C869 /* KeyValueStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D63D05219B0EE220054EA87 /* KeyValueStorage.h */; };
-		9D4B31B01AC009200083C869 /* CCCoreEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D41012A1978CFAD00907FA8 /* CCCoreEventHandler.h */; };
 		9D4B31B11AC009200083C869 /* KeyValDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D63D05019B0EE220054EA87 /* KeyValDatabase.h */; };
 		9D4B31B21AC009200083C869 /* CCDomainHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D4101301978CFAD00907FA8 /* CCDomainHelper.h */; };
 		9D4B31B31AC009200083C869 /* SoomlaEncryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D63D05619B0EE220054EA87 /* SoomlaEncryptor.h */; };
@@ -205,6 +204,12 @@
 		9D63D09819B0EE220054EA87 /* SoomlaUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D63D07219B0EE220054EA87 /* SoomlaUtils.m */; };
 		9D63D09919B0EE220054EA87 /* DictionaryFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D63D07419B0EE220054EA87 /* DictionaryFactory.h */; };
 		9D63D09A19B0EE220054EA87 /* DictionaryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D63D07519B0EE220054EA87 /* DictionaryFactory.m */; };
+		B2FA802E3365C440A8C2CE14 /* CCSoomlaConfigBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2FA8254C685A34B3B081061 /* CCSoomlaConfigBuilder.cpp */; };
+		B2FA84DCA2FD895A848B08A0 /* CCSoomlaConfigBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2FA8254C685A34B3B081061 /* CCSoomlaConfigBuilder.cpp */; };
+		B2FA86C2856A1BAF91591F20 /* CCSoomlaConfigBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2FA8254C685A34B3B081061 /* CCSoomlaConfigBuilder.cpp */; };
+		B2FA8763981B0B5D263E6DF1 /* CCSoomlaConfigBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = B2FA89D0A8AF2688ED2003E4 /* CCSoomlaConfigBuilder.h */; };
+		B2FA8B2E47494837381F1791 /* CCSoomlaConfigBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = B2FA89D0A8AF2688ED2003E4 /* CCSoomlaConfigBuilder.h */; };
+		B2FA8E732776A9A79B96F9CD /* CCSoomlaConfigBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = B2FA89D0A8AF2688ED2003E4 /* CCSoomlaConfigBuilder.h */; };
 		C0B3C5F3168C6D0C00161FAA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B3C5F2168C6D0C00161FAA /* Foundation.framework */; };
 		F861D66719BF6192008834EF /* Cocos2dxCore.h in Headers */ = {isa = PBXBuildFile; fileRef = F861D66619BF6192008834EF /* Cocos2dxCore.h */; };
 		F865E1AE1AB05541006DA7E2 /* CCSoomla.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F865E1AD1AB05541006DA7E2 /* CCSoomla.cpp */; };
@@ -369,6 +374,8 @@
 		9D63D07219B0EE220054EA87 /* SoomlaUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoomlaUtils.m; sourceTree = "<group>"; };
 		9D63D07419B0EE220054EA87 /* DictionaryFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryFactory.h; sourceTree = "<group>"; };
 		9D63D07519B0EE220054EA87 /* DictionaryFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryFactory.m; sourceTree = "<group>"; };
+		B2FA8254C685A34B3B081061 /* CCSoomlaConfigBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSoomlaConfigBuilder.cpp; sourceTree = "<group>"; };
+		B2FA89D0A8AF2688ED2003E4 /* CCSoomlaConfigBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSoomlaConfigBuilder.h; sourceTree = "<group>"; };
 		C0B3C5EF168C6D0C00161FAA /* libCocos2dxCoreFromSources.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocos2dxCoreFromSources.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B3C5F2168C6D0C00161FAA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F861D66619BF6192008834EF /* Cocos2dxCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cocos2dxCore.h; sourceTree = "<group>"; };
@@ -464,6 +471,8 @@
 				372B748E4E8020FCD1396DDC /* CCSoomlaUtils.h */,
 				372B75AEF9E49C7BD45C6ED6 /* CCSoomlaUtils.cpp */,
 				372B7A1EA12379CCB201D0E1 /* data */,
+				B2FA8254C685A34B3B081061 /* CCSoomlaConfigBuilder.cpp */,
+				B2FA89D0A8AF2688ED2003E4 /* CCSoomlaConfigBuilder.h */,
 			);
 			name = Soomla;
 			path = ../Soomla;
@@ -668,7 +677,6 @@
 				9D4B31AD1AC009200083C869 /* SequenceReward.h in Headers */,
 				9D4B31AE1AC009200083C869 /* Soomla.h in Headers */,
 				9D4B31AF1AC009200083C869 /* KeyValueStorage.h in Headers */,
-				9D4B31B01AC009200083C869 /* CCCoreEventHandler.h in Headers */,
 				9D4B31B11AC009200083C869 /* KeyValDatabase.h in Headers */,
 				9D4B31B21AC009200083C869 /* CCDomainHelper.h in Headers */,
 				9D4B31B31AC009200083C869 /* SoomlaEncryptor.h in Headers */,
@@ -714,6 +722,7 @@
 				9D4B31D91AC009200083C869 /* CCNativeRewardStorage.h in Headers */,
 				9D4B31DA1AC009200083C869 /* CommonConsts.h in Headers */,
 				9D4B31DB1AC009200083C869 /* CCNativeCoreBridge.h in Headers */,
+				B2FA8E732776A9A79B96F9CD /* CCSoomlaConfigBuilder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -774,6 +783,7 @@
 				F865E2021AB0AF65006DA7E2 /* CCNativeRewardStorage.h in Headers */,
 				9D63D03E19B0EDB90054EA87 /* CommonConsts.h in Headers */,
 				F89F721B1AB192D9000ECC23 /* CCNativeCoreBridge.h in Headers */,
+				B2FA8B2E47494837381F1791 /* CCSoomlaConfigBuilder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,6 +815,7 @@
 				F8A1E3E41A236203006FAA3C /* CCSoomlaUtils.h in Headers */,
 				F8A1E3E51A236203006FAA3C /* CCRewardStorage.h in Headers */,
 				F8A1E3E61A236203006FAA3C /* CCKeyValueStorage.h in Headers */,
+				B2FA8763981B0B5D263E6DF1 /* CCSoomlaConfigBuilder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -952,6 +963,7 @@
 				9D4B31A01AC009200083C869 /* CCSchedule.cpp in Sources */,
 				9D4B31A11AC009200083C869 /* CCSoomlaUtils.cpp in Sources */,
 				9D4B31A21AC009200083C869 /* CCRewardStorage.cpp in Sources */,
+				B2FA86C2856A1BAF91591F20 /* CCSoomlaConfigBuilder.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1009,6 +1021,7 @@
 				372B781D8BC07D3AA891021B /* CCSchedule.cpp in Sources */,
 				372B790F7E37797D2E10ED65 /* CCSoomlaUtils.cpp in Sources */,
 				372B7FBE9869CD7B1B70ED0E /* CCRewardStorage.cpp in Sources */,
+				B2FA802E3365C440A8C2CE14 /* CCSoomlaConfigBuilder.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1042,6 +1055,7 @@
 				F8A1E3C21A235D73006FAA3C /* CCSoomlaUtils.cpp in Sources */,
 				F8A1E3C31A235D73006FAA3C /* CCRewardStorage.cpp in Sources */,
 				F8A1E3C41A235D73006FAA3C /* CCKeyValueStorage.cpp in Sources */,
+				B2FA84DCA2FD895A848B08A0 /* CCSoomlaConfigBuilder.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
