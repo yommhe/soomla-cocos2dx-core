@@ -1,3 +1,8 @@
+### v1.3.0 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.2.4...v1.3.0)
+
+* Changes
+  * Added builder classes for initializarion params
+
 ### v1.2.4 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.2.3...v1.2.4)
 
 * Changes

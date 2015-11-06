@@ -28,7 +28,7 @@ You can start by using the more common features in core by including the `Cocos2
 
 ####Pre baked zip:
 
-[soomla-cocos2dx-core 1.2.4](http://library.soom.la/fetch/cocos2dx-core/1.2.4?cf=github)
+[soomla-cocos2dx-core 1.3.0](http://library.soom.la/fetch/cocos2dx-core/1.3.0?cf=github)
 
 #### From sources:
  - Clone this repository recursively: `git clone --recursive https://github.com/soomla/soomla-cocos2dx-core.git`
