@@ -1,3 +1,7 @@
 xcuserdata
 build
 
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
