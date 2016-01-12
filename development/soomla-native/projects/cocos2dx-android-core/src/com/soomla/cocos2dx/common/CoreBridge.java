@@ -14,9 +14,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.Exception;
+import java.lang.String;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CoreBridge {
+
+    private static final String KVS_MIGRATED_EMPTY_KEY = "soomla_kvs_migrated_empty_key";
 
     private static CoreBridge INSTANCE = null;
 
@@ -78,9 +84,14 @@ public class CoreBridge {
         ndkGlue.registerCallHandler("CCSoomla::initialize", new NdkGlue.CallHandler() {
             @Override
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
-                String customSecret = params.optString("customSecret");
+                String soomlaSecret = params.optString("soomlaSecret");
                 SoomlaUtils.LogDebug("SOOMLA", "initialize is called from java!");
-                Soomla.initialize(customSecret);
+                Soomla.initialize(soomlaSecret);
+
+                if (KeyValueStorage.getDefaultStorage().get(KVS_MIGRATED_EMPTY_KEY) == null) {
+                    migrateEmptyKeyInKVS();
+                    KeyValueStorage.getDefaultStorage().put(KVS_MIGRATED_EMPTY_KEY, "true");
+                }
             }
         });
         ndkGlue.registerCallHandler("CCNativeRewardStorage::getTimesGiven", new NdkGlue.CallHandler() {
@@ -153,6 +164,31 @@ public class CoreBridge {
                 retParams.put("return", new JSONArray(result));
             }
         });
+    }
+
+    private static void migrateEmptyKeyInKVS() {
+        KeyValueStorage kvs = new KeyValueStorage("store.kv.db", "");
+
+        // Remove encrypted keys and save them in a Map
+        List<String> keys = kvs.getOnlyEncryptedKeys();
+        Map<String, String> encryptedStorage = new HashMap<String, String>();
+        for (String key : keys) {
+            String val = kvs.get(key);
+            encryptedStorage.put(key, val);
+            kvs.remove(key);
+        }
+
+        // Migrate non-encrypted keys
+        HashMap<String, String> nonEncrypted = kvs.getForNonEncryptedQuery("*");
+        for (String key : nonEncrypted.keySet()) {
+            KeyValueStorage.getDefaultStorage().putForNonEncryptedKey(key, nonEncrypted.get(key));
+        }
+
+        // Save back encrypted storage
+        for (String key : encryptedStorage.keySet()) {
+            KeyValueStorage.getDefaultStorage().put(key, encryptedStorage.get(key));
+        }
+
     }
 
     public void init() {
