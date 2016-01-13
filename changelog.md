@@ -1,3 +1,11 @@
+### v1.3.1 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.3.0...v1.3.1)
+
+* Changes
+  * Added migration for KVS used with empty secret
+
+* Fixes
+  * Fixed soomlaSecret passing from cocos2dx to native
+
 ### v1.3.0 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.2.4...v1.3.0)
 
 * Changes
