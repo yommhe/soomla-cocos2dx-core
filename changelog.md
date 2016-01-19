@@ -1,3 +1,8 @@
+### v1.3.2 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.3.1...v1.3.2)
+
+* Changes
+  * Removed the use of SoomlaApp
+
 ### v1.3.1 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.3.0...v1.3.1)
 
 * Changes
