@@ -1,5 +1,6 @@
 package com.soomla.cocos2dx.common;
 
+import android.app.Activity;
 import android.opengl.GLSurfaceView;
 
 import com.soomla.Soomla;
@@ -14,6 +15,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.Class;
+import java.lang.reflect.Method;
 import java.lang.Exception;
 import java.lang.String;
 import java.util.HashMap;
@@ -86,12 +89,16 @@ public class CoreBridge {
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
                 String soomlaSecret = params.optString("soomlaSecret");
                 SoomlaUtils.LogDebug("SOOMLA", "initialize is called from java!");
-                Soomla.initialize(soomlaSecret);
+
+                Method method = Class.forName("org.cocos2dx.lib.Cocos2dxActivity").getMethod("getContext");
+                Activity cocos2dxActivity = (Activity)method.invoke(null);
+                Soomla.initialize(cocos2dxActivity, soomlaSecret);
 
                 if (KeyValueStorage.getDefaultStorage().get(KVS_MIGRATED_EMPTY_KEY) == null) {
                     migrateEmptyKeyInKVS();
                     KeyValueStorage.getDefaultStorage().put(KVS_MIGRATED_EMPTY_KEY, "true");
                 }
+
             }
         });
         ndkGlue.registerCallHandler("CCNativeRewardStorage::getTimesGiven", new NdkGlue.CallHandler() {

@@ -1,6 +1,7 @@
 xcuserdata
 build
 
+## Other
 *.xccheckout
 *.moved-aside
 *.xcuserstate
