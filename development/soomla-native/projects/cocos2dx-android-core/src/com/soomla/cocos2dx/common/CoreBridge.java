@@ -1,5 +1,6 @@
 package com.soomla.cocos2dx.common;
 
+import android.app.Activity;
 import android.opengl.GLSurfaceView;
 
 import com.soomla.Soomla;
@@ -14,6 +15,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.Class;
+import java.lang.reflect.Method;
 import java.util.List;
 
 public class CoreBridge {
@@ -80,7 +83,9 @@ public class CoreBridge {
             public void handle(JSONObject params, JSONObject retParams) throws Exception {
                 String customSecret = params.optString("customSecret");
                 SoomlaUtils.LogDebug("SOOMLA", "initialize is called from java!");
-                Soomla.initialize(customSecret);
+                Method method = Class.forName("org.cocos2dx.lib.Cocos2dxActivity").getMethod("getContext");
+                Activity cocos2dxActivity = (Activity)method.invoke(null);
+                Soomla.initialize(cocos2dxActivity, customSecret);
             }
         });
         ndkGlue.registerCallHandler("CCNativeRewardStorage::getTimesGiven", new NdkGlue.CallHandler() {

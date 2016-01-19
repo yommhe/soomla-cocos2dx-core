@@ -7,3 +7,10 @@ xcuserdata
 build/
 
 build.log
+
+
+## Other
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
