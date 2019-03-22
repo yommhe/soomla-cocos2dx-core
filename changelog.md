@@ -1,3 +1,8 @@
+### v1.3.3 [view commit logs](https://github.com/yommhe/soomla-cocos2dx-core/compare/v1.3.2...v1.3.3)
+
+* Changes
+  * Updated sdk versions of iOS and Android.
+
 ### v1.3.2 [view commit logs](https://github.com/soomla/soomla-cocos2dx-core/compare/v1.3.1...v1.3.2)
 
 * Changes

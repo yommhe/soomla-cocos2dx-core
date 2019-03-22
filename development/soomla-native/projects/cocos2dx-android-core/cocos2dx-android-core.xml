@@ -59,8 +59,8 @@
 
   <path id="jdk.classpath.android">
     <fileset dir="${jdk.home.android}">
-      <include name="platforms/android-19/android.jar"/>
-      <include name="platforms/android-19/data/res"/>
+      <include name="platforms/android-28/android.jar"/>
+      <include name="platforms/android-28/data/res"/>
       <include name="tools/support/annotations.jar"/>
     </fileset>
   </path>

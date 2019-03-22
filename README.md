@@ -26,14 +26,29 @@ You can start by using the more common features in core by including the `Cocos2
 
 ## Download
 
-####Pre baked zip:
-
-[soomla-cocos2dx-core 1.3.2](http://library.soom.la/fetch/cocos2dx-core/1.3.2?cf=github)
-
 #### From sources:
- - Clone this repository recursively: `git clone --recursive https://github.com/soomla/soomla-cocos2dx-core.git`
+ - Clone this repository recursively: `git clone --recursive https://github.com/yommhe/soomla-cocos2dx-core.git`
+ or, if you have repositories already cloned, fetch the submodules with this command:
+    ```
+    $ git submodule update --init --recursive
+    ```
+
  - Run `./build_all` from project directory
  - Take created binaries from `build` directory and use it!
+
+#### Topics:
+- For some reason if you got something like this:
+```
+[javac] error: error reading {your project root}/cocos2d/extensions/soomla-cocos2dx-core/development/submodules/soomla-android-core/libs/square-otto-1.3.2.jar; error in opening zip file
+```
+You can download Square Otto directly from here:
+[square-otto-1.3.2.jar](https://github.com/downloads/square/otto/square-otto-1.3.2.jar)
+
+- You also need clone this into the `external` directory at the root of your Cocos2d-x framework.
+
+	```
+	$ git clone git@github.com:soomla/jansson.git external/jansson
+	```
 
 Our way of saying "Thanks !"
 ---
